@@ -4,10 +4,10 @@
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
   <packagedElement xmi:type="uml:Actor" xmi:id="_V6zh8L8dEfCM_OfiWjsCXQ" name="Utente"/>
-  <packagedElement xmi:type="uml:Actor" xmi:id="_X3c00L8dEfCM_OfiWjsCXQ" name="Actor2">
+  <packagedElement xmi:type="uml:Actor" xmi:id="_X3c00L8dEfCM_OfiWjsCXQ" name="Ipovedente">
     <generalization xmi:type="uml:Generalization" xmi:id="_j2gn0L8dEfCM_OfiWjsCXQ" general="_V6zh8L8dEfCM_OfiWjsCXQ"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Actor" xmi:id="_d25OwL8dEfCM_OfiWjsCXQ" name="Actor3">
+  <packagedElement xmi:type="uml:Actor" xmi:id="_d25OwL8dEfCM_OfiWjsCXQ" name="DisabilitaMotoria">
     <generalization xmi:type="uml:Generalization" xmi:id="_lH2T4L8dEfCM_OfiWjsCXQ" general="_V6zh8L8dEfCM_OfiWjsCXQ"/>
   </packagedElement>
   <packagedElement xmi:type="uml:UseCase" xmi:id="_sR-YQL8dEfCM_OfiWjsCXQ" name="selezione impostazione">

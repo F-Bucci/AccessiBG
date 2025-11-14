@@ -32,7 +32,7 @@
     </ownedViews>
     <ownedViews xmi:type="viewpoint:DView" uid="_CzO0IL8dEfCM_OfiWjsCXQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.usecase/description/papyrus_usecase.odesign#//@ownedViewpoints[name='UseCaseDiagram']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_C8mLgL8dEfCM_OfiWjsCXQ" name="New Use Case Diagram" repPath="#_C8jvQL8dEfCM_OfiWjsCXQ" changeId="1762880091700">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_C8mLgL8dEfCM_OfiWjsCXQ" name="New Use Case Diagram" repPath="#_C8jvQL8dEfCM_OfiWjsCXQ" changeId="1763124928109">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.usecase/description/papyrus_usecase.odesign#//@ownedViewpoints[name='UseCaseDiagram']/@ownedRepresentations[name='UseCaseDiagram']"/>
         <target xmi:type="uml:Model" href="src.uml#_Chx3wL8dEfCM_OfiWjsCXQ"/>
       </ownedRepresentationDescriptors>
@@ -262,7 +262,7 @@
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_C82DIL8dEfCM_OfiWjsCXQ" source="DANNOTATION_CUSTOMIZATION_KEY">
       <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_C82qML8dEfCM_OfiWjsCXQ"/>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_V64acL8dEfCM_OfiWjsCXQ" name="Actor1" outgoingEdges="__XyLgL8dEfCM_OfiWjsCXQ" incomingEdges="_j2qY0L8dEfCM_OfiWjsCXQ _lH-2wL8dEfCM_OfiWjsCXQ" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_V64acL8dEfCM_OfiWjsCXQ" name="Utente" outgoingEdges="__XyLgL8dEfCM_OfiWjsCXQ" incomingEdges="_j2qY0L8dEfCM_OfiWjsCXQ _lH-2wL8dEfCM_OfiWjsCXQ" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="uml:Actor" href="src.uml#_V6zh8L8dEfCM_OfiWjsCXQ"/>
       <semanticElements xmi:type="uml:Actor" href="src.uml#_V6zh8L8dEfCM_OfiWjsCXQ"/>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_V68E0L8dEfCM_OfiWjsCXQ" labelSize="9" workspacePath="/org.eclipse.papyrus.sirius.uml.diagram.usecase/icons/Actor.svg">
@@ -270,7 +270,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.usecase/description/papyrus_usecase.odesign#//@ownedViewpoints[name='UseCaseDiagram']/@ownedRepresentations[name='UseCaseDiagram']/@defaultLayer/@nodeMappings[name='UCD_Actor']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_X3eC8L8dEfCM_OfiWjsCXQ" name="Actor2" outgoingEdges="_j2qY0L8dEfCM_OfiWjsCXQ" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_X3eC8L8dEfCM_OfiWjsCXQ" name="Ipovedente" outgoingEdges="_j2qY0L8dEfCM_OfiWjsCXQ" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="uml:Actor" href="src.uml#_X3c00L8dEfCM_OfiWjsCXQ"/>
       <semanticElements xmi:type="uml:Actor" href="src.uml#_X3c00L8dEfCM_OfiWjsCXQ"/>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_X3gfML8dEfCM_OfiWjsCXQ" labelSize="9" workspacePath="/org.eclipse.papyrus.sirius.uml.diagram.usecase/icons/Actor.svg">
@@ -278,7 +278,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.usecase/description/papyrus_usecase.odesign#//@ownedViewpoints[name='UseCaseDiagram']/@ownedRepresentations[name='UseCaseDiagram']/@defaultLayer/@nodeMappings[name='UCD_Actor']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_d27D8L8dEfCM_OfiWjsCXQ" name="Actor3" outgoingEdges="_lH-2wL8dEfCM_OfiWjsCXQ" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_d27D8L8dEfCM_OfiWjsCXQ" name="DisabilitaMotoria" outgoingEdges="_lH-2wL8dEfCM_OfiWjsCXQ" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="uml:Actor" href="src.uml#_d25OwL8dEfCM_OfiWjsCXQ"/>
       <semanticElements xmi:type="uml:Actor" href="src.uml#_d25OwL8dEfCM_OfiWjsCXQ"/>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_d285IL8dEfCM_OfiWjsCXQ" labelSize="9" workspacePath="/org.eclipse.papyrus.sirius.uml.diagram.usecase/icons/Actor.svg">
