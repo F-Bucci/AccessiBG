@@ -48,7 +48,7 @@
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_vxbxYL_QEfCd7KKIoLYyzw" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_vxcYcL_QEfCd7KKIoLYyzw" key="nature" value="UML_Nature"/>
     </eAnnotations>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_vxcYcb_QEfCd7KKIoLYyzw" name="edificio" type="_V6444L_KEfCd7KKIoLYyzw" association="_vxbKUL_QEfCd7KKIoLYyzw">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_vxcYcb_QEfCd7KKIoLYyzw" name="edificio" type="_V6444L_KEfCd7KKIoLYyzw" aggregation="composite" association="_vxbKUL_QEfCd7KKIoLYyzw">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KB3YIMY7EfCxIopAnqzi_g" name="LiteralInteger1" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KB3YIcY7EfCxIopAnqzi_g" name="LiteralUnlimitedNatural1" value="*"/>
     </ownedEnd>
@@ -83,7 +83,7 @@
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_C5hR4MFYEfCNK4ORyzINNQ" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_C5hR4cFYEfCNK4ORyzINNQ" key="nature" value="UML_Nature"/>
     </eAnnotations>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_C5hR5cFYEfCNK4ORyzINNQ" name="aula" type="_XvaKgL_KEfCd7KKIoLYyzw" association="_C5gq0MFYEfCNK4ORyzINNQ">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_C5hR5cFYEfCNK4ORyzINNQ" name="aula" type="_XvaKgL_KEfCd7KKIoLYyzw" aggregation="composite" association="_C5gq0MFYEfCNK4ORyzINNQ">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_G8MdIMFYEfCNK4ORyzINNQ" name="LiteralInteger1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_G8NEMMFYEfCNK4ORyzINNQ" name="LiteralUnlimitedNatural1" value="*"/>
     </ownedEnd>
@@ -100,7 +100,7 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JWMaYMFYEfCNK4ORyzINNQ" name="LiteralInteger1" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JWMaYcFYEfCNK4ORyzINNQ" name="LiteralUnlimitedNatural1" value="1"/>
     </ownedEnd>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_IS044sFYEfCNK4ORyzINNQ" name="piano" type="_XW5KcMFXEfCNK4ORyzINNQ" association="_ISzqwMFYEfCNK4ORyzINNQ">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_IS044sFYEfCNK4ORyzINNQ" name="piano" type="_XW5KcMFXEfCNK4ORyzINNQ" aggregation="composite" association="_ISzqwMFYEfCNK4ORyzINNQ">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SfYzgMFYEfCNK4ORyzINNQ" name="LiteralInteger1" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SfYzgcFYEfCNK4ORyzINNQ" name="LiteralUnlimitedNatural1" value="*"/>
     </ownedEnd>
