@@ -13,6 +13,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_UHZ3AMFUEfCNK4ORyzINNQ" name="orario">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_YULnMMY7EfCxIopAnqzi_g" name="serivizi" type="_i4qIAMY6EfCxIopAnqzi_g"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_XvaKgL_KEfCd7KKIoLYyzw" name="Aula">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_dzfFUMFVEfCNK4ORyzINNQ" name="nome">
@@ -29,6 +30,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_2NhLQMFVEfCNK4ORyzINNQ" name="facolta">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_FNA-gMY6EfCxIopAnqzi_g" name="servizi" type="_qoHY8MY4EfCxIopAnqzi_g"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_SmMGkL_NEfCd7KKIoLYyzw" name="Parcheggio">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_P5RXwMFWEfCNK4ORyzINNQ" name="indirizzo" aggregation="composite">
@@ -37,25 +39,19 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_j7ZpUMFWEfCNK4ORyzINNQ" name="aPagamento">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
     </ownedAttribute>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_WRf6sL_NEfCd7KKIoLYyzw" name="Mensa">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_GFT_0MFVEfCNK4ORyzINNQ" name="indirizzo">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_N6fMUMFVEfCNK4ORyzINNQ" name="orario">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_UdWcYMFVEfCNK4ORyzINNQ" name="menu">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_TB5DoMY6EfCxIopAnqzi_g" name="pDisabili">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
     </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_ZBdg4L_NEfCd7KKIoLYyzw" name="Servizi"/>
-  <packagedElement xmi:type="uml:Enumeration" xmi:id="_ILzV4L_OEfCd7KKIoLYyzw" name="Utente"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_vxbKUL_QEfCd7KKIoLYyzw" memberEnd="_vxcYcb_QEfCd7KKIoLYyzw _vxc_gL_QEfCd7KKIoLYyzw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_vxbxYL_QEfCd7KKIoLYyzw" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_vxcYcL_QEfCd7KKIoLYyzw" key="nature" value="UML_Nature"/>
     </eAnnotations>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_vxcYcb_QEfCd7KKIoLYyzw" name="edificio" type="_V6444L_KEfCd7KKIoLYyzw" association="_vxbKUL_QEfCd7KKIoLYyzw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_vxcYcb_QEfCd7KKIoLYyzw" name="edificio" type="_V6444L_KEfCd7KKIoLYyzw" association="_vxbKUL_QEfCd7KKIoLYyzw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KB3YIMY7EfCxIopAnqzi_g" name="LiteralInteger1" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KB3YIcY7EfCxIopAnqzi_g" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
     <ownedEnd xmi:type="uml:Property" xmi:id="_vxc_gL_QEfCd7KKIoLYyzw" name="sede" type="_NlksYL_NEfCd7KKIoLYyzw" association="_vxbKUL_QEfCd7KKIoLYyzw"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_FGZj0L_REfCd7KKIoLYyzw" memberEnd="_FGaK4b_REfCd7KKIoLYyzw _FGaK4r_REfCd7KKIoLYyzw">
@@ -70,10 +66,13 @@
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_JKnnML_REfCd7KKIoLYyzw" key="nature" value="UML_Nature"/>
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_JKnnMb_REfCd7KKIoLYyzw" name="sede" type="_NlksYL_NEfCd7KKIoLYyzw" association="_JKlyAL_REfCd7KKIoLYyzw">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_79zLIL_REfCd7KKIoLYyzw" name="LiteralInteger1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_793ckL_REfCd7KKIoLYyzw" name="LiteralUnlimitedNatural1" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GuCP4MY7EfCxIopAnqzi_g" name="LiteralInteger1" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GuCP4cY7EfCxIopAnqzi_g" name="LiteralUnlimitedNatural1" value="1"/>
     </ownedEnd>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_JKoOQL_REfCd7KKIoLYyzw" name="parcheggio" type="_SmMGkL_NEfCd7KKIoLYyzw" association="_JKlyAL_REfCd7KKIoLYyzw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_JKoOQL_REfCd7KKIoLYyzw" name="parcheggio" type="_SmMGkL_NEfCd7KKIoLYyzw" association="_JKlyAL_REfCd7KKIoLYyzw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IDwssMY7EfCxIopAnqzi_g" name="LiteralInteger1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IDwsscY7EfCxIopAnqzi_g" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_XW5KcMFXEfCNK4ORyzINNQ" name="Piano">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_ZVa3MMFYEfCNK4ORyzINNQ" name="numero">
@@ -105,5 +104,16 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SfYzgMFYEfCNK4ORyzINNQ" name="LiteralInteger1" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SfYzgcFYEfCNK4ORyzINNQ" name="LiteralUnlimitedNatural1" value="*"/>
     </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_qoHY8MY4EfCxIopAnqzi_g" name="ServiziSede">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_0RwzwMY4EfCxIopAnqzi_g" name="MENSA"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_2Tc-sMY4EfCxIopAnqzi_g" name="BIBLIOTECA"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_BzQC0MY5EfCxIopAnqzi_g" name="BAR"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_YOdPIMY6EfCxIopAnqzi_g" name="Utente"/>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_i4qIAMY6EfCxIopAnqzi_g" name="ServiziEdificio">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_oP1BAMY6EfCxIopAnqzi_g" name="ASCENSORE"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_skLLEMY6EfCxIopAnqzi_g" name="RAMPA"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_xpxy8MY6EfCxIopAnqzi_g" name="RISTORO"/>
   </packagedElement>
 </uml:Model>
