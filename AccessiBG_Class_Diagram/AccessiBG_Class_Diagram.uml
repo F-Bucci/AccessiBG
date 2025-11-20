@@ -43,7 +43,6 @@
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
     </ownedAttribute>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_ZBdg4L_NEfCd7KKIoLYyzw" name="Servizi"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_vxbKUL_QEfCd7KKIoLYyzw" memberEnd="_vxcYcb_QEfCd7KKIoLYyzw _vxc_gL_QEfCd7KKIoLYyzw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_vxbxYL_QEfCd7KKIoLYyzw" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_vxcYcL_QEfCd7KKIoLYyzw" key="nature" value="UML_Nature"/>
@@ -53,13 +52,6 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KB3YIcY7EfCxIopAnqzi_g" name="LiteralUnlimitedNatural1" value="*"/>
     </ownedEnd>
     <ownedEnd xmi:type="uml:Property" xmi:id="_vxc_gL_QEfCd7KKIoLYyzw" name="sede" type="_NlksYL_NEfCd7KKIoLYyzw" association="_vxbKUL_QEfCd7KKIoLYyzw"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_FGZj0L_REfCd7KKIoLYyzw" memberEnd="_FGaK4b_REfCd7KKIoLYyzw _FGaK4r_REfCd7KKIoLYyzw">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FGZj0b_REfCd7KKIoLYyzw" source="org.eclipse.papyrus">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FGaK4L_REfCd7KKIoLYyzw" key="nature" value="UML_Nature"/>
-    </eAnnotations>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_FGaK4b_REfCd7KKIoLYyzw" name="servizi" type="_ZBdg4L_NEfCd7KKIoLYyzw" association="_FGZj0L_REfCd7KKIoLYyzw"/>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_FGaK4r_REfCd7KKIoLYyzw" name="sede" type="_NlksYL_NEfCd7KKIoLYyzw" association="_FGZj0L_REfCd7KKIoLYyzw"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_JKlyAL_REfCd7KKIoLYyzw" memberEnd="_JKnnMb_REfCd7KKIoLYyzw _JKoOQL_REfCd7KKIoLYyzw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_JKnAIL_REfCd7KKIoLYyzw" source="org.eclipse.papyrus">
@@ -116,4 +108,18 @@
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_skLLEMY6EfCxIopAnqzi_g" name="RAMPA"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_xpxy8MY6EfCxIopAnqzi_g" name="RISTORO"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_qLYEsMZbEfC2H8GL29Q_Qg" name="Servizi_Sede">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_DjMzIMZdEfC2H8GL29Q_Qg" name="Mensa"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_HJPswMZdEfC2H8GL29Q_Qg" name="Biblioteca"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_LccAQMZdEfC2H8GL29Q_Qg" name="Segreteria"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_OWvOMMZdEfC2H8GL29Q_Qg" name="UfficioTasse"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_xhZQAMZbEfC2H8GL29Q_Qg" name="ServiziPiano" visibility="public">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Y3bo8MZhEfC2H8GL29Q_Qg" name="Ascensore"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_blvCQMZhEfC2H8GL29Q_Qg" name="Rampa"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_2wo8EMZbEfC2H8GL29Q_Qg" name="Servizi Aula">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_aQvIwMZiEfC2H8GL29Q_Qg" name="SpazioSediaARotelle"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ZTfsIMZcEfC2H8GL29Q_Qg" name="Utente"/>
 </uml:Model>
