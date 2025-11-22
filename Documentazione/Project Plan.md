@@ -28,7 +28,7 @@ Standup se lo facciamo,  possibilmente la sera e non necessariamente tutti i gio
 - Implementazione superficiale di alcune sedi;
 - Interfaccia UI/UX essenziale.
 
-#7. PERSONALE
+# 7. PERSONALE
 Tutti fanno tutto (?)
 
 # 8. METODI E TECNICHE
