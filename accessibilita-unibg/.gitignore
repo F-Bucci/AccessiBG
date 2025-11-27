@@ -2,7 +2,7 @@
 .idea/
 .vscode/
 .settings
-.project
+.class
 .classpath
 
 *.iml
