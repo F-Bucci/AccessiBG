@@ -1,21 +1,40 @@
 # 1. INTRODUZIONE
-L'accessibilità ai luoghi pubblici e privati è fondamentale  per garantire autonomia e inclusione a tutte le persone. Si vuole realizzare una web-app per fornire guide dettagliate sull'accessibilità di edifici e spazi, aiutando utenti con esigenze specifiche a pianificare i propri spostamenti in modo sicuro e informato. In particolare ci si vuole focalizzare sugli spazi dell'università di Bergamo fornendo per ogni spazio (sedi, aule, bar, centri sportivi, residenze...) informazioni relative all'accessibilità.
+L’accessibilità fisica e digitale rappresenta un requisito essenziale per garantire autonomia, partecipazione attiva e pari opportunità all’interno della società.
+Il progetto, con l'obiettivo di promuovere inclusione e benessere, prevede la realizzazione di una web-app dedicata alla consultazione di guide strutturate sull’accessibilità di edifici e spazi, consentendo agli utenti, in particolare persone con esigenze specifiche di mobilità o accesso, di pianificare i propri spostamenti in maniera consapevole e sicura.
 
-Questa applicazione dovrà ispirarsi a questo servizio già disponibile online per UK e Irlanda: https://www.accessable.co.uk/
+L’applicazione si focalizzerà sugli spazi dell’Università degli Studi di Bergamo, includendo sedi, aule, biblioteche, bar, mense e centri sportivi. Per ciascun luogo saranno fornite informazioni dettagliate e aggiornate su percorsi, infrastrutture, servizi di supporto e caratteristiche rilevanti dell’accessibilità, con l’obiettivo di creare uno strumento pratico e utile a tutti quelli che ne necessitano.
 
-Web app per fornire informazione sull’accessibilità sulle diversi sedi dell’università di Bergamo.
-Creare un web app per i percorsi dedicati per raggiungere i diversi servizi.
+Come riferimento funzionale e ispirazione progettuale, l’applicazione si baserà su alcuni criteri adottati da AccessAble (https://www.accessable.co.uk/), una web-app che fornisce informazioni utili sull'accessibilità degli spaci pubblici e privati in Regno Unito e in Irlanda.
+
+I responsabili del progetto sono i seguenti:
+- xxxxxxx | Filippo (da completare)
+- 1053039 | Allison Rosa Perez Murillo;
+- 1080937 | Monteleone Daniele;
+- 1080548 | Cuni Luizo.
 
 # 2. MODELLO PROCESSO
-Si voleva attuare, come modello di processo, la programmazione estrema (extreme programming).
+Tra vari modelli di processo messi a disposizione, è stato deciso assieme di attuare quello della programmazione estrema (eXtreme Programming).
 
 # 3. ORGANIZZAZIONE PROCESSO
-L'università di Bergamo, delegata del rettore alle politiche sulla disabilità e la diversità: Prof. Besio Serenella.
-Servizi da fornire dall’utente: indirizzi delle strutture; piante; informazioni riguardo accessibilità; aspettative sull’interfaccia e sulla funzionalità.
-il team si impegna ad avere contatti con la professoressa per conferme nei diversi step dello sviluppo con un approccio di prototipazione evolutiva.
+Il team di progetto lavora in modo collaborativo, seguendo i principi della metodologia Extreme Programming: tutti i membri partecipano alle attività dove possono dare il proprio contributo.
+
+Il ruolo di Cliente (seguendo una delle pratiche della programmazione estrema), che decide le priorità e conferma le funzionalità sviluppate, è ricoperto da un membro del gruppo, come punto di riferimento per il progresso del progetto.
+
+Gli altri ruoli del team (sviluppatore, tester, analista, responsabile qualità, ecc.) non sono né fissi, né tantomeno esclusivi. Infatti, una persona può avere più ruoli, in base alle competenze e alle necessità del momento.
+
+Il team manterrà un confronto costante con i docenti dell’Università degli Studi di Bergamo per ottenere materiali utili al progetto (mappe dei piani degli edifici delle sedi universitarie), ricevere feedback sul lavoro svolto e migliorare le scelte di sviluppo dell’applicazione.
+
+Tutte le attività e le comunicazioni saranno registrate per garantire chiarezza e tracciabilità durante il progetto.
 
 # 4. NORME, LINEE GUIDA, PROCEDURE
-Il codice sarà scritto rispettando le convenzioni Java.
+Durante lo sviluppo dell'applicazione, verrà utilizato Eclipse come ambiente di sviluppo. Tale app, con Maven, verrà scritto con il linguaggio di programmazione Java (rispettando le convenzioni definite da Oracle), che quest'ultima andrà a sostituire la parte scrittura in HTML e in JavaScript grazie al framework di Vaadin (come richiesto dalla proposta di questo progetto).
+
+Per la realizzazione dei diagrammi UML utilizzeremo:
+- Papyrus, per la realizzazione del diagramma delle classi;
+- PlantUML, per i diagrammi restanti.
+
+Infine, come punto di convidisione del materiale e modo di lavorare assieme al progetto si utilizza Github. Sarà presente una repository remota in cui ci sarà tutto ciò che va a definire il nostro progetto (web-app, diagrammi UML e documentazione).
+
 Il team si impegna a seguire le norme etiche generali definite per l’ingegnere informatico. 
 
 # 5. ATTIVITÁ DI GESTIONE
