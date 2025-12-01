@@ -7,7 +7,7 @@ L’applicazione si focalizzerà sugli spazi dell’Università degli Studi di B
 Come riferimento funzionale e ispirazione progettuale, l’applicazione si baserà su alcuni criteri adottati da AccessAble (https://www.accessable.co.uk/), una web-app che fornisce informazioni utili sull'accessibilità degli spaci pubblici e privati in Regno Unito e in Irlanda.
 
 I responsabili del progetto sono i seguenti:
-- xxxxxxx | Filippo (da completare)
+- 1077719 | Filippo Guidomaria Bucci
 - 1053039 | Allison Rosa Perez Murillo;
 - 1080937 | Monteleone Daniele;
 - 1080548 | Cuni Luizo.
