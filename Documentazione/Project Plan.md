@@ -32,6 +32,8 @@ Durante lo sviluppo dell'applicazione, verrà utilizato Eclipse come ambiente di
 Per la realizzazione dei diagrammi UML utilizzeremo:
 - Papyrus, per la realizzazione del diagramma delle classi;
 - PlantUML, per i diagrammi restanti.
+- Eclipse plugin per qualità codice
+- Eclipse IDE
 
 Infine, come punto di convidisione del materiale e modo di lavorare assieme al progetto si utilizza Github. Sarà presente una repository remota in cui ci sarà tutto ciò che va a definire il nostro progetto (web-app, diagrammi UML e documentazione).
 
@@ -54,10 +56,12 @@ Tutti fanno tutto (?)
 -UML: in tutte le fasi dello sviluppo del sw tramite Papyrus;
 -Front-end: Vaadin;
 -Back-end: Java;
--DB: firebase (no sql).
+-DB: firebase (no sql)
+- plugin Eclipse per qualità codice
 
 # 9. GARANZIE DI QUALITÁ
 Il team si impegna a perseguire i criteri di qualità del sw definiti dal modello di McCall.
+(plugin Eclipse per qualità codice)
 
 # 10. ORGANIZZAZIONE PACCHETTI DI LAVORO
 Il team seguendo il modello di sw XP, non definisce dei ruoli precisi ma si riunisce per 
