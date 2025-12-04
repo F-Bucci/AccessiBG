@@ -60,22 +60,18 @@ Standup se lo facciamo,  possibilmente la sera e non necessariamente tutti i gio
 - Interfaccia UI/UX essenziale.
 
 # 7. PERSONALE
-Tutti fanno tutto (?)
+Tutti i componenti del team sono coinvolti in tutte le fasi del progetto, con un'organizzazione del personale che si ispira ai metodi agili quali Scrum e XP. I ruoli di Product Owner e Scrum master, non saranno tuttavia assegnati nella loro completezza, a causa della dimensione del team e del poco tempo a disposizione. Queste responsabilità saranno assegnate ad interim.
 
 # 8. METODI E TECNICHE
--UML: in tutte le fasi dello sviluppo del sw tramite Papyrus;
--Front-end: Vaadin;
--Back-end: Java;
--DB: firebase (no sql)
-- plugin Eclipse per qualità codice
+UML sarà usato in tutte le fasi della progettazione e sviluppo del software, in particolare Papyrus sarà usato per il class diagram, mentre PathUML sarà usato per gli altri diagrammi;
+Per il Front-end verrà usato Vaadin (inserire link), mentre Java sarà usato per il Back-end e verranno usati plugin per la qualità del codice (elenco plugin)
+Per quanto riguarda il layer DB, Firebase (no sql) sarà sicuramente utilizzato, eventualmente affiancato da un altro DB relazionale embedded, creato tramite Eclipse.
 
 # 9. GARANZIE DI QUALITÁ
-Il team si impegna a perseguire i criteri di qualità del sw definiti dal modello di McCall.
-(plugin Eclipse per qualità codice)
+Il team si impegna a perseguire i criteri di qualità del sw definiti dal modello di McCall, ad usare le convenzioni Java e ad integrare plugin Eclipse per aumentare la qualità del codice.
 
 # 10. ORGANIZZAZIONE PACCHETTI DI LAVORO
-Il team seguendo il modello di sw XP, non definisce dei ruoli precisi ma si riunisce per 
-DB, frontend, backend
+L' organizzazione del team si ispira ai metodi agili come Scrum e XP, senza ruoli precisi e con il carico di lavoro ripartito per Sprint dalla durata di una settimana. I lunedì saranno usati per fare una retrospettiva sullo Sprint appena finito e per la pianificazione delle task da completare durante il nuovo Sprint. Queste task avranno delle corrispettive issues nella Kanban board di Github, che sarà usata per monitorare lo stato di queste task e per la loro assegnazione e organizzazione. 
 
 # 11. RISORSE
 2 computer hp per l’implementazione del sw, mentre per la scalabilità prevediamo l’utilizzo di hardware aggiuntivo tramite cloud.
@@ -87,6 +83,5 @@ Non dovrebbe servire, ma per eventuale scalabilità/ test, disposti a spendere a
 Il versioning ed i cambiamenti/ticket verranno gestiti tramite GitHub.
 
 # 14. CONSEGNA
-Dicembre/Gennaio/XP
-- rilascio app su play store (??).
-- per versioni precedenti rilasciamo una versione web di prova per l’utente.
+Per Gennaio sará rilasciata una versione web di prova per l’utente.
+Non si esclude il rilascio di un'app su play store.
