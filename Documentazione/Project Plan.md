@@ -13,17 +13,18 @@ I responsabili del progetto sono i seguenti:
 - 1080548 | Cuni Luizo.
 
 # 2. MODELLO DEL PROCESSO
-Tra i vari modelli di processo messi a disposizione, è stato deciso assieme di attuare (in gran parte) quello della programmazione estrema (eXtreme Programming).
+Tra i vari modelli di processo messi a disposizione, è stato deciso assieme di attuare quello della programmazione estrema (eXtreme Programming).
 Tale decisione è stata presa per le seguenti ragioni:
 
 - Gruppo piccolo;
 - Riunione settimanale veloce, conveniente per noi che abbiamo difficoltà a trovare un'orario in cui siamo tutti disponibili;
 - Intera squadra, in cui abbiamo il Cliente (ruolo coperto da uno dei membri del gruppo) che prende varie decisioni sullo sviluppo del progetto, e il resto dei componenti svolgono il loro ruolo/ruoli in base alle loro competenze;
-- Test dei clienti, il team crea dei test funzionali e il Cliente li esegue per assicurarsi che tutto funzioni come prestabilito;
+- Sviluppo basato sui test, il team crea dei test semplici e automatizzati;
+- Test dei clienti, il Cliente esegue il prototipo per assicurarsi che i requisiti siano stati implementati e rispettati;
 - Piccole uscite, il team si impegna a effettuare delle piccole release funzionali il più frequentemente possibile che saranno accessibili sulla piattaforma Github da parte del team (compreso il Cliente) e da parte dei professori interessati;
 - Design semplice, il team si impegna a creare la web-app mantenendo per l'intero sviluppo un design semplice ma efficace, adattabile a nuove aggiunte/modifiche future;
 - Programmazione in coppia, dove uno scrive e l'altro guarda e interviene quando è necessario; in questa maniera si avrà un codice migliore. Questa operazione viene effettuata mentre si sta in chiamata sulla piattaforma Meet;
-- 
+- Proprietà collettiva del codice, il team si divide a coppie a rotazione in modo che ogni membro del team programmi su diversi aspetti del codice aiutando così la comprensione delle funzionalità.
 
 # 3. ORGANIZZAZIONE PROCESSO
 Il team di progetto lavora in modo collaborativo, seguendo i principi della metodologia Extreme Programming: tutti i membri partecipano alle attività dove possono dare il proprio contributo.
@@ -37,6 +38,7 @@ Il team manterrà un confronto costante con i docenti dell’Università degli S
 Tutte le attività e le comunicazioni saranno registrate per garantire chiarezza e tracciabilità durante il progetto.
 
 # 4. NORME, LINEE GUIDA, PROCEDURE
+//punto sbagliato (punto 11)
 Durante lo sviluppo dell'applicazione, verrà utilizato Eclipse come ambiente di sviluppo. Tale app, con Maven, verrà scritto con il linguaggio di programmazione Java (rispettando le convenzioni definite da Oracle), che quest'ultima andrà a sostituire la parte scrittura in HTML e in JavaScript grazie al framework di Vaadin (come richiesto dalla proposta di questo progetto).
 
 Per la realizzazione dei diagrammi UML utilizzeremo:
