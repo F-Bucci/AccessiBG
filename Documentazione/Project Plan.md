@@ -91,8 +91,8 @@ In particolare si citano:
 - SonarQube per identificare problemi e migliorare la qualità del codice.
 
 # 12. BUDGET
-Non dovrebbe servire, ma potrebbero essere considerati eventuali costi per lo spostamento nelle diversi sedi dell'Universita' di Bergamo per effettuare ricerche utili per il miglioramento dell'esperienza del utente.
-Inoltre, verranno realizzate risorse Open-Source e/o non a pagamento per lo sviluppo del programma.
+Non dovrebbe servire, ma potrebbero essere considerati eventuali costi per lo spostamento nelle diversi sedi dell'Universita' di Bergamo per effettuare ricerche utili per il miglioramento dell'esperienza dell'utente.
+Inoltre, verranno utilizzate risorse Open-Source e/o non a pagamento per lo sviluppo del programma.
 
 # 13. GESTIONE CAMBIAMENTI
 Il versioning ed i cambiamenti/ticket verranno gestiti tramite GitHub.
