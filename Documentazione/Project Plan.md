@@ -38,28 +38,27 @@ Il team manterrà un confronto costante con i docenti dell’Università degli S
 Tutte le attività e le comunicazioni saranno registrate per garantire chiarezza e tracciabilità durante il progetto.
 
 # 4. NORME, LINEE GUIDA, PROCEDURE
-//punto sbagliato (punto 11)
-Durante lo sviluppo dell'applicazione, verrà utilizato Eclipse come ambiente di sviluppo. Tale app, con Maven, verrà scritto con il linguaggio di programmazione Java (rispettando le convenzioni definite da Oracle), che quest'ultima andrà a sostituire la parte scrittura in HTML e in JavaScript grazie al framework di Vaadin (come richiesto dalla proposta di questo progetto).
+La documentazione verrà consegnata seguendo le tempistiche prestabilite ossia:
+- Project plan: verrà consegnato il 16 dicembre 2025 sia in formato markdown che in formato PDF;
+- Documentazione completa: sarà consegnata 5 giorni prima della presentazione concordata del progetto.
 
-Per la realizzazione dei diagrammi UML utilizzeremo:
-- Papyrus, per la realizzazione del diagramma delle classi;
-- PlantUML, per i diagrammi restanti.
-- Eclipse plugin per qualità codice
-- Eclipse IDE
+Per assicurarsi della qualità e comprensibilità della documentazione qui presente, la stessa sarà rivista e corretta da tutti i componenti del team.
 
-Infine, come punto di convidisione del materiale e modo di lavorare assieme al progetto si utilizza Github. Sarà presente una repository remota in cui ci sarà tutto ciò che va a definire il nostro progetto (web-app, diagrammi UML e documentazione).
-
-Il team si impegna a seguire le norme etiche generali definite per l’ingegnere informatico. 
+Il team rispetterà, durante lo sviluppo, le linee guida e gli standard dettati dalle convenzioni per la programmazione Java come definite da Oracle.
+Inoltre, il team si impegna a seguire le norme etiche generali definite per l’ingegnere informatico. 
 
 # 5. ATTIVITÁ DI GESTIONE
-Riunione ogni settimana per eventuali problematiche riscontrate o aggiornamenti.
+Il team si riunirà una volta a settimana su Google Meet o in presenza per discutere di eventuali problematiche riscontrate, aggiornamenti e idee da implementare durante il prossimo Sprint. Per risolvere eventuali problemi urgenti possono essere convocate ulteriori riunione, mentre verranno utilizzati altri mezzi di comunicazione per feedback giornalieri, come ad esempio WhatsApp.
 Si lavorerà tendenzialmente a distanza, ma possono essere convocate eventuali riunioni in presenza in caso di necessità.
-Standup se lo facciamo,  possibilmente la sera e non necessariamente tutti i giorni.
+
+Per monitorare lo stato di avanzamento del progetto si utilizzerà la Kanban Board di GitHub e le sue issues, ognuna delle quali conterrà una etichetta che esplicherà a quale sprint essa appartiene.
 
 # 6. RISCHI
-- Non riuscire a implementare tutte le funzionalità richieste dal cliente nei tempi richiesti;
-- Implementazione superficiale di alcune sedi;
-- Interfaccia UI/UX essenziale.
+- Non riuscire a implementare tutte le funzionalità richieste dal cliente nei tempi richiesti (interfaccia UI/UX essenziale);
+- Implementazione superficiale di alcune sedi ed edifici;
+- Eventuali problemi col software;
+- Tempistiche allungate a causa di nuovi strumenti che il team deve utilizzare pur non avendone una conoscenza approfondita;
+- Possibilità che una riunione possa essere rimandata a causa di impegni personali di qualche membro del team.
 
 # 7. PERSONALE
 Tutti i componenti del team sono coinvolti in tutte le fasi del progetto, con un'organizzazione del personale che si ispira ai metodi agili quali Scrum e XP. I ruoli di Product Owner e Scrum master, non saranno tuttavia assegnati nella loro completezza, a causa della dimensione del team e del poco tempo a disposizione. Queste responsabilità saranno assegnate ad interim.
@@ -98,5 +97,6 @@ Inoltre, verranno utilizzate risorse Open-Source e/o non a pagamento per lo svil
 Il versioning ed i cambiamenti/ticket verranno gestiti tramite GitHub.
 
 # 14. CONSEGNA
-Per Gennaio sará rilasciata una versione web di prova per l’utente.
-Non si esclude il rilascio di un'app su play store.
+La webapp e la sua documentazione sarà disponibile tramite GitHub, al quale le persone interessate ne avranno accesso.
+
+
