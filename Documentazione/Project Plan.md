@@ -76,10 +76,23 @@ Il team si impegna a perseguire i criteri di qualità del sw definiti dal modell
 L' organizzazione del team si ispira ai metodi agili come Scrum e XP, senza ruoli precisi e con il carico di lavoro ripartito per Sprint dalla durata di una settimana. I lunedì saranno usati per fare una retrospettiva sullo Sprint appena finito e per la pianificazione delle task da completare durante il nuovo Sprint. Queste task avranno delle corrispettive issues nella Kanban board di Github, che sarà usata per monitorare lo stato di queste task e per la loro assegnazione e organizzazione. 
 
 # 11. RISORSE
-2 computer hp per l’implementazione del sw, mentre per la scalabilità prevediamo l’utilizzo di hardware aggiuntivo tramite cloud.
+Il team per supportare il progetto utilizzerà diversi strumenti.
+Per quanto riguarda il lato hardware ogni membro del team utilizzerà per la maggior parte del progetto il proprio PC personale, oppure  è possibile che un PC possa esssere condiviso per eseguire in maniera più efficiente eventuali lavori specifici sul progetto.
+
+Questo progetto, inoltre, sarà scritto interamente in Java, utilizzando Vaadin per la creazione della web app, senza l'utilizzo di altri linguaggi di programmazione. 
+Verrà utilizzato, oltre alla documentazione fornita sul sito ufficiale di Vaadin, lo strumento per la creazione di una Preview della web app.
+
+Per lo svilippo del progetto verrà utillizzato Eclipse IDE come ambiente di sviluppo, insieme a diversi plugin per la realizzazione di diagrammi UML e per l'analisi statica.
+
+In particolare si citano:
+- Papyrus UML per la creazione dei diagrammi UML e la generazione delle classi attraverso il diagramma delle classi;
+- Stan4J per l'analisi della struttura del codice;
+- Pmd per individuare eventuale duplicazione del codice nel progetto;
+- SonarQube per identificare problemi e migliorare la qualità del codice.
 
 # 12. BUDGET
-Non dovrebbe servire, ma per eventuale scalabilità/ test, disposti a spendere al più 120,00€.
+Non dovrebbe servire, ma potrebbero essere considerati eventuali costi per lo spostamento nelle diversi sedi dell'Universita' di Bergamo per effettuare ricerche utili per il miglioramento dell'esperienza del utente.
+Inoltre, verranno realizzate risorse Open-Source e/o non a pagamento per lo sviluppo del programma.
 
 # 13. GESTIONE CAMBIAMENTI
 Il versioning ed i cambiamenti/ticket verranno gestiti tramite GitHub.
