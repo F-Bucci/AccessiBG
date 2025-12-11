@@ -39,7 +39,7 @@ Tutte le attività e le comunicazioni saranno registrate per garantire chiarezza
 
 # 4. NORME, LINEE GUIDA, PROCEDURE
 La documentazione verrà consegnata seguendo le tempistiche prestabilite ossia:
-- Project plan: verrà consegnato il 16 dicembre 2025 sia in formato markdown che in formato PDF;
+- Project plan: verrà consegnato il 16 dicembre 2025 in formato markdown;
 - Documentazione completa: sarà consegnata 5 giorni prima della presentazione concordata del progetto.
 
 Per assicurarsi della qualità e comprensibilità della documentazione qui presente, la stessa sarà rivista e corretta da tutti i componenti del team.
@@ -64,22 +64,31 @@ Per monitorare lo stato di avanzamento del progetto si utilizzerà la Kanban Boa
 Tutti i componenti del team sono coinvolti in tutte le fasi del progetto, con un'organizzazione del personale che si ispira ai metodi agili quali Scrum e XP. I ruoli di Product Owner e Scrum master, non saranno tuttavia assegnati nella loro completezza, a causa della dimensione del team e del poco tempo a disposizione. Queste responsabilità saranno assegnate ad interim.
 
 # 8. METODI E TECNICHE
-UML sarà usato in tutte le fasi della progettazione e sviluppo del software, in particolare Papyrus sarà usato per il class diagram, mentre PathUML sarà usato per gli altri diagrammi;
-Per il Front-end verrà usato Vaadin (inserire link), mentre Java sarà usato per il Back-end e verranno usati plugin per la qualità del codice (elenco plugin)
-Per quanto riguarda il layer DB, Firebase (no sql) sarà sicuramente utilizzato, eventualmente affiancato da un altro DB relazionale embedded, creato tramite Eclipse.
+
+Per la raccolta dei requisiti ci saranno delle riunioni con il Cliente. Attraverso le richieste fornite verrà redatta l'ingegneria dei requisiti, implementandole con un forte focus sull'accessibilità, prendendo spunto dal sito AccessAble (https://www.accessable.co.uk/).
+
+Per la progettazione e lo sviluppo del software verranno utilizzati i diagrammi UML basandoci su software e plugins come Papyrus (per il Class Diagramm e Component Diagramm) e PlantUml utilizzando Eclipse come IDE. Inoltre ci baseremo su Papyrus per la generazione delle classi.
+Il progetto verrà gestito dal team utilizzando le diverse funzioni della piattaforma di GitHub per gestire il lavoro sincrono e per organizzarne il versioning, mentre i task verranno gestiti dalla Kanban Board.
+
+Verrà utilizzato il framework di Vaadin per implementare l'interfaccia grafica della webapp utilizzando il linguaggio Java.
+Verrà utilizzata la libreria Jooq per poter gestire il database da Eclipse. 
+
+Effettueremo diversi test durante l'implementazione del codice attraverso Junit ed Eclemma.
 
 # 9. GARANZIE DI QUALITÁ
-Il team si impegna in modo che il codice sia leggibile, pulito e manutenibile, a seguire le seguenti pratiche all'interno dell'ambiente di sviluppo:
+Il team implementa il codice affinchè sia leggibile, pulito e manutenibile e si impegna a seguire le seguenti pratiche all'interno dell'ambiente di sviluppo:
 
 - Convenzioni per la progettazione in Java come definite da Oracle;
-- JavaDoc per garantire la comprensione del codice, non solo all'interno del team, ma anche per garantire che sia manutenibile in futuro;
-- Analisti statica con plugin di Eclipse come Stan4j, pmd e SonarQube per garantire un'ottima qualita' del codice e che sia pulito, evitando cosi       eventuali duplicazioni del codice;
-- Dipendenze(?)
+- I fattori di qualità di McCall;
+- L'utilizzo di JavaDoc per garantire la comprensione del codice, non solo all'interno del team, ma anche per garantire che sia manutenibile in  futuro;
+- Analisi statica con plugin di Eclipse come Stan4j, pmd e SonarQube per garantire un'ottima qualità del codice e che sia pulito, evitando cosi        eventuali duplicazioni del codice;
+- La complessità ciclomatica di McCabe.
 
-Inoltre il team si impegna a garantire la stabilità del codice attraverso un rigoroso processo di testing (CONTINUA)
+Inoltre il team si impegna a garantire la stabilità del codice attraverso un rigoroso processo di testing utilizzando JUnit ed Eclemma.
 
 # 10. ORGANIZZAZIONE PACCHETTI DI LAVORO
-L' organizzazione del team si ispira ai metodi agili come Scrum e XP, senza ruoli precisi e con il carico di lavoro ripartito per Sprint dalla durata di una settimana. I lunedì saranno usati per fare una retrospettiva sullo Sprint appena finito e per la pianificazione delle task da completare durante il nuovo Sprint. Queste task avranno delle corrispettive issues nella Kanban board di Github, che sarà usata per monitorare lo stato di queste task e per la loro assegnazione e organizzazione. 
+L'organizzazione del team si ispira ai metodi agili come Scrum e XP, senza ruoli precisi. Ad ogni sprint vengono definiti i task che devono essere implementati dai membri nel team senza nessuna struttura gerarchica.
+Alla fine dello sprint viene fatta una retrospettiva per verificare lo stato dei task.
 
 # 11. RISORSE
 Il team per supportare il progetto utilizzerà diversi strumenti.
@@ -101,10 +110,14 @@ Non dovrebbe servire, ma potrebbero essere considerati eventuali costi per lo sp
 Inoltre, verranno utilizzate risorse Open-Source e/o non a pagamento per lo sviluppo del programma.
 
 # 13. GESTIONE CAMBIAMENTI
-Il versioning ed i cambiamenti/ticket verranno gestiti tramite GitHub.
+
+Le modifiche verranno analizzate e approvate dal team durante la retrospettiva e verranno poi rilasciate conclusi il task a cui è stato assegnato
 
 # 14. CONSEGNA
 La webapp e la sua documentazione sarà disponibile tramite GitHub, al quale le persone interessate ne avranno accesso entro la data prestabilita.
+Piu precisamente:
+- il project plan verrà consegnato il 16 dicembre 2025 in formato markdown;
+- la documentazione completa insieme al codice, invece, saranno consegnati 5 giorni prima della presentazione concordata del progetto con la data ancora da definire.
 Inoltre la webapp sarà eseguibile senza l'installazione di programmi o plugin aggiuntivi.
 
 
