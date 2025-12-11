@@ -69,7 +69,14 @@ Per il Front-end verrà usato Vaadin (inserire link), mentre Java sarà usato pe
 Per quanto riguarda il layer DB, Firebase (no sql) sarà sicuramente utilizzato, eventualmente affiancato da un altro DB relazionale embedded, creato tramite Eclipse.
 
 # 9. GARANZIE DI QUALITÁ
-Il team si impegna a perseguire i criteri di qualità del sw definiti dal modello di McCall, ad usare le convenzioni Java e ad integrare plugin Eclipse per aumentare la qualità del codice.
+Il team si impegna in modo che il codice sia leggibile, pulito e manutenibile, a seguire le seguenti pratiche all'interno dell'ambiente di sviluppo:
+
+- Convenzioni per la progettazione in Java come definite da Oracle;
+- JavaDoc per garantire la comprensione del codice, non solo all'interno del team, ma anche per garantire che sia manutenibile in futuro;
+- Analisti statica con plugin di Eclipse come Stan4j, pmd e SonarQube per garantire un'ottima qualita' del codice e che sia pulito, evitando cosi       eventuali duplicazioni del codice;
+- Dipendenze(?)
+
+Inoltre il team si impegna a garantire la stabilità del codice attraverso un rigoroso processo di testing (CONTINUA)
 
 # 10. ORGANIZZAZIONE PACCHETTI DI LAVORO
 L' organizzazione del team si ispira ai metodi agili come Scrum e XP, senza ruoli precisi e con il carico di lavoro ripartito per Sprint dalla durata di una settimana. I lunedì saranno usati per fare una retrospettiva sullo Sprint appena finito e per la pianificazione delle task da completare durante il nuovo Sprint. Queste task avranno delle corrispettive issues nella Kanban board di Github, che sarà usata per monitorare lo stato di queste task e per la loro assegnazione e organizzazione. 
@@ -97,6 +104,7 @@ Inoltre, verranno utilizzate risorse Open-Source e/o non a pagamento per lo svil
 Il versioning ed i cambiamenti/ticket verranno gestiti tramite GitHub.
 
 # 14. CONSEGNA
-La webapp e la sua documentazione sarà disponibile tramite GitHub, al quale le persone interessate ne avranno accesso.
+La webapp e la sua documentazione sarà disponibile tramite GitHub, al quale le persone interessate ne avranno accesso entro la data prestabilita.
+Inoltre la webapp sarà eseguibile senza l'installazione di programmi o plugin aggiuntivi.
 
 
