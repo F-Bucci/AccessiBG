@@ -48,15 +48,19 @@ Il team rispetterà, durante lo sviluppo, le linee guida e gli standard dettati 
 Inoltre, il team si impegna a seguire le norme etiche generali definite per l’ingegnere informatico. 
 
 # 5. ATTIVITÁ DI GESTIONE
-Il team si riunirà una volta a settimana su Google Meet o in presenza per discutere di eventuali problematiche riscontrate, aggiornamenti e idee da implementare durante il prossimo Sprint. Per risolvere eventuali problemi urgenti possono essere convocate ulteriori riunione, mentre verranno utilizzati altri mezzi di comunicazione per feedback giornalieri, come ad esempio WhatsApp.
-Si lavorerà tendenzialmente a distanza, ma possono essere convocate eventuali riunioni in presenza in caso di necessità.
+Per una volta a settimana il team si impegnerà a riunirsi su Google Meet (o in presenza quando possibile) per discutere di eventuali problematiche riscontrate, aggiornamenti e idee da implementare durante il prossimo Sprint.
+Nel caso sorga un problema (o più) urgente verrà convocato un'ulteriore riunione per arrivare ad una soluzione per risolverlo, mentre per effettuare dei feedback giornalieri verranno utilizzati altri mezzi di comunicazione, come ad esempio Whatsapp.
 
-Per monitorare lo stato di avanzamento del progetto si utilizzerà la Kanban Board di GitHub e le sue issues, ognuna delle quali conterrà una etichetta che esplicherà a quale sprint essa appartiene.
+Per la maggior parte del lavoro verrà effettuato a distanza, ma è possibile che si convochino eventuali riunioni in presenza in caso di necessità.
+
+Per monitorare lo stato di avanzamento del progetto si utilizzerà la Kanban Board di GitHub assieme alle issues, ognuna delle quali conterrà una etichetta che esplicherà a quale sprint essa appartiene.
 
 # 6. RISCHI
+Durante lo sviluppo della web-app dovremmo tenere conto dei possibili rischi che possono farsi presente.
+I possibili rischi sono i seguenti:
 - Non riuscire a implementare tutte le funzionalità richieste dal cliente nei tempi richiesti (interfaccia UI/UX essenziale);
 - Implementazione superficiale di alcune sedi ed edifici;
-- Eventuali problemi col software;
+- Eventuali problemi con i software;
 - Tempistiche allungate a causa di nuovi strumenti che il team deve utilizzare pur non avendone una conoscenza approfondita;
 - Possibilità che una riunione possa essere rimandata a causa di impegni personali di qualche membro del team.
 
