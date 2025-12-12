@@ -106,11 +106,9 @@ In particolare si citano:
 - SonarQube per identificare problemi e migliorare la qualità del codice.
 
 # 12. BUDGET
-Non dovrebbe servire, ma potrebbero essere considerati eventuali costi per lo spostamento nelle diversi sedi dell'Universita' di Bergamo per effettuare ricerche utili per il miglioramento dell'esperienza dell'utente.
-Inoltre, verranno utilizzate risorse Open-Source e/o non a pagamento per lo sviluppo del programma.
 
-Risorse umane:                  totale 7680
-- Sviluppatori (senza distinzione)  128h stimate 15€/h    totale 128hx4 personex15€/h=7680
+Risorse umane: totale 7680;
+- Sviluppatori (senza distinzione)128h stimate 15€/h    totale 128hx4 personex15€/h=7680
 Infrastruttura tecnica:         totale 290€
 - Database (Jooq)               220€/anno
 - Repository Git (Github)        50€/anno
@@ -123,11 +121,15 @@ Ricerca, analisi e validazione con utente:       totale 70-130€
 - Materiale informativo (questionari, stampe)    20-30€
 Eventuali spese per riunioni e cancelleria       30-60€
 Totale: 8280-8370€
-Eventuaoi altri software utilizzati ma non citati sono da considerarsi a costo 0€.
+Eventuali altri software utilizzati ma non citati sono da considerarsi a costo 0€.
 
 # 13. GESTIONE CAMBIAMENTI
 
-Le modifiche verranno analizzate e approvate dal team durante la retrospettiva e verranno poi rilasciate conclusi il task a cui è stato assegnato
+Le eventuali modifiche vengono discusse durante la retrospettiva in cui viene analizzato l'impatto sui requisiti, sull'architettura ed eventuali costi. In base alla valutazione effettuata dal team, le modifiche vengono approvate o meno.
+Le modifiche approvate vengono transformate in task e inserite all'interno della Kanban Board. 
+
+Inoltre, per gestire i cambiamenti radicali verranno utilizzati i branch, in modo che possano essere visionati e testati dal team prima di effettuare un merge.
+
 
 # 14. CONSEGNA
 La webapp e la sua documentazione sarà disponibile tramite GitHub, al quale le persone interessate ne avranno accesso entro la data prestabilita.
