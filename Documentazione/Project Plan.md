@@ -107,21 +107,34 @@ In particolare si citano:
 
 # 12. BUDGET
 
-Risorse umane: totale 7680;
-- Sviluppatori (senza distinzione)128h stimate 15€/h    totale 128hx4 personex15€/h=7680
-Infrastruttura tecnica:         totale 290€
-- Database (Jooq)               220€/anno
-- Repository Git (Github)        50€/anno
-- Dominio web                    20€/anno
-Strumenti software:             totale 210€
-- Canva (mappe, foto)           100€/anno
-- Interfaccia grafica (Vaadin)  110€/anno
-Ricerca, analisi e validazione con utente:       totale 70-130€
-- Interviste esplorative                         50-100€
-- Materiale informativo (questionari, stampe)    20-30€
-Eventuali spese per riunioni e cancelleria       30-60€
-Totale: 8280-8370€
-Eventuali altri software utilizzati ma non citati sono da considerarsi a costo 0€.
+|**Risorse umane**|**Totale: 7.680,00€**|
+|-|-|
+|Sviluppatori (senza distinzione)|128h stimate x persona \| persone x 15€/h = 7.680,00€|
+
+|**Infrastruttura tecnica**|**Totale: 290,00€**|
+|-|-|
+|Database (Jooq)|220,00€/anno|
+|Repository Git (Github)|50,00€/anno|
+|Dominio web|20,00€/anno|
+
+|**Strumenti software**|**Totale: 210,00€**|
+|-|-|
+|Canva (mappe, foto)|100,00€/anno|
+|Interfaccia grafica (Vaadin)|110,00€/anno|
+
+|**Ricerca, analisi e validazione con utente**|**Totale: 70,00 - 130,00€**|
+|-|-|
+|Interviste esplorative|50,00 - 100,00€|
+|Materiale informativo (questionari, stampe)|20,00 - 30,00€|
+
+|**Eventuali spese per riunioni e cancelleria**|**30,00 - 60,00€**|
+|-|-|
+       
+|**TOTALE BUDGET**|**8.280,00 - 8.370,00€**|
+|-|-|
+
+_Eventuali altri software utilizzati ma non citati sono da considerarsi a costo 0€._
+
 
 # 13. GESTIONE CAMBIAMENTI
 
