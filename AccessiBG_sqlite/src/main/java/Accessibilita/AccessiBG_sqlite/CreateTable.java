@@ -10,7 +10,7 @@ public class CreateTable {
 			Connection conn = DriverManager.getConnection(CreateDB.DB_URL);
 			if (conn != null) {
 				Statement stmt = conn.createStatement();
-				String sql = "CREATE TABLE INDIRIZZI (" + " NOME        TEXT," + " NUMTELEFONO TEXT )";
+				String sql = "CREATE TABLE Edificio (" + " NOME        TEXT," + " INDIRIZZO TEXT," + " SEDE  TEXT )";
 				stmt.executeUpdate(sql);
 				stmt.close();
 				conn.close();

@@ -11,11 +11,11 @@ public class InsertInDB {
 			Connection conn = DriverManager.getConnection(CreateDB.DB_URL);
 			if (conn != null) {
 				Statement stmt = conn.createStatement();
-				String sql = "INSERT INTO INDIRIZZI VALUES (" + " \"ANGELO\"," + " \"78787676\" )";
+				String sql = "INSERT INTO Edificio VALUES (" + " \"Edificio B\"," + " \"Via Einstein 5\", " + "\"Scuola di Ingegneria\" )";
 				stmt.executeUpdate(sql);
 				stmt.close();
 				conn.close();
-				System.out.println("Utente inserito con successo");
+				System.out.println("Edificio inserito con successo");
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
