@@ -53,6 +53,9 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_t1fTUNH-EfCxiNKW-0b_Pw" name="nome">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_sGqvwNtvEfCJiajAhRTfQQ" name="descrizione">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_fMGBANH-EfCxiNKW-0b_Pw" memberEnd="_fMGoEtH-EfCxiNKW-0b_Pw _fMHPItH-EfCxiNKW-0b_Pw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fMGoENH-EfCxiNKW-0b_Pw" source="org.eclipse.papyrus">
@@ -163,7 +166,7 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_Doh28NIBEfCxiNKW-0b_Pw" name="Biblioteca">
     <generalization xmi:type="uml:Generalization" xmi:id="_H-vCMNIBEfCxiNKW-0b_Pw" general="_RQuu0NH9EfCxiNKW-0b_Pw"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_mhR-gNIBEfCxiNKW-0b_Pw" name="topologiaLibri">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_mhR-gNIBEfCxiNKW-0b_Pw" name="tipologiaLibri">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_0eUhINIBEfCxiNKW-0b_Pw" name="prestito">
@@ -208,13 +211,15 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_dmG90NICEfCxiNKW-0b_Pw" name="Bar">
     <generalization xmi:type="uml:Generalization" xmi:id="_oUsncNICEfCxiNKW-0b_Pw" general="_cQDtsNH-EfCxiNKW-0b_Pw"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_ptcjENICEfCxiNKW-0b_Pw" name="orario"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ptcjENICEfCxiNKW-0b_Pw" name="orario">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_tmNkYNICEfCxiNKW-0b_Pw" name="Segreteria">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_Egpf0NIDEfCxiNKW-0b_Pw" name="orario">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_lFpdgNtCEfCJqNqr0OlHxQ" name="getSede()"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_lFpdgNtCEfCJqNqr0OlHxQ" name="getSede"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_v6bpwNICEfCxiNKW-0b_Pw" memberEnd="_v6cQ0tICEfCxiNKW-0b_Pw _v6c34tICEfCxiNKW-0b_Pw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_v6cQ0NICEfCxiNKW-0b_Pw" source="org.eclipse.papyrus">
