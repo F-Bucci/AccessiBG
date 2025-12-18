@@ -31,7 +31,7 @@ public class App
 			if (conn != null) {
 				Statement stmt = conn.createStatement();
 				String sql1 = "CREATE TABLE Edificio2 (" + " NOME        TEXT," + " INDIRIZZO TEXT," + " SEDE  TEXT," + " IMAGE_URL TEXT )";
-				String sql2 = "INSERT INTO Edificio2 VALUES (" + " \"Edificio B\"," + " \"Via Einstein 5\", " + "\"Scuola di Ingegneria\", " + " \"https://storage.googleapis.com/accessibg-images/GI_Caparezza.jpg\")";
+				String sql2 = "INSERT INTO Edificio2 VALUES (" + " \"Edificio B\"," + " \"Via Einstein 5\", " + "\"Scuola di Ingegneria\", " + " \"https://firebasestorage.googleapis.com/v0/b/accessibg-images.firebasestorage.app/o/GI_Caparezza.jpg?alt=media&token=a0ccf204-1027-4d5a-8648-32f71439a9d5\")";
 
 				stmt.executeUpdate(sql1);
 				stmt.executeUpdate(sql2);

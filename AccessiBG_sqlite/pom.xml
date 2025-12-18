@@ -26,5 +26,10 @@
 <artifactId>sqlite-jdbc</artifactId>
 <version>3.50.3.0</version>
 </dependency>
+<dependency>
+    <groupId>com.google.firebase</groupId>
+    <artifactId>firebase-admin</artifactId>
+    <version>9.7.0</version>
+</dependency>
   </dependencies>
 </project>

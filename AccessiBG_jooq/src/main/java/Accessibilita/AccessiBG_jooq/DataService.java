@@ -1,5 +1,6 @@
-package Accessibilita.AccessiBG_jooq;
 
+package Accessibilita.AccessiBG_jooq;
+/*
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,10 +12,11 @@ import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
 
+import accessibilita.genjooq.tables.Edificio;
 import accessibilita.genjooq.tables.records.EdificioRecord;
-import contatti.db_sqlite.CreateDB;
-import contatti.jooq.generated.tables.Indirizzi;
-import contatti.jooq.generated.tables.records.IndirizziRecord;
+import Accessibilita.AccessiBG_sqlite.CreateDB;
+import accessibilita.genjooq.tables.Edificio;
+import accessibilita.genjooq.tables.records.EdificioRecord;
 
 //classe utile per avere tutti gli indirizzi salvati
 public class DataService {
@@ -25,12 +27,12 @@ public class DataService {
 	
 	private static String DB_URL = "jdbc:sqlite:" + DB_REL_FILE;
 
-	public static List<IndirizziRecord> getIndirizziRecord() {
+	public static List<EdificioRecord> getEdificioRecord() {
 		Connection conn;
 		try {
 			conn = DriverManager.getConnection(DB_URL);			
 			DSLContext create = DSL.using(conn, SQLDialect.SQLITE);
-			return create.selectFrom(Edificio.SEDE).fetchInto(EdificioRecord.class);
+			return create.selectFrom(Edificio.EDIFICIO).fetchInto(EdificioRecord.class);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -38,7 +40,8 @@ public class DataService {
 		return Collections.EMPTY_LIST;
 	}
 
-	public static void main(String[] args) {
-		System.out.println(getIndirizziRecord());
-	}
+//	public static void main(String[] args) {
+//		System.out.println(getEdificioRecord());
+//	}
 }
+*/

@@ -1,4 +1,5 @@
 package Accessibilita.AccessiBG_jooq;
+/*
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -10,9 +11,9 @@ import org.jooq.impl.DSL;
 
 import accessibilita.genjooq.tables.Edificio;
 import accessibilita.genjooq.tables.records.EdificioRecord;
-import contatti.db_sqlite.CreateDB;
-import contatti.jooq.generated.tables.Indirizzi;
-import contatti.jooq.generated.tables.records.IndirizziRecord;
+import Accessibilita.AccessiBG_sqlite.CreateDB;
+import accessibilita.genjooq.tables.Edificio;
+import accessibilita.genjooq.tables.records.EdificioRecord;
 public class QueryDB {
 	public static void main(String[] args) throws SQLException {
 		Connection conn = DriverManager.getConnection(CreateDB.DB_URL);
@@ -21,3 +22,4 @@ public class QueryDB {
 		System.out.println(indirizzi);
 	    }
 }
+*/
