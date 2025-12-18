@@ -5,6 +5,7 @@ package accessibilita.genjooq;
 
 
 import accessibilita.genjooq.tables.Edificio;
+import accessibilita.genjooq.tables.Edificio2;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,6 +34,11 @@ public class DefaultSchema extends SchemaImpl {
     public final Edificio EDIFICIO = Edificio.EDIFICIO;
 
     /**
+     * The table <code>Edificio2</code>.
+     */
+    public final Edificio2 EDIFICIO2 = Edificio2.EDIFICIO2;
+
+    /**
      * No further instances allowed
      */
     private DefaultSchema() {
@@ -48,7 +54,8 @@ public class DefaultSchema extends SchemaImpl {
     @Override
     public final List<Table<?>> getTables() {
         return Arrays.asList(
-            Edificio.EDIFICIO
+            Edificio.EDIFICIO,
+            Edificio2.EDIFICIO2
         );
     }
 }

@@ -5,6 +5,7 @@ package accessibilita.genjooq;
 
 
 import accessibilita.genjooq.tables.Edificio;
+import accessibilita.genjooq.tables.Edificio2;
 
 
 /**
@@ -17,4 +18,9 @@ public class Tables {
      * The table <code>Edificio</code>.
      */
     public static final Edificio EDIFICIO = Edificio.EDIFICIO;
+
+    /**
+     * The table <code>Edificio2</code>.
+     */
+    public static final Edificio2 EDIFICIO2 = Edificio2.EDIFICIO2;
 }
