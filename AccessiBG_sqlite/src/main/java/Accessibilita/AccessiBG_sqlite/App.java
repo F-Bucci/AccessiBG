@@ -30,8 +30,9 @@ public class App
 			Connection conn = DriverManager.getConnection(CreateDB.DB_URL);
 			if (conn != null) {
 				Statement stmt = conn.createStatement();
-				String sql1 = "CREATE TABLE Edificio (" + " NOME        TEXT," + " INDIRIZZO TEXT," + " SEDE  TEXT )";
-				String sql2 = "INSERT INTO Edificio VALUES (" + " \"Edificio B\"," + " \"Via Einstein 5\", " + "\"Scuola di Ingegneria\" )";
+				String sql1 = "CREATE TABLE Edificio2 (" + " NOME        TEXT," + " INDIRIZZO TEXT," + " SEDE  TEXT," + " IMAGE_URL TEXT )";
+				String sql2 = "INSERT INTO Edificio2 VALUES (" + " \"Edificio B\"," + " \"Via Einstein 5\", " + "\"Scuola di Ingegneria\", " + " \"https://storage.googleapis.com/accessibg-images/GI_Caparezza.jpg\")";
+
 				stmt.executeUpdate(sql1);
 				stmt.executeUpdate(sql2);
 				stmt.close();
