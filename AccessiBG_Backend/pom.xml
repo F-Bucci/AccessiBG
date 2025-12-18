@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>Accessibilita</groupId>
-  <artifactId>AccessiBG_Data</artifactId>
+  <artifactId>AccessiBG_Backend</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>AccessiBG_Data</name>
+  <name>AccessiBG_Backend</name>
   <url>http://maven.apache.org</url>
 
   <properties>

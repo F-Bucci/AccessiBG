@@ -1,4 +1,4 @@
-package Accessibilita.AccessiBG_Data;
+package Accessibilita.AccessiBG_Backend;
 
 /**
  * Hello world!
