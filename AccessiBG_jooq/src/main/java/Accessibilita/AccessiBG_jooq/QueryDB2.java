@@ -19,7 +19,7 @@ public class QueryDB2 {
 		
 		
 		// prendi il recordo con nome giovanniu
-		SelectConditionStep<IndirizziRecord> rs = create.selectFrom(Indirizzi.INDIRIZZI).where(Indirizzi.INDIRIZZI.NOME.eq("giovanni"));
+		SelectConditionStep<EdificioRecord> rs = create.selectFrom(Indirizzi.INDIRIZZI).where(Indirizzi.INDIRIZZI.NOME.eq("giovanni"));
 		// eseguoi
 		Result<IndirizziRecord> result = rs.fetch();
 		System.out.println(result);

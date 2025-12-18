@@ -8,6 +8,7 @@ import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
 
 import Accessibilita.AccessiBG_sqlite.CreateDB;
+import accessibilita.genjooq.tables.records.EdificioRecord;
 import contatti.jooq.generated.tables.Indirizzi;
 import contatti.jooq.generated.tables.records.IndirizziRecord;
 
@@ -16,7 +17,7 @@ public class InsertInDB {
 		Connection conn = DriverManager.getConnection(Accessibilita.AccessiBG_sqlite.CreateDB.DB_URL);
 		DSLContext create = DSL.using(conn, SQLDialect.SQLITE);
 
-		IndirizziRecord giovanni = new IndirizziRecord("giobbvanni", "0355667700");
+		EdificioRecord giovanni = new EdificioRecord("giobbvanni", "0355667700");
 
 		int result = create.insertInto(Indirizzi.INDIRIZZI).set(giovanni).execute();
 

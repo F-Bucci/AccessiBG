@@ -11,6 +11,7 @@ import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
 
+import accessibilita.genjooq.tables.records.EdificioRecord;
 import contatti.db_sqlite.CreateDB;
 import contatti.jooq.generated.tables.Indirizzi;
 import contatti.jooq.generated.tables.records.IndirizziRecord;
@@ -29,7 +30,7 @@ public class DataService {
 		try {
 			conn = DriverManager.getConnection(DB_URL);			
 			DSLContext create = DSL.using(conn, SQLDialect.SQLITE);
-			return create.selectFrom(Edificio.SEDE).fetchInto(EdificiRecord.class);
+			return create.selectFrom(Edificio.SEDE).fetchInto(EdificioRecord.class);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
