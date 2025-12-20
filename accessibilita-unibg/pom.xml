@@ -54,15 +54,15 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-    <groupId>com.google.firebase</groupId>
-    <artifactId>firebase-admin</artifactId>
-    <version>9.7.0</version>
-</dependency>
-        <dependency>
-  <groupId>Accessibilita</groupId>
-  <artifactId>AccessiBG_Backend</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-</dependency>
+    		<groupId>com.google.firebase</groupId>
+    		<artifactId>firebase-admin</artifactId>
+    		<version>9.7.0</version>
+		</dependency>
+		<dependency>
+  			<groupId>Accessibilita</groupId>
+  			<artifactId>AccessiBG_Backend</artifactId>
+  			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
     </dependencies>
     
     <build>
