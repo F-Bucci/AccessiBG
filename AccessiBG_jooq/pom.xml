@@ -78,7 +78,7 @@
         <configuration>
           <jdbc>
             <driver>org.sqlite.JDBC</driver>
-           <url>jdbc:sqlite:${project.basedir}/AccessiBG_sqlite/src/main/resources/sqlite_db/AccessiBG.db3</url>
+           <url>jdbc:sqlite:${project.basedir}/../AccessiBG_sqlite/src/main/resources/sqlite_db/AccessiBG.db3</url>
           </jdbc>
 
           <generator>
