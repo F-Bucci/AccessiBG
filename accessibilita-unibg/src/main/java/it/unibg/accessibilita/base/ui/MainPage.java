@@ -1,7 +1,6 @@
 package it.unibg.accessibilita.base.ui;
 
 import com.vaadin.flow.component.Composite;
-import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.card.Card;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.H2;
@@ -45,6 +44,7 @@ public class MainPage extends Composite<VerticalLayout> {
     	HorizontalLayout layoutForCards = new HorizontalLayout();
     	HorizontalLayout layoutForFooter = new HorizontalLayout();
     	
+    	
     	H1 textForHeader = new H1();
     	textForHeader.setText("AccessiBG");
     	getContent().setAlignSelf(FlexComponent.Alignment.START, textForHeader);
@@ -54,6 +54,7 @@ public class MainPage extends Composite<VerticalLayout> {
     	getContent().setAlignSelf(FlexComponent.Alignment.CENTER, textForLayoutForCards);
     	textForLayoutForCards.setWidth("max-content");
     	
+    	layoutForHeader.setWidthFull();
     	
     	Paragraph textForFooter = new Paragraph();
     	textForFooter.setText("@ 2026   AccessiBG");
@@ -66,18 +67,12 @@ public class MainPage extends Composite<VerticalLayout> {
     	layoutForCards.addClassName(Gap.MEDIUM);
         layoutForCards.setJustifyContentMode(JustifyContentMode.CENTER);
         
-        mainLayout.setWidth("100%");
-        mainLayout.getStyle().set("flex-grow", "1");
-        mainLayout.setJustifyContentMode(JustifyContentMode.CENTER);
+        mainLayout.setWidthFull();
         mainLayout.setAlignItems(Alignment.CENTER);
-        mainLayout.setFlexGrow(1.0, layoutForCards);
+        getContent().setFlexGrow(1.0, mainLayout);
         
-        layoutForFooter.addClassName(Gap.MEDIUM);
-        layoutForFooter.setWidth("100%");
-        layoutForFooter.setHeight("min-content");
-        layoutForFooter.setAlignItems(Alignment.CENTER);
+        layoutForFooter.setWidthFull();
         layoutForFooter.setJustifyContentMode(JustifyContentMode.CENTER);
-        layoutForFooter.setAlignSelf(FlexComponent.Alignment.END, textForFooter);
         
     	
         /* CREAZIONE CARD */
@@ -100,11 +95,9 @@ public class MainPage extends Composite<VerticalLayout> {
 
         
         
-        // getContent().setWidth("100%");
-        // getContent().setHeight("100%");
+        getContent().setSizeFull();
         getContent().getStyle().set("flex-grow", "1");
-        getContent().setJustifyContentMode(JustifyContentMode.END);
-        getContent().setAlignItems(Alignment.START);
+        getContent().setAlignSelf(FlexComponent.Alignment.END, layoutForFooter);
         
         getContent().add(layoutForHeader);
         layoutForHeader.add(new ViewToolbar(""));
