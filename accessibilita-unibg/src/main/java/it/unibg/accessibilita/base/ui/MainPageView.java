@@ -2,6 +2,7 @@ package it.unibg.accessibilita.base.ui;
 
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.card.Card;
+import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Paragraph;
@@ -42,7 +43,7 @@ public class MainPageView extends Composite<VerticalLayout> {
     	
     	HorizontalLayout layoutForHeader = new HorizontalLayout();
     	VerticalLayout mainLayout = new VerticalLayout();
-    	HorizontalLayout layoutForCards = new HorizontalLayout();
+    	Div layoutForCards = new Div();
     	HorizontalLayout layoutForFooter = new HorizontalLayout();
     	
     	
@@ -63,10 +64,13 @@ public class MainPageView extends Composite<VerticalLayout> {
     	textForFooter.getStyle().set("font-size", "var(--lumo-font-size-m)");
 
     	layoutForCards.setWidthFull();
-    	layoutForCards.getStyle().set("flex-wrap", "WRAP");
+    	layoutForCards.getStyle()
+            .set("display", "grid")
+            .set("grid-template-columns", "repeat(auto-fit, minmax(335px, 1fr))")
+            .set("gap", "var(--lumo-space-m)")
+            .set("justify-items", "center");
     	layoutForFooter.setHeight("min-content");
     	layoutForCards.addClassName(Gap.MEDIUM);
-        layoutForCards.setJustifyContentMode(JustifyContentMode.CENTER);
         
         mainLayout.setWidthFull();
         mainLayout.setAlignItems(Alignment.CENTER);
