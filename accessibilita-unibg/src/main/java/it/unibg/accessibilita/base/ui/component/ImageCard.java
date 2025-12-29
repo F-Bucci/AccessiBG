@@ -31,7 +31,7 @@ public class ImageCard extends Div{
 		if(urlImmagine != null && !urlImmagine.isEmpty()){
 			Image img = new Image(urlImmagine, nome);
 			img.setWidth("100%");
-			img.setHeight("150 px");
+			img.setHeight("150px");
 			img.addClassName(LumoUtility.BorderRadius.MEDIUM);
 			img.getStyle().set("object-fit", "cover");
 			imageContainer.add(img);
