@@ -13,12 +13,14 @@ public class ImageCard extends Div{
 		
 		addClassNames(
 				LumoUtility.Background.BASE,
-				LumoUtility.BoxShadow.MEDIUM,
+				LumoUtility.BoxShadow.SMALL,
 				LumoUtility.BorderRadius.LARGE,
 				LumoUtility.Padding.MEDIUM,
 				LumoUtility.Display.FLEX,
 				LumoUtility.FlexDirection.COLUMN,
-				LumoUtility.AlignItems.CENTER
+				LumoUtility.AlignItems.CENTER,
+				LumoUtility.Border.ALL,
+				LumoUtility.BorderColor.CONTRAST_10
 				);
 		
 		
