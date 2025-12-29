@@ -17,6 +17,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoIcon;
 import com.vaadin.flow.theme.lumo.LumoUtility.Gap;
 
+import it.unibg.accessibilita.base.ui.component.ImageCard;
 import it.unibg.accessibilita.base.ui.component.ViewToolbar;
 
 @Route("") 
@@ -82,7 +83,7 @@ public class MainPage extends Composite<VerticalLayout> {
          * il DB modificheremo le righe di codice sottostanti per
          * renderli più efficienti e più adatti al contesto.
          */
-        
+        /*
         Card iconCard1 = createCard("Sede di Dalmine");
         Card iconCard2 = createCard("Sede di Kilometro Rosso");
         Card iconCard3 = createCard("Sede di Caniana");
@@ -91,7 +92,7 @@ public class MainPage extends Composite<VerticalLayout> {
         Card iconCard6 = createCard("Sede di Sant'Agostino");
         Card iconCard7 = createCard("Sede di Rosate");
         Card iconCard8 = createCard("Sede di Salvecchio");
-        
+        */
 
         
         
@@ -105,6 +106,7 @@ public class MainPage extends Composite<VerticalLayout> {
         getContent().add(mainLayout);
         mainLayout.add(textForLayoutForCards);
         mainLayout.add(layoutForCards);
+        /*
         layoutForCards.add(iconCard1);
         layoutForCards.add(iconCard2);
         layoutForCards.add(iconCard3);
@@ -113,6 +115,15 @@ public class MainPage extends Composite<VerticalLayout> {
         layoutForCards.add(iconCard6);
         layoutForCards.add(iconCard7);
         layoutForCards.add(iconCard8);
+        */
+        layoutForCards.add(new ImageCard("Sede di Dalmine", "via Pasubio, 3", "null"));
+        layoutForCards.add(new ImageCard("Sede di Kilometro Rosso", "via Stezzano, 87, Bergamo e viale Europa, 4, Stezzano", "null"));
+        layoutForCards.add(new ImageCard("Sede di Caniana", "via dei Caniana, 2", "null"));
+        layoutForCards.add(new ImageCard("Sede di Pignolo", "via Pignolo, 123", "null"));
+        layoutForCards.add(new ImageCard("Sede di Sant'Agostino", "piazzale Sant'Agostino, 2", "null"));
+        layoutForCards.add(new ImageCard("Sede di Rosate", "piazza Rosate, 2", "null"));
+        layoutForCards.add(new ImageCard("Sede di Salvecchio", "via Salvecchio, 19", "null"));
+        layoutForCards.add(new ImageCard("Sede di Palazzo Bassi-Rathgeb", "via Pignolo, 76", "null"));
         getContent().add(layoutForFooter);
         layoutForFooter.add(textForFooter);
         
