@@ -280,4 +280,5 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__9gQwdtCEfCJqNqr0OlHxQ" name="LiteralUnlimitedNatural1" value="1"/>
     </ownedEnd>
   </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_njWjwOS-EfCMRfyTdNK6ew" name="Laboratorio"/>
 </uml:Model>

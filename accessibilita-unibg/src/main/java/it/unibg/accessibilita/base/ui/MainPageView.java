@@ -23,7 +23,7 @@ import it.unibg.accessibilita.base.ui.component.ViewToolbar;
 @Route("") 
 @PageTitle("Hello, Vaadin!") 
 @Menu(order = 0, icon = "vaadin:clipboard-check", title = "Main Page")
-public class MainPage extends Composite<VerticalLayout> { 
+public class MainPageView extends Composite<VerticalLayout> { 
 
 	private Card createCard(String testo) {
 		Card card = new Card();
@@ -38,7 +38,7 @@ public class MainPage extends Composite<VerticalLayout> {
 		return card;
 	};
 
-    public MainPage() {
+    public MainPageView() {
     	
     	HorizontalLayout layoutForHeader = new HorizontalLayout();
     	VerticalLayout mainLayout = new VerticalLayout();
