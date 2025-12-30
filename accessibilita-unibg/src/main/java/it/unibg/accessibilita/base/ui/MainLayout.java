@@ -4,6 +4,7 @@ import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.Icon;
@@ -23,7 +24,7 @@ import static com.vaadin.flow.theme.lumo.LumoUtility.*;
 @Layout
 public final class MainLayout extends AppLayout {
 
-    MainLayout() {
+    public MainLayout() {
         setPrimarySection(Section.DRAWER);
         addToNavbar(true, new DrawerToggle());
         addToDrawer(createHeader(),new Scroller(createSideNav()));
@@ -39,8 +40,13 @@ public final class MainLayout extends AppLayout {
         appName.addClassNames(FontWeight.SEMIBOLD, FontSize.LARGE);
         
         Button themeButton = createThemeToggleButton();
+        
+        Div titleContainer = new Div(appName, themeButton);
+        titleContainer.addClassNames(Display.FLEX, FlexDirection.COLUMN);
+        
         Div header = new Div();
         header.add(appLogo, appName, themeButton);
+        
         header.addClassNames(Display.FLEX, Padding.MEDIUM, Gap.MEDIUM, AlignItems.CENTER);
         
         return header;
@@ -49,20 +55,23 @@ public final class MainLayout extends AppLayout {
     
     private Button createThemeToggleButton() {
     	
-    	Button toggleBtn = new Button(VaadinIcon.MOON_O.create());
-    	toggleBtn.setTooltipText("Tema scuro");
-    	toggleBtn.addThemeVariants(com.vaadin.flow.component.button.ButtonVariant.LUMO_TERTIARY);
-    	toggleBtn.addClassName(Margin.Left.AUTO);
-    	
+    	Icon icon = VaadinIcon.MOON_O.create();
+    	Button toggleBtn = new Button("Tema Scuro", icon);
+    	toggleBtn.addThemeVariants(ButtonVariant.LUMO_TERTIARY, ButtonVariant.LUMO_SMALL);
+    	toggleBtn.getStyle().set("padding-left", "0");
+    	toggleBtn.getElement().setAttribute("aria-label", "Cambia Tema");
     	toggleBtn.addClickListener(click ->{
     		ThemeList themelist = UI.getCurrent().getElement().getThemeList();
     		
     	if(themelist.contains(Lumo.DARK)) {
     		themelist.remove(Lumo.DARK);
     		toggleBtn.setIcon(VaadinIcon.MOON_O.create());
+    		toggleBtn.setText("Tema Scuro");
     	} else {
     		themelist.add(Lumo.DARK);
     		toggleBtn.setIcon(VaadinIcon.SUN_O.create());
+    		toggleBtn.setText("Tema Chiaro");
+
     	}
     	
     });
