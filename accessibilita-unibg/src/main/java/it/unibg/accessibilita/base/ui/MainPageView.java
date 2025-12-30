@@ -21,23 +21,9 @@ import com.vaadin.flow.theme.lumo.LumoUtility.Gap;
 import it.unibg.accessibilita.base.ui.component.ImageCard;
 import it.unibg.accessibilita.base.ui.component.ViewToolbar;
 
-@Route("") 
+@Route(value = "mainpage", layout = MainLayout.class) 
 @PageTitle("Hello, Vaadin!") 
-@Menu(order = 0, icon = "vaadin:clipboard-check", title = "Main Page")
 public class MainPageView extends Composite<VerticalLayout> { 
-
-	private Card createCard(String testo) {
-		Card card = new Card();
-		card.setHeight("200px");
-		card.setWidth("300px");
-		
-		Icon iconTemp = LumoIcon.PHOTO.create();
-		
-		card.setMedia(iconTemp);
-		card.add(testo);
-		
-		return card;
-	};
 
     public MainPageView() {
     	
@@ -78,48 +64,17 @@ public class MainPageView extends Composite<VerticalLayout> {
         
         layoutForFooter.setWidthFull();
         layoutForFooter.setJustifyContentMode(JustifyContentMode.CENTER);
-        
-    	
-        /* CREAZIONE CARD */
-        /*
-         * Attualmente le card vengono create in questa maniera,
-         * ma appena riusciremo ad effettuare la comunicazione con
-         * il DB modificheremo le righe di codice sottostanti per
-         * renderli più efficienti e più adatti al contesto.
-         */
-        /*
-        Card iconCard1 = createCard("Sede di Dalmine");
-        Card iconCard2 = createCard("Sede di Kilometro Rosso");
-        Card iconCard3 = createCard("Sede di Caniana");
-        Card iconCard4 = createCard("Sede Palazzo Bassi-Rathgeb");
-        Card iconCard5 = createCard("Sede di Pignolo");
-        Card iconCard6 = createCard("Sede di Sant'Agostino");
-        Card iconCard7 = createCard("Sede di Rosate");
-        Card iconCard8 = createCard("Sede di Salvecchio");
-        */
-
-        
-        
+      
         getContent().setSizeFull();
         getContent().getStyle().set("flex-grow", "1");
         getContent().setAlignSelf(FlexComponent.Alignment.END, layoutForFooter);
         
         getContent().add(layoutForHeader);
-        layoutForHeader.add(new ViewToolbar(""));
         layoutForHeader.add(textForHeader);
         getContent().add(mainLayout);
         mainLayout.add(textForLayoutForCards);
         mainLayout.add(layoutForCards);
-        /*
-        layoutForCards.add(iconCard1);
-        layoutForCards.add(iconCard2);
-        layoutForCards.add(iconCard3);
-        layoutForCards.add(iconCard4);
-        layoutForCards.add(iconCard5);
-        layoutForCards.add(iconCard6);
-        layoutForCards.add(iconCard7);
-        layoutForCards.add(iconCard8);
-        */
+ 
         layoutForCards.add(new ImageCard("Sede di Dalmine", "via Pasubio, 3", "null"));
         layoutForCards.add(new ImageCard("Sede di Kilometro Rosso", "via Stezzano, 87, Bergamo e viale Europa, 4, Stezzano", "null"));
         layoutForCards.add(new ImageCard("Sede di Caniana", "via dei Caniana, 2", "null"));

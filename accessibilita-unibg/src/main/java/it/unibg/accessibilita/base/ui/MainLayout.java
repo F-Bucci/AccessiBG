@@ -2,6 +2,7 @@ package it.unibg.accessibilita.base.ui;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.applayout.AppLayout;
+import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Span;
@@ -24,52 +25,49 @@ public final class MainLayout extends AppLayout {
 
     MainLayout() {
         setPrimarySection(Section.DRAWER);
-        addToDrawer(createHeader());
-        new Scroller(createSideNav());
+        addToNavbar(true, new DrawerToggle());
+        addToDrawer(createHeader(),new Scroller(createSideNav()));
+ 
     }
 
     private Div createHeader() {
     	
-    	Button toggleThemeBtn = new Button(VaadinIcon.MOON_O.create());
-    	
-    	toggleThemeBtn.addThemeVariants(com.vaadin.flow.component.button.ButtonVariant.LUMO_TERTIARY);
-    	toggleThemeBtn.addClassName(Margin.Left.AUTO);
-    	
-    	toggleThemeBtn.addClickListener(click ->{
-    	try {
-    		ThemeList themelist = UI.getCurrent().getElement().getThemeList();
-    		
-    		Button sourceButton = (Button) click.getSource();
-    		
-    	if(themelist.contains(Lumo.DARK)) {
-    		themelist.remove(Lumo.DARK);
-    		sourceButton.setIcon(VaadinIcon.MOON_O.create());
-    	} else {
-    		themelist.add(Lumo.DARK);
-    		sourceButton.setIcon(VaadinIcon.SUN_O.create());
-    	}
-    		
-    	} catch (Exception e) {
-    		System.out.println("----- ERRORE--------");
-    		e.printStackTrace();
-    	}
-    	
-    	});
-    	
-    	
-    	
-        // TODO Replace with real application logo and name
         var appLogo = VaadinIcon.CUBES.create();
         appLogo.addClassNames(TextColor.PRIMARY, IconSize.LARGE);
 
         var appName = new Span("Accessibilita Unibg");
         appName.addClassNames(FontWeight.SEMIBOLD, FontSize.LARGE);
-
-        var header = new Div(appLogo, appName, toggleThemeBtn);
+        
+        Button themeButton = createThemeToggleButton();
+        Div header = new Div();
+        header.add(appLogo, appName, themeButton);
         header.addClassNames(Display.FLEX, Padding.MEDIUM, Gap.MEDIUM, AlignItems.CENTER);
+        
         return header;
         
-        
+    }
+    
+    private Button createThemeToggleButton() {
+    	
+    	Button toggleBtn = new Button(VaadinIcon.MOON_O.create());
+    	toggleBtn.setTooltipText("Tema scuro");
+    	toggleBtn.addThemeVariants(com.vaadin.flow.component.button.ButtonVariant.LUMO_TERTIARY);
+    	toggleBtn.addClassName(Margin.Left.AUTO);
+    	
+    	toggleBtn.addClickListener(click ->{
+    		ThemeList themelist = UI.getCurrent().getElement().getThemeList();
+    		
+    	if(themelist.contains(Lumo.DARK)) {
+    		themelist.remove(Lumo.DARK);
+    		toggleBtn.setIcon(VaadinIcon.MOON_O.create());
+    	} else {
+    		themelist.add(Lumo.DARK);
+    		toggleBtn.setIcon(VaadinIcon.SUN_O.create());
+    	}
+    	
+    });
+    	
+    return toggleBtn;	
     }
 
     private SideNav createSideNav() {
