@@ -13,6 +13,7 @@ import com.vaadin.flow.theme.lumo.LumoUtility;
 import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
 
 import it.unibg.accessibilita.base.ui.MainLayout;
+import it.unibg.accessibilita.base.ui.component.AppFooter;
 import it.unibg.accessibilita.base.ui.component.BoxInfo;
 import it.unibg.accessibilita.base.ui.component.GoogleMapCard;
 import it.unibg.accessibilita.base.ui.component.ImageCard;
@@ -103,18 +104,7 @@ public class SediView extends VerticalLayout{
 		expand(tabSheet);
 		
 		//FOOTER
-		VerticalLayout footer = new VerticalLayout();
-		footer.setWidthFull();
-		footer.setPadding(false);
-		footer.setSpacing(true);
-		
-		footer.setAlignItems(Alignment.CENTER);
-		footer.addClassName(LumoUtility.Margin.Top.XLARGE);
-		
-		Hr lineaFooter = new Hr();
-		lineaFooter.setWidthFull();
-		Paragraph testoFooter = new Paragraph("@AccessiBG 2026");
-		footer.add(lineaFooter, testoFooter);
+		AppFooter footer = new AppFooter();
 		
 		add(titolo, divisoreTitolo, tabSheet, footer);
 	}
