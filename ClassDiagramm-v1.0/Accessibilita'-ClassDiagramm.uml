@@ -10,6 +10,9 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_Inu4sNH9EfCxiNKW-0b_Pw" name="facolta">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_dHbwkOcFEfCPXcCpwXQkmQ" name="nome">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_XXmZINtCEfCJqNqr0OlHxQ" name="getEdificio"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_RQuu0NH9EfCxiNKW-0b_Pw" name="Edificio">
@@ -281,4 +284,31 @@
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_njWjwOS-EfCMRfyTdNK6ew" name="Laboratorio"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_jqU10OcFEfCPXcCpwXQkmQ" name="PuntiDiAccesso">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_vZGxIOcFEfCPXcCpwXQkmQ" name="Posizione">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Lo0FIOcnEfCPXcCpwXQkmQ" name="rampa">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_OIWCoOcnEfCPXcCpwXQkmQ" name="scala">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_UR2-kOcnEfCPXcCpwXQkmQ" name="portaSpinta">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_g7YD0OcnEfCPXcCpwXQkmQ" name="portaAutomatica">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_nnZvYOcFEfCPXcCpwXQkmQ" memberEnd="_nnbkkOcFEfCPXcCpwXQkmQ _nncLoecFEfCPXcCpwXQkmQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_nna9gOcFEfCPXcCpwXQkmQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nna9gecFEfCPXcCpwXQkmQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_nncLoecFEfCPXcCpwXQkmQ" name="edificio" type="_RQuu0NH9EfCxiNKW-0b_Pw" association="_nnZvYOcFEfCPXcCpwXQkmQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_nnbkkOcFEfCPXcCpwXQkmQ" name="puntidiaccesso" type="_jqU10OcFEfCPXcCpwXQkmQ" association="_nnZvYOcFEfCPXcCpwXQkmQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rO-TAOcFEfCPXcCpwXQkmQ" name="LiteralInteger1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rPAIMOcFEfCPXcCpwXQkmQ" name="LiteralUnlimitedNatural1" value="*"/>
+    </ownedEnd>
+  </packagedElement>
 </uml:Model>
