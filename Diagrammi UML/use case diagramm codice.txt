@@ -1,0 +1,25 @@
+@startuml
+:Utente: as Ut
+:Disabilita motoria: as Ut1
+:Ipovedente: as Ut2
+Ut <|-- Ut1
+Ut <|-- Ut2
+
+package WebApp {
+(selezione impostazione) as (selImp)
+(seleziona sede) as (selSed)
+(selezione servizio) as (selSer)
+(selezione servizio sede) as (selUff)
+(seleziona edificio) as (selEd)
+(seleziona piano) as (selP)
+(selSed) -down-.> (selImp) : extends
+(selUff) -down-.> (selSed) : extends
+(selEd) -down-.-> (selSed) : extends
+(selP) -down-.> (selSer) : include
+(selEd) -down-.> (selP) : include
+(selUff) -down-.-> (selEd) : extends
+
+}
+Ut --> (selImp)
+
+@enduml
