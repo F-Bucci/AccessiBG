@@ -39,7 +39,7 @@ public class SediView extends VerticalLayout{
 		
 		AppTabs tabs = new AppTabs();
 		
-		tabs.addTab("Generale",creatGeneraleContent());
+		tabs.addTab("Generale",createGeneraleContent());
 		tabs.addTab("Edifici", createEdificioContent());
 		tabs.addTab("Mappa", createMappaContent());
 		tabs.addTab("Parcheggi", createParcheggiContent());
@@ -48,7 +48,7 @@ public class SediView extends VerticalLayout{
 		add(titolo, divisoreTitolo, tabs, footer);
 	}
 	
-	private Component creatGeneraleContent() {
+	private Component createGeneraleContent() {
 		VerticalLayout layout = new VerticalLayout();
 		layout.setPadding(false);
 		layout.setSpacing(true);
