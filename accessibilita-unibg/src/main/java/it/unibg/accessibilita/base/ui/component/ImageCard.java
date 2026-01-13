@@ -30,7 +30,7 @@ public class ImageCard extends Div{
 		
 		// FACCIO UN ELSE IF PER METTERE UNA ICON AL POSTO DI UNA IMMAGINE SE NON TROVATA
 		Div imageContainer = new Div();
-		if(urlImmagine != null && !urlImmagine.isEmpty()){
+		if(isUrlValid(urlImmagine)){
 			Image img = new Image(urlImmagine, nome);
 			img.setWidth("100%");
 			img.setHeight("150px");
@@ -53,5 +53,14 @@ public class ImageCard extends Div{
 		
 		
 		
+	}
+
+	private boolean isUrlValid(String url) {
+		if (url==null || url.trim().isEmpty()) {
+			return false;
+		}
+		
+		String urlLower = url.toLowerCase();
+		return urlLower.endsWith(".jpg");
 	}
 }

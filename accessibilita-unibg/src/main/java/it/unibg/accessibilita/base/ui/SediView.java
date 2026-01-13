@@ -16,7 +16,7 @@ import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
 import it.unibg.accessibilita.base.ui.MainLayout;
 import it.unibg.accessibilita.base.ui.component.AppFooter;
 import it.unibg.accessibilita.base.ui.component.AppTabs;
-import it.unibg.accessibilita.base.ui.component.BoxInfo;
+import it.unibg.accessibilita.base.ui.component.Box;
 import it.unibg.accessibilita.base.ui.component.GoogleMapCard;
 import it.unibg.accessibilita.base.ui.component.ImageCard;
 
@@ -69,14 +69,14 @@ public class SediView extends VerticalLayout{
 		card.setMinWidth("320px");
 		card.setHeight("500px");
 		
-		BoxInfo infoSede = new BoxInfo("Orario", "Contatti", "Aperto");
+		Box infoSede = new Box("Informazioni Generali");
 		infoSede.setWidth("30%");
 		infoSede.setMinWidth("250px");
 		infoSede.setHeight("500px");
 		
 		rowCentrale.add(card, infoSede);
 		
-		BoxInfo descBox = new BoxInfo("Sulla sede di Dalmine", "", "");
+		Box descBox = new Box("Sulla sede di Dalmine");
 		descBox.setWidthFull();
 		descBox.addClassNames(LumoUtility.Margin.Top.LARGE);
 		

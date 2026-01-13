@@ -13,8 +13,8 @@ public class ImageCardTest {
 		@Test
 		//VOGLIO TESTARE CHE SE URL=NULL VIENE MOSTRATA L'ICONA
 		//SUCCESS
-		public void noUrl_MostraIcon() {
-			ImageCard card = new ImageCard("Nome", "Via", "");
+		public void noUrl_MostraIcona() {
+			ImageCard card = new ImageCard("Nome", "Via", null);
 			Component imageContainer = card.getChildren().findFirst().get();
 			Component contenuto = imageContainer.getChildren().findFirst().get();
 			
@@ -24,12 +24,24 @@ public class ImageCardTest {
 		@Test
 		//VOGLIO TESTARE CHE SE E' PRESENTE UN URL DI UN IMMAGINE, MOSTRI QUEST'ULTIMA
 		//SUCCESS
-		public void conUrl_MostraImmagine() {
+		public void conUrlValido_MostraImmagine() {
 			String url = "http://esempio.it/immagine.jpg";
 			ImageCard card = new ImageCard("Nome", "Via", url);
 			Component imageContainer = card.getChildren().findFirst().get();
 			Component contenuto = imageContainer.getChildren().findFirst().get();
 			
 			assertTrue(contenuto instanceof Image);
+		}
+		
+		@Test
+		//TEST ESTENSIONE NON VALIDA (.txt o .pdf) DOVREBBE MOSTRARE UNA ICONA
+		public void conUrlNonValido_MostraIcona() {
+			String url = "http://esempio.it/file.txt";
+			ImageCard card = new ImageCard("Nome", "Via", url);
+			Component imageContainer = card.getChildren().findFirst().get();
+			Component contenuto = imageContainer.getChildren().findFirst().get();
+			assertTrue(contenuto instanceof Icon);
+					
+			
 		}
 }
