@@ -28,7 +28,7 @@ public final class ViewToolbar extends Composite<Header> {
 
         Div spazio = new Div();
         spazio.addClassNames(Flex.GROW);
-        getContent().add(title);
+        getContent().add(spazio);
         
         if (components.length > 0) {
             var actions = new Div(components);
