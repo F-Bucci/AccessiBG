@@ -7,21 +7,19 @@ package Accessibilita'-ClassDiagramm;
 
 
 /************************************************************/
+package struttura;
+
 /**
  * 
  */
-public class Bagno extends Stanza
- {
+public class Piano {
 				/**
 				 * 
 				 */
-				public boolean bagnoDisabili;
-				/**
-				 * 
-				 */
-				public String descrizione;
-				/**
-				 * 
-				 */
-				public boolean haAllarme;
+				public int numero;
+	/**
+	 * 
+	 */
+	public void getStanza() {
+	}
 }

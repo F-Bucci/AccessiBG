@@ -7,17 +7,19 @@ package Accessibilita'-ClassDiagramm;
 
 
 /************************************************************/
+package struttura;
+
 /**
  * 
  */
-public class Mensa extends Edificio
- {
+public class Segreteria {
 				/**
 				 * 
 				 */
-				public String menu;
-				/**
-				 * 
-				 */
-				public String infoAllergeni;
+				public String orario;
+	/**
+	 * 
+	 */
+	public void getSede() {
+	}
 }

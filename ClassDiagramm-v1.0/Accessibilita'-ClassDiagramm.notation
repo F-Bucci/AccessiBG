@@ -493,17 +493,9 @@
         <element xmi:type="uml:Property" href="Accessibilita'-ClassDiagramm.uml#_Lo0FIOcnEfCPXcCpwXQkmQ"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_LpFK4ecnEfCPXcCpwXQkmQ"/>
       </children>
-      <children xmi:type="notation:Shape" xmi:id="_OInIYOcnEfCPXcCpwXQkmQ" type="Property_ClassAttributeLabel">
-        <element xmi:type="uml:Property" href="Accessibilita'-ClassDiagramm.uml#_OIWCoOcnEfCPXcCpwXQkmQ"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_OInIYecnEfCPXcCpwXQkmQ"/>
-      </children>
-      <children xmi:type="notation:Shape" xmi:id="_USGPIOcnEfCPXcCpwXQkmQ" type="Property_ClassAttributeLabel">
-        <element xmi:type="uml:Property" href="Accessibilita'-ClassDiagramm.uml#_UR2-kOcnEfCPXcCpwXQkmQ"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_USGPIecnEfCPXcCpwXQkmQ"/>
-      </children>
-      <children xmi:type="notation:Shape" xmi:id="_g7pJkOcnEfCPXcCpwXQkmQ" type="Property_ClassAttributeLabel">
-        <element xmi:type="uml:Property" href="Accessibilita'-ClassDiagramm.uml#_g7YD0OcnEfCPXcCpwXQkmQ"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_g7pJkecnEfCPXcCpwXQkmQ"/>
+      <children xmi:type="notation:Shape" xmi:id="_u5rikPFrEfC8X6-7zcni0w" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="Accessibilita'-ClassDiagramm.uml#_u5pGUPFrEfC8X6-7zcni0w"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_u5rikfFrEfC8X6-7zcni0w"/>
       </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_jqYgNOcFEfCPXcCpwXQkmQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_jqYgNecFEfCPXcCpwXQkmQ"/>
@@ -511,6 +503,10 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jqYgN-cFEfCPXcCpwXQkmQ"/>
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_jqYgOOcFEfCPXcCpwXQkmQ" type="Class_OperationCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_SWVocPFsEfC8X6-7zcni0w" type="Operation_ClassOperationLabel">
+        <element xmi:type="uml:Operation" href="Accessibilita'-ClassDiagramm.uml#_SWTMMPFsEfC8X6-7zcni0w"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_SWVocfFsEfC8X6-7zcni0w"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_jqYgOecFEfCPXcCpwXQkmQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_jqYgOucFEfCPXcCpwXQkmQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_jqYgO-cFEfCPXcCpwXQkmQ"/>

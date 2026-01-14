@@ -7,16 +7,23 @@ package Accessibilita'-ClassDiagramm;
 
 
 /************************************************************/
+package struttura;
+
 /**
  * 
  */
-public class Stanza {
+public class Bagno extends Stanza
+ {
 				/**
 				 * 
 				 */
-				public String nome;
+				public boolean bagnoDisabili;
 				/**
 				 * 
 				 */
 				public String descrizione;
+				/**
+				 * 
+				 */
+				public boolean haAllarme;
 }

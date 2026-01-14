@@ -7,21 +7,23 @@ package Accessibilita'-ClassDiagramm;
 
 
 /************************************************************/
+package struttura;
+
 /**
  * 
  */
-public class Aula extends Stanza
+public class Biblioteca extends Edificio
  {
 				/**
 				 * 
 				 */
-				public undef ;
+				public String tipologiaLibri;
 				/**
 				 * 
 				 */
-				public int capienza;
+				public String prestito;
 				/**
 				 * 
 				 */
-				public boolean postiCarrozzina;
+				public String regolamento;
 }

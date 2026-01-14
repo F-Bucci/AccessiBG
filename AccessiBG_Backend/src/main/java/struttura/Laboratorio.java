@@ -7,17 +7,10 @@ package Accessibilita'-ClassDiagramm;
 
 
 /************************************************************/
+package struttura;
+
 /**
  * 
  */
-public class UfficioDocenti extends Stanza
- {
-				/**
-				 * 
-				 */
-				public String nome;
-				/**
-				 * 
-				 */
-				public String docente;
+public class Laboratorio {
 }

@@ -7,6 +7,10 @@
   <semanticResources>pathmap://UML_PROFILES/Standard.profile.uml</semanticResources>
   <semanticResources>pathmap://UML_METAMODELS/UML.metamodel.uml</semanticResources>
   <semanticResources>pathmap://UML_METAMODELS/Ecore.metamodel.uml</semanticResources>
+  <semanticResources>pathmap://Codegen_PROFILES/languages.uml</semanticResources>
+  <semanticResources>pathmap://Codegen_PROFILES/Codegen.profile.uml</semanticResources>
+  <semanticResources>pathmap://Codegen_PROFILES/languages.notation</semanticResources>
+  <semanticResources>pathmap://Codegen_PROFILES/languages.di</semanticResources>
   <ownedViews xmi:type="viewpoint:DView" uid="_62ldANH8EfCxiNKW-0b_Pw">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.compositestructure/description/papyrus_compositestructure.odesign#//@ownedViewpoints[name='CompositeStructureDiagram']"/>
   </ownedViews>

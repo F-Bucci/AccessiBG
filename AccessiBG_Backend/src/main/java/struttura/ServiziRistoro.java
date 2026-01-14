@@ -7,8 +7,27 @@ package Accessibilita'-ClassDiagramm;
 
 
 /************************************************************/
+package struttura;
+
 /**
  * 
  */
-public class Ostacolo {
+public class ServiziRistoro {
+				/**
+				 * 
+				 */
+				public ServiziPiano tipo;
+				/**
+				 * 
+				 */
+				public boolean fuoriServizio;
+				/**
+				 * 
+				 */
+				public String accesPulsantiera;
+	/**
+	 * 
+	 */
+	public void segnalaGuasto() {
+	}
 }

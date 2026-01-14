@@ -7,25 +7,23 @@ package Accessibilita'-ClassDiagramm;
 
 
 /************************************************************/
+package struttura;
+
 /**
  * 
  */
-public class ServiziRistoro {
-				/**
-				 * 
-				 */
-				public ServiziPiano tipo;
-				/**
-				 * 
-				 */
-				public boolean fuoriServizio;
-				/**
-				 * 
-				 */
-				public String accesPulsantiera;
+public enum TipoParcheggio {
 	/**
 	 * 
 	 */
-	public void segnalaGuasto() {
-	}
+	LIBERO,
+	/**
+	 * 
+	 */
+	A PAGAMENTO,
+	/**
+	 * 
+	 */
+	DISCO ORARIO
+	;
 }

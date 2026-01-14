@@ -7,21 +7,22 @@ package Accessibilita'-ClassDiagramm;
 
 
 /************************************************************/
+package struttura;
+
 /**
  * 
  */
-public enum TipoParcheggio {
-	/**
-	 * 
-	 */
-	LIBERO,
-	/**
-	 * 
-	 */
-	A PAGAMENTO,
-	/**
-	 * 
-	 */
-	DISCO ORARIO
-	;
+public class Parcheggio {
+				/**
+				 * 
+				 */
+				public boolean discoOrario;
+				/**
+				 * 
+				 */
+				public boolean pDisabili;
+				/**
+				 * 
+				 */
+				public TipoParcheggio tipoParcheggio;
 }

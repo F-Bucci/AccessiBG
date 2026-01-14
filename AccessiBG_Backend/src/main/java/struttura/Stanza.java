@@ -7,28 +7,18 @@ package Accessibilita'-ClassDiagramm;
 
 
 /************************************************************/
+package struttura;
+
 /**
  * 
  */
-public class PuntiDiAccesso {
+public class Stanza {
 				/**
 				 * 
 				 */
-				public String Posizione;
+				public String nome;
 				/**
 				 * 
 				 */
-				public boolean rampa;
-				/**
-				 * 
-				 */
-				public boolean scala;
-				/**
-				 * 
-				 */
-				public boolean portaSpinta;
-				/**
-				 * 
-				 */
-				public boolean portaAutomatica;
+				public String descrizione;
 }

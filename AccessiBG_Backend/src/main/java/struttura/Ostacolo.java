@@ -7,17 +7,10 @@ package Accessibilita'-ClassDiagramm;
 
 
 /************************************************************/
+package struttura;
+
 /**
  * 
  */
-public class Segreteria {
-				/**
-				 * 
-				 */
-				public String orario;
-	/**
-	 * 
-	 */
-	public void getSede() {
-	}
+public class Ostacolo {
 }

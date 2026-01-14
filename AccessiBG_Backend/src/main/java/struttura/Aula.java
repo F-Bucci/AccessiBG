@@ -7,21 +7,23 @@ package Accessibilita'-ClassDiagramm;
 
 
 /************************************************************/
+package struttura;
+
 /**
  * 
  */
-public enum ServiziPiano {
-	/**
-	 * 
-	 */
-	MACCHINETTE,
-	/**
-	 * 
-	 */
-	DISTRIBUTOREACQUA,
-	/**
-	 * 
-	 */
-	ASCENSORE
-	;
+public class Aula extends Stanza
+ {
+				/**
+				 * 
+				 */
+				public undef ;
+				/**
+				 * 
+				 */
+				public int capienza;
+				/**
+				 * 
+				 */
+				public boolean postiCarrozzina;
 }

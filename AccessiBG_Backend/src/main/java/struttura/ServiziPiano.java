@@ -7,17 +7,23 @@ package Accessibilita'-ClassDiagramm;
 
 
 /************************************************************/
+package struttura;
+
 /**
  * 
  */
-public class Piano {
-				/**
-				 * 
-				 */
-				public int numero;
+public enum ServiziPiano {
 	/**
 	 * 
 	 */
-	public void getStanza() {
-	}
+	MACCHINETTE,
+	/**
+	 * 
+	 */
+	DISTRIBUTOREACQUA,
+	/**
+	 * 
+	 */
+	ASCENSORE
+	;
 }

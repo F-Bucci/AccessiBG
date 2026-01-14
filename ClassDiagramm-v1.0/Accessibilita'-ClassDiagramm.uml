@@ -5,25 +5,26 @@
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="__EjSQNH8EfCxiNKW-0b_Pw" name="Sede">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_EVMsgNH9EfCxiNKW-0b_Pw" name="indirizzo">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_EVMsgNH9EfCxiNKW-0b_Pw" name="indirizzo" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_Inu4sNH9EfCxiNKW-0b_Pw" name="facolta">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Inu4sNH9EfCxiNKW-0b_Pw" name="facolta" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_dHbwkOcFEfCPXcCpwXQkmQ" name="nome">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_dHbwkOcFEfCPXcCpwXQkmQ" name="nome" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_DVpiYPFqEfC8X6-7zcni0w" name="Edificio" visibility="private"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_XXmZINtCEfCJqNqr0OlHxQ" name="getEdificio"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_RQuu0NH9EfCxiNKW-0b_Pw" name="Edificio">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_Sx_GMNH9EfCxiNKW-0b_Pw" name="indirizzo">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Sx_GMNH9EfCxiNKW-0b_Pw" name="indirizzo" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_VxrKcNH9EfCxiNKW-0b_Pw" name="nome">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_VxrKcNH9EfCxiNKW-0b_Pw" name="nome" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_ZFBxkNH9EfCxiNKW-0b_Pw" name="orario">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ZFBxkNH9EfCxiNKW-0b_Pw" name="orario" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
     </packagedElement>
@@ -286,10 +287,10 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_njWjwOS-EfCMRfyTdNK6ew" name="Laboratorio"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_jqU10OcFEfCPXcCpwXQkmQ" name="PuntiDiAccesso">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_vZGxIOcFEfCPXcCpwXQkmQ" name="Posizione">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_vZGxIOcFEfCPXcCpwXQkmQ" name="nome" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_Lo0FIOcnEfCPXcCpwXQkmQ" name="rampa">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Lo0FIOcnEfCPXcCpwXQkmQ" name="accessibile" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_OIWCoOcnEfCPXcCpwXQkmQ" name="scala">
@@ -301,6 +302,10 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_g7YD0OcnEfCPXcCpwXQkmQ" name="portaAutomatica">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_u5pGUPFrEfC8X6-7zcni0w" name="descrizione" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_SWTMMPFsEfC8X6-7zcni0w" name="addEdificio"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_nnZvYOcFEfCPXcCpwXQkmQ" memberEnd="_nnbkkOcFEfCPXcCpwXQkmQ _nncLoecFEfCPXcCpwXQkmQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_nna9gOcFEfCPXcCpwXQkmQ" source="org.eclipse.papyrus">
