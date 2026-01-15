@@ -6,12 +6,31 @@
 	</projects>
 	<buildSpec>
 		<buildCommand>
+<<<<<<< HEAD
+=======
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+>>>>>>> cc201b4a11d5fa71e7ef35b3328708b3f51bd86e
 			<name>org.eclipse.m2e.core.maven2Builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+<<<<<<< HEAD
+	</buildSpec>
+	<natures>
+=======
+		<buildCommand>
+			<name>vaadin-eclipse-plugin.vaadinBuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+>>>>>>> cc201b4a11d5fa71e7ef35b3328708b3f51bd86e
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 	</natures>
 </projectDescription>

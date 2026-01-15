@@ -1,0 +1,98 @@
+@startuml
+actor Utente
+participant Webapp
+database SQLite
+database Firebase
+
+Utente -> Webapp : Visualizza sedi
+
+par
+    Webapp -> SQLite : getInformazioniSedi()
+    SQLite --> Webapp : Informazioni sedi
+else
+    Webapp -> Firebase : getImmaginiSedi()
+    Firebase --> Webapp : Immagini sedi
+end
+
+Webapp --> Utente : Mostra Home
+
+Utente -> Webapp : selezionaSede(Sede)
+
+par
+    Webapp -> SQLite : getInfoSede(Sede)
+    SQLite --> Webapp : Info sede
+else
+    Webapp -> Firebase : getImmaginiSede(Sede)
+    Firebase --> Webapp : Immagini sede
+end
+
+Webapp --> Utente : Mostra Sede
+
+opt Visualizza mappa
+    Utente -> Webapp : VisualizzaMappaSede(Sede)
+    Webapp --> Utente : Visualizza mappa sede
+end
+
+Utente -> Webapp : visualizzaEdifici(Sede)
+
+par
+    Webapp -> SQLite : getInformazioniEdifici(Sede)
+    SQLite --> Webapp : Informazioni edifici
+else
+    Webapp -> Firebase : getFotoEdifici(Sede)
+    Firebase --> Webapp : Foto edifici
+end
+
+Webapp --> Utente : Mostra Edifici
+
+Utente -> Webapp : selezionaEdificio(Edificio)
+
+par
+    Webapp -> SQLite : getInfoEdificio(Edificio)
+    SQLite --> Webapp : Info edificio
+else
+    Webapp -> Firebase : getImmaginiEdificio(Edificio)
+    Firebase --> Webapp : Immagini edificio
+end
+
+Webapp --> Utente : Mostra edificio
+
+opt Visualizza ingressi
+    Utente -> Webapp : VisualizzaIngressi(Edificio)
+
+    par
+        Webapp -> SQLite : getInformazioniIngressi(Edificio)
+        SQLite --> Webapp : Informazioni ingressi
+    else
+        Webapp -> Firebase : getFotoIngressi(Edificio)
+        Firebase -> Webapp : Foto ingressi
+    end
+
+    Webapp --> Utente : Mostra ingressi
+end
+
+opt Visualizza servizi
+    Utente -> Webapp : visualizzaServizi(Edificio)
+    Webapp -> SQLite : getInformazioniServizi(Edificio)
+    SQLite --> Webapp : Informazioni servizi
+    Webapp --> Utente : Mostra servizi
+end
+
+Utente -> Webapp : visualizzaPiani(Edificio)
+Webapp -> SQLite : getPiani(Edificio)
+SQLite --> Webapp : Piani
+Webapp --> Utente : Mostra piani
+
+Utente -> Webapp : selezionaPiano(Piano)
+
+par
+    Webapp -> SQLite : getInformazioniPiano(Piano)
+    SQLite --> Webapp : Informazioni piano
+else
+    Webapp -> Firebase : getMappaPiano(Piano)
+    Firebase --> Webapp : Mappa piano
+end
+
+Webapp --> Utente : Mostra piano
+
+@enduml

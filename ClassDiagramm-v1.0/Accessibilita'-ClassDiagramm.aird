@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" uid="_619K4NH8EfCxiNKW-0b_Pw" selectedViews="_62ldANH8EfCxiNKW-0b_Pw _63Uc0NH8EfCxiNKW-0b_Pw _63pM8NH8EfCxiNKW-0b_Pw _630MENH8EfCxiNKW-0b_Pw _638u8NH8EfCxiNKW-0b_Pw _64LYcNH8EfCxiNKW-0b_Pw _64T7UNH8EfCxiNKW-0b_Pw _64aB8NH8EfCxiNKW-0b_Pw _64kaANH8EfCxiNKW-0b_Pw _64vZINH8EfCxiNKW-0b_Pw _642t4NH8EfCxiNKW-0b_Pw" version="15.4.1.202403191723">
   <semanticResources>Accessibilita'-ClassDiagramm.uml</semanticResources>
+  <semanticResources>pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml</semanticResources>
+  <semanticResources>pathmap://UML_PROFILES/Ecore.profile.uml</semanticResources>
+  <semanticResources>pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml</semanticResources>
+  <semanticResources>pathmap://UML_PROFILES/Standard.profile.uml</semanticResources>
+  <semanticResources>pathmap://UML_METAMODELS/UML.metamodel.uml</semanticResources>
+  <semanticResources>pathmap://UML_METAMODELS/Ecore.metamodel.uml</semanticResources>
+  <semanticResources>pathmap://Codegen_PROFILES/languages.uml</semanticResources>
+  <semanticResources>pathmap://Codegen_PROFILES/Codegen.profile.uml</semanticResources>
+  <semanticResources>pathmap://Codegen_PROFILES/languages.notation</semanticResources>
+  <semanticResources>pathmap://Codegen_PROFILES/languages.di</semanticResources>
   <ownedViews xmi:type="viewpoint:DView" uid="_62ldANH8EfCxiNKW-0b_Pw">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.papyrus.sirius.uml.diagram.compositestructure/description/papyrus_compositestructure.odesign#//@ownedViewpoints[name='CompositeStructureDiagram']"/>
   </ownedViews>

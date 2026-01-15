@@ -14,19 +14,22 @@ import org.jspecify.annotations.Nullable;
 public final class ViewToolbar extends Composite<Header> {
 
     public ViewToolbar(@Nullable String viewTitle, Component... components) {
-        addClassNames(Display.FLEX, FlexDirection.COLUMN, JustifyContent.BETWEEN, AlignItems.STRETCH, Gap.MEDIUM,
-                FlexDirection.Breakpoint.Medium.ROW, AlignItems.Breakpoint.Medium.CENTER);
+        addClassNames(Display.FLEX, FlexDirection.ROW, AlignItems.CENTER, 
+                Gap.MEDIUM, Padding.End.MEDIUM, Width.FULL);
 
         var drawerToggle = new DrawerToggle();
         drawerToggle.addClassNames(Margin.NONE);
-
+        drawerToggle.setAriaLabel("Menu Principale");
+        getContent().add(drawerToggle);
+      
         var title = new H1(viewTitle);
         title.addClassNames(FontSize.XLARGE, Margin.NONE, FontWeight.LIGHT);
+        getContent().add(title);
 
-        var toggleAndTitle = new Div(drawerToggle, title);
-        toggleAndTitle.addClassNames(Display.FLEX, AlignItems.CENTER);
-        getContent().add(toggleAndTitle);
-
+        Div spazio = new Div();
+        spazio.addClassNames(Flex.GROW);
+        getContent().add(spazio);
+        
         if (components.length > 0) {
             var actions = new Div(components);
             actions.addClassNames(Display.FLEX, FlexDirection.COLUMN, JustifyContent.BETWEEN, Flex.GROW, Gap.SMALL,

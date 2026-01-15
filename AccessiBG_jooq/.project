@@ -11,6 +11,14 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
+<<<<<<< HEAD
+=======
+			<name>vaadin-eclipse-plugin.vaadinBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+>>>>>>> cc201b4a11d5fa71e7ef35b3328708b3f51bd86e
 			<name>org.eclipse.m2e.core.maven2Builder</name>
 			<arguments>
 			</arguments>

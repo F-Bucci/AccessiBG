@@ -1,3 +1,5 @@
+/.vaadin/copilot/
+/.eclipse/.copilot-plugin
 /target/
 .idea/
 .vscode/
