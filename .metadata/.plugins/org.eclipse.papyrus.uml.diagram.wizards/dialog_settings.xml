@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="NewModelWizard">
+		<list key="architectureContexts">
+			<item value="org.eclipse.papyrus.infra.services.edit.TypeContext"/>
+		</list>
+		<section name="NewPapyrusProjectWizard.dialogBounds">
+			<item key="DIALOG_X_ORIGIN" value="-75"/>
+			<item key="DIALOG_Y_ORIGIN" value="-242"/>
+			<item key="DIALOG_WIDTH" value="683"/>
+			<item key="DIALOG_HEIGHT" value="720"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		</section>
+	</section>
+</section>
