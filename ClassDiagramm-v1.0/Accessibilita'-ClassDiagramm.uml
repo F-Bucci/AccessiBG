@@ -85,7 +85,6 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_kJIiwNH-EfCxiNKW-0b_Pw" name="Aula">
       <generalization xmi:type="uml:Generalization" xmi:id="_qMl6ANH-EfCxiNKW-0b_Pw" general="_cQDtsNH-EfCxiNKW-0b_Pw"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_l7Sc4NH-EfCxiNKW-0b_Pw" name=""/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_055rUNtAEfCJqNqr0OlHxQ" name="capienza" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
@@ -251,7 +250,6 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_lY4YANtBEfCJqNqr0OlHxQ" name="posizione" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_xMmdsNtBEfCJqNqr0OlHxQ" name="segnalaGuasto"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_1WDJ4NtCEfCJqNqr0OlHxQ" memberEnd="_1WEYANtCEfCJqNqr0OlHxQ _1WE_ENtCEfCJqNqr0OlHxQ" navigableOwnedEnd="_1WE_ENtCEfCJqNqr0OlHxQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1WDw8NtCEfCJqNqr0OlHxQ" source="org.eclipse.papyrus">
@@ -272,15 +270,6 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_Lo0FIOcnEfCPXcCpwXQkmQ" name="accessibile" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_OIWCoOcnEfCPXcCpwXQkmQ" name="scala">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_UR2-kOcnEfCPXcCpwXQkmQ" name="portaSpinta">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_g7YD0OcnEfCPXcCpwXQkmQ" name="portaAutomatica">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_u5pGUPFrEfC8X6-7zcni0w" name="descrizione" visibility="private">
