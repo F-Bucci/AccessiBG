@@ -15,14 +15,6 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
-<<<<<<< HEAD
-=======
-		<buildCommand>
-			<name>vaadin-eclipse-plugin.vaadinBuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
->>>>>>> cc201b4a11d5fa71e7ef35b3328708b3f51bd86e
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>

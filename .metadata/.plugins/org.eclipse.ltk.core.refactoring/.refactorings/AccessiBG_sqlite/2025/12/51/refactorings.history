@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move package &apos;sqlite_db&apos; to &apos;AccessiBG_sqlite/src/main/resources&apos;&#x0D;&#x0A;- Original project: &apos;AccessiBG_sqlite&apos;&#x0D;&#x0A;- Destination element: &apos;AccessiBG_sqlite/src/main/resources&apos;&#x0D;&#x0A;- Original element: &apos;AccessiBG_sqlite/src/main/java/sqlite_db&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move package" destination="/src\/main\/resources=/maven.pomderived=/true=/=/optional=/true=/" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;sqlite_db" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1765902763420" version="1.0"/>
-</session>
