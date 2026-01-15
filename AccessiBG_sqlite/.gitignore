@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-/target/
-=======
 /.vaadin/copilot/
 /.eclipse/.copilot-plugin
 /target/
@@ -18,4 +15,3 @@ node_modules/
 src/main/frontend/generated/
 vite.generated.ts
 /bin/
->>>>>>> cc201b4a11d5fa71e7ef35b3328708b3f51bd86e
