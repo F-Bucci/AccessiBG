@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;AccessiBG_Data&apos; to &apos;AccessiBG_Backend&apos;&#x0D;&#x0A;- Original element: &apos;AccessiBG_Data&apos;&#x0D;&#x0A;- Renamed element: &apos;AccessiBG_Data&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;AccessiBG_Data&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=AccessiBG_Data" name="AccessiBG_Backend" references="true" stamp="1766070255393" version="1.0"/>
+</session>
