@@ -74,7 +74,6 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_kJIiwNH-EfCxiNKW-0b_Pw" name="Aula">
       <generalization xmi:type="uml:Generalization" xmi:id="_qMl6ANH-EfCxiNKW-0b_Pw" general="_cQDtsNH-EfCxiNKW-0b_Pw"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_l7Sc4NH-EfCxiNKW-0b_Pw" name=""/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_055rUNtAEfCJqNqr0OlHxQ" name="capienza">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
@@ -325,6 +324,5 @@
     </profileApplication>
   </uml:Model>
   <Codegen:GeneratorHint xmi:id="_3ikMUPFdEfCQiL03duEjZw" base_Element="_62WzgNH8EfCxiNKW-0b_Pw" generatorID="Standard Java">
-    <language xmi:type="Codegen:Language" href="pathmap://Codegen_PROFILES/languages.uml#_2Zt6YCjREeayco6FJ_OtTQ"/>
-  </Codegen:GeneratorHint>
+    <language xmi:type="Codegen:Language" href="pathmap://Codegen_PROFILES/languages.uml#_2Zt6YCjREeayco6FJ_OtTQ"/></Codegen:GeneratorHint>
 </xmi:XMI>
