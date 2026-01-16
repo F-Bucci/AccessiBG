@@ -23,7 +23,7 @@ import it.unibg.accessibilita.base.ui.component.AppFooter;
 import it.unibg.accessibilita.base.ui.component.ImageCard;
 import it.unibg.accessibilita.base.ui.component.ViewToolbar;
 
-@Route(value = "home", layout = MainLayout.class) 
+@Route(value = "", layout = MainLayout.class) 
 public class HomeView extends VerticalLayout { 
 
     public HomeView() {
@@ -52,10 +52,10 @@ public class HomeView extends VerticalLayout {
     	header.setSpacing(false);
     	header.setAlignItems(Alignment.CENTER);
     	
-    	H1 titolo = new H1("AccessiBg");
+    	H1 titolo = new H1("Università degli Studi di Bergamo");
     	titolo.addClassName(LumoUtility.Margin.Bottom.SMALL);
     	
-    	H2 sottotitolo = new H2("Sedi universitarie di Bergamo");
+    	H2 sottotitolo = new H2("Sedi universitarie");
     	sottotitolo.addClassNames(LumoUtility.TextColor.SECONDARY, LumoUtility.FontSize.LARGE);
     	
     	header.add(titolo, sottotitolo);

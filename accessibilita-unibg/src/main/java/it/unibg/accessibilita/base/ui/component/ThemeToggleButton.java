@@ -8,16 +8,18 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.dom.ThemeList;
 import com.vaadin.flow.theme.lumo.Lumo;
 
-public class ThemeToggleButton extends Button{
+public class ThemeToggleButton extends AppButton{
 	
 	public ThemeToggleButton() {
 		
-		super("Tema Scuro", VaadinIcon.MOON_O.create());
+		super();
 		
 		addThemeVariants(ButtonVariant.LUMO_TERTIARY, ButtonVariant.LUMO_SMALL);
-		getStyle().set("padding-left", "0");
 		getElement().setAttribute("aria-label", "Cambia tema");
 		
+		ThemeList themeList = UI.getCurrent().getElement().getThemeList();
+		boolean isDarkNow = themeList.contains(Lumo.DARK);
+		updateVisuals(isDarkNow);
 		addClickListener(this::handleClick);
 	}
 	
@@ -28,15 +30,15 @@ public class ThemeToggleButton extends Button{
 		if (isDark) {
 			//scuro -> chiaro
 			themeList.remove(Lumo.DARK);
-			update(false);
+			updateVisuals(false);
 		} else {
 			//chiaro -> scuro
 			themeList.add(Lumo.DARK);
-			update(true);
+			updateVisuals(true);
 		}
 	}
 	
-	public void update(boolean isDarkActive) {
+	public void updateVisuals(boolean isDarkActive) {
 	if(isDarkActive) {
 		setIcon(VaadinIcon.SUN_O.create());
         setText("Tema Chiaro");

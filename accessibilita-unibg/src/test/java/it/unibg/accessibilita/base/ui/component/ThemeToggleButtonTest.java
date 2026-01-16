@@ -9,14 +9,14 @@ public class ThemeToggleButtonTest {
 	@Test
 	public void visualizzaTemaChiaro(){
 		ThemeToggleButton btn = new ThemeToggleButton();
-		btn.update(true);
+		btn.updateVisuals(true);
 		assertEquals("Tema Chiaro", btn.getText());
 	}
 	
 	@Test
 	public void visualizzaTemaScuro(){
 		ThemeToggleButton btn = new ThemeToggleButton();
-		btn.update(false);
+		btn.updateVisuals(false);
 		assertEquals("Tema Scuro", btn.getText());
 	
 	}
