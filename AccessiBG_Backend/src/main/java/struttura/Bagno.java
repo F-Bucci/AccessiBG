@@ -8,9 +8,8 @@ package AccessiBG_ClassDiagram;
 
 
 ***********************************************************/
-=======
 
->>>>>>> 2846466b3d54f334e39a854b99abb1ab25d0eb8d
+
 package struttura;
 
 public class Bagno extends Stanza
