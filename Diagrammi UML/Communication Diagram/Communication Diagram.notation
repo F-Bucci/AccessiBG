@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/gmfdiag/style" xmi:id="_gWJwAPSSEfCaLZtMFZMa6g" type="PapyrusUMLCommunicationDiagram" name="Communication Diagram" measurementUnit="Pixel">
+  <children xsi:type="notation:Shape" xmi:id="_gWJwAfSSEfCaLZtMFZMa6g" type="Interaction_Shape">
+    <children xsi:type="notation:DecorationNode" xmi:id="_gWJwAvSSEfCaLZtMFZMa6g" type="Interaction_NameLabel"/>
+    <children xsi:type="notation:DecorationNode" xmi:id="_gWJwA_SSEfCaLZtMFZMa6g" type="Interaction_FloatingNameLabel">
+      <layoutConstraint xsi:type="notation:Location" xmi:id="_gWJwBPSSEfCaLZtMFZMa6g" x="50"/>
+    </children>
+    <children xsi:type="notation:BasicCompartment" xmi:id="_gWJwBfSSEfCaLZtMFZMa6g" type="Interaction_SubfragmentCompartment">
+      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_gWJwBvSSEfCaLZtMFZMa6g"/>
+    </children>
+    <element href="Communication%20Diagram.uml#_gWGssPSSEfCaLZtMFZMa6g"/>
+    <layoutConstraint xsi:type="notation:Bounds" xmi:id="_gWJwB_SSEfCaLZtMFZMa6g"/>
+  </children>
+  <styles xsi:type="notation:StringValueStyle" xmi:id="_gWJwCPSSEfCaLZtMFZMa6g" name="diagram_compatibility_version" stringValue="1.4.0"/>
+  <styles xsi:type="notation:DiagramStyle" xmi:id="_gWJwCfSSEfCaLZtMFZMa6g"/>
+  <styles xsi:type="style:PapyrusDiagramStyle" xmi:id="_gWJwCvSSEfCaLZtMFZMa6g" diagramKindId="org.eclipse.papyrus.uml.diagram.communication">
+    <owner href="Communication%20Diagram.uml#_gS95IPSSEfCaLZtMFZMa6g"/>
+  </styles>
+  <element href="Communication%20Diagram.uml#_gWGssPSSEfCaLZtMFZMa6g"/>
+</notation:Diagram>
