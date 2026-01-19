@@ -49,7 +49,7 @@ public class ImageCard extends Div{
 		Span indirizzoSpan = new Span(indirizzo);
 		indirizzoSpan.addClassNames(LumoUtility.TextColor.SECONDARY, LumoUtility.FontSize.SMALL);
 		
-		add(imageContainer, nomeSpan, indirizzoSpan);
+		add(nomeSpan, indirizzoSpan, imageContainer);
 		
 		
 		
@@ -61,6 +61,6 @@ public class ImageCard extends Div{
 		}
 		
 		String urlLower = url.toLowerCase();
-		return urlLower.endsWith(".jpg");
+		return urlLower.endsWith(".webp");
 	}
 }

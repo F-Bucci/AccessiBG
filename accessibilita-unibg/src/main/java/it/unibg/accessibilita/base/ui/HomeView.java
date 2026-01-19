@@ -1,5 +1,8 @@
 package it.unibg.accessibilita.base.ui;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.card.Card;
 import com.vaadin.flow.component.html.Div;
@@ -19,6 +22,9 @@ import com.vaadin.flow.theme.lumo.LumoIcon;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import com.vaadin.flow.theme.lumo.LumoUtility.Gap;
 
+import Accessibilita.AccessiBG_sqlite.CreateDB;
+import Accessibilita.AccessiBG_sqlite.Sede;
+import Accessibilita.AccessiBG_sqlite.SedeDAO;
 import it.unibg.accessibilita.base.ui.component.AppFooter;
 import it.unibg.accessibilita.base.ui.component.ImageCard;
 import it.unibg.accessibilita.base.ui.component.ViewToolbar;
@@ -77,14 +83,10 @@ public class HomeView extends VerticalLayout {
     }
     
     private void addCards(Div container) {
-    	container.add(new ImageCard("Sede di Dalmine", "via Pasubio, 3", null));
-        container.add(new ImageCard("Sede di Kilometro Rosso", "via Stezzano, 87", null));
-        container.add(new ImageCard("Sede di Caniana", "via dei Caniana, 2", null));
-        container.add(new ImageCard("Sede di Pignolo", "via Pignolo, 123", null));
-        container.add(new ImageCard("Sede di Sant'Agostino", "piazzale Sant'Agostino, 2", null));
-        container.add(new ImageCard("Sede di Rosate", "piazza Rosate, 2", null));
-        container.add(new ImageCard("Sede di Salvecchio", "via Salvecchio, 19", null));
-        container.add(new ImageCard("Sede di Palazzo Bassi-Rathgeb", "via Pignolo, 76", null));
+    	Connection conn=CreateDB.getConnection();
+    	for (Sede s: SedeDAO.findAll(conn)) {
+			container.add(new ImageCard(s.getFacolta(), s.getIndirizzo(), s.getPathFoto()));
+		}
     }
     
 }

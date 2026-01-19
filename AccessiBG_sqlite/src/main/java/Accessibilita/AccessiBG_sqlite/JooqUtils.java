@@ -7,8 +7,7 @@ import java.sql.SQLException;
 
 public class JooqUtils {
 
-	    public static DSLContext getDSL() throws SQLException {
-	        Connection conn = CreateDB.getConnection();
+	    public static DSLContext getDSL(Connection conn) {
 	        return DSL.using(conn, SQLDialect.SQLITE);
 	    }
 }

@@ -1,4 +1,3 @@
-
 package struttura;
 
 public class Bagno extends Stanza

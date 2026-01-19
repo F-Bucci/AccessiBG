@@ -5,8 +5,7 @@ public class CreateTable {
 	
 	public static void creaTabelle(Connection connect) {	
 		try {
-			Connection conn= connect;
-			Statement stmt = conn.createStatement();
+			Statement stmt = connect.createStatement();
 			stmt.execute("PRAGMA foreign_keys = ON");
 			stmt.execute("""
 		            CREATE TABLE IF NOT EXISTS sede (
@@ -35,7 +34,6 @@ public class CreateTable {
 					 )
 				""");
 			stmt.close();
-			conn.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
