@@ -80,12 +80,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_kJIiwNH-EfCxiNKW-0b_Pw" name="Aula">
       <generalization xmi:type="uml:Generalization" xmi:id="_qMl6ANH-EfCxiNKW-0b_Pw" general="_cQDtsNH-EfCxiNKW-0b_Pw"/>
-<<<<<<< HEAD:ClassDiagramm-v1.0/AccessiBG_ClassDiagram.uml
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_055rUNtAEfCJqNqr0OlHxQ" name="capienza">
-=======
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_l7Sc4NH-EfCxiNKW-0b_Pw" name=""/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_055rUNtAEfCJqNqr0OlHxQ" name="capienza" visibility="private">
->>>>>>> 2846466b3d54f334e39a854b99abb1ab25d0eb8d:ClassDiagramm-v1.0/Accessibilita'-ClassDiagramm.uml
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_55VZwNtAEfCJqNqr0OlHxQ" name="postiCarrozzina" visibility="private">
@@ -340,5 +335,6 @@
     </profileApplication>
   </uml:Model>
   <Codegen:GeneratorHint xmi:id="_3ikMUPFdEfCQiL03duEjZw" base_Element="_62WzgNH8EfCxiNKW-0b_Pw" generatorID="Standard Java">
-    <language xmi:type="Codegen:Language" href="pathmap://Codegen_PROFILES/languages.uml#_2Zt6YCjREeayco6FJ_OtTQ"/></Codegen:GeneratorHint>
+    <language xmi:type="Codegen:Language" href="pathmap://Codegen_PROFILES/languages.uml#_2Zt6YCjREeayco6FJ_OtTQ"/>
+  </Codegen:GeneratorHint>
 </xmi:XMI>
