@@ -6,11 +6,11 @@ class Database_SQLite
 class Database_Firebase
 
 
-Utente - WebappConMaven : > 1: Accesso \n< 1.3: Visualizza Home con Sedi \n> 2: RichiestaVisualizzaSede(Sede) \n< 2.3: VisualizzaSede(Sede) \n> 3: RichiestaVisualizzaEdificio(Edificio) \n< 3.3: VisualizzaEdificio(Edificio) \n> 4: RichiestaVisualizzaPiano(Piano) \n< 4.3: VisualizzaPiano(Piano) \n> 5.1: RichiestaVisualizzaServizi(Piano) \n< 5.1.3: VisualizzaServizi(Piano) \n> 5.2: RichiestaVisualizzaStanza(Stanza) \n< 5.2.3: VisualizzaStanza(Stanza)
+Utente - WebappConMaven : > 1: Accesso \n< 1.3: Visualizza Home con Sedi \n> 2: RichiestaVisualizzaViewDiUnIstanza(istanzaDiRiferimento) \n< 2.3: VisualizzaViewDiUnIstanza(istanzaDiRiferimento) 
 
-WebappConMaven - Database_SQLite : > 1.1: RichiestaSedi()\n< 1.1.1: InvioSedi() \n> 2.1: RichiestaInfoSede(Sede) \n< 2.1.1: InvioInfoSede(Sede) \n> 3.1: RichiestaInfoEdificio(Edificio) \n< 3.1.1: InvioInfoEdificio(Edificio) \n> 4.1: RichiestaInfoPiano(Piano) \n< 4.1.1: InvioInfoPiano(Piano) \n> 5.1.1: RichiestaServiziPiano(Piano) \n< 5.1.1.1: InvioServiziPiano(Piano) \n> 5.2.1: RichiestaInfoStanza(Stanza) \n< 5.2.1.1: InvioInfoStanza(Stanza)
+WebappConMaven - Database_SQLite : > 1.1: RichiestaSedi()\n< 1.1.1: InvioSedi() \n> 2.1: RichiestaInfoDiUnIstanza(istanzaDiRiferimento) \n< 2.1.1: InvioInfoDiUnIstanza(istanzaDiRiferimento)
 
-WebappConMaven ---- Database_Firebase : > 1.2: RichiestaImmaginiSedi() \n< 1.2.1: InvioImmaginiSedi() \n> 2.2: RichiestaImmaginiSede(Sede) \n< 2.2.1: InvioImmaginiSede(Sede) \n> 3.2: RichiestaImmaginiEdificio(Edificio) \n< 3.2.1: InvioImmaginiEdificio(Edificio) \n> 4.2: RichiestaImmaginiPiano(Piano) \n< 4.2.1: InvioImmaginiPiano(Piano) \n> 5.2.2: RichiestaImmaginiStanza(Stanza) \n< 5.2.2.1: InvioImmaginiStanza(Stanza)
+WebappConMaven ---- Database_Firebase : > 1.2: RichiestaImmaginiSedi() \n< 1.2.1: InvioImmaginiSedi() \n> 2.2: RichiestaImmaginiDiUnIstanza(istanzaDiRiferimento) \n< 2.2.1: InvioImmaginiDiUnIstanzaS(istanzaDiRiferimento)
 
 
 @enduml
