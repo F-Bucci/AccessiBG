@@ -25,13 +25,13 @@ public class InsertInDB{
 	}
 
 	public void insRecordSedi() {
-		Sede ing = new Sede("Ingegneria", "via A. Einstein 2", "img/sedeDalmine.webp");
-		sedeDAO.insert(ing); // insert non è più statico!
+		Sede ing = new Sede("Ingegneria", "via A. Einstein 2", "/sedeDalmine.webp");
+		sedeDAO.insert(ing); 
     
-		Sede uma = new Sede("Umanistico", "piazzale Sant'Agostino, 2", "img/sedeCittaAlta.webp");
+		Sede uma = new Sede("Umanistico", "piazzale Sant'Agostino, 2", "/sedeCittaAlta.webp");
     	sedeDAO.insert(uma);
 
-    	Sede eco = new Sede("Economico-giuridico", "via dei Caniana, 2", "img/sedeCaniana.webp");
+    	Sede eco = new Sede("Economico-giuridico", "via dei Caniana, 2", "/sedeCaniana.webp");
     	sedeDAO.insert(eco);
 	}
 }

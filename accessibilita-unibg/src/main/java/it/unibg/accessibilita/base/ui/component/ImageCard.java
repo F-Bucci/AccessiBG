@@ -56,11 +56,12 @@ public class ImageCard extends Div{
 	}
 
 	private boolean isUrlValid(String url) {
-		if (url==null || url.trim().isEmpty()) {
+		if (url==null ) {
+				//|| url.trim().isEmpty()
 			return false;
 		}
-		
-		String urlLower = url.toLowerCase();
-		return urlLower.endsWith(".webp");
+		else {return true;}
+		/*String urlLower = url.toLowerCase();
+		return urlLower.endsWith(".webp");*/
 	}
 }
