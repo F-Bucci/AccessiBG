@@ -2,6 +2,7 @@ package it.unibg.accessibilita.base.ui;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.card.Card;
@@ -31,41 +32,31 @@ import it.unibg.accessibilita.base.ui.component.ViewToolbar;
 
 @Route(value = "", layout = MainLayout.class) 
 public class HomeView extends VerticalLayout { 
-
-    public HomeView() {
+	
+	private final SedeDAO sedeDAO;
+	
+    public HomeView(SedeDAO sedeDAO, CreateDB createDB) {
     	
-    	setSpacing(true);
-    	setPadding(true);
+    	this.sedeDAO = sedeDAO;
+    	
+    	createDB.crea();
+    	
     	setSizeFull();
-    	setDefaultHorizontalComponentAlignment(Alignment.CENTER);
-
-    	VerticalLayout header = createHeader();
-    	
-    	Div grigliaCard = createGrigliaCards();
-    	addCards(grigliaCard);
-    	
-    	AppFooter footer = new AppFooter();
-    	
-    	add(header, grigliaCard, footer);
-    	
-    	//espande la griglia su tutta la pagina spingendo il footer in fondo.
-    	expand(grigliaCard);
-    }
-    
-    private VerticalLayout createHeader() {
-    	VerticalLayout header = new VerticalLayout();
-    	header.setPadding(false);
-    	header.setSpacing(false);
-    	header.setAlignItems(Alignment.CENTER);
+    	setAlignItems(Alignment.CENTER);
     	
     	H1 titolo = new H1("Università degli Studi di Bergamo");
-    	titolo.addClassName(LumoUtility.Margin.Bottom.SMALL);
-    	
+    	titolo.addClassNames(LumoUtility.FontSize.XLARGE, LumoUtility.TextAlignment.CENTER);
     	H2 sottotitolo = new H2("Sedi universitarie");
-    	sottotitolo.addClassNames(LumoUtility.TextColor.SECONDARY, LumoUtility.FontSize.LARGE);
+    	sottotitolo.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.TextAlignment.CENTER);
+    	Div container = createGrigliaCards(); 
+    	Div spacer = new Div();
+        spacer.addClassName(LumoUtility.Flex.GROW);
+    	AppFooter footer = new AppFooter();
+    	footer.setWidthFull();
+    	add(titolo, sottotitolo, container, spacer,  footer);
+        addCards(container);
     	
-    	header.add(titolo, sottotitolo);
-    	return header;
+
     }
     
     private Div createGrigliaCards(){
@@ -83,10 +74,45 @@ public class HomeView extends VerticalLayout {
     }
     
     private void addCards(Div container) {
+    	try {
+    		List<Sede> sedi = sedeDAO.findAll();
+    		
+    		if(sedi.isEmpty()) {
+    			System.out.println("DB vuoto");
+    		}for(Sede s : sedi) {
+        		
+        		container.add(new ImageCard(s.getFacolta(), s.getIndirizzo(), s.getPathFoto()));
+        	}
+    		
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    		container.add(new Paragraph("Errore Database: " + e.getMessage()));
+    	}
+    }
+}
+  /*  
+    private VerticalLayout createHeader() {
+    	VerticalLayout header = new VerticalLayout();
+    	header.setPadding(false);
+    	header.setSpacing(false);
+    	header.setAlignItems(Alignment.CENTER);
+    	
+    	H1 titolo = new H1("Università degli Studi di Bergamo");
+    	titolo.addClassName(LumoUtility.Margin.Bottom.SMALL);
+    	
+    	H2 sottotitolo = new H2("Sedi universitarie");
+    	sottotitolo.addClassNames(LumoUtility.TextColor.SECONDARY, LumoUtility.FontSize.LARGE);
+    	
+    	header.add(titolo, sottotitolo);
+    	return header;
+    }
+    
+
+    
+    private void addCards(Div container) {
     	Connection conn=CreateDB.getConnection();
-    	for (Sede s: SedeDAO.findAll(conn)) {
+    	for (Sede s: SedeDAO.findAll()) {
 			container.add(new ImageCard(s.getFacolta(), s.getIndirizzo(), s.getPathFoto()));
 		}
     }
-    
-}
+ */   

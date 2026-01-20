@@ -32,10 +32,10 @@ public class Sede {
 	public void setIndirizzo(String indirizzo) {this.indirizzo = indirizzo;}
 	
 	public String getFacolta() {return facolta;}
-	public void setNome(String facolta) {this.facolta = facolta;}
+	public void setFacolta(String facolta) {this.facolta = facolta;}
 	
 	public String getPathFoto() {return pathFoto;}
-	public void setFacolta(String pathFoto) {this.pathFoto = pathFoto;}
+	public void setPathFoto(String pathFoto) {this.pathFoto = pathFoto;}
 	
 	public List<Edificio> getEdifici(){ return edifici;}
 	public void setEdifici(List<Edificio> edifici) {this.edifici = edifici;}

@@ -1,4 +1,4 @@
-package Accessibilita.AccessiBG_sqlite;
+/*package Accessibilita.AccessiBG_sqlite;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -13,3 +13,4 @@ public class App {
 		conn.close();
     }
 }
+*/
