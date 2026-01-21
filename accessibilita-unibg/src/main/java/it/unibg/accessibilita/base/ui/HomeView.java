@@ -23,8 +23,8 @@ import com.vaadin.flow.theme.lumo.LumoIcon;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import com.vaadin.flow.theme.lumo.LumoUtility.Gap;
 
+import Accessibilita.AccessiBG_Backend.Sede;
 import Accessibilita.AccessiBG_sqlite.CreateDB;
-import Accessibilita.AccessiBG_sqlite.Sede;
 import Accessibilita.AccessiBG_sqlite.SedeDAO;
 import it.unibg.accessibilita.base.ui.component.AppFooter;
 import it.unibg.accessibilita.base.ui.component.ImageCard;
@@ -36,9 +36,8 @@ public class HomeView extends VerticalLayout {
 	private final SedeDAO sedeDAO;
 	
     public HomeView(SedeDAO sedeDAO, CreateDB createDB) {
-    	
+    	//Collegamento DB
     	this.sedeDAO = sedeDAO;
-    	
     	createDB.crea();
     	
     	setSizeFull();
@@ -55,8 +54,6 @@ public class HomeView extends VerticalLayout {
     	footer.setWidthFull();
     	add(titolo, sottotitolo, container, spacer,  footer);
         addCards(container);
-    	
-
     }
     
     private Div createGrigliaCards(){
@@ -83,7 +80,6 @@ public class HomeView extends VerticalLayout {
         		
         		container.add(new ImageCard(s.getFacolta(), s.getIndirizzo(), s.getPathFoto()));
         	}
-    		
     	} catch (Exception e) {
     		e.printStackTrace();
     		container.add(new Paragraph("Errore Database: " + e.getMessage()));
@@ -105,14 +101,4 @@ public class HomeView extends VerticalLayout {
     	
     	header.add(titolo, sottotitolo);
     	return header;
-    }
-    
-
-    
-    private void addCards(Div container) {
-    	Connection conn=CreateDB.getConnection();
-    	for (Sede s: SedeDAO.findAll()) {
-			container.add(new ImageCard(s.getFacolta(), s.getIndirizzo(), s.getPathFoto()));
-		}
-    }
- */   
+    }*/   

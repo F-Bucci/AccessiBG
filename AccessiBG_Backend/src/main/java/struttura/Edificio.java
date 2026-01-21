@@ -4,6 +4,8 @@ package struttura;
 import java.util.ArrayList;
 import java.util.List;
 
+import Accessibilita.AccessiBG_Backend.Sede;
+
 public class Edificio {
 	private String indirizzo;
 	private String nome;

@@ -10,6 +10,8 @@ package AccessiBG_ClassDiagram;
 ***********************************************************/
 package struttura;
 
+import Accessibilita.AccessiBG_Backend.Sede;
+
 /**
  * 
  */

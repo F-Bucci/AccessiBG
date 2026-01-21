@@ -5,18 +5,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class CreateDB {
 	
-	private final SedeDAO sedeDAO;
+	private final CreateTable createTable;
 	private final InsertInDB insertInDB;
 	
-	public CreateDB(SedeDAO sedeDAO, InsertInDB insertInDB) {
-		this.sedeDAO = sedeDAO;
+	public CreateDB(CreateTable createTable, InsertInDB insertInDB) {
+		this.createTable = createTable;
 		this.insertInDB = insertInDB;
 	}
 	
 public void crea() {
-		
-	sedeDAO.createTableIfNotExists();
-	
-	if(sedeDAO.findAll().isEmpty()) {insertInDB.insRecordSedi();}
+	createTable.createTable();
+	insertInDB.insRecordSedi();
 	}
 }

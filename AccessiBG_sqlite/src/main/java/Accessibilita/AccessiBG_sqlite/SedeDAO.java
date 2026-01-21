@@ -4,9 +4,11 @@ import org.jooq.DSLContext;
 import static org.jooq.impl.DSL.*;
 
 import org.springframework.stereotype.Repository;
+
+import Accessibilita.AccessiBG_Backend.Sede;
+
 import java.util.ArrayList;
 import java.util.List;
-
 @Repository
 public class SedeDAO {
 	
@@ -16,14 +18,6 @@ public class SedeDAO {
 		this.dsl = dsl;
 	}
 
-	public void createTableIfNotExists() {
-		dsl.execute("CREATE TABLE IF NOT EXISTS sede (" + 
-                "facolta TEXT PRIMARY KEY, " +
-                "indirizzo TEXT, " +
-                "pathFoto TEXT" +
-                ")");
-	}
-	
 	public void insert(Sede s) {
 		dsl.insertInto(table("sede"), field("facolta"), field("indirizzo"), field("pathFoto"))
         .values(s.getFacolta(), s.getIndirizzo(), s.getPathFoto())
