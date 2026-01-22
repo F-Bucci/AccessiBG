@@ -1,14 +1,15 @@
-package it.unibg.accessibilita.e2e;
+package it.unibg.accessibilita.e2e.components;
 
+import it.unibg.accessibilita.e2e.BaseE2ETest;
 import com.microsoft.playwright.Locator;
 
 import org.junit.jupiter.api.Test;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
-public class ThemeButtonIT extends BaseE2ETest {
+public class ThemeToggleButtonIT extends BaseE2ETest {
 	
 	@Test
-	void testClickCambiaTema() {
+	void clickCambiaTema() {
 		page.navigate("http://localhost:8080/");
 		
 		Locator themeButton = page.getByLabel("Cambia Tema");
