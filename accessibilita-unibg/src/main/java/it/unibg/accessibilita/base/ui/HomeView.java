@@ -1,34 +1,18 @@
 package it.unibg.accessibilita.base.ui;
 
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.List;
-
-import com.vaadin.flow.component.Composite;
-import com.vaadin.flow.component.card.Card;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Paragraph;
-import com.vaadin.flow.component.icon.Icon;
-import com.vaadin.flow.component.orderedlayout.FlexComponent;
-import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
-import com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyContentMode;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.router.Menu;
-import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.theme.lumo.LumoIcon;
 import com.vaadin.flow.theme.lumo.LumoUtility;
-import com.vaadin.flow.theme.lumo.LumoUtility.Gap;
-
 import Accessibilita.AccessiBG_Backend.Sede;
 import Accessibilita.AccessiBG_sqlite.CreateDB;
 import Accessibilita.AccessiBG_sqlite.SedeDAO;
 import it.unibg.accessibilita.base.ui.component.AppFooter;
 import it.unibg.accessibilita.base.ui.component.ImageCard;
-import it.unibg.accessibilita.base.ui.component.ViewToolbar;
 
 @Route(value = "", layout = MainLayout.class) 
 public class HomeView extends VerticalLayout { 
@@ -76,9 +60,16 @@ public class HomeView extends VerticalLayout {
     		
     		if(sedi.isEmpty()) {
     			System.out.println("DB vuoto");
-    		}for(Sede s : sedi) {
-        		
-        		container.add(new ImageCard(s.getFacolta(), s.getIndirizzo(), s.getPathFoto()));
+    		}
+    		for(Sede s : sedi) {
+        		ImageCard card = new ImageCard(s.getFacolta(), s.getIndirizzo(), s.getPathFoto());
+                card.getStyle().set("cursor", "pointer");
+                card.addClickListener(e -> {
+                    card.getUI().ifPresent(ui ->  ui.navigate(SediView.class, s.getFacolta())
+                    );
+                });
+
+        		container.add(card);
         	}
     	} catch (Exception e) {
     		e.printStackTrace();
@@ -86,19 +77,3 @@ public class HomeView extends VerticalLayout {
     	}
     }
 }
-  /*  
-    private VerticalLayout createHeader() {
-    	VerticalLayout header = new VerticalLayout();
-    	header.setPadding(false);
-    	header.setSpacing(false);
-    	header.setAlignItems(Alignment.CENTER);
-    	
-    	H1 titolo = new H1("Università degli Studi di Bergamo");
-    	titolo.addClassName(LumoUtility.Margin.Bottom.SMALL);
-    	
-    	H2 sottotitolo = new H2("Sedi universitarie");
-    	sottotitolo.addClassNames(LumoUtility.TextColor.SECONDARY, LumoUtility.FontSize.LARGE);
-    	
-    	header.add(titolo, sottotitolo);
-    	return header;
-    }*/   
