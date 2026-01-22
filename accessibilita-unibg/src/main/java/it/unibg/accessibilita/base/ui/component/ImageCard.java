@@ -2,14 +2,22 @@ package it.unibg.accessibilita.base.ui.component;
 
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.theme.lumo.LumoIcon;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
 public class ImageCard extends Div{
 
-	public ImageCard(String nome, String indirizzo, String urlImmagine) {
+	public ImageCard(String titolo, String pathFoto) {
+		this(titolo, null, null, pathFoto);
+	}
+	public ImageCard(String titolo, String sottotitolo, String pathFoto) {
+		this(titolo, sottotitolo, null, pathFoto);
+	}
+	public ImageCard(String titolo, String sottotitolo, String descrizione, String pathFoto) {
 		
 		addClassNames(
 				LumoUtility.Background.BASE,
@@ -23,45 +31,72 @@ public class ImageCard extends Div{
 				LumoUtility.BorderColor.CONTRAST_10
 				);
 		
-		
-		// DA MODIFICARE APPENA ABBIAMO FATTO UN COLLEGAMENTO COL DATABASE
 		setWidth("300px");
 		// NON HO IMPOSTATO IL SET HEIGHT COSI VEDIAMO SE LA CARD SI ADATTA AL CONTENUTO
 		
-		// FACCIO UN ELSE IF PER METTERE UNA ICON AL POSTO DI UNA IMMAGINE SE NON TROVATA
+		//IMMAGINE
 		Div imageContainer = new Div();
-		if(isUrlValid(urlImmagine)){
-			Image img = new Image(urlImmagine, nome);
-			img.setWidth("100%");
-			img.setHeight("150px");
-			img.addClassName(LumoUtility.BorderRadius.MEDIUM);
+		imageContainer.setWidthFull();
+		imageContainer.setHeight("180 px");
+		imageContainer.addClassNames(LumoUtility.Display.FLEX, LumoUtility.JustifyContent.CENTER, LumoUtility.AlignItems.CENTER, LumoUtility.Background.CONTRAST_5);
+		
+		String url = fixUrl(pathFoto);
+		if(isUrlValid(url)) {
+			Image img = new Image(url, titolo);
+			img.setWidthFull();
+			img.setHeightFull();
 			img.getStyle().set("object-fit", "cover");
 			imageContainer.add(img);
-		} else {
+		}else {
 			Icon icon = LumoIcon.PHOTO.create();
-			icon.setSize("50px");
-			imageContainer.add(icon);
+			icon.setSize("48px");
+            icon.setColor("gray");
+            imageContainer.add(icon);
+		}
+		//TESTO
+		
+		VerticalLayout testo = new VerticalLayout();
+		testo.setPadding(true);
+		testo.setSpacing(false);
+		
+		//TITOLO
+		Span titoloSpan = new Span(titolo);
+		titoloSpan.addClassNames(LumoUtility.FontWeight.BOLD, LumoUtility.FontSize.LARGE);
+		testo.add(titoloSpan);
+		
+		//SOTTOTILO
+		if(sottotitolo != null && !sottotitolo.isEmpty()){
+			Span sottoSpan = new Span(sottotitolo);
+			sottoSpan.addClassNames(LumoUtility.TextColor.SECONDARY, LumoUtility.FontSize.SMALL);
+			testo.add(sottoSpan);
 		}
 		
-		Span nomeSpan = new Span(nome);
-		nomeSpan.addClassNames(LumoUtility.FontWeight.BOLD, LumoUtility.FontSize.LARGE);
-		
-		Span indirizzoSpan = new Span(indirizzo);
-		indirizzoSpan.addClassNames(LumoUtility.TextColor.SECONDARY, LumoUtility.FontSize.SMALL);
-		
-		add(nomeSpan, indirizzoSpan, imageContainer);
-		
-		
-		
-	}
-
-	private boolean isUrlValid(String url) {
-		if (url==null ) {
-				//|| url.trim().isEmpty()
-			return false;
+		//DESCRIZIONE 
+		if(descrizione != null && !descrizione.isEmpty()) {
+			Paragraph descP = new Paragraph(descrizione);
+			descP.getStyle().set("display", "-webkit-box");
+            descP.getStyle().set("-webkit-line-clamp", "3"); // Max 3 righe
+            descP.getStyle().set("-webkit-box-orient", "vertical");
+            descP.getStyle().set("overflow", "hidden");
+            
+            testo.add(descP);
 		}
-		else {return true;}
-		/*String urlLower = url.toLowerCase();
-		return urlLower.endsWith(".webp");*/
+		
+		add(imageContainer, testo);
+		
 	}
+	
+	//evita che java vada in crash se dal database arriva un campo vuoto
+	//toglie gli spazi in caso di inserimento accidentale
+	private String fixUrl(String url) {
+        if (url == null || url.trim().isEmpty()) return "";
+        if (url.startsWith("http") || url.startsWith("/")) return url;
+        return "/" + url.trim();
+    }
+	//verifica che le immagini finiscano con .webp
+    private boolean isUrlValid(String url) {
+        if (url == null || url.isEmpty()) return false;
+        String lower = url.toLowerCase();
+        return lower.endsWith(".webp");
+    }
 }
