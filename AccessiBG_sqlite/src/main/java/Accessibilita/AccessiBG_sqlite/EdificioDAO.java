@@ -23,7 +23,7 @@ public class EdificioDAO {
 	public void insert(Edificio e) {
 		dsl.insertInto(table("edificio"), field("nome"),field("indirizzo"),field("orario"), field("pathFoto"), field("facolta"))
 		.values(e.getNome(), e.getIndirizzo(), e.getOrario(), e.getPathFoto(), e.getFacolta())
-		.onConflict(field("nome"))
+		.onConflict(field("nome"), field("facolta"))
 		.doNothing()
 		.execute();
 	}
