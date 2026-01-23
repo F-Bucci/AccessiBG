@@ -28,13 +28,13 @@ public class InsertInDB{
 	}
 	
 	public void insRecordEdifici() {
-		Edificio a = new Edificio("a", "Via Einstein 2", "lun-ven:7.30-20.30 sabato:7.30-13.30", "/dalmineA", "Sede di Dalmine");
+		Edificio a = new Edificio("Edificio A", "Via Einstein 2", "DA LUNEDÍ A VENERDÍ \n" + "7.30-20.30 \n" + "SABATO \n"+ "7.30-13.30", "/dalmineA.webp", "Sede di Dalmine");
 		edificioDAO.insert(a); 
-		Edificio b = new Edificio("b", "viale Marconi 5", "lun-ven:7.30-20.30 sabato:7.30-13.30", "/dalmineB", "Sede di Dalmine");
+		Edificio b = new Edificio("Edificio B", "viale Marconi 5", "DA LUNEDÍ A VENERDÍ \n" + "7.30-20.30 \n" + "SABATO \n"+ "7.30-13.30", "/dalmineB.webp", "Sede di Dalmine");
 		edificioDAO.insert(b);
-		Edificio c = new Edificio("c", "viale Pasubio 7", "lun-ven:7.30-20.30 sabato:7.30-13.30", "/dalmineC", "Sede di Dalmine");
+		Edificio c = new Edificio("Edifcio C", "viale Pasubio 7", "DA LUNEDÍ A VENERDÍ \n" + "7.30-20.30 \n" + "SABATO \n"+ "7.30-13.30", "/dalmineC.webp", "Sede di Dalmine");
 		edificioDAO.insert(c);
-		Edificio d = new Edificio("d", "via Galvani 2", "lun-ven:7.30-20.30 sabato:7.30-13.30", "/dalmineD", "Sede di Dalmine");
+		Edificio d = new Edificio("Edificio D", "via Galvani 2", "DA LUNEDÍ A VENERDÍ \n" + "7.30-20.30 \n" + "SABATO \n"+ "7.30-13.30", "/dalmineD.webp", "Sede di Dalmine");
 		edificioDAO.insert(d);
 	}
 	

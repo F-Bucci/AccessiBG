@@ -19,10 +19,8 @@ public class HomeView extends VerticalLayout {
 	
 	private final SedeDAO sedeDAO;
 	
-    public HomeView(SedeDAO sedeDAO, CreateDB createDB) {
-    	//Collegamento DB
+    public HomeView(SedeDAO sedeDAO) {
     	this.sedeDAO = sedeDAO;
-    	createDB.crea();
     	
     	setSizeFull();
     	setAlignItems(Alignment.CENTER);

@@ -37,7 +37,9 @@ public class ImageCard extends Div{
 		//IMMAGINE
 		Div imageContainer = new Div();
 		imageContainer.setWidthFull();
-		imageContainer.setHeight("180 px");
+		imageContainer.setHeight("200 px");
+		imageContainer.getStyle().set("border-radius", "8px 8px 0 0");
+		imageContainer.getStyle().set("object-fit", "cover");
 		imageContainer.addClassNames(LumoUtility.Display.FLEX, LumoUtility.JustifyContent.CENTER, LumoUtility.AlignItems.CENTER, LumoUtility.Background.CONTRAST_5);
 		
 		String url = fixUrl(pathFoto);

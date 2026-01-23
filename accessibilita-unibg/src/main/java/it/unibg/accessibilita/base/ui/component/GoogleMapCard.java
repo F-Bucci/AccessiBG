@@ -9,7 +9,7 @@ public class GoogleMapCard extends Div {
 /*
 @param urlMappa
 */
-	public GoogleMapCard(String urlMappa) {
+	public GoogleMapCard(String pathMaps) {
 		
 		setWidthFull();
 		setHeight("450px");
@@ -19,7 +19,7 @@ public class GoogleMapCard extends Div {
 				LumoUtility.BoxShadow.SMALL,
 				LumoUtility.Overflow.HIDDEN
 				);
-		IFrame iframe = new IFrame(urlMappa);
+		IFrame iframe = new IFrame(pathMaps);
 		iframe.setSizeFull();
 		iframe.getStyle().set("border", "none");
 		
