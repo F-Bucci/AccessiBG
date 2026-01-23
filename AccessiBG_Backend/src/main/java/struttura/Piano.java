@@ -14,6 +14,8 @@ package struttura;
 import java.util.ArrayList;
 import java.util.List;
 
+import Accessibilita.AccessiBG_Backend.Edificio;
+
 public class Piano {
 
 	public int numero;
