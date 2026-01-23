@@ -17,5 +17,6 @@ public void crea() {
 	createTable.createTable();
 	insertInDB.insRecordSedi();
 	insertInDB.insRecordEdifici();
+	insertInDB.insRecordParcheggio();
 	}
 }

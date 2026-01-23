@@ -1,5 +1,8 @@
 package Accessibilita.AccessiBG_sqlite;
 
+import static org.jooq.impl.DSL.field;
+import static org.jooq.impl.DSL.table;
+
 import java.sql.*;
 
 import org.jooq.DSLContext;
@@ -21,9 +24,12 @@ public class CreateTable {
 				"nome TEXT NOT NULL,"+ "indirizzo TEXT NOT NULL,"+ "orario TEXT NOT NULL,"+ "pathFoto TEXT NOT NULL," +
 				"facolta TEXT NOT NULL, " + "PRIMARY KEY (nome, facolta), " + "FOREIGN KEY (facolta)"+"REFERENCES sede(facolta)"+"ON DELETE CASCADE)");
 		
+		dsl.execute("CREATE TABLE IF NOT EXISTS parcheggio("+
+				"nome TEXT NOT NULL,"+ "tipo TEXT NOT NULL,"+ "postiDisabili INTEGER NOT NULL,"+ "indirizzo TEXT NOT NULL," + "pathFoto TEXT NOT NULL," +
+				"facolta TEXT NOT NULL, " + "PRIMARY KEY (nome, facolta), " + "FOREIGN KEY (facolta)"+"REFERENCES sede(facolta)"+"ON DELETE CASCADE)");
+		
 		dsl.execute("CREATE TABLE IF NOT EXISTS piano("+
 			    "id INTEGER PRIMARY KEY AUTOINCREMENT,"+"numero INTEGER NOT NULL,"+
 				"edificio_nome TEXT NOT NULL,"+"FOREIGN KEY (edificio_nome)"+"REFERENCES edificio(nome)"+"ON DELETE CASCADE)");
-		}	
-		
+		}
 }

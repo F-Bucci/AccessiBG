@@ -8,10 +8,13 @@ import Accessibilita.AccessiBG_Backend.*;
 public class InsertInDB{
 	private final SedeDAO sedeDAO;
 	private final EdificioDAO edificioDAO;
+	private final ParcheggioDAO parcheggioDAO;
 
-	public InsertInDB(SedeDAO sedeDAO, EdificioDAO edificioDAO) {
+
+	public InsertInDB(SedeDAO sedeDAO, EdificioDAO edificioDAO, ParcheggioDAO parcheggioDAO) {
 		this.sedeDAO = sedeDAO;
 		this.edificioDAO=edificioDAO;
+		this.parcheggioDAO=parcheggioDAO;
 	}
 
 	public void insRecordSedi() {
@@ -36,6 +39,11 @@ public class InsertInDB{
 		edificioDAO.insert(c);
 		Edificio d = new Edificio("Edificio D", "via Galvani 2", "DA LUNEDÍ A VENERDÍ \n" + "7.30-20.30 \n" + "SABATO \n"+ "7.30-13.30", "/dalmineD.webp", "Sede di Dalmine");
 		edificioDAO.insert(d);
+	}
+	
+	public void insRecordParcheggio() {
+		Parcheggio p = new Parcheggio("Parcheggio dalmine", TipoParcheggio.LIBERO, true , "Via Galvani 7", "/parcheggioDalmine.webp", "Sede di Dalmine");
+		parcheggioDAO.insert(p);
 	}
 	
 }
