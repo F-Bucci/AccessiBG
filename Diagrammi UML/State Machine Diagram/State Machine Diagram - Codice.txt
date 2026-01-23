@@ -1,0 +1,59 @@
+@startuml
+
+state Webapp{
+
+  [*] --> Interfaccia : Accesso webapp
+
+  state Interfaccia{
+
+    [*] -> View_Home
+    
+    state View_Home{
+      [*] -> Lista_Sedi : Mostra lista sedi
+      Lista_Sedi -> [*] : Mostra sede scelta
+    }
+    
+    View_Home -> View_Sede : Visualizza sede
+    View_Sede -> View_Home : Torna indietro
+    
+    state View_Sede{
+      
+    }
+      
+    View_Sede -> View_Edificio : Visualizza edificio
+    View_Edificio -> View_Sede : Torna indietro
+      
+    state View_Edificio{
+      
+    }
+      
+    View_Edificio -> View_Piano : Visualizza piano
+    View_Piano -> View_Edificio : Torna indietro
+    
+    state View_Piano{
+      
+    }
+    
+    View_Piano -> View_Stanza : Visualizza stanza
+    View_Stanza -> View_Piano : Torna indietro
+    
+    state View_Stanza{
+      
+    }
+    
+  }
+
+  state Menu{
+    
+  }
+  
+  Interfaccia -> Menu : Accesso menu
+  Menu --> Interfaccia : Chiusura menu
+
+  Interfaccia --> [*] : Chiusura webapp
+
+}
+
+
+
+@enduml
