@@ -18,8 +18,10 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
 import Accessibilita.AccessiBG_Backend.Edificio;
+import Accessibilita.AccessiBG_Backend.Parcheggio;
 import Accessibilita.AccessiBG_Backend.Sede;
 import Accessibilita.AccessiBG_sqlite.EdificioDAO;
+import Accessibilita.AccessiBG_sqlite.ParcheggioDAO;
 import Accessibilita.AccessiBG_sqlite.SedeDAO;
 
 import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
@@ -38,10 +40,12 @@ public class SediView extends VerticalLayout implements HasUrlParameter<String>{
 	
 	private final SedeDAO sedeDAO;
 	private final EdificioDAO edificioDAO;
-	public SediView(SedeDAO sedeDAO, EdificioDAO edificioDAO) {
+	private final ParcheggioDAO parcheggioDAO;
+	public SediView(SedeDAO sedeDAO, EdificioDAO edificioDAO, ParcheggioDAO parcheggioDAO) {
 		
 		this.sedeDAO = sedeDAO;
 		this.edificioDAO = edificioDAO;
+		this.parcheggioDAO = parcheggioDAO;
 		
 		setSpacing(false);
 		setPadding(true);
@@ -153,7 +157,26 @@ public class SediView extends VerticalLayout implements HasUrlParameter<String>{
 	
 	private Component createParcheggiContent(Sede sede) {
 		
-		VerticalLayout layout = new VerticalLayout();
-		return layout;
+
+		Div griglia = new Div();
+		griglia.getMaxWidth();
+        griglia.getStyle()
+        .set("display", "grid")
+        .set("grid-template-columns", "repeat(auto-fill, minmax(300px, 1fr))")
+        .set("gap", "40px")
+        .set("padding", "20px 0")
+        .set("justify-content", "center");
+        
+        Div spacer = new Div();
+        spacer.addClassName(LumoUtility.Flex.GROW);
+        
+        List<Parcheggio> parcheggi = sedeDAO.findParcheggioBySede(sede.getFacolta());
+        if(parcheggi.isEmpty()) {return null;}
+        for(Parcheggio p : parcheggi) {
+			ImageCard card = new ImageCard(p.getNome(), p.getIndirizzo(), p.getPathFoto());
+            card.getStyle().set("cursor", "pointer");
+            griglia.add(card, spacer);
+		}
+		return griglia;
 	}
 }

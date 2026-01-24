@@ -4,11 +4,12 @@ import static org.jooq.impl.DSL.field;
 import static org.jooq.impl.DSL.table;
 
 import org.jooq.DSLContext;
+import org.springframework.stereotype.Repository;
 
 import Accessibilita.AccessiBG_Backend.Edificio;
 import Accessibilita.AccessiBG_Backend.Parcheggio;
 import Accessibilita.AccessiBG_Backend.TipoParcheggio;
-
+@Repository
 public class ParcheggioDAO {
 	
 	private final DSLContext dsl;
