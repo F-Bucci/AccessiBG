@@ -32,12 +32,12 @@ public class ImageCard extends Div{
 				);
 		
 		setWidth("300px");
-		// NON HO IMPOSTATO IL SET HEIGHT COSI VEDIAMO SE LA CARD SI ADATTA AL CONTENUTO
+		
 		
 		//IMMAGINE
 		Div imageContainer = new Div();
 		imageContainer.setWidthFull();
-		imageContainer.setHeight("200 px");
+		imageContainer.setHeight("200px");
 		imageContainer.getStyle().set("border-radius", "8px 8px 0 0");
 		imageContainer.getStyle().set("object-fit", "cover");
 		imageContainer.addClassNames(LumoUtility.Display.FLEX, LumoUtility.JustifyContent.CENTER, LumoUtility.AlignItems.CENTER, LumoUtility.Background.CONTRAST_5);

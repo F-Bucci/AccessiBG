@@ -3,7 +3,6 @@ package it.unibg.accessibilita.e2e.views;
 
 import org.junit.jupiter.api.Test;
 import com.microsoft.playwright.Locator;
-import com.microsoft.playwright.Page;
 import java.util.regex.Pattern;
 import it.unibg.accessibilita.e2e.BaseE2ETest;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
