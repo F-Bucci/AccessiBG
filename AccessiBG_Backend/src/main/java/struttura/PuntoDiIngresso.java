@@ -5,6 +5,8 @@ import Accessibilita.AccessiBG_Backend.Edificio;
 
 public class PuntoDiIngresso {
 
+//	tipo ingresso scalini rampa 
+	
 				private String nome;
 				private boolean accessibile;
 				private String descrizione;

@@ -17,9 +17,9 @@ public class PianoDAO {
 	}
 
 	public void insert(Piano p) {
-		dsl.insertInto(table("piano"), field("num"),field("descrizione"))
-		.values(p.getNumero(), p.getDescrizione())
-		.onConflict(field("num"), field("descrizione"))
+		dsl.insertInto(table("piano"), field("num"),field("descrizione"),field("edificio"))
+		.values(p.getNumero(), p.getDescrizione(), p.getEdificio())
+		.onConflict(field("num"), field("edificio"))
 		.doNothing()
 		.execute();
 	}
@@ -35,7 +35,8 @@ public class PianoDAO {
 		if (record != null) {
 			return new Piano(
 					record.get("num", Integer.class),
-					record.get("descrizione", String.class)
+					record.get("descrizione", String.class),
+					record.get("edificio", String.class)
 					);}
 		return null;}
 }

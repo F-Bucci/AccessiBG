@@ -10,10 +10,12 @@ public class Piano {
 
 	public int numero;
 	private String descrizione;
+	private String edificio;
 	
-	public Piano(int numero, String descrizione) {
+	public Piano(int numero, String descrizione, String edificio) {
 		this.numero = numero;
 		this.descrizione = descrizione;
+		this.edificio = edificio;
 	}
 	
 	public int getNumero() { return numero; }
@@ -21,4 +23,8 @@ public class Piano {
 
     public String getDescrizione() { return descrizione; }
     public void setDescrizione(String descrizione) { this.descrizione = descrizione;}
+
+	public String getEdificio() {
+		return edificio;
+	}
 }
