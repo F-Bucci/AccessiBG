@@ -41,25 +41,21 @@ public class SediView extends VerticalLayout implements HasUrlParameter<String>{
 	private final SedeDAO sedeDAO;
 	private final EdificioDAO edificioDAO;
 	private final ParcheggioDAO parcheggioDAO;
+	
 	public SediView(SedeDAO sedeDAO, EdificioDAO edificioDAO, ParcheggioDAO parcheggioDAO) {
-		
 		this.sedeDAO = sedeDAO;
 		this.edificioDAO = edificioDAO;
 		this.parcheggioDAO = parcheggioDAO;
-		
 		setSpacing(false);
 		setPadding(true);
 		setWidthFull();
 		setSizeFull();
-		
 	}
 	
 	@Override
 	public void setParameter(BeforeEvent event, String facolta) {
 		removeAll();
-		
-		try {
-			Sede sede = sedeDAO.findByFacolta(facolta);
+		try {Sede sede = sedeDAO.findByFacolta(facolta);
 			if(sede != null){interfacciaSede(sede);
 			}
 		}catch (Exception e){
@@ -152,12 +148,10 @@ public class SediView extends VerticalLayout implements HasUrlParameter<String>{
 		
 		layout.add(titoloMappa, mappaSede);
 		return layout;
-
 	}
 	
 	private Component createParcheggiContent(Sede sede) {
 		
-
 		Div griglia = new Div();
 		griglia.getMaxWidth();
         griglia.getStyle()

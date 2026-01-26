@@ -1,6 +1,8 @@
 
 package struttura;
 
+import Accessibilita.AccessiBG_Backend.Piano;
+
 public class Distributore {
 
 	public TipoDistributore tipo;

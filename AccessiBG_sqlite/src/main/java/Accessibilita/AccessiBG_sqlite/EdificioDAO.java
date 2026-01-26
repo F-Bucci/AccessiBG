@@ -6,7 +6,7 @@ import static org.jooq.impl.DSL.*;
 
 import org.springframework.stereotype.Repository;
 
-import Accessibilita.AccessiBG_Backend.Edificio;
+import Accessibilita.AccessiBG_Backend.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,7 +60,10 @@ public class EdificioDAO {
 			return new ArrayList<>();
 		}
 	}
+	
+	public List<Piano> findPianoByEdificio(String edificio) {
+	    return dsl
+	        .selectFrom(table("piano"))
+	        .where(field("edificio").eq(edificio))
+	        .fetchInto(Piano.class);}
 }
-	
-	
-

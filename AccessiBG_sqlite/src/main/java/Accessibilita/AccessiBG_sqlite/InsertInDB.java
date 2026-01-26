@@ -42,8 +42,14 @@ public class InsertInDB{
 	}
 	
 	public void insRecordParcheggio() {
-		Parcheggio p = new Parcheggio("Parcheggio dalmine", TipoParcheggio.LIBERO, true , "Via Galvani 7", "/parcheggioDalmine.webp", "Sede di Dalmine");
-		parcheggioDAO.insert(p);
+		Parcheggio sterrato = new Parcheggio("Parcheggio sterrato C", TipoParcheggio.LIBERO, true , "Via Galvani 7", "/parcheggioSterrato.webp", "Sede di Dalmine");
+		parcheggioDAO.insert(sterrato);
+		Parcheggio tenaris = new Parcheggio("Parcheggio asfaltato C", TipoParcheggio.LIBERO, true , "Via Einstein 2", "/parcheggioTenaris.webp", "Sede di Dalmine");
+		parcheggioDAO.insert(tenaris);
+		Parcheggio edA = new Parcheggio("Parcheggio edificio A", TipoParcheggio.DISCO_ORARIO, true , "Via Cavour 2B", "/parcheggioEdA.webp", "Sede di Dalmine");
+		parcheggioDAO.insert(edA);
+		Parcheggio edD = new Parcheggio("Parcheggio edificio C", TipoParcheggio.DISCO_ORARIO, false , "Via Pasubio 2", "/parcheggioEdD.webp", "Sede di Dalmine");
+		parcheggioDAO.insert(edD);
 	}
 	
 }

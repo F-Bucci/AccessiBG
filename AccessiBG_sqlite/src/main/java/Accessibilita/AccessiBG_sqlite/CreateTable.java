@@ -29,7 +29,20 @@ public class CreateTable {
 				"facolta TEXT NOT NULL, " + "PRIMARY KEY (nome, facolta), " + "FOREIGN KEY (facolta)"+"REFERENCES sede(facolta)"+"ON DELETE CASCADE)");
 		
 		dsl.execute("CREATE TABLE IF NOT EXISTS piano("+
-			    "id INTEGER PRIMARY KEY AUTOINCREMENT,"+"numero INTEGER NOT NULL,"+
-				"edificio_nome TEXT NOT NULL,"+"FOREIGN KEY (edificio_nome)"+"REFERENCES edificio(nome)"+"ON DELETE CASCADE)");
+			    "num INTEGER PRIMARY KEY,"+"descrizione TEXT NOT NULL,"+
+				"edificio TEXT NOT NULL,"+"FOREIGN KEY (num, edificio)"+"REFERENCES edificio(nome)"+"ON DELETE CASCADE)");
+		
+		dsl.execute("CREATE TABLE IF NOT EXISTS distributore("+
+			    "id INTEGER PRIMARY KEY,"+"descrizione TEXT NOT NULL,"+
+				"piano INTEGER NOT NULL,"+"FOREIGN KEY (id, piano)"+"REFERENCES piano(num)"+"ON DELETE CASCADE)");
+		
+		dsl.execute("CREATE TABLE IF NOT EXISTS ostacolo("+
+			    "id INTEGER PRIMARY KEY,"+"descrizione TEXT NOT NULL,"+ "pathFoto TEXT NOT NULL, " + 
+				"piano INTEGER NOT NULL,"+"FOREIGN KEY (id, piano)"+"REFERENCES piano(num)"+"ON DELETE CASCADE)");
+		
+		dsl.execute("CREATE TABLE IF NOT EXISTS stanza("+
+			    "nome TEXT PRIMARY KEY,"+"posti INTEGER NOT NULL,"+ "pathFoto TEXT NOT NULL, " + 
+				"piano INTEGER NOT NULL,"+"FOREIGN KEY (NOME, piano)"+"REFERENCES piano(num)"+"ON DELETE CASCADE)");
+		
 		}
 }

@@ -11,6 +11,8 @@ package AccessiBG_ClassDiagram;
 
 package struttura;
 
+import Accessibilita.AccessiBG_Backend.Piano;
+
 public class Ostacolo {
 	private String descrizione;
 	private TipoOstacolo tipo;
