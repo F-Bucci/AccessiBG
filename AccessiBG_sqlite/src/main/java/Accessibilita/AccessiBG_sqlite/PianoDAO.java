@@ -3,10 +3,12 @@ package Accessibilita.AccessiBG_sqlite;
 import static org.jooq.impl.DSL.field;
 import static org.jooq.impl.DSL.table;
 
+import java.util.List;
+
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
 
-import Accessibilita.AccessiBG_Backend.Piano;
+import Accessibilita.AccessiBG_Backend.*;
 
 @Repository
 public class PianoDAO {
@@ -39,4 +41,10 @@ public class PianoDAO {
 					record.get("edificio", String.class)
 					);}
 		return null;}
+	
+	public List<Distributore> findDistributoreByPiano(String piano) {
+	    return dsl
+	        .selectFrom(table("distributore"))
+	        .where(field("piano").eq(piano))
+	        .fetchInto(Distributore.class);}
 }
