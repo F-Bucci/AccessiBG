@@ -62,7 +62,7 @@ public class HomeView extends VerticalLayout {
     		for(Sede s : sedi) {
         		ImageCard card = new ImageCard(s.getFacolta(), s.getIndirizzo(), s.getPathFoto());
                 card.getStyle().set("cursor", "pointer");
-                card.addClickListener(e -> {
+                card.addClickListener(event -> {
                     card.getUI().ifPresent(ui ->  ui.navigate(SediView.class, s.getFacolta())
                     );
                 });

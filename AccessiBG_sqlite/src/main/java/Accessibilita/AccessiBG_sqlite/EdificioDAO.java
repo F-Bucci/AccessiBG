@@ -45,6 +45,29 @@ public class EdificioDAO {
 					);}
 		return null;}
 	
+	// cerca l'edificio in base al nome mi serve per navigazione tra le views
+	public Edificio findByName(String nome) {
+		var record = dsl.select(
+			field("nome"),
+            field("indirizzo"),
+            field("orario"), 
+            field("pathFoto"), 
+            field("facolta")
+		)
+			.from(table("edificio"))	
+			.where(field("nome").eq(nome))
+			.fetchOne();
+		if (record != null) {
+	        return new Edificio(
+	            record.get("nome", String.class),
+	            record.get("indirizzo", String.class),
+	            record.get("orario", String.class),
+	            record.get("pathFoto", String.class),
+	            record.get("facolta", String.class)
+	        );
+	    }
+	    return null;
+	}
 //	gia implementato in sede, potrebbe non servire, da valutare
 	public List<Edificio> findAll(){
 		try {return dsl.selectFrom(table("sede"))

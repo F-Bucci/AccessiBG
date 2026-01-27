@@ -130,6 +130,10 @@ public class SediView extends VerticalLayout implements HasUrlParameter<String>{
 		for(Edificio e : edifici) {
 			ImageCard card = new ImageCard(e.getNome(), e.getIndirizzo(), e.getOrario(), e.getPathFoto());
             card.getStyle().set("cursor", "pointer");
+            card.addClickListener(event -> {
+                card.getUI().ifPresent(ui ->  ui.navigate(EdificiView.class, e.getNome())
+                );
+            });
             griglia.add(card, spacer);
 		}
 		return griglia;
