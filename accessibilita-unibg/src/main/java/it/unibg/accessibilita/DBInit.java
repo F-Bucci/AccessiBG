@@ -3,7 +3,7 @@ package it.unibg.accessibilita;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import Accessibilita.AccessiBG_sqlite.CreateDB;
+import gestione_db.CreateDB;
 
 @Component
 public class DBInit implements CommandLineRunner{

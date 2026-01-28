@@ -1,4 +1,4 @@
-package Accessibilita.AccessiBG_sqlite;
+package gestione_db;
 
 import org.springframework.stereotype.Service;
 

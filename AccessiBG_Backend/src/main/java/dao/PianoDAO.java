@@ -1,4 +1,4 @@
-package Accessibilita.AccessiBG_Backend;
+package dao;
 
 import static org.jooq.impl.DSL.field;
 import static org.jooq.impl.DSL.table;
@@ -7,6 +7,9 @@ import java.util.List;
 
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
+
+import struttura.Distributore;
+import struttura.Piano;
 
 @Repository
 public class PianoDAO {

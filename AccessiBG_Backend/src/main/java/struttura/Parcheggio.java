@@ -5,8 +5,8 @@
 /*
 package AccessiBG_ClassDiagram;
 ***********************************************************/
-package Accessibilita.AccessiBG_Backend;
-import struttura.ServizioSede;
+package struttura;
+import servizi.ServizioSede;
 
 public class Parcheggio extends ServizioSede {
 

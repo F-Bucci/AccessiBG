@@ -1,6 +1,4 @@
-package Accessibilita.AccessiBG_Backend;
-
-import struttura.TipoDistributore;
+package struttura;
 
 public class Distributore {
 	private int id;

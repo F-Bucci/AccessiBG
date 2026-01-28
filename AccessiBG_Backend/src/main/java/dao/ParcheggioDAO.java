@@ -1,10 +1,13 @@
-package Accessibilita.AccessiBG_Backend;
+package dao;
 
 import static org.jooq.impl.DSL.field;
 import static org.jooq.impl.DSL.table;
 
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
+
+import struttura.Parcheggio;
+import struttura.TipoParcheggio;
 @Repository
 public class ParcheggioDAO {
 	

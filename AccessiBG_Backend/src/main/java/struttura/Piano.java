@@ -4,7 +4,7 @@
 // --------------------------------------------------------
 /*
 ***********************************************************/
-package Accessibilita.AccessiBG_Backend;
+package struttura;
 
 public class Piano {
 

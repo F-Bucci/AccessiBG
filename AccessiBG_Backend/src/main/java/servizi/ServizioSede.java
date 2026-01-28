@@ -1,6 +1,6 @@
-package struttura;
+package servizi;
 
-import Accessibilita.AccessiBG_Backend.Sede;
+import struttura.Sede;
 
 public abstract class ServizioSede {
 	

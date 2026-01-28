@@ -9,9 +9,11 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {
-    "it.unibg.accessibilita",
-    "Accessibilita.AccessiBG_sqlite",
-    "Accessibilita.AccessiBG_Backend"
+		"it.unibg.accessibilita",
+	    "gestione_db",
+	    "dao",
+	    "servizi",
+	    "struttura"
 })
 public class Application implements AppShellConfigurator {
 

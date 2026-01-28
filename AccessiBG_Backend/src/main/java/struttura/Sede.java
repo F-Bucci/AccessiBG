@@ -1,5 +1,5 @@
 
-package Accessibilita.AccessiBG_Backend;
+package struttura;
 
 public class Sede {
 	private String indirizzo;

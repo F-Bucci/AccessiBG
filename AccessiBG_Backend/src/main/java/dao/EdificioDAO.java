@@ -1,10 +1,13 @@
-package Accessibilita.AccessiBG_Backend;
+package dao;
 
 import org.jooq.DSLContext;
 
 import static org.jooq.impl.DSL.*;
 
 import org.springframework.stereotype.Repository;
+
+import struttura.Edificio;
+import struttura.Piano;
 
 import java.util.ArrayList;
 import java.util.List;

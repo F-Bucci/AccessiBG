@@ -7,23 +7,27 @@ package AccessiBG_ClassDiagram;
 
 
 ***********************************************************/
-package struttura;
+package servizi;
 
 /**
  * 
  */
-public enum ServiziPiano {
+public class ServiziRistoro {
+				/**
+				 * 
+				 */
+				public ServiziPiano tipo;
+				/**
+				 * 
+				 */
+				public boolean fuoriServizio;
+				/**
+				 * 
+				 */
+				public String accesPulsantiera;
 	/**
 	 * 
 	 */
-	MACCHINETTE,
-	/**
-	 * 
-	 */
-	DISTRIBUTOREACQUA,
-	/**
-	 * 
-	 */
-	ASCENSORE
-	;
+	public void segnalaGuasto() {
+	}
 }

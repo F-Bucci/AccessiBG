@@ -1,10 +1,8 @@
 
-package Accessibilita.AccessiBG_Backend;
+package struttura;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import struttura.PuntoDiIngresso;
 
 public class Edificio {
 	private String indirizzo;

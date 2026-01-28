@@ -9,7 +9,7 @@ package AccessiBG_ClassDiagram;
 
 ***********************************************************/
 
-package Accessibilita.AccessiBG_Backend;
+package struttura;
 
 
 public enum TipoParcheggio {

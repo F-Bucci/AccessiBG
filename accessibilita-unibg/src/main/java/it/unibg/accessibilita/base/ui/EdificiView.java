@@ -20,14 +20,14 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoIcon;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
-import Accessibilita.AccessiBG_Backend.Edificio;
-import Accessibilita.AccessiBG_Backend.EdificioDAO;
-import Accessibilita.AccessiBG_Backend.Sede;
-import Accessibilita.AccessiBG_Backend.SedeDAO;
+import dao.EdificioDAO;
+import dao.SedeDAO;
 import it.unibg.accessibilita.base.ui.component.AppFooter;
 import it.unibg.accessibilita.base.ui.component.AppTabs;
 import it.unibg.accessibilita.base.ui.component.Box;
 import it.unibg.accessibilita.base.ui.component.ImageCard;
+import struttura.Edificio;
+import struttura.Sede;
 
 import com.vaadin.flow.router.BeforeEvent;
 

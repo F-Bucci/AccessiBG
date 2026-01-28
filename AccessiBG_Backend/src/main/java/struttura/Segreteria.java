@@ -9,6 +9,8 @@ package AccessiBG_ClassDiagram;
 ***********************************************************/
 package struttura;
 
+import servizi.ServizioSede;
+
 /**
  * 
  */

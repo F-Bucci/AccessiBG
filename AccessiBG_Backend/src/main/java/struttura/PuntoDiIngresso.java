@@ -1,8 +1,6 @@
 
 package struttura;
 
-import Accessibilita.AccessiBG_Backend.Edificio;
-
 public class PuntoDiIngresso {
 
 //	tipo ingresso scalini rampa 

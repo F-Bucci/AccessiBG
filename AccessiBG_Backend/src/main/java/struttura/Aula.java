@@ -10,9 +10,7 @@ package AccessiBG_ClassDiagram;
 ***********************************************************/
 
 
-package Accessibilita.AccessiBG_Backend;
-
-import struttura.Stanza;
+package struttura;
 
 class Aula extends Stanza
  {

@@ -1,9 +1,10 @@
-package Accessibilita.AccessiBG_sqlite;
+package gestione_db;
 
 import org.springframework.stereotype.Service;
 
-import Accessibilita.AccessiBG_Backend.*;
-import struttura.TipoDistributore;
+import dao.*;
+import struttura.*;
+import servizi.*;
 
 @Service
 public class InsertInDB{

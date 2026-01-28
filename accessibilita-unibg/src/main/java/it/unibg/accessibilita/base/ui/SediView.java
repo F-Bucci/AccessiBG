@@ -17,12 +17,9 @@ import com.vaadin.flow.router.Menu;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
-import Accessibilita.AccessiBG_Backend.Edificio;
-import Accessibilita.AccessiBG_Backend.EdificioDAO;
-import Accessibilita.AccessiBG_Backend.Parcheggio;
-import Accessibilita.AccessiBG_Backend.ParcheggioDAO;
-import Accessibilita.AccessiBG_Backend.Sede;
-import Accessibilita.AccessiBG_Backend.SedeDAO;
+import dao.EdificioDAO;
+import dao.ParcheggioDAO;
+import dao.SedeDAO;
 
 import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
 
@@ -32,6 +29,9 @@ import it.unibg.accessibilita.base.ui.component.AppTabs;
 import it.unibg.accessibilita.base.ui.component.Box;
 import it.unibg.accessibilita.base.ui.component.GoogleMapCard;
 import it.unibg.accessibilita.base.ui.component.ImageCard;
+import struttura.Edificio;
+import struttura.Parcheggio;
+import struttura.Sede;
 
 //TEMPORANEAMENTE PER VEDERE LA VIEW FARE: http://localhost:8080/sedi
 //Alcuni attributi vanno modificati dopo aver implementato il Database

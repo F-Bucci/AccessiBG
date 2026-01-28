@@ -1,4 +1,4 @@
-package Accessibilita.AccessiBG_Backend;
+package dao;
 
 import static org.jooq.impl.DSL.field;
 import static org.jooq.impl.DSL.table;
@@ -6,6 +6,7 @@ import static org.jooq.impl.DSL.table;
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
 
+import struttura.Distributore;
 import struttura.TipoDistributore;
 
 @Repository
