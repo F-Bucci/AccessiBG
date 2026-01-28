@@ -9,37 +9,57 @@ state Webapp{
     [*] -> View_Home
     
     state View_Home{
-      [*] -> Lista_Sedi : Mostra lista sedi
-      Lista_Sedi -> [*] : Mostra sede scelta
+      [*] -> Mostra_Sedi : Mostra lista sedi
+      
+      Mostra_Sedi -> [*] : Mostra sede scelta
     }
     
     View_Home -> View_Sede : Visualizza sede
-    View_Sede -> View_Home : Torna indietro
     
     state View_Sede{
-      
+      state c1 <<choice>>
+      state c2 <<choice>>
+      [*] -> c1
+      c1 ---> Mostra_Sede : Visualizza dettagli sede OR Primo accesso
+      c1 --> Mostra_Mappa : Visualizza mappa
+      c1 --> Mostra_Parcheggi : Visualizza parcheggi
+      c1 -> Mostra_Edifici : Visualizza edifici
+      Mostra_Sede -> c2 : Seleziona informazioni
+      Mostra_Mappa -> c2 : Seleziona informazioni
+      Mostra_Parcheggi -> c2 : Seleziona informazioni
+      Mostra_Edifici -> c2 : Seleziona informazioni
+      c2 -> c1
+      Mostra_Edifici --> [*] : Seleziona edificio
     }
       
     View_Sede -> View_Edificio : Visualizza edificio
-    View_Edificio -> View_Sede : Torna indietro
       
     state View_Edificio{
-      
+      state c3 <<choice>>
+      state c4 <<choice>>
+      [*] -> c3
+      c3 --> Mostra_Edificio : Visualizza dettagli edificio OR Primo accesso
+      c3 -> Mostra_Ingressi : Visualizza ingressi
+      Mostra_Edificio -> c4 : Seleziona informazioni
+      Mostra_Edificio -> c4 : Seleziona informazioni
+      c4 -> c3
+      Mostra_Edificio -> Mostra_Struttura_Edificio : Visualizza struttura edificio
+      Mostra_Struttura_Edificio --> [*]
     }
       
-    View_Edificio -> View_Piano : Visualizza piano
-    View_Piano -> View_Edificio : Torna indietro
+    View_Edificio -> View_Struttura : Visualizza struttura
     
-    state View_Piano{
-      
+    state View_Struttura{
+      state c5 <<choice>>
+      state c6 <<choice>>
+      [*] -> c5
+      c5 -> Mostra_Piani
+      c5 -> Mostra_Servizi
+      c5 -> Ricerca_Aula
     }
-    
-    View_Piano -> View_Stanza : Visualizza stanza
-    View_Stanza -> View_Piano : Torna indietro
-    
-    state View_Stanza{
-      
-    }
+
+    state History <<history*>>
+    History -> View_Struttura
     
   }
 
@@ -48,7 +68,7 @@ state Webapp{
   }
   
   Interfaccia -> Menu : Accesso menu
-  Menu --> Interfaccia : Chiusura menu
+  Menu --> History : Chiusura menu
 
   Interfaccia --> [*] : Chiusura webapp
 
