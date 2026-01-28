@@ -1,4 +1,4 @@
-package Accessibilita.AccessiBG_sqlite;
+package Accessibilita.AccessiBG_Backend;
 
 import static org.jooq.impl.DSL.field;
 import static org.jooq.impl.DSL.table;
@@ -6,7 +6,6 @@ import static org.jooq.impl.DSL.table;
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
 
-import Accessibilita.AccessiBG_Backend.*;
 import struttura.TipoDistributore;
 
 @Repository

@@ -30,16 +30,6 @@
       <version>3.50.3.0</version>
     </dependency>
     <dependency>
-        <groupId>org.jooq</groupId>
-        <artifactId>jooq</artifactId>
-        <version>3.19.0</version>
-    </dependency>
-    <dependency>
-    	<groupId>org.springframework.boot</groupId>
-    	<artifactId>spring-boot-starter-jooq</artifactId>
-   	 	<version>3.4.1</version>
-    </dependency>
-    <dependency>
     	<groupId>Accessibilita</groupId>
     	<artifactId>AccessiBG_Backend</artifactId>
    	 	<version>0.0.1-SNAPSHOT</version>

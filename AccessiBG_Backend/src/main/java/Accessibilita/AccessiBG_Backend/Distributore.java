@@ -1,4 +1,3 @@
-
 package Accessibilita.AccessiBG_Backend;
 
 import struttura.TipoDistributore;

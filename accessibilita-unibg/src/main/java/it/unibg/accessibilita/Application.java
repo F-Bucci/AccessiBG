@@ -8,11 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@Theme(value = "default")
 @ComponentScan(basePackages = {
-	    "it.unibg.accessibilita",       
-	    "Accessibilita.AccessiBG_sqlite" 
-	})
+    "it.unibg.accessibilita",
+    "Accessibilita.AccessiBG_sqlite",
+    "Accessibilita.AccessiBG_Backend"
+})
 public class Application implements AppShellConfigurator {
 
     public static void main(String[] args) {

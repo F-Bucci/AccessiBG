@@ -9,8 +9,8 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import Accessibilita.AccessiBG_Backend.Sede;
+import Accessibilita.AccessiBG_Backend.SedeDAO;
 import Accessibilita.AccessiBG_sqlite.CreateDB;
-import Accessibilita.AccessiBG_sqlite.SedeDAO;
 import it.unibg.accessibilita.base.ui.component.AppFooter;
 import it.unibg.accessibilita.base.ui.component.ImageCard;
 

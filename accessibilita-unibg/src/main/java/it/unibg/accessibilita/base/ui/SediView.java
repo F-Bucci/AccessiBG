@@ -18,11 +18,11 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
 import Accessibilita.AccessiBG_Backend.Edificio;
+import Accessibilita.AccessiBG_Backend.EdificioDAO;
 import Accessibilita.AccessiBG_Backend.Parcheggio;
+import Accessibilita.AccessiBG_Backend.ParcheggioDAO;
 import Accessibilita.AccessiBG_Backend.Sede;
-import Accessibilita.AccessiBG_sqlite.EdificioDAO;
-import Accessibilita.AccessiBG_sqlite.ParcheggioDAO;
-import Accessibilita.AccessiBG_sqlite.SedeDAO;
+import Accessibilita.AccessiBG_Backend.SedeDAO;
 
 import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
 

@@ -1,12 +1,10 @@
-package Accessibilita.AccessiBG_sqlite;
+package Accessibilita.AccessiBG_Backend;
 
 import org.jooq.DSLContext;
 
 import static org.jooq.impl.DSL.*;
 
 import org.springframework.stereotype.Repository;
-
-import Accessibilita.AccessiBG_Backend.*;
 
 import java.util.ArrayList;
 import java.util.List;
