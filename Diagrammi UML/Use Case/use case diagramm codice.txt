@@ -1,25 +1,55 @@
 @startuml
 :Utente: as Ut
-:Disabilita motoria: as Ut1
-:Ipovedente: as Ut2
-Ut <|-- Ut1
-Ut <|-- Ut2
 
 package WebApp {
-(selezione impostazione) as (selImp)
-(seleziona sede) as (selSed)
-(selezione servizio) as (selSer)
-(selezione servizio sede) as (selUff)
-(seleziona edificio) as (selEd)
-(seleziona piano) as (selP)
-(selSed) -down-.> (selImp) : extends
-(selUff) -down-.> (selSed) : extends
-(selEd) -down-.-> (selSed) : extends
-(selP) -down-.> (selSer) : include
-(selEd) -down-.> (selP) : include
-(selUff) -down-.-> (selEd) : extends
+(apetura menu laterale) as (menu)
+(selezione preferenze accessibilità) as (pref)
+(selezione tema) as (tema)
+(visualizza sedi universitarie) as (vSedi)
+(visualizza informazioni sede selezionata) as (infoSede)
+(visualizza parcheggi sede) as (park)
+(visualizza mappa sede) as (mappasede)
+(visualizza edifici sede) as (eSedi)
+(seleziona edificio) as (sEdificio)
+(visualizza informazioni edificio selezionato) as (vEdificio)
+(visualizza punti d'ingresso) as (ingresso)
+(filtra punti di ingresso) as (filtraingresso)
+(visualizza struttura edificio) as (struttura)
+(visualizza piani edificio) as (vPiani)
+(visualizza mappa piano e informazioni) as (infoMappa)
+(segnala ostacoli accessibilità) as (ost)
+(ricerca aula) as (raula)
+(visualizza aula) as (vaula)
 
+(menu) <--. (pref) : include
+(menu) <--. (tema) : include
+(vSedi) -down-> (infoSede)
+(infoSede) <--. (park) : include
+(infoSede) <--. (mappasede) : include
+(infoSede) <--. (eSedi) : include
+(eSedi) --> (sEdificio)
+(sEdificio) --> (vEdificio)
+(vEdificio) <-left-. (ingresso) : include
+(ingresso) -left-.> (filtraingresso) : extends
+
+note on link
+  **Condizione:** Utente ha impostato preferenze accessibilità
+end note
+
+(vEdificio) -right-> (struttura)
+(struttura) <--. (vPiani) : <<include>>
+(vPiani) -left-> (infoMappa)
+(infoMappa) <-left-. (ost) :extends
+note on link
+  **Condizione:** Utente ha impostato preferenze accessibilità
+end note
+(vPiani) -right-.> (raula)
+(raula) <-right-. (vaula) : <<extends>>
+note on link
+  **Condizione:** Utente ha inserito un'aula esistente
+end note
 }
-Ut --> (selImp)
+Ut --> (vSedi)
+Ut --> (menu)
 
 @enduml
