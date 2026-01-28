@@ -21,16 +21,16 @@ package WebApp {
 (ricerca aula) as (raula)
 (visualizza aula) as (vaula)
 
-(menu) <--. (pref) : include
-(menu) <--. (tema) : include
+(menu) <--. (pref) : <<include>>
+(menu) <--. (tema) : <<include>>
 (vSedi) -down-> (infoSede)
-(infoSede) <--. (park) : include
-(infoSede) <--. (mappasede) : include
-(infoSede) <--. (eSedi) : include
+(infoSede) <--. (park) : <<include>>
+(infoSede) <--. (mappasede) : <<include>>
+(infoSede) <--. (eSedi) : <<include>>
 (eSedi) --> (sEdificio)
 (sEdificio) --> (vEdificio)
-(vEdificio) <-left-. (ingresso) : include
-(ingresso) -left-.> (filtraingresso) : extends
+(struttura) <-right-. (ingresso) : <<include>>
+(ingresso) -right-.> (filtraingresso) : <<extends>>
 
 note on link
   **Condizione:** Utente ha impostato preferenze accessibilità
@@ -39,11 +39,11 @@ end note
 (vEdificio) -right-> (struttura)
 (struttura) <--. (vPiani) : <<include>>
 (vPiani) -left-> (infoMappa)
-(infoMappa) <-left-. (ost) :extends
+(infoMappa) <-left-. (ost) : <<extends>>
 note on link
   **Condizione:** Utente ha impostato preferenze accessibilità
 end note
-(vPiani) -right-.> (raula)
+(vPiani) -right-> (raula)
 (raula) <-right-. (vaula) : <<extends>>
 note on link
   **Condizione:** Utente ha inserito un'aula esistente
