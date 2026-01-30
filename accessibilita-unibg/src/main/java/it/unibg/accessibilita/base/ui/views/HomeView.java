@@ -1,4 +1,4 @@
-package it.unibg.accessibilita.base.ui;
+package it.unibg.accessibilita.base.ui.views;
 
 import java.util.List;
 import com.vaadin.flow.component.html.Div;

@@ -1,4 +1,4 @@
-package it.unibg.accessibilita.base.ui;
+package it.unibg.accessibilita.base.ui.views;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Composite;

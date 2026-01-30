@@ -1,4 +1,4 @@
-package it.unibg.accessibilita.base.ui;
+package it.unibg.accessibilita.base.ui.views;
 
 import java.util.List;
 
@@ -23,7 +23,6 @@ import dao.SedeDAO;
 
 import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
 
-import it.unibg.accessibilita.base.ui.MainLayout;
 import it.unibg.accessibilita.base.ui.component.AppFooter;
 import it.unibg.accessibilita.base.ui.component.AppTabs;
 import it.unibg.accessibilita.base.ui.component.Box;
