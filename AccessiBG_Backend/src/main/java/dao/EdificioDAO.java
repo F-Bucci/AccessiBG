@@ -22,16 +22,39 @@ public class EdificioDAO {
 	}
 
 	public void insert(Edificio e) {
-		dsl.insertInto(table("edificio"), field("nome"),field("indirizzo"),field("orario"), field("pathFoto"), field("facolta"))
-		.values(e.getNome(), e.getIndirizzo(), e.getOrario(), e.getPathFoto(), e.getFacolta())
-		.onConflict(field("nome"), field("facolta"))
+		dsl.insertInto(
+				table("edificio"),
+				field("nome"),
+				field("indirizzo"),
+				field("orario"),
+				field("pathFoto"),
+				field("facolta")
+		)
+		.values(
+				e.getNome(),
+				e.getIndirizzo(),
+				e.getOrario(),
+				e.getPathFoto(),
+				e.getFacolta()
+		)
+		.onConflict(
+				field("nome"),
+				field("facolta")
+		)
 		.doNothing()
 		.execute();
 	}
 
-//	restituisce edificio in base a nome e facolta, forse non utile, implementato già con sede
+    // restituisce edificio in base a nome e facolta, forse non utile, implementato già con sede
 	public Edificio findByEdificioFacolta(String nome, String facolta) {
-		var record = dsl.select(field("nome"),field("indirizzo"),field("orario"), field("pathFoto"), field("facolta"))
+		var record = dsl
+				.select(
+						field("nome"),
+						field("indirizzo"),
+						field("orario"),
+						field("pathFoto"),
+						field("facolta")
+				)
 				.from(table("edificio"))
 				.where(field("nome").eq(nome)) 
 				.and(field("facolta").eq(facolta))
@@ -43,10 +66,13 @@ public class EdificioDAO {
 					record.get("orario", String.class),
 					record.get("pathFoto", String.class),
 					record.get("facolta", String.class)
-					);}
-		return null;}
+			);
+		}
+		
+		return null;
+	}
 	
-// cerca l'edificio in base al nome mi serve per navigazione tra le views
+    // cerca l'edificio in base al nome mi serve per navigazione tra le views
 	public Edificio findByName(String nome) {
 		var record = dsl.select(
 				field("nome"),
@@ -65,21 +91,24 @@ public class EdificioDAO {
 					record.get("orario", String.class),
 					record.get("pathFoto", String.class),
 					record.get("facolta", String.class)
-					);
+			);
 		}
+		
 		return null;
 	}
-//	gia implementato in sede, potrebbe non servire, da valutare
+	
+	// gia implementato in sede, potrebbe non servire, da valutare
 	public List<Edificio> findAll(){
-		try {return dsl.selectFrom(table("sede"))
-				.fetch(record ->
-				new Edificio(
+		try {return dsl
+				.selectFrom(table("sede"))
+				.fetch(record -> new Edificio(
 						record.get("nome", String.class),
 						record.get("indirizzo", String.class),
 						record.get("orario", String.class),
 						record.get("pathFoto", String.class),
-						record.get("facolta", String.class)));
-		}catch (Exception e) {
+						record.get("facolta", String.class)
+				));
+		} catch(Exception e) {
 			e.printStackTrace();
 			return new ArrayList<>();
 		}
@@ -89,5 +118,6 @@ public class EdificioDAO {
 	    return dsl
 	        .selectFrom(table("piano"))
 	        .where(field("edificio").eq(edificio))
-	        .fetchInto(Piano.class);}
+	        .fetchInto(Piano.class);
+	}
 }

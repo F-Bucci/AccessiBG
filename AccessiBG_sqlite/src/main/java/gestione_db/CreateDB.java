@@ -13,10 +13,12 @@ public class CreateDB {
 		this.insertInDB = insertInDB;
 	}
 	
-public void crea() {
-	createTable.createTable();
-	insertInDB.insRecordSedi();
-	insertInDB.insRecordEdifici();
-	insertInDB.insRecordParcheggio();
+	public void crea() {
+		createTable.createTable();
+		
+		insertInDB.insRecordSedi();
+		insertInDB.insRecordEdifici();
+		insertInDB.insRecordParcheggio();
 	}
+
 }

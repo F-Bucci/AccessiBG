@@ -11,6 +11,7 @@ import struttura.TipoDistributore;
 
 @Repository
 public class DistributoreDAO {
+	
 	private final DSLContext dsl;
 
 	public DistributoreDAO(DSLContext dsl) {
@@ -18,21 +19,45 @@ public class DistributoreDAO {
 	}
 
 	public void insert(Distributore d) {
-		dsl.insertInto(table("distributore"), field("id"),field("tipo"),field("posizione"),field("accessibile"),field("numPiano"))
-		.values(d.getId(), d.getTipo(), d.getPosizione(), d.getAccessibile(), d.getPiano())
-		.onConflict(field("id"), field("numPiano"))
-		.doNothing()
-		.execute();
+		dsl
+			.insertInto(
+					table("distributore"),
+					field("id"),
+					field("tipo"),
+					field("posizione"),
+					field("accessibile"),
+					field("numPiano")
+			)
+			.values(
+					d.getId(),
+					d.getTipo(),
+					d.getPosizione(),
+					d.getAccessibile(),
+					d.getPiano()
+			)
+			.onConflict(
+					field("id"),
+					field("numPiano")
+			)
+			.doNothing()
+			.execute();
 	}
-
-//	restituisce d in base a id e piano, forse non utile, implementato già con sede
+	
+	// restituisce d in base a id e piano, forse non utile, implementato già con sede
 	public Distributore findDistributoreByPiano(int id, int piano) {
 		var record = dsl
-				.select(field("id"),field("tipo"),field("posizione"),field("accessibile"),field("numPiano"))
+				.select(
+						field("id"),
+						field("tipo"),
+						field("posizione"),
+						field("accessibile"),
+						field("numPiano")
+				)
 				.from(table("distributore"))
 				.where(field("id").eq(id))
 				.and(field("piano").eq(piano))
 				.fetchOne();
+		
 		if (record != null) {
 			TipoDistributore tipo = TipoDistributore.valueOf(record.get("tipo", String.class));
 			boolean accessibile = record.get("accessibile", Boolean.class);
@@ -43,5 +68,7 @@ public class DistributoreDAO {
 					accessibile,
 					record.get("numPiano", Integer.class));
 		}
-		return null;}
+		
+		return null;
+	}
 }
