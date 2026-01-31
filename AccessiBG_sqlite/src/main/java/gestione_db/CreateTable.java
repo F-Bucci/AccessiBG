@@ -59,7 +59,17 @@ public class CreateTable {
 			    "nomeEdif TEXT NOT NULL,"+
 			    "FOREIGN KEY (numPiano, nomeEdif) REFERENCES piano(num, nomeEdif) ON DELETE CASCADE" +
 			    ")");
-
+			
+			dsl.execute("CREATE TABLE IF NOT EXISTS puntiAccesso("+
+					"id INTEGER NOT NULL,"+
+					"scale INTEGER NOT NULL,"+
+					"rampe INTEGER NOT NULL,"+
+					"portaTagliafuoco INTEGER NOT NULL,"+
+					"percorsoStrisceIpov INTEGER NOT NULL,"+
+					"edificio TEXT NOT NULL,"+
+					"PRIMARY KEY (id, edificio), " +
+					"FOREIGN KEY (edificio) REFERENCES edificio(nome) ON DELETE CASCADE" +
+					")");
 		/*
 		dsl.execute("CREATE TABLE IF NOT EXISTS ostacolo("+
 			    "id INTEGER PRIMARY KEY,"+"descrizione TEXT NOT NULL,"+ "pathFoto TEXT NOT NULL, " + 
@@ -69,5 +79,6 @@ public class CreateTable {
 			    "nome TEXT PRIMARY KEY,"+"posti INTEGER NOT NULL,"+ "pathFoto TEXT NOT NULL, " + 
 				"piano INTEGER NOT NULL,"+"FOREIGN KEY (NOME, piano)"+"REFERENCES piano(num)"+"ON DELETE CASCADE)");
 		*/
+			
 		}
 }

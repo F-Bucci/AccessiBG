@@ -8,8 +8,7 @@ import java.util.List;
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
 
-import struttura.Distributore;
-import struttura.Piano;
+import struttura.*;
 
 @Repository
 public class PianoDAO {

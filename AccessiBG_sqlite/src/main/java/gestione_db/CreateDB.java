@@ -18,5 +18,7 @@ public void crea() {
 	insertInDB.insRecordSedi();
 	insertInDB.insRecordEdifici();
 	insertInDB.insRecordParcheggio();
+	insertInDB.insRecordPiano();
+	insertInDB.insRecordPuntoIngresso();
 	}
 }

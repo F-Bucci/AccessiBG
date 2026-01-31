@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import struttura.Edificio;
 import struttura.Piano;
+import struttura.PuntoDiIngresso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,4 +91,10 @@ public class EdificioDAO {
 	        .selectFrom(table("piano"))
 	        .where(field("edificio").eq(edificio))
 	        .fetchInto(Piano.class);}
+	
+	public List<PuntoDiIngresso> findIngressoByEdificio(String edificio) {
+	    return dsl
+	        .selectFrom(table("puntiAccesso"))
+	        .where(field("edificio").eq(edificio))
+	        .fetchInto(PuntoDiIngresso.class);}
 }

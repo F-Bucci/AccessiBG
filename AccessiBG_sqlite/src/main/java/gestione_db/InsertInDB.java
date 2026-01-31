@@ -13,13 +13,16 @@ public class InsertInDB{
 	private final ParcheggioDAO parcheggioDAO;
 	private final PianoDAO pianoDAO;
 	private final DistributoreDAO distributoreDAO;
+	private final PuntiDiIngressoDAO puntoDiIngressoDAO;
 
-	public InsertInDB(SedeDAO sedeDAO, EdificioDAO edificioDAO, ParcheggioDAO parcheggioDAO, PianoDAO pianoDAO, DistributoreDAO distributoreDAO) {
+
+	public InsertInDB(SedeDAO sedeDAO, EdificioDAO edificioDAO, ParcheggioDAO parcheggioDAO, PianoDAO pianoDAO, DistributoreDAO distributoreDAO, PuntiDiIngressoDAO puntoDiIngressoDAO) {
 		this.sedeDAO = sedeDAO;
 		this.edificioDAO=edificioDAO;
 		this.parcheggioDAO=parcheggioDAO;
 		this.pianoDAO=pianoDAO;
 		this.distributoreDAO=distributoreDAO;
+		this.puntoDiIngressoDAO=puntoDiIngressoDAO;
 	}
 
 	public void insRecordSedi() {
@@ -55,6 +58,11 @@ public class InsertInDB{
 		parcheggioDAO.insert(edA);
 		Parcheggio edD = new Parcheggio("Parcheggio edificio C", TipoParcheggio.DISCO_ORARIO, false , "Via Pasubio 2", "/parcheggioEdD.webp", "Sede di Dalmine");
 		parcheggioDAO.insert(edD);
+	}
+//	int id, boolean scale, boolean rampe, boolean portaTagliafuoco, boolean percorsoStrisceIpov, String edificio)
+	public void insRecordPuntoIngresso() {
+		PuntoDiIngresso p = new PuntoDiIngresso (1, false, true, false, false, "Edificio D");
+		puntoDiIngressoDAO.insert(p);
 	}
 	
 	public void insRecordPiano() {

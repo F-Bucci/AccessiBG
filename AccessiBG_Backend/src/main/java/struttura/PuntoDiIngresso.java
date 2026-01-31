@@ -4,28 +4,38 @@ package struttura;
 public class PuntoDiIngresso {
 
 //	tipo ingresso scalini rampa 
+	private int id;
+	private boolean scale;
+	private boolean rampe;
+	private boolean portaTagliafuoco;
+	private boolean percorsoStrisceIpov;
+	private String edificio;
+
+	public PuntoDiIngresso(int id, boolean scale, boolean rampe, boolean portaTagliafuoco, boolean percorsoStrisceIpov, String edificio) {
+		this.id=id;
+		this.scale=scale;
+		this.rampe=rampe;
+		this.portaTagliafuoco=portaTagliafuoco;
+		this.percorsoStrisceIpov=percorsoStrisceIpov;
+	}
+
+	public boolean getPercorsoStrisceIpov() {return percorsoStrisceIpov;}
 	
-				private String nome;
-				private boolean accessibile;
-				private String descrizione;
-				private Edificio edificio;
-				
-				public void setEdificio(Edificio edificio) {
-					this.edificio= edificio;
-				}
-				public PuntoDiIngresso() {}
-				
-				public PuntoDiIngresso(String nome, boolean accessibile) {
-					this.nome = nome;
-					this.accessibile = accessibile;
-				}
-				
-				public String getNome() {return nome;}
-				public void setNome(String nome) {this.nome = nome;}
-				
-				public boolean IsAccessibile() {return accessibile;}
-				public void setAccessibile(boolean accessibile) {this.accessibile = accessibile;}
-				
-				public String getDescrizione() {return descrizione;}
-				public void setDescrizione(String descrizione) {this.descrizione = descrizione;}
+	public int getId() {return id;}
+
+	public boolean getScale() {
+		return scale;
+	}
+
+	public boolean getRampe() {
+		return rampe;
+	}
+
+	public boolean getPortaTagliafuoco() {
+		return portaTagliafuoco;
+	}
+
+	public String getEdificio() {
+		return edificio;
+	}
 }
