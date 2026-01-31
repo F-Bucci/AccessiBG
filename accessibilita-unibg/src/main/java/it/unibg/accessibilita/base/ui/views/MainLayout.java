@@ -32,20 +32,20 @@ public final class MainLayout extends AppLayout implements RouterLayout {
     private void createDrawer() {
     	
     	//MENU LATERALE
-        //BOTTONE HOME
+        //CREAZIONE BOTTONE HOME
         AppButton homeBtn = new AppButton("Home", VaadinIcon.HOME.create(), e -> {
             UI.getCurrent().navigate(HomeView.class); 
         });
         homeBtn.setWidthFull(); 
         homeBtn.addClassNames(LumoUtility.JustifyContent.START); 
-        
+        //SEZIONE BOTTONE
         VerticalLayout navSection = new VerticalLayout(homeBtn);
         navSection.setPadding(false);
         navSection.setSpacing(false);
-        //TEMA
+        //CAMBIO TEMA
     	H3 aspettoTitle = new H3("ASPETTO:");
     	aspettoTitle.addClassNames(LumoUtility.FontSize.XSMALL, LumoUtility.TextColor.SECONDARY, LumoUtility.Padding.Horizontal.MEDIUM, LumoUtility.Margin.Top.MEDIUM);
-
+    	//SEZIONE CAMBIO TEMA
         ThemeToggleButton toggleBtn = new ThemeToggleButton();
         toggleBtn.setWidthFull(); 
         toggleBtn.addClassNames(LumoUtility.JustifyContent.START); 
@@ -58,7 +58,7 @@ public final class MainLayout extends AppLayout implements RouterLayout {
         preferenzeTitle.addClassNames(LumoUtility.FontSize.XSMALL, LumoUtility.TextColor.SECONDARY, LumoUtility.Padding.Horizontal.MEDIUM, LumoUtility.Margin.Top.MEDIUM);
         ToggleAccessibilita accessBtn = new ToggleAccessibilita();
         accessBtn.getStyle().set("padding-left", "16px");
-        
+        // SEZIONE PREFERENZE
         VerticalLayout preferenzeSection = new VerticalLayout(preferenzeTitle, accessBtn);
         preferenzeSection.setPadding(false);
         preferenzeSection.setSpacing(false);
@@ -69,7 +69,7 @@ public final class MainLayout extends AppLayout implements RouterLayout {
     	
     	drawerContent.add(navSection);
         drawerContent.add(preferenzeSection);
-    	//PORTA IL TOGGLE IN BASSO
+    	//PORTA IL CAMBIO TEMA IN BASSO
     	Div spacer = new Div();
         drawerContent.add(spacer);
         drawerContent.expand(spacer);

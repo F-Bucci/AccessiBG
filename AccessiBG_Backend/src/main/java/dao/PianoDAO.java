@@ -39,7 +39,7 @@ public class PianoDAO {
 					record.get("num", Integer.class),
 					record.get("descrizione", String.class),
 					record.get("edificio", String.class)
-					);}
+					);}       
 		return null;}
 	
 	public List<Distributore> findDistributoreByPiano(String piano) {

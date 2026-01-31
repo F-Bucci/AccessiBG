@@ -19,8 +19,6 @@ public class ToggleAccessibilita extends Checkbox{
 	            LumoUtility.Display.FLEX,
 	            LumoUtility.AlignItems.CENTER
 	        );
-		//icona
-		//this.icon(VaadinIcon.ACCESSIBILITY.create());
 		
 		//leggo stato iniziale della sessione
 		this.setValue(SessionManager.isAccessibilitaMode());

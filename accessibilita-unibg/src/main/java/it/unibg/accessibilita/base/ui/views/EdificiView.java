@@ -1,5 +1,7 @@
 package it.unibg.accessibilita.base.ui.views;
 
+import java.util.List;
+
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.card.Card;
@@ -21,12 +23,16 @@ import com.vaadin.flow.theme.lumo.LumoIcon;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
 import dao.EdificioDAO;
+import dao.PianoDAO;
 import dao.SedeDAO;
+import it.unibg.accessibilita.base.ui.component.AppButton;
 import it.unibg.accessibilita.base.ui.component.AppFooter;
 import it.unibg.accessibilita.base.ui.component.AppTabs;
 import it.unibg.accessibilita.base.ui.component.Box;
 import it.unibg.accessibilita.base.ui.component.ImageCard;
+import it.unibg.accessibilita.base.ui.component.SelettorePiano;
 import struttura.Edificio;
+import struttura.Piano;
 import struttura.Sede;
 
 import com.vaadin.flow.router.BeforeEvent;
@@ -34,12 +40,14 @@ import com.vaadin.flow.router.BeforeEvent;
 @Route(value = "edifici", layout = MainLayout.class)
 public class EdificiView extends VerticalLayout implements HasUrlParameter<String>{
 	
-	private final VerticalLayout contentContainer = new VerticalLayout();
 	private final SedeDAO sedeDAO;
 	private final EdificioDAO edificioDAO;
-	public EdificiView(SedeDAO sedeDAO, EdificioDAO edificioDAO){
+	private final PianoDAO pianoDAO;
+	
+	public EdificiView(SedeDAO sedeDAO, EdificioDAO edificioDAO, PianoDAO pianoDAO){
 		this.sedeDAO = sedeDAO;
 		this.edificioDAO = edificioDAO;
+		this.pianoDAO = pianoDAO;
 		
 		setSpacing(false);
 		setPadding(true);
@@ -63,9 +71,9 @@ public class EdificiView extends VerticalLayout implements HasUrlParameter<Strin
 		
 		AppTabs edificioTab = new AppTabs();
 		edificioTab.addTab("Generale", createGeneraleContent(edificio));
-		edificioTab.addTab("Ingressi", createIngressiContent());
-		edificioTab.addTab("Servizi", createServiziContent());
-		edificioTab.addTab("Mappa", createMappaContent());
+		edificioTab.addTab("Ingressi", createIngressiContent(edificio));
+		edificioTab.addTab("Servizi", createServiziContent(edificio));
+		edificioTab.addTab("Mappa", createMappaContent(edificio));
         
 		AppFooter footer = new AppFooter();
 		add(titolo, divisore, edificioTab, footer);
@@ -78,7 +86,7 @@ public class EdificiView extends VerticalLayout implements HasUrlParameter<Strin
 		layout.setSpacing(true);
 		layout.setWidthFull();
 		layout.addClassNames(LumoUtility.Margin.Horizontal.AUTO);
-		
+		// zona immagine edificio + box
 		HorizontalLayout rowCentrale = new HorizontalLayout();
         rowCentrale.setWidthFull();
         rowCentrale.setSpacing(true);
@@ -90,14 +98,23 @@ public class EdificiView extends VerticalLayout implements HasUrlParameter<Strin
 		infoEdificio.add(new Paragraph("Orario: " + edificio.getOrario()));
 		infoEdificio.setWidth("30%");
 		infoEdificio.setMinWidth("250px");
-		infoEdificio.setHeight("500px");
 		rowCentrale.add(card, infoEdificio);
 		layout.add(rowCentrale);
-		return layout;
+		// zona bottone struttura
+		List<Piano> piano = edificioDAO.findPianoByEdificio(edificio.getNome());
 		
+		if(piano != null && !piano.isEmpty()) {
+		HorizontalLayout rowInferiore = new HorizontalLayout();
+        rowInferiore.setPadding(true);
+        
+        SelettorePiano selector = new SelettorePiano(piano);
+        rowInferiore.add(selector);
+        layout.add(rowInferiore);
+		}
+		return layout;
 	}
 	//TAB INGRESSI
-	private VerticalLayout createIngressiContent() {
+	private VerticalLayout createIngressiContent(Edificio edificio) {
 	    VerticalLayout layout = new VerticalLayout();
 	    layout.setPadding(false);
 	    layout.setSpacing(true);
@@ -105,7 +122,7 @@ public class EdificiView extends VerticalLayout implements HasUrlParameter<Strin
 	    return layout;
 	}
 	//TAB SERVIZI
-	private VerticalLayout createServiziContent() {
+	private VerticalLayout createServiziContent(Edificio edificio) {
 	    VerticalLayout layout = new VerticalLayout();
 	    layout.setPadding(false);
 	    layout.setSpacing(true);
@@ -113,7 +130,7 @@ public class EdificiView extends VerticalLayout implements HasUrlParameter<Strin
 	    return layout;
 	}
 	//TAB MAPPA
-	private VerticalLayout createMappaContent() {
+	private VerticalLayout createMappaContent(Edificio edificio) {
 	    VerticalLayout layout = new VerticalLayout();
 	    layout.setPadding(false);
 	    layout.setSpacing(true);

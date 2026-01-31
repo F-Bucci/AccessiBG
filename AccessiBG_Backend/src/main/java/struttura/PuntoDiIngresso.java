@@ -17,6 +17,7 @@ public class PuntoDiIngresso {
 		this.rampe=rampe;
 		this.portaTagliafuoco=portaTagliafuoco;
 		this.percorsoStrisceIpov=percorsoStrisceIpov;
+		this.edificio = edificio;
 	}
 
 	public boolean getPercorsoStrisceIpov() {return percorsoStrisceIpov;}

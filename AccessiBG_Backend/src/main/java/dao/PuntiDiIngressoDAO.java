@@ -21,7 +21,7 @@ public class PuntiDiIngressoDAO {
 	public void insert(PuntoDiIngresso p) {
 		dsl.insertInto(table("puntiAccesso"), field("id"),field("scale"),field("rampe"), field("portaTagliafuoco"),field("percorsoStrisceIpov"),field("edificio"))
 		.values(p.getId(),p.getScale(), p.getRampe(), p.getPortaTagliafuoco(), p.getPercorsoStrisceIpov(), p.getEdificio())
-		.onConflict(field("num"), field("edificio"))
+		.onConflict(field("id"), field("edificio"))
 		.doNothing()
 		.execute();
 	}

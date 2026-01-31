@@ -66,7 +66,7 @@ public class InsertInDB{
 	}
 	
 	public void insRecordPiano() {
-		Piano terra = new Piano (0,"piano terra", "edificio D");
+		Piano terra = new Piano (0,"piano terra", "Edificio D");
 		pianoDAO.insert(terra);
 	}
 //	(int id, TipoDistributore tipo, String posizione, boolean accessibile, int piano)

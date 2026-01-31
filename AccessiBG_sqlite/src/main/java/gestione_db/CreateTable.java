@@ -45,9 +45,9 @@ public class CreateTable {
 			dsl.execute("CREATE TABLE IF NOT EXISTS piano("+
 			    "num INTEGER NOT NULL,"+
 			    "descrizione TEXT NOT NULL,"+
-			    "nomeEdif TEXT NOT NULL,"+
-			    "PRIMARY KEY (num, nomeEdif), " +
-			    "FOREIGN KEY (nomeEdif) REFERENCES edificio(nome) ON DELETE CASCADE" +
+			    "edificio TEXT NOT NULL,"+
+			    "PRIMARY KEY (num, edificio), " +
+			    "FOREIGN KEY (edificio) REFERENCES edificio(nome) ON DELETE CASCADE" +
 			    ")");
 
 			dsl.execute("CREATE TABLE IF NOT EXISTS distributore("+
@@ -69,6 +69,21 @@ public class CreateTable {
 					"edificio TEXT NOT NULL,"+
 					"PRIMARY KEY (id, edificio), " +
 					"FOREIGN KEY (edificio) REFERENCES edificio(nome) ON DELETE CASCADE" +
+					
+					")");
+			dsl.execute("CREATE TABLE IF NOT EXISTS stanza(" +
+					"id INTEGER PRIMARY KEY AUTOINCREMENT, "+
+					"nome TEXT NOT NULL, "+
+					"descrizione TEXT NOT NULL, " +
+					"accessibile INTEGER NOT NULL, " +
+					"x REAL, " +
+					"y REAL, " +
+					"tipo_stanza TEXT NOT NULL, " +
+					"posti INTEGER, " + // NOT NULL non messo perche' non tutte le stanza hanno dei posti, ma le aule invece si
+					"genere TEXT, " + // solo per i bagni
+					"piano INTEGER NOT NULL, " +
+					"edificio TEXT NOT NULL, " +
+					"FOREIGN KEY(piano, edificio) REFERENCES piano(num, edificio) ON DELETE CASCADE" +
 					")");
 		/*
 		dsl.execute("CREATE TABLE IF NOT EXISTS ostacolo("+
