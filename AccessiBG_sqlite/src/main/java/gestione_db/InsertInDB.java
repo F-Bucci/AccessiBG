@@ -82,8 +82,14 @@ public class InsertInDB{
 //	(int id, String nome, int posti, String descrizione, boolean accessibile, int x, int y,TipoStanza tipoStan, String piano, String edificio)
 	
 	public void insRecordStanza() {
-		Stanza d01 = new Stanza (1, "D001", 275, "aula magna, dispone del banco per disabili", true, 2, 3, TipoStanza.AULA, "primo piano", "Edificio D");
+		Stanza d01 = new Stanza (1, "D001", 275, "Aula magna, dispone del banco per disabili", true, 2, 3, TipoStanza.AULA, "piano terra", "Edificio D");
 		stanzaDAO.insert(d01);
+		Stanza d02 = new Stanza (2, "D002", 265, "Dispone del banco per disabili", true, 8, 9, TipoStanza.AULA, "piano terra", "Edificio D");
+		stanzaDAO.insert(d02);
+		Stanza stud1 = new Stanza (3, "Aula studio", 275, "Aula studio con banchi grandi e sedie rimovibili", true, 4, 5, TipoStanza.AULA_STUDIO, "piano terra", "Edificio D");
+		stanzaDAO.insert(stud1);
+		Stanza bagno = new Stanza (3,"Bagno", 8 ,"Bagno uomini a sinistra e donne a destra", true, 7, 9, TipoStanza.BAGNO, "piano terra", "Edificio D");
+		stanzaDAO.insert(bagno);
 	}
 	
 }
