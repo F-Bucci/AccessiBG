@@ -1,0 +1,17 @@
+@startuml
+
+skinparam componentStyle uml2
+skinparam shadowing false
+
+component "accessibilita-unibg\n(Web UI)" as UI
+component "AccessiBG_Backend\n(DAO, servizi, struttura)" as Backend
+component "AccessiBG_sqlite\n(CreateDB, CreateTable, InsertInDB)" as SQLite
+database "SQLite DB (file)" as DB
+
+UI ..> Backend : Maven dependency
+UI ..> SQLite : Maven dependency
+UI --> SQLite : calls CreateDB.crea()
+SQLite --> DB : creates / populates
+Backend --> DB : uses (DSLContext / jOOQ)
+
+@enduml
