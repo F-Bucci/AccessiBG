@@ -15,7 +15,8 @@ public class DistributoreDAO extends DAO<Distributore> {
 	public DistributoreDAO(DSLContext dsl) {
 		super(dsl);
 	}
-@Override
+	
+    @Override
 	public void insert(Distributore d) {
 		dsl
 			.insertInto(

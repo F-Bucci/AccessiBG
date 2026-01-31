@@ -17,7 +17,8 @@ public class PianoDAO extends DAO<Piano> {
 	public PianoDAO(DSLContext dsl) {
 		super(dsl);
 	}
-@Override
+	
+	@Override
 	public void insert(Piano p) {
 		dsl
 			.insertInto(

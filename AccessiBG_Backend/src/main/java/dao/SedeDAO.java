@@ -20,7 +20,8 @@ public class SedeDAO extends DAO<Sede> {
 	public SedeDAO(DSLContext dsl) {
 		super(dsl);
 	}
-@Override
+    
+	@Override
 	public void insert(Sede s) {
 		dsl.insertInto(
 				table("sede"),

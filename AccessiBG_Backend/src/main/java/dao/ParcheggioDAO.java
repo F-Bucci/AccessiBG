@@ -16,7 +16,8 @@ public class ParcheggioDAO extends DAO<Parcheggio> {
 	public ParcheggioDAO(DSLContext dsl) {
 		super(dsl);
 	}
-@Override
+	
+    @Override
 	public void insert(Parcheggio p) {
 		dsl
 			.insertInto(

@@ -10,5 +10,6 @@ public abstract class DAO<T> {
 	protected DAO(DSLContext dsl) {
 		this.dsl = dsl;
 	}
+	
 	public abstract void insert(T o);
 }
