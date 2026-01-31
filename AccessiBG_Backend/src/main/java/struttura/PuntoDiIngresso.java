@@ -2,8 +2,6 @@
 package struttura;
 
 public class PuntoDiIngresso {
-
-//	tipo ingresso scalini rampa 
 	private int id;
 	private boolean scale;
 	private boolean rampe;

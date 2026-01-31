@@ -41,10 +41,19 @@ public class PianoDAO {
 					record.get("edificio", String.class)
 					);}       
 		return null;}
-	
-	public List<Distributore> findDistributoreByPiano(String piano) {
+//	restituisce i distributori all'interno di un piano (di un certo edificio)
+	public List<Distributore> findDistributoreByPiano(String piano, String edificio) {
 	    return dsl
 	        .selectFrom(table("distributore"))
 	        .where(field("piano").eq(piano))
+	        .and(field("edificio").eq(edificio))
 	        .fetchInto(Distributore.class);}
+	
+//	restituisce tutte le stanze di un piano (di un certo edificio)
+	public List<Stanza> findStanzaByPiano(String piano, String edificio) {
+	    return dsl
+	        .selectFrom(table("stanza"))
+	        .where(field("piano").eq(piano))
+	        .and(field("edificio").eq(edificio))
+	        .fetchInto(Stanza.class);}
 }

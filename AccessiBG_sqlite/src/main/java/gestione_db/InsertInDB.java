@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 
 import dao.*;
 import struttura.*;
-import servizi.*;
 
 @Service
 public class InsertInDB{
@@ -14,15 +13,16 @@ public class InsertInDB{
 	private final PianoDAO pianoDAO;
 	private final DistributoreDAO distributoreDAO;
 	private final PuntiDiIngressoDAO puntoDiIngressoDAO;
+	private final StanzaDAO stanzaDAO;
 
-
-	public InsertInDB(SedeDAO sedeDAO, EdificioDAO edificioDAO, ParcheggioDAO parcheggioDAO, PianoDAO pianoDAO, DistributoreDAO distributoreDAO, PuntiDiIngressoDAO puntoDiIngressoDAO) {
+	public InsertInDB(SedeDAO sedeDAO, EdificioDAO edificioDAO, ParcheggioDAO parcheggioDAO, PianoDAO pianoDAO, DistributoreDAO distributoreDAO, PuntiDiIngressoDAO puntoDiIngressoDAO, StanzaDAO stanzaDAO) {
 		this.sedeDAO = sedeDAO;
 		this.edificioDAO=edificioDAO;
 		this.parcheggioDAO=parcheggioDAO;
 		this.pianoDAO=pianoDAO;
 		this.distributoreDAO=distributoreDAO;
 		this.puntoDiIngressoDAO=puntoDiIngressoDAO;
+		this.stanzaDAO=stanzaDAO;
 	}
 
 	public void insRecordSedi() {
@@ -69,7 +69,7 @@ public class InsertInDB{
 		Piano terra = new Piano (0,"piano terra", "Edificio D");
 		pianoDAO.insert(terra);
 	}
-//	(int id, TipoDistributore tipo, String posizione, boolean accessibile, int piano)
+	
 	public void insRecordDistributore() {
 		Distributore dx = new Distributore (1, TipoDistributore.BEVANDE_CALDE,"a destra dell'ingresso", true, 0 );
 		distributoreDAO.insert(dx);
@@ -79,6 +79,11 @@ public class InsertInDB{
 		distributoreDAO.insert(sx);
 	}
 	
+//	(int id, String nome, int posti, String descrizione, boolean accessibile, int x, int y,TipoStanza tipoStan, String piano, String edificio)
 	
+	public void insRecordStanza() {
+		Stanza d01 = new Stanza (1, "D001", 275, "aula magna, dispone del banco per disabili", true, 2, 3, TipoStanza.AULA, "primo piano", "Edificio D");
+		stanzaDAO.insert(d01);
+	}
 	
 }

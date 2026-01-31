@@ -3,8 +3,6 @@ package dao;
 import static org.jooq.impl.DSL.field;
 import static org.jooq.impl.DSL.table;
 
-import java.util.List;
-
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
 
@@ -25,4 +23,6 @@ public class PuntiDiIngressoDAO {
 		.doNothing()
 		.execute();
 	}
+	
+	
 }
