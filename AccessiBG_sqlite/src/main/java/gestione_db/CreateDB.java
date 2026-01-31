@@ -20,5 +20,7 @@ public void crea() {
 	insertInDB.insRecordParcheggio();
 	insertInDB.insRecordPiano();
 	insertInDB.insRecordPuntoIngresso();
+	insertInDB.insRecordStanza();
+	insertInDB.insRecordOstacolo();
 	}
 }

@@ -56,4 +56,11 @@ public class PianoDAO {
 	        .where(field("piano").eq(piano))
 	        .and(field("edificio").eq(edificio))
 	        .fetchInto(Stanza.class);}
+	
+//	restituisce tutte le stanze di un piano (di un certo edificio)
+	public List<Ostacolo> findOstacoloByPiano(String piano) {
+	    return dsl
+	        .selectFrom(table("ostacolo"))
+	        .where(field("piano").eq(piano))
+	        .fetchInto(Ostacolo.class);}
 }

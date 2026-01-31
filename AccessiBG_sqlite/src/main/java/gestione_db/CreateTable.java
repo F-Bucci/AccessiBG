@@ -70,8 +70,8 @@ public class CreateTable {
 					"edificio TEXT NOT NULL,"+
 					"PRIMARY KEY (id, edificio), " +
 					"FOREIGN KEY (edificio) REFERENCES edificio(nome) ON DELETE CASCADE" +
-					
 					")");
+			
 			dsl.execute("CREATE TABLE IF NOT EXISTS stanza(" +
 					"id INTEGER PRIMARY KEY, "+
 					"nome TEXT NOT NULL, "+
@@ -86,15 +86,14 @@ public class CreateTable {
 					"PRIMARY KEY (id, piano, edificio), " +
 					"FOREIGN KEY(piano, edificio) REFERENCES piano(num), edificio(nome) ON DELETE CASCADE" +
 					")");
-		/*
-		dsl.execute("CREATE TABLE IF NOT EXISTS ostacolo("+
-			    "id INTEGER PRIMARY KEY,"+"descrizione TEXT NOT NULL,"+ "pathFoto TEXT NOT NULL, " + 
-				"piano INTEGER NOT NULL,"+"FOREIGN KEY (id, piano)"+"REFERENCES piano(num)"+"ON DELETE CASCADE)");
-		
-		dsl.execute("CREATE TABLE IF NOT EXISTS stanza("+
-			    "nome TEXT PRIMARY KEY,"+"posti INTEGER NOT NULL,"+ "pathFoto TEXT NOT NULL, " + 
-				"piano INTEGER NOT NULL,"+"FOREIGN KEY (NOME, piano)"+"REFERENCES piano(num)"+"ON DELETE CASCADE)");
-		*/
-			
+
+			dsl.execute("CREATE TABLE IF NOT EXISTS ostacolo("+
+					"id INTEGER NOT NULL,"+
+					"tipo TEXT NOT NULL,"+
+					"descrizione TEXT NOT NULL,"+
+					"piano TEXT NOT NULL,"+
+					"PRIMARY KEY (id, piano), " +
+					"FOREIGN (piano) REFERENCES piano(num) ON DELETE CASCADE" +
+					")");
 		}
 }

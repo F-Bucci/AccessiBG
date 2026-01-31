@@ -44,7 +44,7 @@ public class StanzaDAO {
 					record.get("x", Integer.class),
 					record.get("y", Integer.class),
 					tipo,
-					record.get("piano", String.class),
+					record.get("piano", Integer.class),
 					record.get("edificio", String.class)
 					);
 		}

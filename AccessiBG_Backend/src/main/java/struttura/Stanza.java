@@ -9,11 +9,11 @@ public class Stanza {
 	private int x;
 	private int y;
 	private TipoStanza tipoStan;
-	private String piano;
+	private int piano;
 	private String edificio;
 
 	public Stanza(int id, String nome, int posti, String descrizione, boolean accessibile, int x, int y,
-			TipoStanza tipoStan, String piano, String edificio) {
+			TipoStanza tipoStan, int piano, String edificio) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -36,7 +36,7 @@ public class Stanza {
 	public String getDescrizione() {return descrizione;}
 	//	    public void setDescrizione(String descrizione) { this.descrizione = descrizione; }
 
-	public String getPiano() { return piano; }
+	public int getPiano() { return piano; }
 	//	    public void setPiano(Piano piano) { this.piano = piano; }
 
 	public int getId() {
