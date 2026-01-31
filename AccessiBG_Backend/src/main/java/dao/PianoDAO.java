@@ -14,13 +14,11 @@ import struttura.*;
 public class PianoDAO {
 	private final DSLContext dsl;
 
-	public PianoDAO(DSLContext dsl) {
-		this.dsl = dsl;
-	}
+	public PianoDAO(DSLContext dsl) {this.dsl = dsl;}
 
 	public void insert(Piano p) {
-		dsl.insertInto(table("piano"), field("num"),field("descrizione"),field("edificio"))
-		.values(p.getNumero(), p.getDescrizione(), p.getEdificio())
+		dsl.insertInto(table("piano"), field("num"),field("descrizione"),field("pathFoto"),field("edificio"))
+		.values(p.getNumero(), p.getDescrizione(),p.getPathFoto(), p.getEdificio())
 		.onConflict(field("num"), field("edificio"))
 		.doNothing()
 		.execute();
@@ -38,9 +36,11 @@ public class PianoDAO {
 			return new Piano(
 					record.get("num", Integer.class),
 					record.get("descrizione", String.class),
+					record.get("pathFoto", String.class),
 					record.get("edificio", String.class)
 					);}       
 		return null;}
+	
 //	restituisce i distributori all'interno di un piano (di un certo edificio)
 	public List<Distributore> findDistributoreByPiano(String piano, String edificio) {
 	    return dsl

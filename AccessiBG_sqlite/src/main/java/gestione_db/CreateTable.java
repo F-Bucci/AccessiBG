@@ -45,6 +45,7 @@ public class CreateTable {
 			dsl.execute("CREATE TABLE IF NOT EXISTS piano("+
 			    "num INTEGER NOT NULL,"+
 			    "descrizione TEXT NOT NULL,"+
+			    "pathFoto TEXT NOT NULL,"+
 			    "edificio TEXT NOT NULL,"+
 			    "PRIMARY KEY (num, edificio),"+
 			    "FOREIGN KEY (edificio) REFERENCES edificio(nome) ON DELETE CASCADE" +

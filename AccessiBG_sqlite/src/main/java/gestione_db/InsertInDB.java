@@ -69,7 +69,7 @@ public class InsertInDB{
 	}
 	
 	public void insRecordPiano() {
-		Piano terra = new Piano (0,"piano terra", "Edificio D");
+		Piano terra = new Piano (0,"piano terra","url dellafoto", "Edificio D");
 		pianoDAO.insert(terra);
 	}
 	
