@@ -6,6 +6,7 @@ import static org.jooq.impl.DSL.*;
 
 import org.springframework.stereotype.Repository;
 
+import struttura.Distributore;
 import struttura.Edificio;
 import struttura.Piano;
 
@@ -13,14 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class EdificioDAO {
-		
-	private final DSLContext dsl;
+public class EdificioDAO extends DAO<Edificio> {
 		
 	public EdificioDAO(DSLContext dsl) {
-		this.dsl = dsl;
+		super(dsl);
 	}
-
+@Override
 	public void insert(Edificio e) {
 		dsl.insertInto(
 				table("edificio"),
