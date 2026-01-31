@@ -18,8 +18,8 @@ public class OstacoloDAO {
 	}
 
 	public void insert(Ostacolo o) {
-		dsl.insertInto(table("stanza"), field("id"),field("tipo"),field("descrizione"), field("piano"))
-		.values(o.getId(), o.getTipo(), o.getDescrizione(), o.getPiano())
+		dsl.insertInto(table("stanza"), field("id"),field("tipo"),field("descrizione"),field("x"),field("y"), field("piano"))
+		.values(o.getId(), o.getTipo(), o.getDescrizione(),o.getX(), o.getY(), o.getPiano())
 		.onConflict(field("id"), field("id"))
 		.doNothing()
 		.execute();
@@ -36,6 +36,8 @@ public class OstacoloDAO {
 					record.get("id", Integer.class),
 					tipo,
 					record.get("descrizione", String.class),
+					record.get("x", Double.class),
+					record.get("y", Double.class),
 					record.get("piano", Integer.class)
 					);
 		}

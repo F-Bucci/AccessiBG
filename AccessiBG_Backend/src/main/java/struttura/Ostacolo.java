@@ -4,12 +4,16 @@ public class Ostacolo {
 	private int id;
 	private String descrizione;
 	private TipoOstacolo tipo;
+	private double x;
+	private double y;
 	private int piano;
 	
-	public Ostacolo(int id, TipoOstacolo tipo, String descrizione, int piano) {
+	public Ostacolo(int id, TipoOstacolo tipo, String descrizione, double x, double y, int piano) {
        this.id=id;
 		this.tipo = tipo;
         this.descrizione = descrizione;
+        this.x=x;
+        this.y=y;
         this.piano=piano;
     }
 	public Ostacolo() {}
@@ -25,5 +29,11 @@ public class Ostacolo {
 	
     public int getId() {
 		return id;
+	}
+	public double getX() {
+		return x;
+	}
+	public double getY() {
+		return y;
 	}
 }

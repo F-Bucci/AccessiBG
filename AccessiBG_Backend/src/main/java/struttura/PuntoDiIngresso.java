@@ -22,19 +22,11 @@ public class PuntoDiIngresso {
 	
 	public int getId() {return id;}
 
-	public boolean getScale() {
-		return scale;
-	}
+	public boolean getScale() {return scale;}
 
-	public boolean getRampe() {
-		return rampe;
-	}
+	public boolean getRampe() {return rampe;}
 
-	public boolean getPortaTagliafuoco() {
-		return portaTagliafuoco;
-	}
+	public boolean getPortaTagliafuoco() {return portaTagliafuoco;}
 
-	public String getEdificio() {
-		return edificio;
-	}
+	public String getEdificio() {return edificio;}
 }

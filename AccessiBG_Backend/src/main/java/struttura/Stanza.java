@@ -6,13 +6,13 @@ public class Stanza {
 	private int posti;
 	private String descrizione;
 	private boolean accessibile;
-	private int x;
-	private int y;
+	private double x;
+	private double y;
 	private TipoStanza tipoStan;
 	private int piano;
 	private String edificio;
 
-	public Stanza(int id, String nome, int posti, String descrizione, boolean accessibile, int x, int y,
+	public Stanza(int id, String nome, int posti, String descrizione, boolean accessibile, double x, double y,
 			TipoStanza tipoStan, int piano, String edificio) {
 		super();
 		this.id = id;
@@ -47,11 +47,11 @@ public class Stanza {
 		return posti;
 	}
 
-	public int getX() {
+	public double getX() {
 		return x;
 	}
 
-	public int getY() {
+	public double getY() {
 		return y;
 	}
 

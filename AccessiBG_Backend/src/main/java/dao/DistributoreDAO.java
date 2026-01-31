@@ -18,8 +18,8 @@ public class DistributoreDAO {
 	}
 
 	public void insert(Distributore d) {
-		dsl.insertInto(table("distributore"), field("id"),field("tipo"),field("posizione"),field("accessibile"),field("numPiano"))
-		.values(d.getId(), d.getTipo(), d.getPosizione(), d.getAccessibile(), d.getPiano())
+		dsl.insertInto(table("distributore"), field("id"),field("tipo"),field("x"),field("y"),field("accessibile"),field("numPiano"))
+		.values(d.getId(), d.getTipo(), d.getAccessibile(), d.getX(), d.getY(), d.getPiano())
 		.onConflict(field("id"), field("numPiano"))
 		.doNothing()
 		.execute();
@@ -39,8 +39,9 @@ public class DistributoreDAO {
 			return new Distributore(
 					record.get("id", Integer.class),
 					tipo,
-					record.get("posizione", String.class),
 					accessibile,
+					record.get("x", Double.class),
+					record.get("y", Double.class),
 					record.get("numPiano", Integer.class));
 		}
 		return null;}

@@ -56,6 +56,8 @@ public class CreateTable {
 			    "tipo TEXT NOT NULL,"+
 			    "posizione TEXT NOT NULL,"+
 			    "accessibile INTEGER NOT NULL,"+
+			    "x REAL, " +
+				"y REAL, " +
 			    "piano INTEGER NOT NULL,"+
 			    "edificio TEXT NOT NULL,"+
 			    "PRIMARY KEY (id, piano, edificio), " +
@@ -92,6 +94,8 @@ public class CreateTable {
 					"id INTEGER NOT NULL,"+
 					"tipo TEXT NOT NULL,"+
 					"descrizione TEXT NOT NULL,"+
+					"x REAL, " +
+					"y REAL, " +
 					"piano TEXT NOT NULL,"+
 					"PRIMARY KEY (id, piano), " +
 					"FOREIGN (piano) REFERENCES piano(num) ON DELETE CASCADE" +

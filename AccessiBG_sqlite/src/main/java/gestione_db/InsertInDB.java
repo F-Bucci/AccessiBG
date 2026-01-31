@@ -74,32 +74,32 @@ public class InsertInDB{
 	}
 	
 	public void insRecordDistributore() {
-		Distributore dx = new Distributore (1, TipoDistributore.BEVANDE_CALDE,"a destra dell'ingresso", true, 0 );
+		Distributore dx = new Distributore (1, TipoDistributore.BEVANDE_CALDE, true, 56.64, 45, 0 );
 		distributoreDAO.insert(dx);
-		Distributore dxA = new Distributore (2, TipoDistributore.ACQUA,"a destra dell'ingresso", false, 0 );
+		Distributore dxA = new Distributore (2, TipoDistributore.ACQUA, false,52.54, 45.50, 0 );
 		distributoreDAO.insert(dxA);
-		Distributore sx = new Distributore (3, TipoDistributore.SNACK_E_BEVANDE,"a sinistra dell'ingresso", true, 0 );
+		Distributore sx = new Distributore (3, TipoDistributore.SNACK_E_BEVANDE, true, 7.13, 73.13, 0 );
 		distributoreDAO.insert(sx);
 	}
 		
 	public void insRecordStanza() {
-		Stanza d01 = new Stanza (1, "D001", 275, "Aula magna, dispone del banco per disabili", true, 2, 3, TipoStanza.AULA, 0, "Edificio D");
+		Stanza d01 = new Stanza (1, "D001", 275, "Aula magna, dispone del banco per disabili", true, 33.24, 39.88, TipoStanza.AULA, 0, "Edificio D");
 		stanzaDAO.insert(d01);
-		Stanza d02 = new Stanza (2, "D002", 265, "Dispone del banco per disabili", true, 8, 9, TipoStanza.AULA, 0, "Edificio D");
+		Stanza d02 = new Stanza (2, "D002", 265, "Dispone del banco per disabili", true, 61.10, 68.75, TipoStanza.AULA, 0, "Edificio D");
 		stanzaDAO.insert(d02);
-		Stanza stud1 = new Stanza (3, "Aula studio", 275, "Aula studio con banchi grandi e sedie rimovibili", true, 4, 5, TipoStanza.AULA_STUDIO, 0, "Edificio D");
+		Stanza stud1 = new Stanza (3, "Aula studio", 275, "Aula studio con banchi grandi e sedie rimovibili", true, 8.30, 52.13, TipoStanza.AULA_STUDIO, 0, "Edificio D");
 		stanzaDAO.insert(stud1);
-		Stanza bagno = new Stanza (3,"Bagno", 8 ,"Bagno uomini a sinistra e donne a destra", true, 7, 9, TipoStanza.BAGNO, 0, "Edificio D");
-		stanzaDAO.insert(bagno);
+		Stanza bagnoU = new Stanza (4,"Bagno", 8 ,"Bagno uomini a sinistra", true, 49.90, 36.88, TipoStanza.BAGNO, 0, "Edificio D");
+		stanzaDAO.insert(bagnoU);
+		Stanza bagnoD = new Stanza (5,"Bagno", 8 ,"Bagno donne a destra", true, 60.35, 34.62, TipoStanza.BAGNO, 0, "Edificio D");
+		stanzaDAO.insert(bagnoD);
 	}
 	
 //	int id, TipoOstacolo tipo, String descrizione, int piano
 	public void insRecordOstacolo() {
-		Ostacolo o1 = new Ostacolo (1, TipoOstacolo.OGGETTO_INGROMBRANTE, "sedie laterali fisse", 0);
+		Ostacolo o1 = new Ostacolo (1, TipoOstacolo.OGGETTO_INGROMBRANTE, "sedie laterali fisse", 52.13, 70.38, 0);
 		ostacoloDAO.insert(o1);
-		Ostacolo o2 = new Ostacolo (2, TipoOstacolo.OGGETTO_INGROMBRANTE, "macchinario vicino ingresso D002", 0);
+		Ostacolo o2 = new Ostacolo (2, TipoOstacolo.OGGETTO_INGROMBRANTE, "macchinario vicino ingresso D002", 59.96, 61.88, 0);
 		ostacoloDAO.insert(o2);
 		}
-	
-	
 }
