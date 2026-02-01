@@ -12,6 +12,7 @@ import struttura.Stanza;
 
 public class MapPin extends Div{
 	public MapPin(ElementoMappa e) {
+		//crea delle icone in base alla tipo di elemento
 		VaadinIcon icona = VaadinIcon.CIRCLE;
         String colore = "gray";
         
@@ -22,13 +23,17 @@ public class MapPin extends Div{
         }
         case Distributore d -> {
             icona = VaadinIcon.COFFEE;
-            colore = "#d2691e"; // Marrone
+            colore = "#964B00"; // Marrone
         }
         case Stanza s -> {
             switch (s.getTipoStan()) {
                 case AULA -> {
                     icona = VaadinIcon.ACADEMY_CAP;
                     colore = "#ff6347"; // Rosso pomodoro
+                }
+                case AULA_STUDIO -> {
+                	icona = VaadinIcon.ACADEMY_CAP;
+                    colore = "#FFFF00 "; //Giallo
                 }
                 case BAGNO_UOMO -> {
                     icona = VaadinIcon.MALE;

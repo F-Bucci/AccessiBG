@@ -5,4 +5,5 @@ public interface ElementoMappa {
  double getY();
  int getId();
  String getPathPercorso();
+ String getPathFoto();
 }

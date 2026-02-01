@@ -22,5 +22,6 @@ public void crea() {
 	insertInDB.insRecordPuntoIngresso();
 	insertInDB.insRecordStanza();
 	insertInDB.insRecordOstacolo();
+	insertInDB.insRecordDistributore();
 	}
 }

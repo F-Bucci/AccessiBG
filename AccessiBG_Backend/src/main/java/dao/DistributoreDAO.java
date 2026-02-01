@@ -19,9 +19,9 @@ public class DistributoreDAO {
 
 	public void insert(Distributore d) {
 		dsl.insertInto(table("distributore"), field("id"),field("tipo"),field("accessibile"),field("x"),
-				field("y"),field("pathFoto"),field("pathPercorso"),field("numPiano"))
-		.values(d.getId(), d.getTipo(), d.getAccessibile(), d.getX(), d.getY(), d.getPathFoto(),d.getPathPercorso(), d.getPiano())
-		.onConflict(field("id"), field("numPiano"))
+				field("y"),field("pathFoto"),field("pathPercorso"),field("piano"))
+		.values(d.getId(), d.getTipo().name(), d.getAccessibile() ? 1 : 0, d.getX(), d.getY(), d.getPathFoto(),d.getPathPercorso(), d.getPiano())
+		.onConflict(field("id"), field("piano"))
 		.doNothing()
 		.execute();
 	}
@@ -30,7 +30,7 @@ public class DistributoreDAO {
 	public Distributore findDistributoreByPiano(int id, int piano) {
 		var record = dsl
 				.select(field("id"),field("tipo"),field("accessibile"),field("x"),
-						field("y"),field("pathFoto"),field("pathPercorso"),field("numPiano"))
+						field("y"),field("pathFoto"),field("pathPercorso"),field("piano"))
 				.from(table("distributore"))
 				.where(field("id").eq(id))
 				.and(field("piano").eq(piano))
@@ -46,14 +46,14 @@ public class DistributoreDAO {
 					record.get("y", Double.class),					
 					record.get("pathFoto", String.class),
 					record.get("pathPercorso", String.class),
-					record.get("numPiano", Integer.class));
+					record.get("piano", Integer.class));
 		}
 		return null;}
 	
 	public Distributore findById(int id) {
 			var record = dsl
 					.select(field("id"),field("tipo"),field("accessibile"),field("x"),
-							field("y"),field("pathFoto"),field("pathPercorso"),field("numPiano"))
+							field("y"),field("pathFoto"),field("pathPercorso"),field("piano"))
 					.from(table("distributore"))
 					.where(field("id").eq(id))
 					.fetchOne();
@@ -68,7 +68,7 @@ public class DistributoreDAO {
 						record.get("y", Double.class),					
 						record.get("pathFoto", String.class),
 						record.get("pathPercorso", String.class),
-						record.get("numPiano", Integer.class));
+						record.get("piano", Integer.class));
 			}
 			return null;
 	}

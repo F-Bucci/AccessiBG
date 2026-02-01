@@ -43,8 +43,9 @@ public class PianoDAO {
 	
 //	restituisce i distributori all'interno di un piano (di un certo edificio)
 	public List<Distributore> findDistributoreByPiano(int piano) {
-	    return dsl
-	        .selectFrom(table("distributore"))
+	   
+	    return dsl	
+	    	.selectFrom(table("distributore"))
 	        .where(field("piano").eq(piano))
 	        .fetchInto(Distributore.class);}
 	

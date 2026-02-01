@@ -54,15 +54,14 @@ public class CreateTable {
 			dsl.execute("CREATE TABLE IF NOT EXISTS distributore("+
 			    "id INTEGER NOT NULL,"+
 			    "tipo TEXT NOT NULL,"+
-			    "posizione TEXT NOT NULL,"+
 			    "accessibile INTEGER NOT NULL,"+
 			    "x REAL, " +
 				"y REAL, " +
 				"pathFoto TEXT NOT NULL,"+
 				"pathPercorso TEXT NOT NULL,"+
 			    "piano INTEGER NOT NULL,"+
-			    "PRIMARY KEY (id, piano), " +
-			    "FOREIGN KEY (piano) REFERENCES piano(num) ON DELETE CASCADE" +
+			    "PRIMARY KEY (id, piano) " +
+			    //"FOREIGN KEY (piano) REFERENCES piano(num) ON DELETE CASCADE" +
 			    ")");
 			
 			dsl.execute("CREATE TABLE IF NOT EXISTS puntiAccesso("+

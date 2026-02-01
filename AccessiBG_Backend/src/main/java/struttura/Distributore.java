@@ -29,12 +29,9 @@ public class Distributore implements ElementoMappa{
 	public int getPiano() {return piano;}
 	
 	public int getId() {return id;}
-	public double getX() {
-		return x;
-	}
-	public double getY() {
-		return y;
-	}
+	
+	public double getX() {return x;}
+	public double getY() {return y;}
 	@Override
 	public String getPathPercorso() {
 		return pathPercorso;

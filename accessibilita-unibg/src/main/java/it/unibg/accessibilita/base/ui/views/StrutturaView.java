@@ -38,6 +38,7 @@ public class StrutturaView extends VerticalLayout implements HasUrlParameter<Str
 		this.pianoDAO = pianoDAO;
 		this.stanzaDAO = stanzaDAO;
 		this.ostacoloDAO = ostacoloDAO;
+		this.distributoreDAO = distributoreDAO;
 				
 		setSpacing(false);
 		setPadding(true);
@@ -57,13 +58,14 @@ public class StrutturaView extends VerticalLayout implements HasUrlParameter<Str
 		}
 	}
 	private void interfacciaPiano(Piano piano) {
-		System.out.println("Caricamento interfaccia per piano: " + piano.getNumero());
+		//creazione mappa utilizziamo una interfaccia
 		MappaInterattiva mappa = new MappaInterattiva();
 		List<ElementoMappa> elemento = new ArrayList<>();
 		
 		List<Stanza> s = pianoDAO.findStanzaByPiano(piano.getNumero());
 		List<Ostacolo> o = pianoDAO.findOstacoloByPiano(piano.getNumero());
 		List<Distributore> d = pianoDAO.findDistributoreByPiano(piano.getNumero());
+		
 		
 		if(s != null) elemento.addAll(s);
 		if(o != null) elemento.addAll(o);
@@ -75,6 +77,7 @@ public class StrutturaView extends VerticalLayout implements HasUrlParameter<Str
 		mappa.setMinHeight("600px");
 		add(mappa);
 	}
+	//crea dialog (box che appare quando si clicca una icona)
 	private void apriDettaglio(ElementoMappa elemento, MappaInterattiva mappa) {
 		Dialog dialog = new Dialog();
 		//dialog.setHeaderTitle(elemento.get);
@@ -82,14 +85,15 @@ public class StrutturaView extends VerticalLayout implements HasUrlParameter<Str
 		VerticalLayout layoutDettagli = new VerticalLayout();
 	    layoutDettagli.setAlignItems(Alignment.CENTER);
 	    layoutDettagli.setSpacing(true);
-	    
-	    if (elemento.getPathPercorso() != null && !elemento.getPathPercorso().isEmpty()) {
-	        Image img = new Image(elemento.getPathPercorso(), "cambaire con metodo per il nome");
+	    //aggiunge foto nel dialog
+	    if (elemento.getPathFoto() != null && !elemento.getPathFoto().isEmpty()) {
+	        Image img = new Image(elemento.getPathFoto(), "cambaire con metodo per il nome");
 	        img.setWidth("250px");
 	        layoutDettagli.add(img);
 	    }
+	    //bottone per chiudere dialog
 	    AppButton chiudi = new AppButton("Chiudi", event ->{
-	    	mappa.Mapreset();
+	    	//mappa.Mapreset();
 	    	dialog.close();
 	    });
 	    dialog.getFooter().add(chiudi);
