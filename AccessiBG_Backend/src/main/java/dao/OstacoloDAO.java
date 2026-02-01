@@ -18,9 +18,9 @@ public class OstacoloDAO {
 	}
 
 	public void insert(Ostacolo o) {
-		dsl.insertInto(table("stanza"), field("id"),field("tipo"),field("descrizione"),field("x"),field("y"),field("pathFoto"),field("pathPercorso"), field("piano"))
-		.values(o.getId(), o.getTipo(), o.getDescrizione(),o.getX(), o.getY(), o.getPathFoto(), o.getPathPercorso(), o.getPiano())
-		.onConflict(field("id"), field("id"))
+		dsl.insertInto(table("ostacolo"), field("id"),field("tipo"),field("descrizione"),field("x"),field("y"),field("pathFoto"),field("pathPercorso"), field("piano"))
+		.values(o.getId(), o.getTipo().name(), o.getDescrizione(),o.getX(), o.getY(), o.getPathFoto(), o.getPathPercorso(), o.getPiano())
+		.onConflict(field("id"), field("piano"))
 		.doNothing()
 		.execute();
 	}

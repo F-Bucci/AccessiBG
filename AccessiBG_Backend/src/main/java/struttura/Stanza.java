@@ -1,6 +1,7 @@
 package struttura;
 
-public class Stanza {
+
+public class Stanza implements ElementoMappa{
 	private int id;
 	private String nome;
 	private int posti;
@@ -61,8 +62,9 @@ public class Stanza {
 		return tipoStan;
 	}
 
+	@Override
 	public String getPathPercorso() {
-		return pathPercorso;
+	    return this.pathPercorso; // Ritorna la variabile che hai nella classe
 	}
 
 	public String getPathFoto() {

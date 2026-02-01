@@ -20,9 +20,9 @@ public class StanzaDAO {
 	public void insert(Stanza s) {
 		dsl.insertInto(table("stanza"), field("id"),field("nome"),field("posti"), field("descrizione"), field("accessibile"),
 				field("x"), field("y"), field("tipoStanza"),field("pathFoto"), field("pathPercorso"),field("piano"))
-		.values(s.getId(), s.getNome(), s.getPosti(), s.getDescrizione(), s.getAccessibile(), s.getX(), s.getY(), 
-				s.getTipoStan(),s.getPathFoto(),s.getPathPercorso(),s.getPiano())
-		.onConflict(field("id"), field("id"))
+		.values(s.getId(), s.getNome(), s.getPosti(), s.getDescrizione(), s.getAccessibile() ? 1 : 0, s.getX(), s.getY(), 
+				s.getTipoStan().name(),s.getPathFoto(),s.getPathPercorso(),s.getPiano())
+		.onConflict(field("id"), field("piano"))
 		.doNothing()
 		.execute();
 	}
@@ -35,6 +35,7 @@ public class StanzaDAO {
 				.fetchOne();
 		if (record != null) {
 			TipoStanza tipo = TipoStanza.valueOf(record.get("tipoStanza", String.class));
+			Integer accInt = record.get("accessibile", Integer.class);
 			boolean accessibile = record.get("accessibile", Boolean.class);
 			return new Stanza(
 					record.get("id", Integer.class),

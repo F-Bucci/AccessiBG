@@ -1,5 +1,5 @@
 
-
+/*
 package struttura;
 
 public class UfficioDocenti extends Stanza
@@ -16,3 +16,4 @@ public class UfficioDocenti extends Stanza
 	public String getDocente() { return docente; }
     //public void setDocente(String docente) { this.docente = docente; }
 }
+*/

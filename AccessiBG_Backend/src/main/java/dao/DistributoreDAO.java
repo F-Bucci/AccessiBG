@@ -49,4 +49,27 @@ public class DistributoreDAO {
 					record.get("numPiano", Integer.class));
 		}
 		return null;}
+	
+	public Distributore findById(int id) {
+			var record = dsl
+					.select(field("id"),field("tipo"),field("accessibile"),field("x"),
+							field("y"),field("pathFoto"),field("pathPercorso"),field("numPiano"))
+					.from(table("distributore"))
+					.where(field("id").eq(id))
+					.fetchOne();
+			if (record != null) {
+				TipoDistributore tipo = TipoDistributore.valueOf(record.get("tipo", String.class));
+				boolean accessibile = record.get("accessibile", Boolean.class);
+				return new Distributore(
+						record.get("id", Integer.class),
+						tipo,
+						accessibile,
+						record.get("x", Double.class),
+						record.get("y", Double.class),					
+						record.get("pathFoto", String.class),
+						record.get("pathPercorso", String.class),
+						record.get("numPiano", Integer.class));
+			}
+			return null;
+	}
 }

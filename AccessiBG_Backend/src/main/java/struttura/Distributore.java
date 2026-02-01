@@ -1,6 +1,6 @@
 package struttura;
 
-public class Distributore {
+public class Distributore implements ElementoMappa{
 	private int id;
 	private TipoDistributore tipo;
 	private boolean accessibile;
@@ -35,6 +35,7 @@ public class Distributore {
 	public double getY() {
 		return y;
 	}
+	@Override
 	public String getPathPercorso() {
 		return pathPercorso;
 	}

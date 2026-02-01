@@ -1,6 +1,6 @@
 package struttura;
 
-public class Ostacolo {
+public class Ostacolo implements ElementoMappa{
 	private int id;
 	private String descrizione;
 	private TipoOstacolo tipo;
@@ -40,8 +40,9 @@ public class Ostacolo {
 	public double getY() {
 		return y;
 	}
+	@Override
 	public String getPathPercorso() {
-		return pathPercorso;
+		return null;
 	}
 	public String getPathFoto() {
 		return pathFoto;

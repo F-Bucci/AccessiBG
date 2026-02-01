@@ -77,7 +77,7 @@ public class CreateTable {
 					")");
 			
 			dsl.execute("CREATE TABLE IF NOT EXISTS stanza(" +
-					"id INTEGER PRIMARY KEY, "+
+					"id INTEGER NOT NULL, "+
 					"nome TEXT NOT NULL, "+
 					"posti INTEGER NOT NULL, " +
 					"descrizione TEXT NOT NULL, " +
@@ -98,11 +98,11 @@ public class CreateTable {
 					"descrizione TEXT NOT NULL,"+
 					"x REAL, " +
 					"y REAL, " +
-					"pathFoto TEXT NOT NULL,"+
-					"pathPercorso TEXT NOT NULL,"+
+					"pathFoto TEXT ,"+
+					"pathPercorso TEXT,"+
 					"piano INTEGER NOT NULL,"+
 					"PRIMARY KEY (id, piano), " +
-					"FOREIGN (piano) REFERENCES piano(num) ON DELETE CASCADE" +
+					"FOREIGN KEY (piano) REFERENCES piano(num) ON DELETE CASCADE" +
 					")");
 		}
 }
