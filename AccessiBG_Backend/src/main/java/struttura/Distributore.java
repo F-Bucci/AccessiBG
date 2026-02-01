@@ -6,15 +6,19 @@ public class Distributore {
 	private boolean accessibile;
 	private double x;
 	private double y;
+	private String pathFoto;
+	private String pathPercorso;
 	private int piano;
 	
-	public Distributore(int id, TipoDistributore tipo, boolean accessibile, double x, double y, int piano) {
+	public Distributore(int id, TipoDistributore tipo, boolean accessibile, double x, double y, String pathFoto,String pathPercorso, int piano) {
 		this.id=id;
 		this.tipo = tipo;
 		this.accessibile = accessibile;
 		this.x=x;
 		this.y=y;
 		this.piano=piano;
+		this.pathFoto=pathFoto;
+		this.pathPercorso=pathPercorso;
 	}
 	public TipoDistributore getTipo() { return tipo; }
 //    public void setTipo(TipoDistributore tipo) {this.tipo = tipo; }
@@ -30,5 +34,11 @@ public class Distributore {
 	}
 	public double getY() {
 		return y;
+	}
+	public String getPathPercorso() {
+		return pathPercorso;
+	}
+	public String getPathFoto() {
+		return pathFoto;
 	}
 }

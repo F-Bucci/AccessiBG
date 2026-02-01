@@ -18,15 +18,15 @@ public class OstacoloDAO {
 	}
 
 	public void insert(Ostacolo o) {
-		dsl.insertInto(table("stanza"), field("id"),field("tipo"),field("descrizione"),field("x"),field("y"), field("piano"))
-		.values(o.getId(), o.getTipo(), o.getDescrizione(),o.getX(), o.getY(), o.getPiano())
+		dsl.insertInto(table("stanza"), field("id"),field("tipo"),field("descrizione"),field("x"),field("y"),field("pathFoto"),field("pathPercorso"), field("piano"))
+		.values(o.getId(), o.getTipo(), o.getDescrizione(),o.getX(), o.getY(), o.getPathFoto(), o.getPathPercorso(), o.getPiano())
 		.onConflict(field("id"), field("id"))
 		.doNothing()
 		.execute();
 	}
 
 	public Ostacolo findById(int id) {
-		var record = dsl.select(field("id"),field("tipo"),field("descrizione"), field("piano"))
+		var record = dsl.select(field("id"),field("tipo"),field("descrizione"),field("x"),field("y"),field("pathFoto"),field("pathPercorso"), field("piano"))
 				.from(table("ostacolo"))	
 				.where(field("id").eq(id))
 				.fetchOne();
@@ -38,6 +38,8 @@ public class OstacoloDAO {
 					record.get("descrizione", String.class),
 					record.get("x", Double.class),
 					record.get("y", Double.class),
+					record.get("pathFoto", String.class),
+					record.get("pathPercorso", String.class),
 					record.get("piano", Integer.class)
 					);
 		}

@@ -6,15 +6,19 @@ public class Ostacolo {
 	private TipoOstacolo tipo;
 	private double x;
 	private double y;
+	private String pathFoto;
+	private String pathPercorso;
 	private int piano;
 	
-	public Ostacolo(int id, TipoOstacolo tipo, String descrizione, double x, double y, int piano) {
+	public Ostacolo(int id, TipoOstacolo tipo, String descrizione, double x, double y,String pathFoto,String pathPercorso, int piano) {
        this.id=id;
 		this.tipo = tipo;
         this.descrizione = descrizione;
         this.x=x;
         this.y=y;
         this.piano=piano;
+        this.pathPercorso=pathPercorso;
+        this.pathFoto=pathFoto;
     }
 	public Ostacolo() {}
 	
@@ -35,5 +39,11 @@ public class Ostacolo {
 	}
 	public double getY() {
 		return y;
+	}
+	public String getPathPercorso() {
+		return pathPercorso;
+	}
+	public String getPathFoto() {
+		return pathFoto;
 	}
 }

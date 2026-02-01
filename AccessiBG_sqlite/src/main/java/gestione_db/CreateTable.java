@@ -58,6 +58,8 @@ public class CreateTable {
 			    "accessibile INTEGER NOT NULL,"+
 			    "x REAL, " +
 				"y REAL, " +
+				"pathFoto TEXT NOT NULL,"+
+				"pathPercorso TEXT NOT NULL,"+
 			    "piano INTEGER NOT NULL,"+
 			    "edificio TEXT NOT NULL,"+
 			    "PRIMARY KEY (id, piano, edificio), " +
@@ -84,6 +86,8 @@ public class CreateTable {
 					"x REAL, " +
 					"y REAL, " +
 					"tipoStanza TEXT NOT NULL, " +
+					"pathFoto TEXT NOT NULL,"+
+					"pathPercorso TEXT NOT NULL,"+
 					"piano INTEGER NOT NULL, " +
 					"edificio TEXT NOT NULL, " +
 					"PRIMARY KEY (id, piano, edificio), " +
@@ -96,6 +100,8 @@ public class CreateTable {
 					"descrizione TEXT NOT NULL,"+
 					"x REAL, " +
 					"y REAL, " +
+					"pathFoto TEXT NOT NULL,"+
+					"pathPercorso TEXT NOT NULL,"+
 					"piano TEXT NOT NULL,"+
 					"PRIMARY KEY (id, piano), " +
 					"FOREIGN (piano) REFERENCES piano(num) ON DELETE CASCADE" +

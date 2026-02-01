@@ -18,8 +18,9 @@ public class DistributoreDAO {
 	}
 
 	public void insert(Distributore d) {
-		dsl.insertInto(table("distributore"), field("id"),field("tipo"),field("x"),field("y"),field("accessibile"),field("numPiano"))
-		.values(d.getId(), d.getTipo(), d.getAccessibile(), d.getX(), d.getY(), d.getPiano())
+		dsl.insertInto(table("distributore"), field("id"),field("tipo"),field("accessibile"),field("x"),
+				field("y"),field("pathFoto"),field("pathPercorso"),field("numPiano"))
+		.values(d.getId(), d.getTipo(), d.getAccessibile(), d.getX(), d.getY(), d.getPathFoto(),d.getPathPercorso(), d.getPiano())
 		.onConflict(field("id"), field("numPiano"))
 		.doNothing()
 		.execute();
@@ -28,7 +29,8 @@ public class DistributoreDAO {
 //	restituisce d in base a id e piano, forse non utile, implementato già con sede
 	public Distributore findDistributoreByPiano(int id, int piano) {
 		var record = dsl
-				.select(field("id"),field("tipo"),field("posizione"),field("accessibile"),field("numPiano"))
+				.select(field("id"),field("tipo"),field("accessibile"),field("x"),
+						field("y"),field("pathFoto"),field("pathPercorso"),field("numPiano"))
 				.from(table("distributore"))
 				.where(field("id").eq(id))
 				.and(field("piano").eq(piano))
@@ -41,7 +43,9 @@ public class DistributoreDAO {
 					tipo,
 					accessibile,
 					record.get("x", Double.class),
-					record.get("y", Double.class),
+					record.get("y", Double.class),					
+					record.get("pathFoto", String.class),
+					record.get("pathPercorso", String.class),
 					record.get("numPiano", Integer.class));
 		}
 		return null;}
