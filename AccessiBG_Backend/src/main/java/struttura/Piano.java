@@ -8,21 +8,21 @@ package struttura;
 
 public class Piano {
 
-	public int numero;
+	private int numero;
 	private String descrizione;
 	private String edificio;
 	
 	public Piano(int numero, String descrizione, String edificio) {
-		this.numero = numero;
-		this.descrizione = descrizione;
-		this.edificio = edificio;
+		this.numero = (numero < -1) ? -1 : numero;
+		this.descrizione = (descrizione == null || descrizione.isBlank()) ? "Descrizione non presente" : descrizione;
+		this.edificio = (edificio == null || edificio.isBlank()) ? "Edificio non specificato" : edificio;
 	}
 	
 	public int getNumero() { return numero; }
-    public void setNumero(int numero) { this.numero = numero; }
+    // public void setNumero(int numero) { this.numero = numero; }
 
     public String getDescrizione() { return descrizione; }
-    public void setDescrizione(String descrizione) { this.descrizione = descrizione;}
+    // public void setDescrizione(String descrizione) { this.descrizione = descrizione;}
 
 	public String getEdificio() {
 		return edificio;
