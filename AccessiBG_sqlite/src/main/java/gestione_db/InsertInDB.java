@@ -14,6 +14,12 @@ public class InsertInDB{
 	private final PianoDAO pianoDAO;
 	private final DistributoreDAO distributoreDAO;
 
+	private <T> void insertAll(DAO<T> dao, T[] entities) {
+	    for (T entity : entities) {
+	        dao.insert(entity);
+	    }
+	}
+	
 	public InsertInDB(SedeDAO sedeDAO, EdificioDAO edificioDAO, ParcheggioDAO parcheggioDAO, PianoDAO pianoDAO, DistributoreDAO distributoreDAO) {
 		this.sedeDAO = sedeDAO;
 		this.edificioDAO = edificioDAO;
@@ -34,12 +40,7 @@ public class InsertInDB{
 				new Sede("Sede Rosate", "Piazza Rosate, 2", "/sedeRosate.webp", "Lun-Ven: 7.30-20.30  Sabato: 7.30-13.30", "urlMaps")
 		};
 		
-		inserimentoSedi(listaSedi);
-	}
-	
-	private void inserimentoSedi(Sede[] listaSedi) {
-		for(Sede s : listaSedi)
-			sedeDAO.insert(s);
+		insertAll(sedeDAO, listaSedi);
 	}
 	
 	
@@ -52,12 +53,7 @@ public class InsertInDB{
 				new Edificio("Edificio D", "Via Galvani 2", "DA LUNEDÍ A VENERDÍ: \n" + "7.30-20.30 \n" + "SABATO: \n"+ "7.30-13.30", "/dalmineD.webp", "Sede di Dalmine")	
 		};
 		
-		inserimentoEdifici(listaEdifici);
-	}
-	
-	private void inserimentoEdifici(Edificio[] listaEdifici) {
-		for(Edificio e : listaEdifici)
-			edificioDAO.insert(e);
+		insertAll(edificioDAO, listaEdifici);
 	}
 	
 	
@@ -70,12 +66,7 @@ public class InsertInDB{
 				new Parcheggio("Parcheggio edificio C", TipoParcheggio.DISCO_ORARIO, false , "Via Pasubio 2", "/parcheggioEdD.webp", "Sede di Dalmine")
 		};
 		
-		inserimentoParcheggi(listaParcheggi);
-	}
-	
-	private void inserimentoParcheggi(Parcheggio[] listaParcheggi) {
-		for(Parcheggio p : listaParcheggi)
-			parcheggioDAO.insert(p);
+		insertAll(parcheggioDAO, listaParcheggi);
 	}
 	
 	
@@ -85,12 +76,7 @@ public class InsertInDB{
 				new Piano (0, "Piano terra", "Edificio D")	
 		};
 		
-		inserimentoPiani(listaPiani);
-	}
-	
-	private void inserimentoPiani(Piano[] listaPiani) {
-		for(Piano p : listaPiani)
-			pianoDAO.insert(p);
+		insertAll(pianoDAO, listaPiani);
 	}
 	
 	

@@ -12,14 +12,13 @@ import struttura.Distributore;
 import struttura.Piano;
 
 @Repository
-public class PianoDAO {
+public class PianoDAO extends DAO<Piano> {
 	
-	private final DSLContext dsl;
-
 	public PianoDAO(DSLContext dsl) {
-		this.dsl = dsl;
+		super(dsl);
 	}
-
+	
+	@Override
 	public void insert(Piano p) {
 		dsl
 			.insertInto(

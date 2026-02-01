@@ -8,20 +8,20 @@ import static org.jooq.impl.DSL.*;
 
 import struttura.Edificio;
 import struttura.Parcheggio;
+import struttura.Piano;
 import struttura.Sede;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class SedeDAO {
-
-	private final DSLContext dsl;
+public class SedeDAO extends DAO<Sede> {
 
 	public SedeDAO(DSLContext dsl) {
-		this.dsl = dsl;
+		super(dsl);
 	}
-
+    
+	@Override
 	public void insert(Sede s) {
 		dsl.insertInto(
 				table("sede"),

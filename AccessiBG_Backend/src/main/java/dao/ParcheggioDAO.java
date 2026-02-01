@@ -6,18 +6,18 @@ import static org.jooq.impl.DSL.table;
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
 
+import struttura.Edificio;
 import struttura.Parcheggio;
 import struttura.TipoParcheggio;
 
 @Repository
-public class ParcheggioDAO {
-	
-	private final DSLContext dsl;
+public class ParcheggioDAO extends DAO<Parcheggio> {
 	
 	public ParcheggioDAO(DSLContext dsl) {
-		this.dsl = dsl;
+		super(dsl);
 	}
-
+	
+    @Override
 	public void insert(Parcheggio p) {
 		dsl
 			.insertInto(
