@@ -83,15 +83,15 @@ public class InsertInDB{
 	}
 		
 	public void insRecordStanza() {
-		Stanza d01 = new Stanza (1, "D001", 275, "Aula magna, dispone del banco per disabili", true, 33.24, 39.88, TipoStanza.AULA, "foto","percorso", 0, "Edificio D");
+		Stanza d01 = new Stanza (1, "D001", 275, "Aula magna, dispone del banco per disabili", true, 33.24, 39.88, TipoStanza.AULA, "foto","percorso", 0);
 		stanzaDAO.insert(d01);
-		Stanza d02 = new Stanza (2, "D002", 265, "Dispone del banco per disabili", true, 61.10, 68.75, TipoStanza.AULA, "foto","percorso", 0, "Edificio D");
+		Stanza d02 = new Stanza (2, "D002", 265, "Dispone del banco per disabili", true, 61.10, 68.75, TipoStanza.AULA, "foto","percorso", 0);
 		stanzaDAO.insert(d02);
-		Stanza stud1 = new Stanza (3, "Aula studio", 275, "Aula studio con banchi grandi e sedie rimovibili", true, 8.30, 52.13, TipoStanza.AULA_STUDIO, "foto","percorso", 0, "Edificio D");
+		Stanza stud1 = new Stanza (3, "Aula studio", 275, "Aula studio con banchi grandi e sedie rimovibili", true, 8.30, 52.13, TipoStanza.AULA_STUDIO, "foto","percorso", 0);
 		stanzaDAO.insert(stud1);
-		Stanza bagnoU = new Stanza (4,"Bagno", 8 ,"Bagno uomini a sinistra", true, 49.90, 36.88, TipoStanza.BAGNO, "foto","percorso", 0, "Edificio D");
+		Stanza bagnoU = new Stanza (4,"Bagno", 8 ,"Bagno uomini a sinistra", true, 49.90, 36.88, TipoStanza.BAGNO, "foto","percorso", 0);
 		stanzaDAO.insert(bagnoU);
-		Stanza bagnoD = new Stanza (5,"Bagno", 8 ,"Bagno donne a destra", true, 60.35, 34.62, TipoStanza.BAGNO, "foto","percorso", 0, "Edificio D");
+		Stanza bagnoD = new Stanza (5,"Bagno", 8 ,"Bagno donne a destra", true, 60.35, 34.62, TipoStanza.BAGNO, "foto","percorso", 0);
 		stanzaDAO.insert(bagnoD);
 	}
 	

@@ -12,10 +12,9 @@ public class Stanza {
 	private String pathFoto;
 	private String pathPercorso;
 	private int piano;
-	private String edificio;
 
 	public Stanza(int id, String nome, int posti, String descrizione, boolean accessibile, double x, double y,
-			TipoStanza tipoStan, String pathPercorso,String pathFoto,int piano, String edificio) {
+			TipoStanza tipoStan, String pathPercorso,String pathFoto,int piano) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -26,7 +25,6 @@ public class Stanza {
 		this.y = y;
 		this.tipoStan = tipoStan;
 		this.piano = piano;
-		this.edificio=edificio;
 		this.pathPercorso=pathPercorso;
 		this.pathFoto=pathFoto;
 	}
@@ -61,10 +59,6 @@ public class Stanza {
 
 	public TipoStanza getTipoStan() {
 		return tipoStan;
-	}
-
-	public String getEdificio() {
-		return edificio;
 	}
 
 	public String getPathPercorso() {

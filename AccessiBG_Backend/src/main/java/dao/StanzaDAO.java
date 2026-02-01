@@ -19,9 +19,9 @@ public class StanzaDAO {
 	
 	public void insert(Stanza s) {
 		dsl.insertInto(table("stanza"), field("id"),field("nome"),field("posti"), field("descrizione"), field("accessibile"),
-				field("x"), field("y"), field("tipoStanza"),field("pathFoto"), field("pathPercorso"),field("piano"),  field("edificio"))
+				field("x"), field("y"), field("tipoStanza"),field("pathFoto"), field("pathPercorso"),field("piano"))
 		.values(s.getId(), s.getNome(), s.getPosti(), s.getDescrizione(), s.getAccessibile(), s.getX(), s.getY(), 
-				s.getTipoStan(),s.getPathFoto(),s.getPathPercorso(),s.getPiano(), s.getEdificio())
+				s.getTipoStan(),s.getPathFoto(),s.getPathPercorso(),s.getPiano())
 		.onConflict(field("id"), field("id"))
 		.doNothing()
 		.execute();
@@ -29,7 +29,7 @@ public class StanzaDAO {
 
 	public Stanza findByName(String nome) {
 		var record = dsl.select(field("id"),field("nome"),field("posti"), field("descrizione"), field("accessibile"),
-				field("x"), field("y"), field("tipoStanza"), field("pathFoto"), field("pathPercorso"),field("piano"),  field("edificio"))
+				field("x"), field("y"), field("tipoStanza"), field("pathFoto"), field("pathPercorso"),field("piano"))
 				.from(table("stanza"))	
 				.where(field("nome").eq(nome))
 				.fetchOne();
@@ -47,8 +47,7 @@ public class StanzaDAO {
 					tipo,
 					record.get("pathFoto", String.class),
 					record.get("pathPercorso", String.class),
-					record.get("piano", Integer.class),
-					record.get("edificio", String.class)
+					record.get("piano", Integer.class)
 					);
 		}
 		return null;}

@@ -61,9 +61,8 @@ public class CreateTable {
 				"pathFoto TEXT NOT NULL,"+
 				"pathPercorso TEXT NOT NULL,"+
 			    "piano INTEGER NOT NULL,"+
-			    "edificio TEXT NOT NULL,"+
-			    "PRIMARY KEY (id, piano, edificio), " +
-			    "FOREIGN KEY (piano, edificio) REFERENCES piano(num), edificio(nome) ON DELETE CASCADE" +
+			    "PRIMARY KEY (id, piano), " +
+			    "FOREIGN KEY (piano) REFERENCES piano(num) ON DELETE CASCADE" +
 			    ")");
 			
 			dsl.execute("CREATE TABLE IF NOT EXISTS puntiAccesso("+
@@ -89,9 +88,8 @@ public class CreateTable {
 					"pathFoto TEXT NOT NULL,"+
 					"pathPercorso TEXT NOT NULL,"+
 					"piano INTEGER NOT NULL, " +
-					"edificio TEXT NOT NULL, " +
-					"PRIMARY KEY (id, piano, edificio), " +
-					"FOREIGN KEY(piano, edificio) REFERENCES piano(num), edificio(nome) ON DELETE CASCADE" +
+					"PRIMARY KEY (id, piano), " +
+					"FOREIGN KEY(piano) REFERENCES piano(num) ON DELETE CASCADE" +
 					")");
 
 			dsl.execute("CREATE TABLE IF NOT EXISTS ostacolo("+
@@ -102,7 +100,7 @@ public class CreateTable {
 					"y REAL, " +
 					"pathFoto TEXT NOT NULL,"+
 					"pathPercorso TEXT NOT NULL,"+
-					"piano TEXT NOT NULL,"+
+					"piano INTEGER NOT NULL,"+
 					"PRIMARY KEY (id, piano), " +
 					"FOREIGN (piano) REFERENCES piano(num) ON DELETE CASCADE" +
 					")");
