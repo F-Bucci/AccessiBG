@@ -164,7 +164,7 @@ public class SedeTest {
 		assertEquals("Mappa non disponibile", s.getPathMaps());
 	}
 	
-	// Viene verificato che tutti i controllo agiscano insieme
+	// Viene verificato che tutti i controlli nel costruttore agiscano insieme
 	@Test
 	public void testValoriNonValidi() {
 		Sede s = new Sede(

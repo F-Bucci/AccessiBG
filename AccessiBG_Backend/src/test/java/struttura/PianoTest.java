@@ -16,10 +16,10 @@ public class PianoTest {
 	    assertEquals("Edificio D", p.getEdificio());
 	}
 	
-	// Viene controllato che un valore negativo passato al numero del piano diventi 0
+	// Viene controllato che un valore negativo passato all'attributo numero (piano) diventi 1
 	@Test
 	public void testNumeroPianoNegativo() {
-	    Piano p = new Piano(-2, null, null);
+	    Piano p = new Piano(-3, null, null);
 	    
 	    assertEquals(-1, p.getNumero());
 	}
@@ -56,7 +56,7 @@ public class PianoTest {
 		assertEquals("Edificio non specificato", p.getEdificio());
 	}
 	
-	// Viene verificato che tutti i controlli agiscano insieme
+	// Viene verificato che tutti i controlli nel costruttore agiscano insieme
 	@Test
 	public void testValoriNonValidi() {
 		Piano p = new Piano(-4, " ", null);
