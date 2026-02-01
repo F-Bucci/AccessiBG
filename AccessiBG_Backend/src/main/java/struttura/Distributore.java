@@ -14,14 +14,15 @@ public class Distributore {
 		this.accessibile = accessibile;
 		this.piano=piano;
 	}
+	
 	public TipoDistributore getTipo() { return tipo; }
-//    public void setTipo(TipoDistributore tipo) {this.tipo = tipo; }
+    // public void setTipo(TipoDistributore tipo) {this.tipo = tipo; }
 
     public String getPosizione() { return posizione; }
-//    public void setPosizione(String posizione) { this.posizione = posizione; }
+    // public void setPosizione(String posizione) { this.posizione = posizione; }
 
     public boolean getAccessibile() { return accessibile; }
-//    public void setAccessibile(boolean accessibile) { this.accessibile = accessibile; }
+    // public void setAccessibile(boolean accessibile) { this.accessibile = accessibile; }
     
 	public int getPiano() {return piano;}
 	

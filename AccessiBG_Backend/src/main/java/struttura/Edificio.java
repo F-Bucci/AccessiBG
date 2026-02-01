@@ -21,22 +21,24 @@ public class Edificio {
 	}
 				
 	public String getIndirizzo() {return indirizzo;}
-//	public void setIndirizzo(String indirizzo) {this.indirizzo = indirizzo;}
+    // public void setIndirizzo(String indirizzo) {this.indirizzo = indirizzo;}
 				
 	public String getNome() {return nome;}
-//	public void setNome(String nome) {this.nome = nome;}
+    // public void setNome(String nome) {this.nome = nome;}
 				
 	public String getOrario() {return orario;}
-//	public void setOrario(String orario) {this.orario = orario;}
+    // public void setOrario(String orario) {this.orario = orario;}
 	
 	public String getFacolta() {return facolta;}
 	
 	public String getPathFoto() {return pathFoto;}
 				
 	public List<PuntoDiIngresso> getPuntiDiAccesso(){return pIngresso;}
+	
 	public void setPuntiDiAccesso(List<PuntoDiIngresso> puntiDiAccesso) {
 		this.pIngresso = puntiDiAccesso;
-		}
+	}
+	
 	public void addPuntoDiIngresso(PuntoDiIngresso p) {
 		this.pIngresso.add(p);
 		p.setEdificio(this);

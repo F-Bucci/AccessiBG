@@ -27,16 +27,16 @@ public class Parcheggio extends ServizioSede {
     }
 	
 	public boolean getPostiDisabili() { return postiDisabili; }
-//    public void setPostiDisabili(boolean postiDisabili) { this.postiDisabili = postiDisabili; }
+    // public void setPostiDisabili(boolean postiDisabili) { this.postiDisabili = postiDisabili; }
 	
     public TipoParcheggio getTipo() {return tipo;}
-//    public void setTipo(TipoParcheggio tipo) {this.tipo = tipo;}
+    // public void setTipo(TipoParcheggio tipo) {this.tipo = tipo;}
     
     public String getNome() { return nome; }
-//    public void setNome(String nome) { this.nome = nome; }
+    // public void setNome(String nome) { this.nome = nome; }
     
     public String getIndirizzo() { return indirizzo; }
-//    public void setPosizione(String posizione) { this.indirizzo = posizione; }
+    // public void setPosizione(String posizione) { this.indirizzo = posizione; }
 
 	public String getFacolta() {return facolta;}
 

@@ -23,6 +23,7 @@ public class Ostacolo {
         this.descrizione = descrizione;
         this.posizione = posizione;
     }
+	
 	public Ostacolo() {}
 	
 	public TipoOstacolo getTipo() { return tipo; }

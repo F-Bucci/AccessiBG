@@ -16,12 +16,12 @@ import servizi.ServizioSede;
  */
 public class Mensa extends ServizioSede
  {
-				/**
-				 * 
-				 */
-				public String menu;
-				/**
-				 * 
-				 */
-				public String infoAllergeni;
+	/**
+	 * 
+	 */
+	public String menu;
+	/**
+	 * 
+	 */
+	public String infoAllergeni;
 }

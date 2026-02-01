@@ -15,12 +15,9 @@ import servizi.ServizioSede;
  * 
  */
 public class Segreteria extends ServizioSede {
-				/**
-				 * 
-				 */
-				public String orario;
 	/**
 	 * 
 	 */
+	public String orario;
 
 }

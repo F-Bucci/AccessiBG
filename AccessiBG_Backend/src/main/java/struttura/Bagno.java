@@ -14,6 +14,7 @@ public class Bagno extends Stanza
 	}
 	
 	 public boolean isBagnoDisabili() { return bagnoDisabili; }
+	 
 	 public void setBagnoDisabili(boolean bagnoDisabili) { 
 	        this.bagnoDisabili = bagnoDisabili;
 	 }
