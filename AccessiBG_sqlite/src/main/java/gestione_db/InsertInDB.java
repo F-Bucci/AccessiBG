@@ -1,104 +1,108 @@
 package gestione_db;
 
 import org.springframework.stereotype.Service;
-
 import dao.*;
 import struttura.*;
 
 @Service
-public class InsertInDB{
-	private final SedeDAO sedeDAO;
-	private final EdificioDAO edificioDAO;
-	private final ParcheggioDAO parcheggioDAO;
-	private final PianoDAO pianoDAO;
-	private final DistributoreDAO distributoreDAO;
-	private final PuntoDiIngressoDAO puntoDiIngressoDAO;
-	private final StanzaDAO stanzaDAO;
-	private final OstacoloDAO ostacoloDAO;
+public class InsertInDB {
+    private final SedeDAO sedeDAO;
+    private final EdificioDAO edificioDAO;
+    private final ParcheggioDAO parcheggioDAO;
+    private final PianoDAO pianoDAO;
+    private final DistributoreDAO distributoreDAO;
+    private final PuntoDiIngressoDAO puntoDiIngressoDAO;
+    private final StanzaDAO stanzaDAO;
+    private final OstacoloDAO ostacoloDAO;
 
-	public InsertInDB(SedeDAO sedeDAO, EdificioDAO edificioDAO, ParcheggioDAO parcheggioDAO, PianoDAO pianoDAO, DistributoreDAO distributoreDAO, 
-			PuntoDiIngressoDAO puntoDiIngressoDAO, StanzaDAO stanzaDAO, OstacoloDAO ostacoloDAO) {
-		this.sedeDAO = sedeDAO;
-		this.edificioDAO=edificioDAO;
-		this.parcheggioDAO=parcheggioDAO;
-		this.pianoDAO=pianoDAO;
-		this.distributoreDAO=distributoreDAO;
-		this.puntoDiIngressoDAO=puntoDiIngressoDAO;
-		this.stanzaDAO=stanzaDAO;
-		this.ostacoloDAO=ostacoloDAO;
-	}
+    public InsertInDB(SedeDAO sedeDAO, EdificioDAO edificioDAO, ParcheggioDAO parcheggioDAO, PianoDAO pianoDAO, 
+                      DistributoreDAO distributoreDAO, PuntoDiIngressoDAO puntoDiIngressoDAO, 
+                      StanzaDAO stanzaDAO, OstacoloDAO ostacoloDAO) {
+        this.sedeDAO = sedeDAO;
+        this.edificioDAO = edificioDAO;
+        this.parcheggioDAO = parcheggioDAO;
+        this.pianoDAO = pianoDAO;
+        this.distributoreDAO = distributoreDAO;
+        this.puntoDiIngressoDAO = puntoDiIngressoDAO;
+        this.stanzaDAO = stanzaDAO;
+        this.ostacoloDAO = ostacoloDAO;
+    }
 
-	public void insRecordSedi() {
-		Sede dalmine = new Sede("Sede di Dalmine", "via A. Einstein 2", "/sedeDalmine.webp", "lun-ven:7.30-20.30 sabato:7.30-13.30", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1394.595860840313!2d9.595292955636975!3d45.64697147025653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47814df37b8ef653%3A0x3eda30ac45ab6bed!2sUniversit%C3%A0%20Degli%20Studi%20Di%20Bergamo%20Ingegneria%20Ed%20B%2C%20Via%20Salvecchio%2C%2019%2C%2024129%20Bergamo%20BG!5e0!3m2!1sit!2sit!4v1769163707622!5m2!1sit!2sit");
-		sedeDAO.insert(dalmine); 
-		Sede santAgostino = new Sede("Sede di Sant'Agostino", "piazzale Sant'Agostino, 2", "/sedeCittaAlta.webp", "lun-ven:7.30-20.30 sabato:7.30-13.30", "urlMaps");
-		sedeDAO.insert(santAgostino);
-		Sede caniana = new Sede("Sede di Caniana", "via dei Caniana, 2", "/sedeCaniana.webp", "lun-ven:7.30-20.30", "urlMaps");
-		sedeDAO.insert(caniana);
-		Sede pignolo = new Sede("Sede di Pignolo", "via Pignolo, 123", "/sedePignolo.webp", "lun-ven:7.30-20.30 sabato:7.30-13.30", "urlMaps");
-		sedeDAO.insert(pignolo);
-		Sede kmrosso = new Sede("Sede Km Rosso", "Ingresso Est, via Stezzano, 87. Ingresso Ovest, viale Europa, 4", "/sedeKmrosso.webp", "lun-dom:7.30-20.30", "urlMaps");
-		sedeDAO.insert(kmrosso);
-	}
-	
-	public void insRecordEdifici() {
-		Edificio a = new Edificio("Edificio A", "Via Einstein 2", "DA LUNEDÍ A VENERDÍ \n" + "7.30-20.30 \n" + "SABATO \n"+ "7.30-13.30", "/dalmineA.webp", "Sede di Dalmine");
-		edificioDAO.insert(a); 
-		Edificio b = new Edificio("Edificio B", "viale Marconi 5", "DA LUNEDÍ A VENERDÍ \n" + "7.30-20.30 \n" + "SABATO \n"+ "7.30-13.30", "/dalmineB.webp", "Sede di Dalmine");
-		edificioDAO.insert(b);
-		Edificio c = new Edificio("Edifcio C", "viale Pasubio 7", "DA LUNEDÍ A VENERDÍ \n" + "7.30-20.30 \n" + "SABATO \n"+ "7.30-13.30", "/dalmineC.webp", "Sede di Dalmine");
-		edificioDAO.insert(c);
-		Edificio d = new Edificio("Edificio D", "via Galvani 2", "DA LUNEDÍ A VENERDÍ \n" + "7.30-20.30 \n" + "SABATO \n"+ "7.30-13.30", "/dalmineD.webp", "Sede di Dalmine");
-		edificioDAO.insert(d);
-	}
-	
-	public void insRecordParcheggio() {
-		Parcheggio sterrato = new Parcheggio("Parcheggio sterrato C", TipoParcheggio.LIBERO, true , "Via Galvani 7", "/parcheggioSterrato.webp", "Sede di Dalmine");
-		parcheggioDAO.insert(sterrato);
-		Parcheggio tenaris = new Parcheggio("Parcheggio asfaltato C", TipoParcheggio.LIBERO, true , "Via Einstein 2", "/parcheggioTenaris.webp", "Sede di Dalmine");
-		parcheggioDAO.insert(tenaris);
-		Parcheggio edA = new Parcheggio("Parcheggio edificio A", TipoParcheggio.DISCO_ORARIO, true , "Via Cavour 2B", "/parcheggioEdA.webp", "Sede di Dalmine");
-		parcheggioDAO.insert(edA);
-		Parcheggio edD = new Parcheggio("Parcheggio edificio C", TipoParcheggio.DISCO_ORARIO, false , "Via Pasubio 2", "/parcheggioEdD.webp", "Sede di Dalmine");
-		parcheggioDAO.insert(edD);
-	}
+    private <T> void insertAll(DAO<T> dao, T[] entities) {
+        for (T entity : entities) {
+            dao.insert(entity);
+        }
+    }
 
-	public void insRecordPuntoIngresso() {	
-	PuntoDiIngresso p = new PuntoDiIngresso (1,"Ingresso principale", false, true, false, false, 33.10, 85.38,"pathFoto","pathpercorso","Edificio D");
-		puntoDiIngressoDAO.insert(p);
-	}
-	
-	public void insRecordPiano() {
-		Piano terra = new Piano (0,"piano terra","/Mappa_PianoTerra_D.webp", "Edificio D");
-		pianoDAO.insert(terra);
-	}
-	
-	public void insRecordDistributore() {
-		Distributore dx = new Distributore (1, "Macchinetta caffe",TipoDistributore.BEVANDE_CALDE, true, 56.64, 45, "/DBagni_E_DistributoriDX.webp","/percorso_DistributoriDX_BAGNO.webp" ,0 );
-		distributoreDAO.insert(dx);
-		Distributore dxA = new Distributore (2, "Distributore acqua",TipoDistributore.ACQUA, false,52.54, 45.50, "/DBagni_E_DistributoriDX.webp","/percorso_DistributoriDX_BAGNO.webp", 0 );
-		distributoreDAO.insert(dxA);
-		Distributore dsx = new Distributore (3, "Macchinetta merendine",TipoDistributore.SNACK_E_BEVANDE, true, 7.13, 73.13, "/D_DistributoreSX.webp","/percorso_DistributoriSX.webp", 0 );
-		distributoreDAO.insert(dsx);
-	}
-		
-	public void insRecordStanza() {
-		Stanza d001 = new Stanza (1, "D001", 275, "Aula magna, dispone del banco per disabili", true, 33.24, 39.88, TipoStanza.AULA, "/D001.webp","/percorso_D001.webp", 0);
-		stanzaDAO.insert(d001);
-		Stanza d002 = new Stanza (2, "D002", 265, "Dispone del banco per disabili", true, 61.10, 68.75, TipoStanza.AULA, "/D002.webp","/percorso_D002.webp", 0);
-		stanzaDAO.insert(d002);
-		Stanza dstud1 = new Stanza (3, "Aula studio", 275, "Aula studio con banchi grandi e sedie rimovibili", true, 8.30, 52.13, TipoStanza.AULA_STUDIO, "/aulaStudioD.webp","/percorso_DAulaStudio.webp", 0);
-		stanzaDAO.insert(dstud1);
-		Stanza dbagnoU = new Stanza (4,"Bagno", 4 ,"Bagno uomini a sinistra", true, 49.90, 36.88, TipoStanza.BAGNO_UOMO, "/DBagni_E_DistributoriDX.webp","/percorso_DistributoriDX_BAGNO.webp", 0);
-		stanzaDAO.insert(dbagnoU);
-		Stanza dbagnoD = new Stanza (5,"Bagno", 4 ,"Bagno donne a destra", true, 60.35, 34.62, TipoStanza.BAGNO_DONNA, "/DBagni_E_DistributoriDX.webp","/percorso_DistributoriDX_BAGNO.webp", 0);
-		stanzaDAO.insert(dbagnoD);
-	}
-	
-	public void insRecordOstacolo() {
-		Ostacolo o1 = new Ostacolo (1, "Sedie",TipoOstacolo.OGGETTO_INGROMBRANTE, "sedie laterali fisse", 52.13, 70.38, "/D002.webp","percorso", 0);
-		ostacoloDAO.insert(o1);
-		Ostacolo o2 = new Ostacolo (2, "Macchinario",TipoOstacolo.OGGETTO_INGROMBRANTE, "macchinario vicino ingresso D002", 59.96, 61.88, "foto","percorso", 0);
-		ostacoloDAO.insert(o2);
-		}
+    public void insRecordSedi() {
+        Sede[] listaSedi = {
+            new Sede("Sede di Dalmine", "Via A. Einstein 2", "/sedeDalmine.webp", "Lun-Ven: 7.30-20.30  Sabato: 7.30-13.30", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1394.595860840313!2d9.595292955636975!3d45.64697147025653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47814df37b8ef653%3A0x3eda30ac45ab6bed!2sUniversit%C3%A0%20Degli%20Studi%20Di%20Bergamo%20Ingegneria%20Ed%20B%2C%20Via%20Salvecchio%2C%2019%2C%2024129%20Bergamo%20BG!5e0!3m2!1sit!2sit!4v1769163707622!5m2!1sit!2sit"),
+            new Sede("Sede di Sant'Agostino", "Piazzale Sant'Agostino, 2", "/sedeCittaAlta.webp", "Lun-Ven: 7.30-20.30  Sabato: 7.30-13.30", "urlMaps"),
+            new Sede("Sede di Caniana", "Via dei Caniana, 2", "/sedeCaniana.webp", "Lun-Ven: 7.30-20.30", "urlMaps"),
+            new Sede("Sede di Pignolo", "Via Pignolo, 123", "/sedePignolo.webp", "Lun-Ven: 7.30-20.30  Sabato:7.30-13.30", "urlMaps"),
+            new Sede("Sede Km Rosso", "Ingresso Est, via Stezzano, 87. Ingresso Ovest, viale Europa, 4", "/sedeKmrosso.webp", "Lun-Dom: 7.30-20.30", "urlMaps"),
+            new Sede("Sede Rosate", "Piazza Rosate, 2", "/sedeRosate.webp", "Lun-Ven: 7.30-20.30  Sabato: 7.30-13.30", "urlMaps")
+        };
+        insertAll(sedeDAO, listaSedi);
+    }
+
+    public void insRecordEdifici() {
+        Edificio[] listaEdifici = {
+            new Edificio("Edificio A", "Via Einstein 2", "7.30-20.30", "/dalmineA.webp", "Sede di Dalmine"),
+            new Edificio("Edificio B", "Viale Marconi 5", "7.30-20.30", "/dalmineB.webp", "Sede di Dalmine"),
+            new Edificio("Edificio C", "Viale Pasubio 7", "7.30-20.30", "/dalmineC.webp", "Sede di Dalmine"),
+            new Edificio("Edificio D", "Via Galvani 2", "7.30-20.30", "/dalmineD.webp", "Sede di Dalmine")    
+        };
+        insertAll(edificioDAO, listaEdifici);
+    }
+
+    public void insRecordParcheggio() {
+        Parcheggio[] listaParcheggi = {
+            new Parcheggio("Parcheggio sterrato C", TipoParcheggio.LIBERO, true , "Via Galvani 7", "/parcheggioSterrato.webp", "Sede di Dalmine"),
+            new Parcheggio("Parcheggio asfaltato C", TipoParcheggio.LIBERO, true , "Via Einstein 2", "/parcheggioTenaris.webp", "Sede di Dalmine"),
+            new Parcheggio("Parcheggio edificio A", TipoParcheggio.DISCO_ORARIO, true , "Via Cavour 2B", "/parcheggioEdA.webp", "Sede di Dalmine"),
+            new Parcheggio("Parcheggio edificio C", TipoParcheggio.DISCO_ORARIO, false , "Via Pasubio 2", "/parcheggioEdD.webp", "Sede di Dalmine")
+        };
+        insertAll(parcheggioDAO, listaParcheggi);
+    }
+
+    public void insRecordPuntoIngresso() {
+        PuntoDiIngresso[] listaIngressi = {
+            new PuntoDiIngresso(1, "Ingresso principale", false, true, false, false, 33.10, 85.38, "pathFoto", "pathpercorso", "Edificio D")
+        };
+        insertAll(puntoDiIngressoDAO, listaIngressi);
+    }
+
+    public void insRecordPiano() {
+        Piano terra = new Piano(0, "piano terra", "/Mappa_PianoTerra_D.webp", "Edificio D");
+        pianoDAO.insert(terra);
+    }
+
+    public void insRecordDistributore() {
+        Distributore[] listaDistributori = {
+            new Distributore(1, "Macchinetta caffe", TipoDistributore.BEVANDE_CALDE, true, 56.64, 45, "/DBagni_E_DistributoriDX.webp", "/percorso_DistributoriDX_BAGNO.webp", 0),
+            new Distributore(2, "Distributore acqua", TipoDistributore.ACQUA, false, 52.54, 45.50, "/DBagni_E_DistributoriDX.webp", "/percorso_DistributoriDX_BAGNO.webp", 0),
+            new Distributore(3, "Macchinetta merendine", TipoDistributore.SNACK_E_BEVANDE, true, 7.13, 73.13, "/D_DistributoreSX.webp", "/percorso_DistributoriSX.webp", 0)
+        };
+        insertAll(distributoreDAO, listaDistributori);
+    }
+
+    public void insRecordStanza() {
+        Stanza[] listaStanze = {
+            new Stanza(1, "D001", 275, "Aula magna", true, 33.24, 39.88, TipoStanza.AULA, "/D001.webp", "/percorso_D001.webp", 0),
+            new Stanza(2, "D002", 265, "Aula", true, 61.10, 68.75, TipoStanza.AULA, "/D002.webp", "/percorso_D002.webp", 0),
+            new Stanza(3, "Aula studio", 275, "Aula studio", true, 8.30, 52.13, TipoStanza.AULA_STUDIO, "/aulaStudioD.webp", "/percorso_DAulaStudio.webp", 0),
+            new Stanza(4, "Bagno Uomini", 4, "Bagno uomini situato a sinistra", true, 49.90, 36.88, TipoStanza.BAGNO_UOMO, "/DBagni_E_DistributoriDX.webp", "/percorso_DistributoriDX_BAGNO.webp", 0),
+            new Stanza(5, "Bagno Donne", 4, "Bagno donne situato a destra", true, 60.35, 34.62, TipoStanza.BAGNO_DONNA, "/DBagni_E_DistributoriDX.webp", "/percorso_DistributoriDX_BAGNO.webp", 0)
+        };
+        insertAll(stanzaDAO, listaStanze);
+    }
+
+    public void insRecordOstacolo() {
+        Ostacolo[] listaOstacoli = {
+            new Ostacolo(1, "Sedie", TipoOstacolo.OGGETTO_INGROMBRANTE, "sedie laterali fisse", 52.13, 70.38, "/D002.webp", "percorso", 0),
+            new Ostacolo(2, "Macchinario", TipoOstacolo.OGGETTO_INGROMBRANTE, "macchinario vicino ingresso D002", 59.96, 61.88, "/D002.webp", "percorso", 0)
+        };
+        insertAll(ostacoloDAO, listaOstacoli);
+    }
 }

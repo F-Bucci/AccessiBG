@@ -15,28 +15,29 @@ public class DistributoreDAO extends DAO<Distributore> {
 	public DistributoreDAO(DSLContext dsl) {
 		super(dsl);
 	}
+
 	@Override
 	public void insert(Distributore d) {
-		dsl.insertInto(table("distributore"), field("id"),field("nome"),field("tipo"),field("accessibile"),field("x"),
-				field("y"),field("pathFoto"),field("pathPercorso"),field("piano"))
-		.values(d.getId(),d.getNome(), d.getTipo().name(), d.getAccessibile() ? 1 : 0, d.getX(), d.getY(), d.getPathFoto(),d.getPathPercorso(), d.getPiano())
+		dsl.insertInto(table("distributore"), field("id"), field("nome"), field("tipo"), field("accessibile"), field("x"),
+				field("y"), field("pathFoto"), field("pathPercorso"), field("piano"))
+		.values(d.getId(), d.getNome(), d.getTipo().name(), d.getAccessibile() ? 1 : 0, d.getX(), d.getY(), d.getPathFoto(), d.getPathPercorso(), d.getPiano())
 		.onConflict(field("id"), field("piano"))
 		.doNothing()
 		.execute();
 	}
-
-//	restituisce d in base a id e piano, forse non utile, implementato già con sede
+	
 	public Distributore findDistributoreByPiano(int id, int piano) {
 		var record = dsl
-				.select(field("id"),field("nome"),field("tipo"),field("accessibile"),field("x"),
-						field("y"),field("pathFoto"),field("pathPercorso"),field("piano"))
+				.select(field("id"), field("nome"), field("tipo"), field("accessibile"), field("x"),
+						field("y"), field("pathFoto"), field("pathPercorso"), field("piano"))
 				.from(table("distributore"))
 				.where(field("id").eq(id))
 				.and(field("piano").eq(piano))
 				.fetchOne();
+		
 		if (record != null) {
 			TipoDistributore tipo = TipoDistributore.valueOf(record.get("tipo", String.class));
-			boolean accessibile = record.get("accessibile", Boolean.class);
+			boolean accessibile = record.get("accessibile", Integer.class) == 1; // SQLite usa 0/1 per i boolean
 			return new Distributore(
 					record.get("id", Integer.class),
 					record.get("nome", String.class),
@@ -48,18 +49,19 @@ public class DistributoreDAO extends DAO<Distributore> {
 					record.get("pathPercorso", String.class),
 					record.get("piano", Integer.class));
 		}
-		return null;}
+		return null;
+	}
 	
 	public Distributore findById(int id) {
 			var record = dsl
-					.select(field("id"),field("nome"),field("tipo"),field("accessibile"),field("x"),
-							field("y"),field("pathFoto"),field("pathPercorso"),field("piano"))
+					.select(field("id"), field("nome"), field("tipo"), field("accessibile"), field("x"),
+							field("y"), field("pathFoto"), field("pathPercorso"), field("piano"))
 					.from(table("distributore"))
 					.where(field("id").eq(id))
 					.fetchOne();
 			if (record != null) {
 				TipoDistributore tipo = TipoDistributore.valueOf(record.get("tipo", String.class));
-				boolean accessibile = record.get("accessibile", Boolean.class);
+				boolean accessibile = record.get("accessibile", Integer.class) == 1;
 				return new Distributore(
 						record.get("id", Integer.class),
 						record.get("nome", String.class),
