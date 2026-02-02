@@ -6,7 +6,7 @@ import com.microsoft.playwright.Locator;
 import org.junit.jupiter.api.Test;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
-public class ThemeToggleButtonIT extends BaseE2ETest {
+ class ThemeToggleButtonIT extends BaseE2ETest {
 	
 	@Test
 	void clickCambiaTema() {

@@ -12,12 +12,12 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.icon.Icon;
 
-public class ImageCardTest {
+class ImageCardTest {
 
 		@Test
 		//VOGLIO TESTARE CHE SE URL=NULL VIENE MOSTRATA L'ICONA
 		//SUCCESS
-		public void aggiungeSlashAUrl() {
+		void aggiungeSlashAUrl() {
 			String url = "img/foto.webp";
 			ImageCard card = new ImageCard("titolo", url);
 			Div imageContainer = (Div) card.getComponentAt(0);
@@ -31,7 +31,7 @@ public class ImageCardTest {
 		
 		@Test
 		//verifico che la card viene creata senza errori in caso di valori null 
-		public void creaImageCard_ValoriNull() {
+		void creaImageCard_ValoriNull() {
 			ImageCard card = new ImageCard("esempio", null, null, null);
 
 			assertNotNull(card);
@@ -40,7 +40,7 @@ public class ImageCardTest {
 		
 		@Test
 		//TEST VERIFICA CON URL NON VALIDO VIENE MOSTRATA ICONA
-		public void conUrlNonValido_MostraIcona() {
+		void conUrlNonValido_MostraIcona() {
 			ImageCard card = new ImageCard("Nome", "documento.txt");
 			Div imageContainer = (Div) card.getComponentAt(0);
 	        Component contenuto = imageContainer.getComponentAt(0);

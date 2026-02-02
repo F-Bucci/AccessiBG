@@ -17,7 +17,7 @@ public class OstacoloDAO extends DAO<Ostacolo> {
 	@Override
 	public void insert(Ostacolo o) {
 		dsl.insertInto(table("ostacolo"), field("id"),field("nome"),field("tipo"),field("descrizione"),field("x"),field("y"),field("pathFoto"),field("pathPercorso"), field("piano"))
-		.values(o.getId(), o.getNome(),o.getTipo(), o.getDescrizione(),o.getX(), o.getY(), o.getPathFoto(), o.getPathPercorso(), o.getPiano())
+		.values(o.getId(), o.getNome(),o.getTipo().name(), o.getDescrizione(),o.getX(), o.getY(), o.getPathFoto(), o.getPathPercorso(), o.getPiano())
 		.onConflict(field("id"), field("piano"))
 		.doNothing()
 		.execute();

@@ -3,7 +3,6 @@ package it.unibg.accessibilita.base.ui.views;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -33,9 +32,8 @@ public final class MainLayout extends AppLayout implements RouterLayout {
     	
     	//MENU LATERALE
         //CREAZIONE BOTTONE HOME
-        AppButton homeBtn = new AppButton("Home", VaadinIcon.HOME.create(), e -> {
-            UI.getCurrent().navigate(HomeView.class); 
-        });
+        AppButton homeBtn = new AppButton("Home", VaadinIcon.HOME.create(), e ->
+            UI.getCurrent().navigate(HomeView.class));
         homeBtn.setWidthFull(); 
         homeBtn.addClassNames(LumoUtility.JustifyContent.START); 
         //SEZIONE BOTTONE

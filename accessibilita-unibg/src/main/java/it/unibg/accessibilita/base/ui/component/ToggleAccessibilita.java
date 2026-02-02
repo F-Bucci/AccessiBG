@@ -2,7 +2,6 @@ package it.unibg.accessibilita.base.ui.component;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.checkbox.Checkbox;
-import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import it.unibg.accessibilita.base.ui.manager.SessionManager;

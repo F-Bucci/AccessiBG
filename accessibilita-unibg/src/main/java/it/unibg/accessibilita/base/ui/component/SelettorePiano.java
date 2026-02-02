@@ -22,8 +22,6 @@ public class SelettorePiano extends Select<Piano>{
 			Piano p = event.getValue();
 			if(p!= null) {
 			String nomeEdificio = p.getEdificio();
-			int nPiano = p.getNumero();
-			String parametro = nomeEdificio + "/" + nPiano;
 			UI.getCurrent().navigate(StrutturaView.class, nomeEdificio);
 			this.clear();
 			}

@@ -5,21 +5,16 @@ import java.util.List;
 
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.router.Route;
 
-import dao.DistributoreDAO;
 import dao.EdificioDAO;
-import dao.OstacoloDAO;
 import dao.PianoDAO;
-import dao.StanzaDAO;
 import it.unibg.accessibilita.base.ui.component.AppButton;
 import it.unibg.accessibilita.base.ui.component.MappaInterattiva;
 import struttura.Distributore;
-import struttura.Edificio;
 import struttura.ElementoMappa;
 import struttura.Ostacolo;
 import struttura.Piano;
@@ -28,17 +23,13 @@ import struttura.Stanza;
 @Route(value = "struttura", layout = MainLayout.class)
 public class StrutturaView extends VerticalLayout implements HasUrlParameter<String>{
 	
-	private final EdificioDAO edificioDAO;
-	private final PianoDAO pianoDAO;
-	private final StanzaDAO stanzaDAO;
-	private final OstacoloDAO ostacoloDAO;
-	private DistributoreDAO distributoreDAO;
-	public StrutturaView(EdificioDAO edificioDAO, PianoDAO pianoDAO,StanzaDAO stanzaDAO, OstacoloDAO ostacoloDAO, DistributoreDAO distributoreDAO) {
+	private final transient EdificioDAO edificioDAO;
+	private final transient PianoDAO pianoDAO;
+
+	public StrutturaView(EdificioDAO edificioDAO, PianoDAO pianoDAO) {
 		this.edificioDAO = edificioDAO;
 		this.pianoDAO = pianoDAO;
-		this.stanzaDAO = stanzaDAO;
-		this.ostacoloDAO = ostacoloDAO;
-		this.distributoreDAO = distributoreDAO;
+
 				
 		setSpacing(false);
 		setPadding(true);
@@ -71,16 +62,15 @@ public class StrutturaView extends VerticalLayout implements HasUrlParameter<Str
 		if(o != null) elemento.addAll(o);
 		if(d != null) elemento.addAll(d);
 		
-		mappa.setOnElementClick(e -> apriDettaglio(e, mappa));
+		mappa.setOnElementClick(e -> apriDettaglio(e));
 		mappa.mapBuilder(piano, elemento);
 		mappa.setWidthFull();
 		mappa.setMinHeight("600px");
 		add(mappa);
 	}
 	//crea dialog (box che appare quando si clicca una icona)
-	private void apriDettaglio(ElementoMappa elemento, MappaInterattiva mappa) {
+	private void apriDettaglio(ElementoMappa elemento) {
 		Dialog dialog = new Dialog();
-		//dialog.setHeaderTitle(elemento.get);
 		
 		VerticalLayout layoutDettagli = new VerticalLayout();
 	    layoutDettagli.setAlignItems(Alignment.CENTER);
@@ -92,10 +82,8 @@ public class StrutturaView extends VerticalLayout implements HasUrlParameter<Str
 	        layoutDettagli.add(img);
 	    }
 	    //bottone per chiudere dialog
-	    AppButton chiudi = new AppButton("Chiudi", event ->{
-	    	//mappa.Mapreset();
-	    	dialog.close();
-	    });
+	    AppButton chiudi = new AppButton("Chiudi", event ->
+	    	dialog.close());
 	    dialog.getFooter().add(chiudi);
 	    dialog.add(layoutDettagli);
 	    dialog.open();

@@ -19,7 +19,7 @@ public class DistributoreDAO extends DAO<Distributore> {
 	public void insert(Distributore d) {
 		dsl.insertInto(table("distributore"), field("id"),field("nome"),field("tipo"),field("accessibile"),field("x"),
 				field("y"),field("pathFoto"),field("pathPercorso"),field("piano"))
-		.values(d.getId(),d.getNome(), d.getTipo(), d.getAccessibile() ? 1 : 0, d.getX(), d.getY(), d.getPathFoto(),d.getPathPercorso(), d.getPiano())
+		.values(d.getId(),d.getNome(), d.getTipo().name(), d.getAccessibile() ? 1 : 0, d.getX(), d.getY(), d.getPathFoto(),d.getPathPercorso(), d.getPiano())
 		.onConflict(field("id"), field("piano"))
 		.doNothing()
 		.execute();

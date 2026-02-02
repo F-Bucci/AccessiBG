@@ -13,7 +13,6 @@ import struttura.*;
 @Repository
 public class PianoDAO extends DAO<Piano>{
 
-
 	public PianoDAO(DSLContext dsl) {super(dsl);}
 	@Override
 	public void insert(Piano p) {

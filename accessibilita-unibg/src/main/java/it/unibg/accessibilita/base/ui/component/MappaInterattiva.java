@@ -5,35 +5,37 @@ import java.util.function.Consumer;
 
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.icon.VaadinIcon;
+
 
 import struttura.Piano;
 import struttura.Stanza;
 import struttura.Distributore;
 import struttura.ElementoMappa;
-import struttura.Ostacolo;
 
 public class MappaInterattiva extends Div {
+	private static final String STYLE_DISPLAY = "display";
+	private static final String FULL_WIDTH = "100%";
+	private static final String POSITION = "position";
 	private final Div containerImg;
 	private final Image mappaImg;
 	private String mappaOriginale;
-	private Consumer<ElementoMappa> onElementClick;
+	private transient Consumer<ElementoMappa> onElementClick;
 	public MappaInterattiva() {
-	    getStyle().set("position", "relative");
-	    getStyle().set("display", "inline-block");
+	    getStyle().set(POSITION, "relative");
+	    getStyle().set(STYLE_DISPLAY, "inline-block");
 	    setWidthFull();
 	    setMaxWidth("1024px");
 
 	    // CONTENITORE IMMAGINE
 	    containerImg = new Div();
-	    containerImg.getStyle().set("position", "relative");
-	    containerImg.getStyle().set("display", "inline-block");
+	    containerImg.getStyle().set(POSITION, "relative");
+	    containerImg.getStyle().set(STYLE_DISPLAY, "inline-block");
 	    containerImg.setWidth("100%");
 
 	    // IMMAGINE
 	    mappaImg = new Image();
 	    mappaImg.setWidth("100%");
-	    mappaImg.getStyle().set("display", "block");
+	    mappaImg.getStyle().set(FULL_WIDTH, "block");
 
 	    containerImg.add(mappaImg);
 	    add(containerImg);
@@ -57,16 +59,16 @@ public class MappaInterattiva extends Div {
 	}
 	private void aggiungiPin(ElementoMappa e) {
 		MapPin pin = new MapPin(e);
-		pin.getStyle().set("position", "absolute");
+		pin.getStyle().set(POSITION, "absolute");
         pin.getStyle().set("left", e.getX() + "%");
         pin.getStyle().set("top", e.getY() + "%");
         pin.getStyle().set("transform", "translate(-50%, -50%)");
 		pin.addClickListener(event ->{
 		String imgPercorso = null;
-		if(e instanceof Stanza) {
-			imgPercorso = ((Stanza) e).getPathPercorso();
-		} else if (e instanceof Distributore){
-			imgPercorso = ((Distributore) e).getPathPercorso();
+		if(e instanceof Stanza s) {
+			imgPercorso = s.getPathPercorso();
+		} else if (e instanceof Distributore d){
+			imgPercorso = d.getPathPercorso();
 		}
 		
 		//logica cambio immagine
@@ -80,7 +82,7 @@ public class MappaInterattiva extends Div {
 		});
 		containerImg.add(pin);
 	}
-	public void Mapreset() {
+	public void mapReset() {
 		if (this.mappaOriginale != null) {
             mappaImg.setSrc(this.mappaOriginale);
 	}

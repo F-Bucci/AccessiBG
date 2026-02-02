@@ -17,11 +17,11 @@ public class MapPin extends Div{
         String colore = "gray";
         
         switch (e) {
-        case Ostacolo o -> {
+        case Ostacolo _ -> {
             icona = VaadinIcon.WARNING;
             colore = "#ffc107"; // Giallo
         }
-        case Distributore d -> {
+        case Distributore _ -> {
             icona = VaadinIcon.COFFEE;
             colore = "#964B00"; // Marrone
         }
@@ -43,11 +43,15 @@ public class MapPin extends Div{
                     icona = VaadinIcon.FEMALE;
                     colore = "#ffb6c1"; // Rosa chiaro
                 }
-                default -> {} 
+                default -> {
+                	//Nessuna azione richiesta per i casi non specificati
+                } 
             }
         }
 
-        default -> {}
+        default -> {
+        	//Nessuna azione richiesta per i casi non specificati
+        }
         }
         graficaMappa(icona, colore);
 	}

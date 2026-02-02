@@ -72,6 +72,10 @@ public class CreateTable {
 					"rampe INTEGER NOT NULL,"+
 					"portaTagliafuoco INTEGER NOT NULL,"+
 					"percorsoStrisceIpov INTEGER NOT NULL,"+
+					"x REAL, " +
+					"y REAL, " +
+					"pathFoto TEXT," +
+					"pathPercorso TEXT," +
 					"edificio TEXT NOT NULL,"+
 					"PRIMARY KEY (id, edificio), " +
 					"FOREIGN KEY (edificio) REFERENCES edificio(nome) ON DELETE CASCADE" +

@@ -2,30 +2,19 @@ package it.unibg.accessibilita.base.ui.views;
 
 import java.util.List;
 
-import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.Composite;
-import com.vaadin.flow.component.card.Card;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Hr;
 import com.vaadin.flow.component.html.Paragraph;
-import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
-import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
-import com.vaadin.flow.router.Menu;
-import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.theme.lumo.LumoIcon;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
 import dao.EdificioDAO;
-import dao.PianoDAO;
-import dao.SedeDAO;
-import it.unibg.accessibilita.base.ui.component.AppButton;
+
 import it.unibg.accessibilita.base.ui.component.AppFooter;
 import it.unibg.accessibilita.base.ui.component.AppTabs;
 import it.unibg.accessibilita.base.ui.component.Box;
@@ -33,21 +22,16 @@ import it.unibg.accessibilita.base.ui.component.ImageCard;
 import it.unibg.accessibilita.base.ui.component.SelettorePiano;
 import struttura.Edificio;
 import struttura.Piano;
-import struttura.Sede;
+import struttura.PuntoDiIngresso;
 
-import com.vaadin.flow.router.BeforeEvent;
 
 @Route(value = "edifici", layout = MainLayout.class)
 public class EdificiView extends VerticalLayout implements HasUrlParameter<String>{
 	
-	private final SedeDAO sedeDAO;
-	private final EdificioDAO edificioDAO;
-	private final PianoDAO pianoDAO;
+	private final transient EdificioDAO edificioDAO;
 	
-	public EdificiView(SedeDAO sedeDAO, EdificioDAO edificioDAO, PianoDAO pianoDAO){
-		this.sedeDAO = sedeDAO;
+	public EdificiView(EdificioDAO edificioDAO){
 		this.edificioDAO = edificioDAO;
-		this.pianoDAO = pianoDAO;
 		
 		setSpacing(false);
 		setPadding(true);
@@ -64,17 +48,17 @@ public class EdificiView extends VerticalLayout implements HasUrlParameter<Strin
 		}
 	}
 		public void interfacciaEdificio(Edificio edificio) {
+		//TITOLO
 		H2 titolo = new H2(edificio.getNome());
 		titolo.addClassNames(LumoUtility.Margin.Bottom.SMALL);
-		
+		//DIVISORE TITOLO
 		Hr divisore = new Hr();
-		
+		//TABS
 		AppTabs edificioTab = new AppTabs();
 		edificioTab.addTab("Generale", createGeneraleContent(edificio));
 		edificioTab.addTab("Ingressi", createIngressiContent(edificio));
 		edificioTab.addTab("Servizi", createServiziContent(edificio));
-		edificioTab.addTab("Mappa", createMappaContent(edificio));
-        
+        //FOOTER
 		AppFooter footer = new AppFooter();
 		add(titolo, divisore, edificioTab, footer);
 	}
@@ -114,23 +98,30 @@ public class EdificiView extends VerticalLayout implements HasUrlParameter<Strin
 		return layout;
 	}
 	//TAB INGRESSI
-	private VerticalLayout createIngressiContent(Edificio edificio) {
-	    VerticalLayout layout = new VerticalLayout();
-	    layout.setPadding(false);
-	    layout.setSpacing(true);
-
-	    return layout;
+	private Div createIngressiContent(Edificio edificio) {
+		Div griglia = new Div();
+		griglia.getMaxWidth();
+        griglia.getStyle()
+        .set("display", "grid")
+        .set("grid-template-columns", "repeat(auto-fill, minmax(300px, 1fr))")
+        .set("gap", "40px")
+        .set("padding", "20px 0")
+        .set("justify-content", "center");
+	    
+        Div spacer = new Div();
+        spacer.addClassName(LumoUtility.Flex.GROW);
+        // creazione griglia con gli ingressi
+		List<PuntoDiIngresso> ingresso = edificioDAO.findIngressoByEdificio(edificio.getNome());
+		if(ingresso.isEmpty()) {return null;}
+		for(PuntoDiIngresso p : ingresso) {
+			ImageCard card = new ImageCard(p.getNome(), p.getPathFoto());
+            card.getStyle().set("cursor", "pointer");
+            griglia.add(card);
+		}
+	    return griglia;
 	}
 	//TAB SERVIZI
 	private VerticalLayout createServiziContent(Edificio edificio) {
-	    VerticalLayout layout = new VerticalLayout();
-	    layout.setPadding(false);
-	    layout.setSpacing(true);
-
-	    return layout;
-	}
-	//TAB MAPPA
-	private VerticalLayout createMappaContent(Edificio edificio) {
 	    VerticalLayout layout = new VerticalLayout();
 	    layout.setPadding(false);
 	    layout.setSpacing(true);
