@@ -2,6 +2,7 @@ package struttura;
 
 public class Distributore implements ElementoMappa{
 	private int id;
+	private String nome;
 	private TipoDistributore tipo;
 	private boolean accessibile;
 	private double x;
@@ -10,8 +11,9 @@ public class Distributore implements ElementoMappa{
 	private String pathPercorso;
 	private int piano;
 	
-	public Distributore(int id, TipoDistributore tipo, boolean accessibile, double x, double y, String pathFoto,String pathPercorso, int piano) {
+	public Distributore(int id, String nome,TipoDistributore tipo, boolean accessibile, double x, double y, String pathFoto,String pathPercorso, int piano) {
 		this.id=id;
+		this.nome = nome;
 		this.tipo = tipo;
 		this.accessibile = accessibile;
 		this.x=x;
@@ -38,5 +40,8 @@ public class Distributore implements ElementoMappa{
 	}
 	public String getPathFoto() {
 		return pathFoto;
+	}
+	public String getNome() {
+		return nome;
 	}
 }

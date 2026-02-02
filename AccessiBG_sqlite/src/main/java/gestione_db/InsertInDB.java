@@ -62,9 +62,9 @@ public class InsertInDB{
 		Parcheggio edD = new Parcheggio("Parcheggio edificio C", TipoParcheggio.DISCO_ORARIO, false , "Via Pasubio 2", "/parcheggioEdD.webp", "Sede di Dalmine");
 		parcheggioDAO.insert(edD);
 	}
-//	int id, boolean scale, boolean rampe, boolean portaTagliafuoco, boolean percorsoStrisceIpov, String edificio)
-	public void insRecordPuntoIngresso() {
-		PuntoDiIngresso p = new PuntoDiIngresso (1, false, true, false, false, "Edificio D");
+
+	public void insRecordPuntoIngresso() {	
+	PuntoDiIngresso p = new PuntoDiIngresso (1,"Ingresso principale", false, true, false, false, 33.10, 85.38,"pathFoto","pathpercorso","Edificio D");
 		puntoDiIngressoDAO.insert(p);
 	}
 	
@@ -74,11 +74,11 @@ public class InsertInDB{
 	}
 	
 	public void insRecordDistributore() {
-		Distributore dx = new Distributore (1, TipoDistributore.BEVANDE_CALDE, true, 56.64, 45, "/DBagni_E_DistributoriDX.webp","/percorso_DistributoriDX_BAGNO.webp" ,0 );
+		Distributore dx = new Distributore (1, "Macchinetta caffe",TipoDistributore.BEVANDE_CALDE, true, 56.64, 45, "/DBagni_E_DistributoriDX.webp","/percorso_DistributoriDX_BAGNO.webp" ,0 );
 		distributoreDAO.insert(dx);
-		Distributore dxA = new Distributore (2, TipoDistributore.ACQUA, false,52.54, 45.50, "/DBagni_E_DistributoriDX.webp","/percorso_DistributoriDX_BAGNO.webp", 0 );
+		Distributore dxA = new Distributore (2, "Distributore acqua",TipoDistributore.ACQUA, false,52.54, 45.50, "/DBagni_E_DistributoriDX.webp","/percorso_DistributoriDX_BAGNO.webp", 0 );
 		distributoreDAO.insert(dxA);
-		Distributore dsx = new Distributore (3, TipoDistributore.SNACK_E_BEVANDE, true, 7.13, 73.13, "/D_DistributoreSX.webp","/percorso_DistributoriSX.webp", 0 );
+		Distributore dsx = new Distributore (3, "Macchinetta merendine",TipoDistributore.SNACK_E_BEVANDE, true, 7.13, 73.13, "/D_DistributoreSX.webp","/percorso_DistributoriSX.webp", 0 );
 		distributoreDAO.insert(dsx);
 	}
 		
@@ -95,11 +95,10 @@ public class InsertInDB{
 		stanzaDAO.insert(dbagnoD);
 	}
 	
-//	int id, TipoOstacolo tipo, String descrizione, int piano
 	public void insRecordOstacolo() {
-		Ostacolo o1 = new Ostacolo (1, TipoOstacolo.OGGETTO_INGROMBRANTE, "sedie laterali fisse", 52.13, 70.38, "/D002.webp","percorso", 0);
+		Ostacolo o1 = new Ostacolo (1, "Sedie",TipoOstacolo.OGGETTO_INGROMBRANTE, "sedie laterali fisse", 52.13, 70.38, "/D002.webp","percorso", 0);
 		ostacoloDAO.insert(o1);
-		Ostacolo o2 = new Ostacolo (2, TipoOstacolo.OGGETTO_INGROMBRANTE, "macchinario vicino ingresso D002", 59.96, 61.88, "foto","percorso", 0);
+		Ostacolo o2 = new Ostacolo (2, "Macchinario",TipoOstacolo.OGGETTO_INGROMBRANTE, "macchinario vicino ingresso D002", 59.96, 61.88, "foto","percorso", 0);
 		ostacoloDAO.insert(o2);
 		}
 }

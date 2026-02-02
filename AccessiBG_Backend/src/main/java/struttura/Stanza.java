@@ -16,7 +16,6 @@ public class Stanza implements ElementoMappa{
 
 	public Stanza(int id, String nome, int posti, String descrizione, boolean accessibile, double x, double y,
 			TipoStanza tipoStan, String pathPercorso,String pathFoto,int piano) {
-		super();
 		this.id = id;
 		this.nome = nome;
 		this.posti = posti;

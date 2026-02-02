@@ -16,15 +16,15 @@ public class OstacoloDAO extends DAO<Ostacolo> {
 	}
 	@Override
 	public void insert(Ostacolo o) {
-		dsl.insertInto(table("ostacolo"), field("id"),field("tipo"),field("descrizione"),field("x"),field("y"),field("pathFoto"),field("pathPercorso"), field("piano"))
-		.values(o.getId(), o.getTipo().name(), o.getDescrizione(),o.getX(), o.getY(), o.getPathFoto(), o.getPathPercorso(), o.getPiano())
+		dsl.insertInto(table("ostacolo"), field("id"),field("nome"),field("tipo"),field("descrizione"),field("x"),field("y"),field("pathFoto"),field("pathPercorso"), field("piano"))
+		.values(o.getId(), o.getNome(),o.getTipo(), o.getDescrizione(),o.getX(), o.getY(), o.getPathFoto(), o.getPathPercorso(), o.getPiano())
 		.onConflict(field("id"), field("piano"))
 		.doNothing()
 		.execute();
 	}
 
 	public Ostacolo findById(int id) {
-		var record = dsl.select(field("id"),field("tipo"),field("descrizione"),field("x"),field("y"),field("pathFoto"),field("pathPercorso"), field("piano"))
+		var record = dsl.select(field("id"), field("nome"),field("tipo"),field("descrizione"),field("x"),field("y"),field("pathFoto"),field("pathPercorso"), field("piano"))
 				.from(table("ostacolo"))	
 				.where(field("id").eq(id))
 				.fetchOne();
@@ -32,6 +32,7 @@ public class OstacoloDAO extends DAO<Ostacolo> {
 			TipoOstacolo tipo = TipoOstacolo.valueOf(record.get("tipoStanza", String.class));
 			return new Ostacolo(
 					record.get("id", Integer.class),
+					record.get("nome", String.class),
 					tipo,
 					record.get("descrizione", String.class),
 					record.get("x", Double.class),

@@ -33,7 +33,6 @@ public class StanzaDAO extends DAO<Stanza>{
 				.fetchOne();
 		if (record != null) {
 			TipoStanza tipo = TipoStanza.valueOf(record.get("tipoStanza", String.class));
-			Integer accInt = record.get("accessibile", Integer.class);
 			boolean accessibile = record.get("accessibile", Boolean.class);
 			return new Stanza(
 					record.get("id", Integer.class),

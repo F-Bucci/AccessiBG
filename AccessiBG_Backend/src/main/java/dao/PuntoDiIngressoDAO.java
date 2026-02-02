@@ -16,11 +16,11 @@ public class PuntoDiIngressoDAO extends DAO<PuntoDiIngresso>{
 	}
 	@Override
 	public void insert(PuntoDiIngresso p) {
-		dsl.insertInto(table("puntiAccesso"), field("id"),field("scale"),field("rampe"), field("portaTagliafuoco"),field("percorsoStrisceIpov"),field("edificio"))
-		.values(p.getId(),p.getScale(), p.getRampe(), p.getPortaTagliafuoco(), p.getPercorsoStrisceIpov(), p.getEdificio())
+		dsl.insertInto(table("puntiAccesso"),field("id"),field("nome"),field("scale"),field("rampe"), field("portaTagliafuoco"),field("percorsoStrisceIpov"),
+				field("x"),field("y"),field("pathFoto"),field("pathPercorso"),field("edificio"))
+		.values(p.getId(),p.getNome(),p.getScale(), p.getRampe(), p.getPortaTagliafuoco(), p.getPercorsoStrisceIpov(),p.getX(), p.getY(), p.getPathFoto(), p.getPathPercorso(), p.getEdificio())
 		.onConflict(field("id"), field("edificio"))
 		.doNothing()
 		.execute();
 	}
-	
 }
