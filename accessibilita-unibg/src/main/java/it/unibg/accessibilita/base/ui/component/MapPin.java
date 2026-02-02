@@ -12,49 +12,60 @@ import struttura.Stanza;
 
 public class MapPin extends Div{
 	public MapPin(ElementoMappa e) {
-		//crea delle icone in base alla tipo di elemento
-		VaadinIcon icona = VaadinIcon.CIRCLE;
+        // Crea delle icone in base al tipo di elemento
+        VaadinIcon icona = VaadinIcon.CIRCLE;
         String colore = "gray";
-        
-        switch (e) {
-        case Ostacolo _ -> {
+
+        if (e instanceof Ostacolo) {
             icona = VaadinIcon.WARNING;
             colore = "#ffc107"; // Giallo
-        }
-        case Distributore _ -> {
-            icona = VaadinIcon.COFFEE;
-            colore = "#964B00"; // Marrone
-        }
-        case Stanza s -> {
+        } 
+        else if (e instanceof Distributore d) {
+        	switch (d.getTipo()) {
+        	case BEVANDE_CALDE:
+                icona = VaadinIcon.COFFEE;
+                colore = "#964B00"; // Marrone
+                break;
+        	case ACQUA:
+        		icona = VaadinIcon.DROP;
+        		colore = "#343a90"; // blu chiarissimo
+        		break;
+        	
+        	case SNACK_E_BEVANDE:
+        		icona = VaadinIcon.CART_O;
+        		colore = "#90ec53"; // verde chiaro
+        		break;
+        	default: 
+        		//icona grigia
+        		break;
+        	}
+        } 
+        else if (e instanceof Stanza s) {
             switch (s.getTipoStan()) {
-                case AULA -> {
+                case AULA:
                     icona = VaadinIcon.ACADEMY_CAP;
                     colore = "#ff6347"; // Rosso pomodoro
-                }
-                case AULA_STUDIO -> {
-                	icona = VaadinIcon.ACADEMY_CAP;
-                    colore = "#FFFF00 "; //Giallo
-                }
-                case BAGNO_UOMO -> {
+                    break;
+                case AULA_STUDIO:
+                    icona = VaadinIcon.ACADEMY_CAP;
+                    colore = "ffd10a"; //
+                    break;
+                case BAGNO_UOMO:
                     icona = VaadinIcon.MALE;
                     colore = "#007bff"; // Blu
-                }
-                case BAGNO_DONNA -> {
+                    break;
+                case BAGNO_DONNA:
                     icona = VaadinIcon.FEMALE;
                     colore = "#ffb6c1"; // Rosa chiaro
-                }
-                default -> {
-                	//Nessuna azione richiesta per i casi non specificati
-                } 
+                    break;
+                default:
+                    // Colore grigio di default già impostato sopra
+                    break;
             }
         }
 
-        default -> {
-        	//Nessuna azione richiesta per i casi non specificati
-        }
-        }
         graficaMappa(icona, colore);
-	}
+    }
 	
 	private void graficaMappa(VaadinIcon icon, String colore) {
 		

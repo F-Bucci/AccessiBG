@@ -62,7 +62,7 @@ public class StrutturaView extends VerticalLayout implements HasUrlParameter<Str
 		if(o != null) elemento.addAll(o);
 		if(d != null) elemento.addAll(d);
 		
-		mappa.setOnElementClick(e -> apriDettaglio(e));
+		mappa.setOnElementClick(this::apriDettaglio);
 		mappa.mapBuilder(piano, elemento);
 		mappa.setWidthFull();
 		mappa.setMinHeight("600px");
