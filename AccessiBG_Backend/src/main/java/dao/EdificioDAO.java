@@ -14,14 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class EdificioDAO {
-		
-	private final DSLContext dsl;
+public class EdificioDAO extends DAO<Edificio> {
 		
 	public EdificioDAO(DSLContext dsl) {
-		this.dsl = dsl;
+		super(dsl);
 	}
-
+	
+	@Override
 	public void insert(Edificio e) {
 		dsl.insertInto(table("edificio"), field("nome"),field("indirizzo"),field("orario"), field("pathFoto"), field("facolta"))
 		.values(e.getNome(), e.getIndirizzo(), e.getOrario(), e.getPathFoto(), e.getFacolta())

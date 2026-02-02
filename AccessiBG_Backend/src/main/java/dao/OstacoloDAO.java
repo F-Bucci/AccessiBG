@@ -9,14 +9,12 @@ import org.springframework.stereotype.Repository;
 import struttura.*;
 
 @Repository
-public class OstacoloDAO {
-		
-	private final DSLContext dsl;
+public class OstacoloDAO extends DAO<Ostacolo> {
 
 	public OstacoloDAO(DSLContext dsl) {
-		this.dsl = dsl;
+		super(dsl);
 	}
-
+	@Override
 	public void insert(Ostacolo o) {
 		dsl.insertInto(table("ostacolo"), field("id"),field("tipo"),field("descrizione"),field("x"),field("y"),field("pathFoto"),field("pathPercorso"), field("piano"))
 		.values(o.getId(), o.getTipo().name(), o.getDescrizione(),o.getX(), o.getY(), o.getPathFoto(), o.getPathPercorso(), o.getPiano())

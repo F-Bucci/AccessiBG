@@ -10,13 +10,12 @@ import struttura.Distributore;
 import struttura.TipoDistributore;
 
 @Repository
-public class DistributoreDAO {
-	private final DSLContext dsl;
+public class DistributoreDAO extends DAO<Distributore> {
 
 	public DistributoreDAO(DSLContext dsl) {
-		this.dsl = dsl;
+		super(dsl);
 	}
-
+	@Override
 	public void insert(Distributore d) {
 		dsl.insertInto(table("distributore"), field("id"),field("tipo"),field("accessibile"),field("x"),
 				field("y"),field("pathFoto"),field("pathPercorso"),field("piano"))

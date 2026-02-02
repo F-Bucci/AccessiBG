@@ -12,12 +12,12 @@ public class InsertInDB{
 	private final ParcheggioDAO parcheggioDAO;
 	private final PianoDAO pianoDAO;
 	private final DistributoreDAO distributoreDAO;
-	private final PuntiDiIngressoDAO puntoDiIngressoDAO;
+	private final PuntoDiIngressoDAO puntoDiIngressoDAO;
 	private final StanzaDAO stanzaDAO;
 	private final OstacoloDAO ostacoloDAO;
 
 	public InsertInDB(SedeDAO sedeDAO, EdificioDAO edificioDAO, ParcheggioDAO parcheggioDAO, PianoDAO pianoDAO, DistributoreDAO distributoreDAO, 
-			PuntiDiIngressoDAO puntoDiIngressoDAO, StanzaDAO stanzaDAO, OstacoloDAO ostacoloDAO) {
+			PuntoDiIngressoDAO puntoDiIngressoDAO, StanzaDAO stanzaDAO, OstacoloDAO ostacoloDAO) {
 		this.sedeDAO = sedeDAO;
 		this.edificioDAO=edificioDAO;
 		this.parcheggioDAO=parcheggioDAO;

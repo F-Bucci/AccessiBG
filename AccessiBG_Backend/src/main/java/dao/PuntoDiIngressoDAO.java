@@ -9,13 +9,12 @@ import org.springframework.stereotype.Repository;
 import struttura.*;
 
 @Repository
-public class PuntiDiIngressoDAO {
-	private final DSLContext dsl;
+public class PuntoDiIngressoDAO extends DAO<PuntoDiIngresso>{
 
-	public PuntiDiIngressoDAO(DSLContext dsl) {
-		this.dsl = dsl;
+	public PuntoDiIngressoDAO(DSLContext dsl) {
+		super(dsl);
 	}
-	
+	@Override
 	public void insert(PuntoDiIngresso p) {
 		dsl.insertInto(table("puntiAccesso"), field("id"),field("scale"),field("rampe"), field("portaTagliafuoco"),field("percorsoStrisceIpov"),field("edificio"))
 		.values(p.getId(),p.getScale(), p.getRampe(), p.getPortaTagliafuoco(), p.getPercorsoStrisceIpov(), p.getEdificio())
@@ -23,6 +22,5 @@ public class PuntiDiIngressoDAO {
 		.doNothing()
 		.execute();
 	}
-	
 	
 }

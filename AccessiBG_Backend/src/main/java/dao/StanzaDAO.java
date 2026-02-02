@@ -9,14 +9,12 @@ import org.springframework.stereotype.Repository;
 import struttura.*;
 
 @Repository
-public class StanzaDAO {
-	
-	private final DSLContext dsl;
+public class StanzaDAO extends DAO<Stanza>{
 
 	public StanzaDAO(DSLContext dsl) {
-		this.dsl = dsl;
+		super(dsl);
 	}
-	
+	@Override
 	public void insert(Stanza s) {
 		dsl.insertInto(table("stanza"), field("id"),field("nome"),field("posti"), field("descrizione"), field("accessibile"),
 				field("x"), field("y"), field("tipoStanza"),field("pathFoto"), field("pathPercorso"),field("piano"))

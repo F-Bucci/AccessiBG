@@ -11,11 +11,11 @@ import org.springframework.stereotype.Repository;
 import struttura.*;
 
 @Repository
-public class PianoDAO {
-	private final DSLContext dsl;
+public class PianoDAO extends DAO<Piano>{
 
-	public PianoDAO(DSLContext dsl) {this.dsl = dsl;}
 
+	public PianoDAO(DSLContext dsl) {super(dsl);}
+	@Override
 	public void insert(Piano p) {
 		dsl.insertInto(table("piano"), field("num"),field("descrizione"),field("pathFoto"),field("edificio"))
 		.values(p.getNumero(), p.getDescrizione(),p.getPathFoto(), p.getEdificio())

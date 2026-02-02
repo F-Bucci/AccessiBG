@@ -12,13 +12,11 @@ import struttura.Sede;
 import java.util.ArrayList;
 import java.util.List;
 @Repository
-public class SedeDAO {
-	
-	private final DSLContext dsl;
+public class SedeDAO extends DAO<Sede>{
 	
 	public SedeDAO(DSLContext dsl) {
-		this.dsl = dsl;}
-
+		super(dsl);}
+	@Override
 	public void insert(Sede s) {
 		dsl.insertInto(table("sede"), field("facolta"), field("indirizzo"), field("pathFoto"), field("orarioApertura"), field("pathMaps"))
         .values(s.getFacolta(), s.getIndirizzo(), s.getPathFoto(), s.getOrarioApertura(), s.getPathMaps())
