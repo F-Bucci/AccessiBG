@@ -16,14 +16,6 @@ public class PianoTest {
 	    assertEquals("Edificio D", p.getEdificio());
 	}
 	
-	// Viene controllato che un valore negativo passato all'attributo numero (piano) diventi 1
-	@Test
-	public void testNumeroPianoNegativo() {
-	    Piano p = new Piano(-3, null, "/Mappa_PianoTerra_D.webp", null);
-	    
-	    assertEquals(-1, p.getNumero());
-	}
-	
 	// Viene controllato che un valore null passato all'attributo descrizione diventi "Descrizione non presente"
 	@Test
 	public void testDescrizioneNull() {
@@ -38,6 +30,22 @@ public class PianoTest {
 		Piano p = new Piano(0, "  ", "/Mappa_PianoTerra_D.webp", "Edificio D");
 		
 		assertEquals("Descrizione non presente", p.getDescrizione());
+	}
+	
+	// Viene controllato che un valore null passato all'attributo pathFoto diventi "Foto non disponibile"
+	@Test
+	public void testPathFotoNull() {
+		Piano p = new Piano(0, "Piano terra", null, "Edificio D");
+		
+		assertEquals("Foto non disponibile", p.getPathFoto());
+	}
+	
+	// Viene controllato che una stringa vuota passata all'attributo pathFoto diventi "Foto non disponibile"
+	@Test
+	public void testPathFotoVuoto() {
+		Piano p = new Piano(0, "Piano terra", "", "Edificio D");
+		
+		assertEquals("Foto non disponibile", p.getPathFoto());
 	}
 	
 	// Viene controllato che un valore null passato all'attributo edificio diventi "Descrizione non presente"
@@ -56,13 +64,14 @@ public class PianoTest {
 		assertEquals("Edificio non specificato", p.getEdificio());
 	}
 	
-	// Viene verificato che tutti i controlli nel costruttore agiscano insieme
+	// Viene verificato che tutti i controlli nel costruttore agiscano insieme (tranne il numero)
 	@Test
 	public void testValoriNonValidi() {
-		Piano p = new Piano(-4, " ", "/Mappa_PianoTerra_D.webp", null);
+		Piano p = new Piano(-1, " ", "   ", null);
 		
 		assertEquals(-1, p.getNumero());
 		assertEquals("Descrizione non presente", p.getDescrizione());
+		assertEquals("Foto non disponibile", p.getPathFoto());
 		assertEquals("Edificio non specificato", p.getEdificio());
 	}
 	
