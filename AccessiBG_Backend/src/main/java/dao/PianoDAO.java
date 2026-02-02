@@ -8,44 +8,46 @@ import java.util.List;
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
 
-import struttura.Distributore;
-import struttura.Piano;
+import struttura.*;
 
 @Repository
 public class PianoDAO extends DAO<Piano> {
-	
+
 	public PianoDAO(DSLContext dsl) {
 		super(dsl);
 	}
-	
+
 	@Override
 	public void insert(Piano p) {
 		dsl
 			.insertInto(
-					table("piano"),
+					table("piano"), 
 					field("num"),
 					field("descrizione"),
+					field("pathFoto"),
 					field("edificio")
 			)
 			.values(
-					p.getNumero(),
+					p.getNumero(), 
 					p.getDescrizione(),
+					p.getPathFoto(), 
 					p.getEdificio()
 			)
 			.onConflict(
-					field("num"),
+					field("num"), 
 					field("edificio")
 			)
 			.doNothing()
 			.execute();
 	}
 		
-    // restituisce piano in base a num e edificio, forse non utile, implementato già con edificio
 	public Piano findPianoByEdificio(int num, String edificio) {
 		var record = dsl
 				.select(
 						field("num"),
-						field("descrizione")
+						field("descrizione"),
+						field("pathFoto"),
+						field("edificio")
 				)
 				.from(table("piano"))
 				.where(field("num").eq(num))
@@ -56,17 +58,31 @@ public class PianoDAO extends DAO<Piano> {
 			return new Piano(
 					record.get("num", Integer.class),
 					record.get("descrizione", String.class),
+					record.get("pathFoto", String.class),
 					record.get("edificio", String.class)
 			);
 		}
-		
 		return null;
 	}
 	
-	public List<Distributore> findDistributoreByPiano(String piano) {
-	    return dsl
-	    		.selectFrom(table("distributore"))
-	    		.where(field("piano").eq(piano))
-	    		.fetchInto(Distributore.class);
+	public List<Distributore> findDistributoreByPiano(int piano) {
+		return dsl	
+				.selectFrom(table("distributore"))
+				.where(field("piano").eq(piano))
+				.fetchInto(Distributore.class);
+	}
+	
+	public List<Stanza> findStanzaByPiano(int piano) {
+		return dsl
+				.selectFrom(table("stanza"))
+				.where(field("piano").eq(piano))
+				.fetchInto(Stanza.class);
+	}
+	
+	public List<Ostacolo> findOstacoloByPiano(int piano) {
+		return dsl
+				.selectFrom(table("ostacolo"))
+				.where(field("piano").eq(piano))
+				.fetchInto(Ostacolo.class);
 	}
 }

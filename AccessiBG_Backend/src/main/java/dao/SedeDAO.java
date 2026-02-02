@@ -1,9 +1,7 @@
 package dao;
 
 import org.springframework.stereotype.Repository;
-
 import org.jooq.DSLContext;
-
 import static org.jooq.impl.DSL.*;
 
 import struttura.Edificio;
@@ -20,7 +18,7 @@ public class SedeDAO extends DAO<Sede> {
 	public SedeDAO(DSLContext dsl) {
 		super(dsl);
 	}
-    
+
 	@Override
 	public void insert(Sede s) {
 		dsl.insertInto(
@@ -86,19 +84,15 @@ public class SedeDAO extends DAO<Sede> {
 		}
 	}
 
-	// restituisce tutti gli edifici di una sede (sempre un array)
 	public List<Edificio> findEdificiBySede(String facolta) {
 		return dsl
 				.selectFrom(table("edificio"))
 				.where(field("facolta").eq(facolta))
 				.fetchInto(Edificio.class);
-	}
-
-	// restituisce tutti i parcheggi di una sede (sempre un array)
+		}
 	public List<Parcheggio> findParcheggioBySede(String facolta) {
-		return dsl
-				.selectFrom(table("parcheggio"))
-				.where(field("facolta").eq(facolta))
-				.fetchInto(Parcheggio.class);
+	    return dsl.selectFrom(table("parcheggio"))
+	              .where(field("facolta").eq(facolta))
+	              .fetchInto(Parcheggio.class);
+		}
 	}
-}

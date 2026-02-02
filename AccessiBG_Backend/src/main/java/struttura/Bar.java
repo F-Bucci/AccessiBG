@@ -7,12 +7,12 @@ package AccessiBG_ClassDiagram;
 
 
 
-***********************************************************/
+*
 package struttura;
 
 /**
  * 
- */
+
 public class Bar extends Stanza
 
  {
@@ -29,3 +29,4 @@ public class Bar extends Stanza
 	public String getOrario() { return orario; }
     public void setOrario(String orario) { this.orario = orario; }
 }
+*/

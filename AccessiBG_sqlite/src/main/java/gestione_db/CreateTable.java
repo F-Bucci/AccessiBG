@@ -45,29 +45,70 @@ public class CreateTable {
 			dsl.execute("CREATE TABLE IF NOT EXISTS piano("+
 			    "num INTEGER NOT NULL,"+
 			    "descrizione TEXT NOT NULL,"+
-			    "nomeEdif TEXT NOT NULL,"+
-			    "PRIMARY KEY (num, nomeEdif), " +
-			    "FOREIGN KEY (nomeEdif) REFERENCES edificio(nome) ON DELETE CASCADE" +
+			    "pathFoto TEXT NOT NULL,"+
+			    "edificio TEXT NOT NULL,"+
+			    "PRIMARY KEY (num, edificio),"+
+			    "FOREIGN KEY (edificio) REFERENCES edificio(nome) ON DELETE CASCADE" +
 			    ")");
 
 			dsl.execute("CREATE TABLE IF NOT EXISTS distributore("+
 			    "id INTEGER NOT NULL,"+
+			    "nome TEXT NOT NULL,"+
 			    "tipo TEXT NOT NULL,"+
-			    "posizione TEXT NOT NULL,"+
 			    "accessibile INTEGER NOT NULL,"+
-			    "numPiano INTEGER NOT NULL,"+
-			    "nomeEdif TEXT NOT NULL,"+
-			    "FOREIGN KEY (numPiano, nomeEdif) REFERENCES piano(num, nomeEdif) ON DELETE CASCADE" +
+			    "x REAL, " +
+				"y REAL, " +
+				"pathFoto TEXT NOT NULL,"+
+				"pathPercorso TEXT NOT NULL,"+
+			    "piano INTEGER NOT NULL,"+
+			    "PRIMARY KEY (id, piano) " +
+			    //"FOREIGN KEY (piano) REFERENCES piano(num) ON DELETE CASCADE" +
 			    ")");
+			
+			dsl.execute("CREATE TABLE IF NOT EXISTS puntiAccesso("+
+					"id INTEGER NOT NULL,"+
+					"nome TEXT NOT NULL,"+
+					"scale INTEGER NOT NULL,"+
+					"rampe INTEGER NOT NULL,"+
+					"portaTagliafuoco INTEGER NOT NULL,"+
+					"percorsoStrisceIpov INTEGER NOT NULL,"+
+					"x REAL, " +
+					"y REAL, " +
+					"pathFoto TEXT," +
+					"pathPercorso TEXT," +
+					"edificio TEXT NOT NULL,"+
+					"PRIMARY KEY (id, edificio), " +
+					"FOREIGN KEY (edificio) REFERENCES edificio(nome) ON DELETE CASCADE" +
+					")");
+			
+			dsl.execute("CREATE TABLE IF NOT EXISTS stanza(" +
+					"id INTEGER NOT NULL, "+
+					"nome TEXT NOT NULL, "+
+					"posti INTEGER NOT NULL, " +
+					"descrizione TEXT NOT NULL, " +
+					"accessibile INTEGER NOT NULL, " +
+					"x REAL, " +
+					"y REAL, " +
+					"tipoStanza TEXT NOT NULL, " +
+					"pathFoto TEXT NOT NULL,"+
+					"pathPercorso TEXT NOT NULL,"+
+					"piano INTEGER NOT NULL, " +
+					"PRIMARY KEY (id, piano), " +
+					"FOREIGN KEY(piano) REFERENCES piano(num) ON DELETE CASCADE" +
+					")");
 
-		/*
-		dsl.execute("CREATE TABLE IF NOT EXISTS ostacolo("+
-			    "id INTEGER PRIMARY KEY,"+"descrizione TEXT NOT NULL,"+ "pathFoto TEXT NOT NULL, " + 
-				"piano INTEGER NOT NULL,"+"FOREIGN KEY (id, piano)"+"REFERENCES piano(num)"+"ON DELETE CASCADE)");
-		
-		dsl.execute("CREATE TABLE IF NOT EXISTS stanza("+
-			    "nome TEXT PRIMARY KEY,"+"posti INTEGER NOT NULL,"+ "pathFoto TEXT NOT NULL, " + 
-				"piano INTEGER NOT NULL,"+"FOREIGN KEY (NOME, piano)"+"REFERENCES piano(num)"+"ON DELETE CASCADE)");
-		*/
+			dsl.execute("CREATE TABLE IF NOT EXISTS ostacolo("+
+					"id INTEGER NOT NULL,"+
+					"nome TEXT NOT NULL,"+
+					"tipo TEXT NOT NULL,"+
+					"descrizione TEXT NOT NULL,"+
+					"x REAL, " +
+					"y REAL, " +
+					"pathFoto TEXT ,"+
+					"pathPercorso TEXT,"+
+					"piano INTEGER NOT NULL,"+
+					"PRIMARY KEY (id, piano), " +
+					"FOREIGN KEY (piano) REFERENCES piano(num) ON DELETE CASCADE" +
+					")");
 		}
 }

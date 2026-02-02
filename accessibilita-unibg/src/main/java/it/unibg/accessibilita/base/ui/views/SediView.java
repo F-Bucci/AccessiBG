@@ -1,4 +1,4 @@
-package it.unibg.accessibilita.base.ui;
+package it.unibg.accessibilita.base.ui.views;
 
 import java.util.List;
 
@@ -10,20 +10,13 @@ import com.vaadin.flow.component.html.Hr;
 import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.tabs.TabSheet;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
-import com.vaadin.flow.router.Menu;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
-import dao.EdificioDAO;
-import dao.ParcheggioDAO;
 import dao.SedeDAO;
 
-import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
-
-import it.unibg.accessibilita.base.ui.MainLayout;
 import it.unibg.accessibilita.base.ui.component.AppFooter;
 import it.unibg.accessibilita.base.ui.component.AppTabs;
 import it.unibg.accessibilita.base.ui.component.Box;
@@ -38,14 +31,10 @@ import struttura.Sede;
 @Route(value = "sedi", layout = MainLayout.class)
 public class SediView extends VerticalLayout implements HasUrlParameter<String>{
 	
-	private final SedeDAO sedeDAO;
-	private final EdificioDAO edificioDAO;
-	private final ParcheggioDAO parcheggioDAO;
+	private final transient SedeDAO sedeDAO;
 	
-	public SediView(SedeDAO sedeDAO, EdificioDAO edificioDAO, ParcheggioDAO parcheggioDAO) {
+	public SediView(SedeDAO sedeDAO) {
 		this.sedeDAO = sedeDAO;
-		this.edificioDAO = edificioDAO;
-		this.parcheggioDAO = parcheggioDAO;
 		setSpacing(false);
 		setPadding(true);
 		setWidthFull();
@@ -130,10 +119,9 @@ public class SediView extends VerticalLayout implements HasUrlParameter<String>{
 		for(Edificio e : edifici) {
 			ImageCard card = new ImageCard(e.getNome(), e.getIndirizzo(), e.getOrario(), e.getPathFoto());
             card.getStyle().set("cursor", "pointer");
-            card.addClickListener(event -> {
+            card.addClickListener(event ->
                 card.getUI().ifPresent(ui ->  ui.navigate(EdificiView.class, e.getNome())
-                );
-            });
+                ));
             griglia.add(card, spacer);
 		}
 		return griglia;

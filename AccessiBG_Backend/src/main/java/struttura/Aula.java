@@ -9,7 +9,7 @@ package AccessiBG_ClassDiagram;
 
 ***********************************************************/
 
-
+/*
 package struttura;
 
 class Aula extends Stanza
@@ -32,3 +32,4 @@ class Aula extends Stanza
         this.postiCarrozzina = postiCarrozzina;
     }
 }
+*/

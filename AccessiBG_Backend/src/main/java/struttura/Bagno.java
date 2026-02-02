@@ -1,4 +1,4 @@
-package struttura;
+/*package struttura;
 
 public class Bagno extends Stanza
  {
@@ -23,4 +23,4 @@ public class Bagno extends Stanza
 	
 	 public String getGenere() {return genere;}
 	 public void setGenere(String genere) { this.genere = genere; }
-}
+} */

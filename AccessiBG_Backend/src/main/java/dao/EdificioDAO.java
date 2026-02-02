@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import struttura.Distributore;
 import struttura.Edificio;
 import struttura.Piano;
+import struttura.PuntoDiIngresso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ public class EdificioDAO extends DAO<Edificio> {
 		super(dsl);
 	}
 	
-    @Override
+	@Override
 	public void insert(Edificio e) {
 		dsl.insertInto(
 				table("edificio"),
@@ -118,6 +119,12 @@ public class EdificioDAO extends DAO<Edificio> {
 	    return dsl
 	        .selectFrom(table("piano"))
 	        .where(field("edificio").eq(edificio))
-	        .fetchInto(Piano.class);
+	        .fetchInto(Piano.class);}
+	
+	public List<PuntoDiIngresso> findIngressoByEdificio(String edificio) {
+	    return dsl
+	        .selectFrom(table("puntiAccesso"))
+	        .where(field("edificio").eq(edificio))
+	        .fetchInto(PuntoDiIngresso.class);
 	}
 }

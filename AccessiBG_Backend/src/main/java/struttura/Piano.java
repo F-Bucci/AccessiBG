@@ -10,11 +10,13 @@ public class Piano {
 
 	public int numero;
 	private String descrizione;
+	private String pathFoto;
 	private String edificio;
 	
-	public Piano(int numero, String descrizione, String edificio) {
+	public Piano(int numero, String descrizione, String pathFoto,String edificio) {
 		this.numero = numero;
 		this.descrizione = descrizione;
+		this.pathFoto=pathFoto;
 		this.edificio = edificio;
 	}
 	
@@ -26,5 +28,9 @@ public class Piano {
 
 	public String getEdificio() {
 		return edificio;
+	}
+
+	public String getPathFoto() {
+		return pathFoto;
 	}
 }

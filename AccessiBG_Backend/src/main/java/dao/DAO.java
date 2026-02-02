@@ -2,7 +2,6 @@ package dao;
 
 import org.jooq.DSLContext;
 
-
 public abstract class DAO<T> {
 	
 	protected final DSLContext dsl;
@@ -10,6 +9,5 @@ public abstract class DAO<T> {
 	protected DAO(DSLContext dsl) {
 		this.dsl = dsl;
 	}
-	
 	public abstract void insert(T o);
 }

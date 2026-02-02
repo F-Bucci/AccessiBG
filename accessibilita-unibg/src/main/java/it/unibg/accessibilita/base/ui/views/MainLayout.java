@@ -1,9 +1,8 @@
-package it.unibg.accessibilita.base.ui;
+package it.unibg.accessibilita.base.ui.views;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -13,6 +12,7 @@ import com.vaadin.flow.theme.lumo.LumoUtility;
 
 import it.unibg.accessibilita.base.ui.component.AppButton;
 import it.unibg.accessibilita.base.ui.component.ThemeToggleButton;
+import it.unibg.accessibilita.base.ui.component.ToggleAccessibilita;
 import it.unibg.accessibilita.base.ui.component.ViewToolbar;
 @Layout
 public final class MainLayout extends AppLayout implements RouterLayout {
@@ -30,39 +30,49 @@ public final class MainLayout extends AppLayout implements RouterLayout {
     
     private void createDrawer() {
     	
-        H3 menuTitle = new H3("MENU");
-        menuTitle.addClassNames(LumoUtility.FontSize.MEDIUM, LumoUtility.Padding.Horizontal.MEDIUM);
-
-        AppButton homeBtn = new AppButton("Home", VaadinIcon.HOME.create(), e -> {
-            UI.getCurrent().navigate(HomeView.class); 
-        });
+    	//MENU LATERALE
+        //CREAZIONE BOTTONE HOME
+        AppButton homeBtn = new AppButton("Home", VaadinIcon.HOME.create(), e ->
+            UI.getCurrent().navigate(HomeView.class));
         homeBtn.setWidthFull(); 
         homeBtn.addClassNames(LumoUtility.JustifyContent.START); 
-        
-        VerticalLayout navSection = new VerticalLayout(menuTitle, homeBtn);
+        //SEZIONE BOTTONE
+        VerticalLayout navSection = new VerticalLayout(homeBtn);
         navSection.setPadding(false);
         navSection.setSpacing(false);
-        
-    	H3 sottotitolo = new H3("ASPETTO:");
-        sottotitolo.addClassNames(LumoUtility.FontSize.MEDIUM, LumoUtility.Padding.Horizontal.MEDIUM);
-
+        //CAMBIO TEMA
+    	H3 aspettoTitle = new H3("ASPETTO:");
+    	aspettoTitle.addClassNames(LumoUtility.FontSize.XSMALL, LumoUtility.TextColor.SECONDARY, LumoUtility.Padding.Horizontal.MEDIUM, LumoUtility.Margin.Top.MEDIUM);
+    	//SEZIONE CAMBIO TEMA
         ThemeToggleButton toggleBtn = new ThemeToggleButton();
         toggleBtn.setWidthFull(); 
         toggleBtn.addClassNames(LumoUtility.JustifyContent.START); 
-        
-        VerticalLayout settingsSection = new VerticalLayout(sottotitolo, toggleBtn);
-        settingsSection.setPadding(false);
-        settingsSection.setSpacing(false);
+        VerticalLayout aspettoSection = new VerticalLayout(aspettoTitle, toggleBtn);
+        aspettoSection.setPadding(false);
+        aspettoSection.setSpacing(false);
+       
+        //IMPOSTAZIONI PREFERENZE
+        H3 preferenzeTitle = new H3("Preferenze di navigazione");
+        preferenzeTitle.addClassNames(LumoUtility.FontSize.XSMALL, LumoUtility.TextColor.SECONDARY, LumoUtility.Padding.Horizontal.MEDIUM, LumoUtility.Margin.Top.MEDIUM);
+        ToggleAccessibilita accessBtn = new ToggleAccessibilita();
+        accessBtn.getStyle().set("padding-left", "16px");
+        // SEZIONE PREFERENZE
+        VerticalLayout preferenzeSection = new VerticalLayout(preferenzeTitle, accessBtn);
+        preferenzeSection.setPadding(false);
+        preferenzeSection.setSpacing(false);
         
     	VerticalLayout drawerContent = new VerticalLayout();
     	drawerContent.setSizeFull();
     	drawerContent.setPadding(false);
     	
     	drawerContent.add(navSection);
+        drawerContent.add(preferenzeSection);
+    	//PORTA IL CAMBIO TEMA IN BASSO
     	Div spacer = new Div();
         drawerContent.add(spacer);
         drawerContent.expand(spacer);
-        drawerContent.add(settingsSection);
+        
+        drawerContent.add(aspettoSection);
     	addToDrawer(drawerContent);
     }
 }
