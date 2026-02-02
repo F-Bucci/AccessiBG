@@ -6,9 +6,8 @@
 package AccessiBG_ClassDiagram;
 ***********************************************************/
 package struttura;
-import servizi.ServizioSede;
 
-public class Parcheggio extends ServizioSede {
+public class Parcheggio {
 
 	private String nome;
 	private TipoParcheggio tipo;
