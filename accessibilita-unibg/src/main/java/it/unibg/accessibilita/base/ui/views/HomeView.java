@@ -1,6 +1,7 @@
-package it.unibg.accessibilita.base.ui;
+package it.unibg.accessibilita.base.ui.views;
 
 import java.util.List;
+
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.H2;
@@ -10,7 +11,6 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
 import dao.SedeDAO;
-import gestione_db.CreateDB;
 import it.unibg.accessibilita.base.ui.component.AppFooter;
 import it.unibg.accessibilita.base.ui.component.ImageCard;
 import struttura.Sede;
@@ -18,7 +18,7 @@ import struttura.Sede;
 @Route(value = "", layout = MainLayout.class) 
 public class HomeView extends VerticalLayout { 
 	
-	private final SedeDAO sedeDAO;
+	private final transient SedeDAO sedeDAO;
 	
     public HomeView(SedeDAO sedeDAO) {
     	this.sedeDAO = sedeDAO;
@@ -57,16 +57,13 @@ public class HomeView extends VerticalLayout {
     	try {
     		List<Sede> sedi = sedeDAO.findAll();
     		
-    		if(sedi.isEmpty()) {
-    			System.out.println("DB vuoto");
-    		}
     		for(Sede s : sedi) {
         		ImageCard card = new ImageCard(s.getFacolta(), s.getIndirizzo(), s.getPathFoto());
                 card.getStyle().set("cursor", "pointer");
-                card.addClickListener(event -> {
+                card.addClickListener(event ->
                     card.getUI().ifPresent(ui ->  ui.navigate(SediView.class, s.getFacolta())
-                    );
-                });
+                    ));
+                
 
         		container.add(card);
         	}

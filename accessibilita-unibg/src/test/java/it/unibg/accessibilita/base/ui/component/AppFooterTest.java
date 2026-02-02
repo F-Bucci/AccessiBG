@@ -8,13 +8,13 @@ import org.junit.jupiter.api.Test;
 
 import com.vaadin.flow.component.html.Paragraph;
 
-public class AppFooterTest {
+class AppFooterTest {
 
 	@Test
 	//VOGLIO TESTARE CHE L'ANNO CHE VIENE MOSTRATO NEL FOOTER SIA QUELLO CORRENTE.
 	//COMUNQUE E' STATO VERIFICATO DI PERSONA IL CAMBIO DI ANNO AUTOMATICO.
 	//SUCCESS
-	public void deveMostrareTestoEAnnoCorrente() {
+	void deveMostrareTestoEAnnoCorrente() {
 		
 		AppFooter footer = new AppFooter();
 		Paragraph paragrafo =(Paragraph) footer.getComponentAt(1);

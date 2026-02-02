@@ -8,11 +8,11 @@ import org.junit.jupiter.api.Test;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.html.H3;
 
-public class BoxTest {
+class BoxTest {
 
 	@Test
 	//test per verificare se quando il box ha un titolo quest'ultimo viene effettivamente creato col conternuto corretto
-	public void boxConTitolo_CreaTitolo() {
+	void boxConTitolo_CreaTitolo() {
 		String titoloAtteso = "Prova";
 		Box box = new Box(titoloAtteso);
 		
@@ -24,7 +24,7 @@ public class BoxTest {
 	
 	@Test
 	//testare nel caso il titolo sia null il boc non dovrebbe essere inizialmente vuoto (zero figli)
-	public void boxSenzaTitolo_DeveEssereVuoto() {
+	void boxSenzaTitolo_DeveEssereVuoto() {
 	Box box = new Box(null);
 	
 	long l = box.getChildren().count();
@@ -33,7 +33,7 @@ public class BoxTest {
 	
 	@Test
 	//test per verificare se viene aggiunto correttamente il testo in una riga 
-	public void addInfo_AggiungeRigaInfo() {
+	void addInfo_AggiungeRigaInfo() {
 	Box box = new Box(null);
 	box.addInfo("telefono", "12345");
 	Component riga = box.getChildren().findFirst().get();
@@ -47,7 +47,7 @@ public class BoxTest {
 	}
 	@Test
 	//testare se viene aggiungo il paragrafo con il testo correttamente
-	public void addParagrafo_TestoCorretto() {
+	void addParagrafo_TestoCorretto() {
 		Box box = new Box(null);
 		String testo = "prova";
 		

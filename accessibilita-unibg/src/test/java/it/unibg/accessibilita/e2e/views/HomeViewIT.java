@@ -6,13 +6,12 @@ import com.microsoft.playwright.Locator;
 import java.util.regex.Pattern;
 import it.unibg.accessibilita.e2e.BaseE2ETest;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class HomeViewIT extends BaseE2ETest {
+class HomeViewIT extends BaseE2ETest {
 	
 	@Test
 	//verifica che l'home page viene caricata correttamente
-	public void homePage_caricaCorrettamente(){
+	void homePage_caricaCorrettamente(){
 		
 		page.navigate("http://localhost:8080/");
 		assertThat(page.getByText("Università degli Studi di Bergamo")).isVisible();
@@ -22,7 +21,7 @@ public class HomeViewIT extends BaseE2ETest {
 	}
 	@Test
 	//verifica che le ImageCard vengpno visualizzate in modo corretto
-	public void grigliaContieneImageCard() {
+	void grigliaContieneImageCard() {
 		page.navigate("http://localhost:8080/");
 		//recupero componente css per selezionare le card
 		Locator card = page.locator("div[style*='cursor: pointer']");
@@ -31,7 +30,7 @@ public class HomeViewIT extends BaseE2ETest {
 	
 	@Test
 	//verifica corretta navigazione a view successiva tramite ImageCard
-	public void navigazioneClickImageCard() {
+	void navigazioneClickImageCard() {
 		page.navigate("http://localhost:8080/");
 		Locator card = page.locator("div[style*='cursor: pointer']");
 		//esegue click sul primo elemento che trova

@@ -9,10 +9,10 @@ import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
 
-public class AppTabsTest {
+class AppTabsTest {
 	@Test
 	//Test per verificare che quandp si cambia tab cambia anche il contenuto
-	public void cambiaScheda_cambiaContenuto() {
+	void cambiaScheda_cambiaContenuto() {
 		
 		AppTabs tab = new AppTabs();
 		Span c1 = new Span("C1");

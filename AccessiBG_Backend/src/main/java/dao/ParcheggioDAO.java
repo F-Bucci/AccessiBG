@@ -6,7 +6,6 @@ import static org.jooq.impl.DSL.table;
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
 
-import struttura.Edificio;
 import struttura.Parcheggio;
 import struttura.TipoParcheggio;
 
@@ -17,7 +16,7 @@ public class ParcheggioDAO extends DAO<Parcheggio> {
 		super(dsl);
 	}
 	
-    @Override
+	@Override
 	public void insert(Parcheggio p) {
 		dsl
 			.insertInto(
@@ -63,6 +62,8 @@ public class ParcheggioDAO extends DAO<Parcheggio> {
 		
 		if (record != null) {
 			TipoParcheggio tipo = TipoParcheggio.valueOf(record.get("tipo", String.class));
+			// Nota: SQLite salva i boolean come 0/1. 
+			// Se riscontri errori di cast, usa: record.get("postiDisabili", Integer.class) == 1
 			boolean postiDisabili = record.get("postiDisabili", Boolean.class);
 			return new Parcheggio(
 					record.get("nome", String.class),
