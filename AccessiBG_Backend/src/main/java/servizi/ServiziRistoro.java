@@ -13,18 +13,18 @@ package servizi;
  * 
  */
 public class ServiziRistoro {
-				/**
-				 * 
-				 */
-				public ServiziPiano tipo;
-				/**
-				 * 
-				 */
-				public boolean fuoriServizio;
-				/**
-				 * 
-				 */
-				public String accesPulsantiera;
+	/**
+	 * 
+	 */
+	public ServiziPiano tipo;
+	/**
+	 * 
+	 */
+	public boolean fuoriServizio;
+	/**
+	 * 
+	 */
+	public String accesPulsantiera;
 	/**
 	 * 
 	 */

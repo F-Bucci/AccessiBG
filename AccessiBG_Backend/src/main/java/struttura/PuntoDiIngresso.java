@@ -1,4 +1,3 @@
-
 package struttura;
 
 public class PuntoDiIngresso {
@@ -14,7 +13,7 @@ public class PuntoDiIngresso {
 	private String pathPercorso; 
 	private String edificio;
 	
-public PuntoDiIngresso(int id, String nome,  boolean scale, boolean rampe, boolean portaTagliafuoco,
+	public PuntoDiIngresso(int id, String nome,  boolean scale, boolean rampe, boolean portaTagliafuoco,
 			boolean percorsoStrisceIpov, double x, double y, String pathFoto, String pathPercorso, String edificio) {
 		this.id = id;
 		this.nome = nome;
@@ -60,4 +59,5 @@ public PuntoDiIngresso(int id, String nome,  boolean scale, boolean rampe, boole
 	public String getPathPercorso() {
 		return pathPercorso;
 	}
+
 }

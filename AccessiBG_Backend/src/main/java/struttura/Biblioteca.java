@@ -16,16 +16,16 @@ import servizi.ServizioSede;
  */
 public class Biblioteca extends ServizioSede
  {
-				/**
-				 * 
-				 */
-				public String tipologiaLibri;
-				/**
-				 * 
-				 */
-				public String prestito;
-				/**
-				 * 
-				 */
-				public String regolamento;
+	/**
+	 * 
+	 */
+	public String tipologiaLibri;
+	/**
+	 * 
+	 */
+	public String prestito;
+	/**
+	 * 
+	 */
+	public String regolamento;
 }

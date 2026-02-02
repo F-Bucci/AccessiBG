@@ -15,4 +15,5 @@ import servizi.ServizioSede;
  * 
  */
 public class Laboratorio extends ServizioSede {
+	
 }

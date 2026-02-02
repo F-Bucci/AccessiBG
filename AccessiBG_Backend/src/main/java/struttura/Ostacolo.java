@@ -23,6 +23,8 @@ public class Ostacolo implements ElementoMappa{
         this.pathFoto=pathFoto;
     }
 	
+	public Ostacolo() {}
+	
 	public TipoOstacolo getTipo() { return tipo; }
 //    public void setTipo(TipoOstacolo tipo) { this.tipo = tipo; }
 

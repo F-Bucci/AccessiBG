@@ -1,6 +1,5 @@
 package struttura;
 
-
 public class Stanza implements ElementoMappa{
 	private int id;
 	private String nome;
@@ -30,16 +29,12 @@ public class Stanza implements ElementoMappa{
 	}
 
 	public String getNome() {return nome;}
-	//	    public void setNome(String nome) { this.nome = nome; }
 
 	public boolean getAccessibile() { return accessibile; }
-	//	    public void setAccessibile(boolean accessibile) { this.accessibile = accessibile;}
 
 	public String getDescrizione() {return descrizione;}
-	//	    public void setDescrizione(String descrizione) { this.descrizione = descrizione; }
 
 	public int getPiano() { return piano; }
-	//	    public void setPiano(Piano piano) { this.piano = piano; }
 
 	public int getId() {
 		return id;
