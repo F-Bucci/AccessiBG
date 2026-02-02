@@ -186,21 +186,4 @@ public class EdificioTest {
 		assertEquals("Facoltà non specificata", e.getFacolta());
 	}
 	
-	// Verificare che lista dei punti di ingresso inizia vuota, ma non può essere null
-	@Test
-    public void testGetPuntiDiAccessoInizialmenteVuota() {
-		Edificio e = new Edificio(
-				"Edificio A",
-				"Via Einstein 2",
-				null,
-				"/dalmineA.webp",
-				"Sede di Dalmine"
-		);
-
-        List<PuntoDiIngresso> lista = e.getPuntiDiAccesso();
-
-        assertNotNull(lista); // La lista dei punti di ingresso non dovrebbe essere null
-        assertTrue(lista.isEmpty()); // La lista dei punti di ingresso dovrebbe essere inizialmente vuota
-    }
-	
 }

@@ -9,7 +9,7 @@ public class PianoTest {
 	// Viene verificato che nessuna normalizzazione venga applicata quando i dati sono corretti
 	@Test
 	public void testCostruttoreValoriValidi() {
-	    Piano p = new Piano(0, "Piano terra", "Edificio D");
+	    Piano p = new Piano(0, "Piano terra", "/Mappa_PianoTerra_D.webp", "Edificio D");
 
 	    assertEquals(0, p.getNumero());
 	    assertEquals("Piano terra", p.getDescrizione());
@@ -19,7 +19,7 @@ public class PianoTest {
 	// Viene controllato che un valore negativo passato all'attributo numero (piano) diventi 1
 	@Test
 	public void testNumeroPianoNegativo() {
-	    Piano p = new Piano(-3, null, null);
+	    Piano p = new Piano(-3, null, "/Mappa_PianoTerra_D.webp", null);
 	    
 	    assertEquals(-1, p.getNumero());
 	}
@@ -27,7 +27,7 @@ public class PianoTest {
 	// Viene controllato che un valore null passato all'attributo descrizione diventi "Descrizione non presente"
 	@Test
 	public void testDescrizioneNull() {
-		Piano p = new Piano(0, null, "Edificio D");
+		Piano p = new Piano(0, null, "/Mappa_PianoTerra_D.webp", "Edificio D");
 		
 	    assertEquals("Descrizione non presente", p.getDescrizione());
 	}
@@ -35,7 +35,7 @@ public class PianoTest {
 	// Viene controllato che una stringa vuota passata all'attributo descrizione diventi "Descrizione non presente"
 	@Test
 	public void testDescrizioneVuoto() {
-		Piano p = new Piano(0, "  ", "Edificio D");
+		Piano p = new Piano(0, "  ", "/Mappa_PianoTerra_D.webp", "Edificio D");
 		
 		assertEquals("Descrizione non presente", p.getDescrizione());
 	}
@@ -43,7 +43,7 @@ public class PianoTest {
 	// Viene controllato che un valore null passato all'attributo edificio diventi "Descrizione non presente"
 	@Test
 	public void testEdificioNull() {
-		Piano p = new Piano(0, "Piano terra", null);
+		Piano p = new Piano(0, "Piano terra", "/Mappa_PianoTerra_D.webp", null);
 		
 	    assertEquals("Edificio non specificato", p.getEdificio());
 	}
@@ -51,7 +51,7 @@ public class PianoTest {
 	// Viene controllato che una stringa vuota passata all'attributo edificio diventi "Descrizione non presente"
 	@Test
 	public void testEdificioVuoto() {
-		Piano p = new Piano(0, "Piano terra", "  ");
+		Piano p = new Piano(0, "Piano terra", "/Mappa_PianoTerra_D.webp", "  ");
 		
 		assertEquals("Edificio non specificato", p.getEdificio());
 	}
@@ -59,7 +59,7 @@ public class PianoTest {
 	// Viene verificato che tutti i controlli nel costruttore agiscano insieme
 	@Test
 	public void testValoriNonValidi() {
-		Piano p = new Piano(-4, " ", null);
+		Piano p = new Piano(-4, " ", "/Mappa_PianoTerra_D.webp", null);
 		
 		assertEquals(-1, p.getNumero());
 		assertEquals("Descrizione non presente", p.getDescrizione());
