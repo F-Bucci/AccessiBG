@@ -26,13 +26,10 @@ public class Ostacolo implements ElementoMappa{
 	public Ostacolo() {}
 	
 	public TipoOstacolo getTipo() { return tipo; }
-//    public void setTipo(TipoOstacolo tipo) { this.tipo = tipo; }
 
     public String getDescrizione() { return descrizione; }
-//    public void setDescrizione(String descrizione) { this.descrizione = descrizione; }
  
     public int getPiano() { return piano; }
-//    public void setPiano(int piano) { this.piano = piano; }
 	
     public int getId() {
 		return id;

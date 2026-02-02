@@ -23,10 +23,8 @@ public class Distributore implements ElementoMappa{
 		this.pathPercorso=pathPercorso;
 	}
 	public TipoDistributore getTipo() { return tipo; }
-//    public void setTipo(TipoDistributore tipo) {this.tipo = tipo; }
 
     public boolean getAccessibile() { return accessibile; }
-//    public void setAccessibile(boolean accessibile) { this.accessibile = accessibile; }
     
 	public int getPiano() {return piano;}
 	
