@@ -15,17 +15,17 @@ public class Stanza implements ElementoMappa{
 
 	public Stanza(int id, String nome, int posti, String descrizione, boolean accessibile, double x, double y,
 			TipoStanza tipoStan, String pathPercorso,String pathFoto,int piano) {
-		this.id = id;
-		this.nome = nome;
-		this.posti = posti;
-		this.descrizione = descrizione;
+		this.id = id; // id può essere qualsiasi valore, validato altrove
+		this.nome = (nome == null || nome.isBlank()) ? "Nome non specificato" : nome;
+		this.posti = (posti < 0) ? 0 : posti;
+		this.descrizione = (descrizione == null || descrizione.isBlank()) ? "Descrizione non presente" : descrizione;
 		this.accessibile = accessibile;
-		this.x = x;
-		this.y = y;
-		this.tipoStan = tipoStan;
-		this.piano = piano;
-		this.pathPercorso=pathPercorso;
-		this.pathFoto=pathFoto;
+		this.x = x; // coordinata x può essere qualsiasi valore, validato altrove
+		this.y = y; // coordinata y può essere qualsiasi valore, validato altrove
+		this.tipoStan = (tipoStan == null) ? TipoStanza.AULA : tipoStan; 
+		this.piano = piano; // numero di piano può essere qualsiasi valore, validato altrove
+		this.pathPercorso = (pathPercorso == null || pathPercorso.isBlank()) ? "Percorso non disponibile" : pathPercorso;
+		this.pathFoto = (pathFoto == null || pathFoto.isBlank()) ? "Foto non disponibile" : pathFoto;
 	}
 
 	public String getNome() {return nome;}
