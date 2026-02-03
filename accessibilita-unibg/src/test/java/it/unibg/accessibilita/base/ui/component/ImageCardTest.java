@@ -46,7 +46,5 @@ class ImageCardTest {
 	        Component contenuto = imageContainer.getComponentAt(0);
 			assertTrue(contenuto instanceof Icon);
 			assertFalse(contenuto instanceof Image);
-					
-			
 		}
 }

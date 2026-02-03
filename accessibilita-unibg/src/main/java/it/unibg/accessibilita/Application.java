@@ -12,7 +12,6 @@ import org.springframework.context.annotation.ComponentScan;
 		"it.unibg.accessibilita",
 	    "gestione_db",
 	    "dao",
-	    "servizi",
 	    "struttura"
 })
 public class Application implements AppShellConfigurator {
