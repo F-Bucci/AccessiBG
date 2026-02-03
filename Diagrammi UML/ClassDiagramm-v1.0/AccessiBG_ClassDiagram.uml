@@ -384,12 +384,22 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_K7QAMABwEfG7PdVgw6qLpw" name="Class3"/>
       <packagedElement xmi:type="uml:Package" xmi:id="_SPYVIABwEfG7PdVgw6qLpw" name="views">
         <packagedElement xmi:type="uml:Class" xmi:id="_XCBkwABwEfG7PdVgw6qLpw" name="EdificiView">
+          <generalization xmi:type="uml:Generalization" xmi:id="_K0LVgAE5EfGeB8zFFlKGYA" general="_ohfFQABwEfG7PdVgw6qLpw"/>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_bcmSoABwEfG7PdVgw6qLpw" name="Operation1"/>
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_lH3eEABwEfG7PdVgw6qLpw" name="HomeView"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_lH3eEABwEfG7PdVgw6qLpw" name="HomeView">
+          <generalization xmi:type="uml:Generalization" xmi:id="_KaylIAE5EfGeB8zFFlKGYA" general="_ohfFQABwEfG7PdVgw6qLpw"/>
+        </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_ohfFQABwEfG7PdVgw6qLpw" name="MainLayout"/>
-        <packagedElement xmi:type="uml:Class" xmi:id="_p8ttIABwEfG7PdVgw6qLpw" name="SediView"/>
-        <packagedElement xmi:type="uml:Class" xmi:id="_s2q80ABwEfG7PdVgw6qLpw" name="StrutturaView"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_p8ttIABwEfG7PdVgw6qLpw" name="SediView">
+          <generalization xmi:type="uml:Generalization" xmi:id="_J-u7QAE5EfGeB8zFFlKGYA" general="_ohfFQABwEfG7PdVgw6qLpw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_s2q80ABwEfG7PdVgw6qLpw" name="StrutturaView">
+          <generalization xmi:type="uml:Generalization" xmi:id="_JaSxcAE5EfGeB8zFFlKGYA" general="_ohfFQABwEfG7PdVgw6qLpw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_2EfP0AE3EfGeB8zFFlKGYA" client="_SPYVIABwEfG7PdVgw6qLpw" supplier="_57on4AE0EfGeB8zFFlKGYA"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_7wyrUAE3EfGeB8zFFlKGYA" client="_SPYVIABwEfG7PdVgw6qLpw" supplier="_xXNIwABwEfG7PdVgw6qLpw"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_YOjFYAE4EfGeB8zFFlKGYA" client="_ohfFQABwEfG7PdVgw6qLpw" supplier="_ohfFQABwEfG7PdVgw6qLpw"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_xXNIwABwEfG7PdVgw6qLpw" name="component">
         <packagedElement xmi:type="uml:Class" xmi:id="_2hh4kABwEfG7PdVgw6qLpw" name="AppFooter">
@@ -410,6 +420,11 @@
         <packagedElement xmi:type="uml:Class" xmi:id="_P8TCwABxEfG7PdVgw6qLpw" name="MapPin"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_RGHKgABxEfG7PdVgw6qLpw" name="SelettorePiano"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_XTR3YABxEfG7PdVgw6qLpw" name="MappaIterattiva"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_nwatQAE3EfGeB8zFFlKGYA" name="DialogMappa"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_vHj58AE3EfGeB8zFFlKGYA" name="SelettorePiano"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_57on4AE0EfGeB8zFFlKGYA" name="manager">
+        <packagedElement xmi:type="uml:Class" xmi:id="_EugUkAE1EfGeB8zFFlKGYA" name="manager"/>
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_3iJVkPFdEfCQiL03duEjZw">
@@ -420,6 +435,5 @@
     </profileApplication>
   </uml:Model>
   <Codegen:GeneratorHint xmi:id="_3ikMUPFdEfCQiL03duEjZw" base_Element="_62WzgNH8EfCxiNKW-0b_Pw" generatorID="Standard Java">
-    <language xmi:type="Codegen:Language" href="pathmap://Codegen_PROFILES/languages.uml#_2Zt6YCjREeayco6FJ_OtTQ"/>
-  </Codegen:GeneratorHint>
+    <language xmi:type="Codegen:Language" href="pathmap://Codegen_PROFILES/languages.uml#_2Zt6YCjREeayco6FJ_OtTQ"/></Codegen:GeneratorHint>
 </xmi:XMI>
