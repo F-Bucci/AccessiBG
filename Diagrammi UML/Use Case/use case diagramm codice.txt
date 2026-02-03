@@ -13,16 +13,14 @@ package WebApp {
 (seleziona edificio) as (sEdificio)
 (visualizza informazioni edificio selezionato) as (vEdificio)
 (visualizza punti d'ingresso) as (ingresso)
-(filtra punti di ingresso) as (filtraingresso)
 (visualizza struttura edificio) as (struttura)
 (visualizza piani edificio) as (vPiani)
-(visualizza mappa piano e informazioni) as (infoMappa)
-(segnala ostacoli accessibilità) as (ost)
-(ricerca aula) as (raula)
-(visualizza aula) as (vaula)
+(visualizza mappa piano) as (infoMappa)
+(seleziona piano) as (sPiano)
+(visualizza elementi mappa) as (em)
 
-(menu) <--. (pref) : <<include>>
-(menu) <--. (tema) : <<include>>
+(menu) --.> (pref) : <<extends>>
+(menu) --.> (tema) : <<extends>>
 (vSedi) -down-> (infoSede)
 (infoSede) <--. (park) : <<include>>
 (infoSede) <--. (mappasede) : <<include>>
@@ -30,26 +28,13 @@ package WebApp {
 (eSedi) --> (sEdificio)
 (sEdificio) --> (vEdificio)
 (struttura) <-right-. (ingresso) : <<include>>
-(ingresso) -right-.> (filtraingresso) : <<extends>>
-
-note on link
-  **Condizione:** Utente ha impostato preferenze accessibilità
-end note
 
 (vEdificio) -right-> (struttura)
 (struttura) <--. (vPiani) : <<include>>
-(vPiani) -left-> (infoMappa)
-(infoMappa) <-left-. (ost) : <<extends>>
-note on link
-  **Condizione:** Utente ha impostato preferenze accessibilità
-end note
-(vPiani) -right-> (raula)
-(raula) <-right-. (vaula) : <<extends>>
-note on link
-  **Condizione:** Utente ha inserito un'aula esistente
-end note
+(vPiani) --> (sPiano)
+(sPiano) -left-> (infoMappa)
+(infoMappa) <.-- (em) :: <<include>>
 }
 Ut --> (vSedi)
 Ut --> (menu)
-
 @enduml
