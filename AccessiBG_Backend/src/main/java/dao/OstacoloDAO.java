@@ -10,36 +10,48 @@ import struttura.*;
 
 @Repository
 public class OstacoloDAO extends DAO<Ostacolo> {
+	
+	static final String DESCRIZIONE = "descrizione";
+	static final String OSTACOLO = "ostacolo";
+	static final String ID = "id";
+	static final String NOME = "nome";
+	static final String TIPO = "tipo";
+	static final String PATHFOTO = "pathFoto";
+	static final String PATHPERCORSO = "pathPercorso";
+	static final String PIANO = "piano";
+	static final String X = "x";
+	static final String Y = "y";
+	
 
 	public OstacoloDAO(DSLContext dsl) {
 		super(dsl);
 	}
 	@Override
 	public void insert(Ostacolo o) {
-		dsl.insertInto(table("ostacolo"), field("id"),field("nome"),field("tipo"),field("descrizione"),field("x"),field("y"),field("pathFoto"),field("pathPercorso"), field("piano"))
+		dsl.insertInto(table(OSTACOLO), field(ID),field(NOME),field(TIPO),field(DESCRIZIONE),field(X),field(Y),field(PATHFOTO),field(PATHPERCORSO), field(PIANO))
 		.values(o.getId(), o.getNome(),o.getTipo().name(), o.getDescrizione(),o.getX(), o.getY(), o.getPathFoto(), o.getPathPercorso(), o.getPiano())
-		.onConflict(field("id"), field("piano"))
+		.onConflict(field(ID), field(PIANO))
 		.doNothing()
 		.execute();
 	}
 
 	public Ostacolo findById(int id) {
-		var record = dsl.select(field("id"), field("nome"),field("tipo"),field("descrizione"),field("x"),field("y"),field("pathFoto"),field("pathPercorso"), field("piano"))
-				.from(table("ostacolo"))	
-				.where(field("id").eq(id))
+		var istanza = dsl.select(field(ID), field(NOME),field(TIPO),field(DESCRIZIONE),field(X),field(Y),field(PATHFOTO),field(PATHPERCORSO), field(PIANO))
+				.from(table(OSTACOLO))	
+				.where(field(ID).eq(id))
 				.fetchOne();
-		if (record != null) {
-			TipoOstacolo tipo = TipoOstacolo.valueOf(record.get("tipoStanza", String.class));
+		if (istanza != null) {
+			TipoOstacolo tipo = TipoOstacolo.valueOf(istanza.get("tipoStanza", String.class));
 			return new Ostacolo(
-					record.get("id", Integer.class),
-					record.get("nome", String.class),
+					istanza.get(ID, Integer.class),
+					istanza.get(NOME, String.class),
 					tipo,
-					record.get("descrizione", String.class),
-					record.get("x", Double.class),
-					record.get("y", Double.class),
-					record.get("pathFoto", String.class),
-					record.get("pathPercorso", String.class),
-					record.get("piano", Integer.class)
+					istanza.get(DESCRIZIONE, String.class),
+					istanza.get(X, Double.class),
+					istanza.get(Y, Double.class),
+					istanza.get(PATHFOTO, String.class),
+					istanza.get(PATHPERCORSO, String.class),
+					istanza.get(PIANO, Integer.class)
 					);
 		}
 		return null;}

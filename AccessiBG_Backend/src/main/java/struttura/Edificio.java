@@ -9,11 +9,11 @@ public class Edificio {
 	private String pathFoto;
 	
 	public Edificio(String nome, String indirizzo, String orario, String pathFoto, String facolta) {
-		this.indirizzo = indirizzo;
-		this.nome = nome;
-		this.orario = orario;
-		this.facolta = facolta;
-		this.pathFoto = pathFoto;
+		this.indirizzo = (indirizzo == null || indirizzo.isBlank()) ? "Indirizzo non disponibile" : indirizzo;
+		this.nome = (nome == null || nome.isBlank()) ? "Nome non specificato" : nome;
+		this.orario = (orario == null || orario.isBlank()) ? "Orario non specificato" : orario;
+		this.facolta = (facolta == null || facolta.isBlank()) ? "Facoltà non specificata" : facolta;
+		this.pathFoto = (pathFoto == null || pathFoto.isBlank()) ? "Foto non disponibile" : pathFoto;
 	}
 				
 	public String getIndirizzo() {return indirizzo;}

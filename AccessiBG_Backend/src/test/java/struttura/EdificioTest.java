@@ -1,10 +1,6 @@
 package struttura;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
-import java.util.List;
 
 import org.junit.Test;
 
@@ -16,14 +12,14 @@ public class EdificioTest {
 		Edificio e = new Edificio(
 				"Edificio A",
 				"Via Einstein 2",
-				"DA LUNEDÍ A VENERDÍ: \n" + "7.30-20.30 \n" + "SABATO: \n"+ "7.30-13.30",
+				"DA LUNEDÍ A VENERDÍ: \n7.30-20.30 \nSABATO: \n7.30-13.30",
 				"/dalmineA.webp",
 				"Sede di Dalmine"
 		);
 		
 		assertEquals("Edificio A", e.getNome());
 		assertEquals("Via Einstein 2", e.getIndirizzo());
-		assertEquals("DA LUNEDÍ A VENERDÍ: \n" + "7.30-20.30 \n" + "SABATO: \n"+ "7.30-13.30", e.getOrario());
+		assertEquals("DA LUNEDÍ A VENERDÍ: \n7.30-20.30 \nSABATO: \n7.30-13.30", e.getOrario());
 		assertEquals("/dalmineA.webp", e.getPathFoto());
 		assertEquals("Sede di Dalmine", e.getFacolta());
 	}
@@ -34,7 +30,7 @@ public class EdificioTest {
 		Edificio e = new Edificio(
 				null,
 				"Via Einstein 2",
-				"DA LUNEDÍ A VENERDÍ: \n" + "7.30-20.30 \n" + "SABATO: \n"+ "7.30-13.30",
+				"DA LUNEDÍ A VENERDÍ: \n7.30-20.30 \nSABATO: \n7.30-13.30",
 				"/dalmineA.webp",
 				"Sede di Dalmine"
 		);
@@ -48,7 +44,7 @@ public class EdificioTest {
 		Edificio e = new Edificio(
 				"  ",
 				"Via Einstein 2",
-				"DA LUNEDÍ A VENERDÍ: \n" + "7.30-20.30 \n" + "SABATO: \n"+ "7.30-13.30",
+				"DA LUNEDÍ A VENERDÍ: \n7.30-20.30 \nSABATO: \n7.30-13.30",
 				"/dalmineA.webp",
 				"Sede di Dalmine"
 		);
@@ -62,7 +58,7 @@ public class EdificioTest {
 		Edificio e = new Edificio(
 				"Edificio A",
 				null,
-				"DA LUNEDÍ A VENERDÍ: \n" + "7.30-20.30 \n" + "SABATO: \n"+ "7.30-13.30",
+				"DA LUNEDÍ A VENERDÍ: \n7.30-20.30 \nSABATO: \n7.30-13.30",
 				"/dalmineA.webp",
 				"Sede di Dalmine"
 		);
@@ -76,7 +72,7 @@ public class EdificioTest {
 		Edificio e = new Edificio(
 				"Edificio A",
 				"   ",
-				"DA LUNEDÍ A VENERDÍ: \n" + "7.30-20.30 \n" + "SABATO: \n"+ "7.30-13.30",
+				"DA LUNEDÍ A VENERDÍ: \n7.30-20.30 \nSABATO: \n7.30-13.30",
 				"/dalmineA.webp",
 				"Sede di Dalmine"
 		);
@@ -118,7 +114,7 @@ public class EdificioTest {
 		Edificio e = new Edificio(
 				"Edificio A",
 				"Via Einstein 2",
-				"DA LUNEDÍ A VENERDÍ: \n" + "7.30-20.30 \n" + "SABATO: \n"+ "7.30-13.30",
+				"DA LUNEDÍ A VENERDÍ: \n7.30-20.30 \nSABATO: \n7.30-13.30",
 				null,
 				"Sede di Dalmine"
 		);
@@ -132,7 +128,7 @@ public class EdificioTest {
 		Edificio e = new Edificio(
 				"Edificio A",
 				"Via Einstein 2",
-				"DA LUNEDÍ A VENERDÍ: \n" + "7.30-20.30 \n" + "SABATO: \n"+ "7.30-13.30",
+				"DA LUNEDÍ A VENERDÍ: \n7.30-20.30 \nSABATO: \n7.30-13.30",
 				"  ",
 				"Sede di Dalmine"
 		);
@@ -146,7 +142,7 @@ public class EdificioTest {
 		Edificio e = new Edificio(
 				"Edificio A",
 				"Via Einstein 2",
-				"DA LUNEDÍ A VENERDÍ: \n" + "7.30-20.30 \n" + "SABATO: \n"+ "7.30-13.30",
+				"DA LUNEDÍ A VENERDÍ: \n7.30-20.30 \nSABATO: \n7.30-13.30",
 				"/dalmineA.webp",
 				null
 		);
@@ -160,7 +156,7 @@ public class EdificioTest {
 		Edificio e = new Edificio(
 				"Edificio A",
 				"Via Einstein 2",
-				"DA LUNEDÍ A VENERDÍ: \n" + "7.30-20.30 \n" + "SABATO: \n"+ "7.30-13.30",
+				"DA LUNEDÍ A VENERDÍ: \n7.30-20.30 \nSABATO: \n7.30-13.30",
 				"/dalmineA.webp",
 				"  "
 		);

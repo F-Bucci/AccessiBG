@@ -6,7 +6,6 @@ import static org.jooq.impl.DSL.*;
 
 import struttura.Edificio;
 import struttura.Parcheggio;
-import struttura.Piano;
 import struttura.Sede;
 
 import java.util.ArrayList;
@@ -14,6 +13,14 @@ import java.util.List;
 
 @Repository
 public class SedeDAO extends DAO<Sede> {
+	
+	static final String SEDE = "sede";
+	static final String FACOLTA = "facolta";
+	static final String INDIRIZZO = "indirizzo";
+	static final String PATHFOTO = "pathFoto";
+	static final String ORARIOAPERTURA = "orarioApertura";
+	static final String PATHMAPS = "pathMaps";
+	
 
 	public SedeDAO(DSLContext dsl) {
 		super(dsl);
@@ -22,12 +29,12 @@ public class SedeDAO extends DAO<Sede> {
 	@Override
 	public void insert(Sede s) {
 		dsl.insertInto(
-				table("sede"),
-				field("facolta"),
-				field("indirizzo"),
-				field("pathFoto"),
-				field("orarioApertura"),
-				field("pathMaps")
+				table(SEDE),
+				field(FACOLTA),
+				field(INDIRIZZO),
+				field(PATHFOTO),
+				field(ORARIOAPERTURA),
+				field(PATHMAPS)
 		)
 		.values(
 				s.getFacolta(),
@@ -36,31 +43,31 @@ public class SedeDAO extends DAO<Sede> {
 				s.getOrarioApertura(),
 				s.getPathMaps()
 		)
-		.onConflict(field("facolta"))
+		.onConflict(field(FACOLTA))
 		.doNothing()
 		.execute();
 	}
 
 	public Sede findByFacolta(String facolta) {
-		var record = dsl
+		var istanza = dsl
 				.select(
-						field("facolta"),
-						field("indirizzo"),
-						field("pathFoto"),
-						field("orarioApertura"),
-						field("pathMaps")
+						field(FACOLTA),
+						field(INDIRIZZO),
+						field(PATHFOTO),
+						field(ORARIOAPERTURA),
+						field(PATHMAPS)
 				)
-				.from(table("sede"))
-				.where(field("facolta").eq(facolta))
+				.from(table(SEDE))
+				.where(field(FACOLTA).eq(facolta))
 				.fetchOne();
 
-		if (record != null) {
+		if (istanza != null) {
 			return new Sede(
-					record.get("facolta", String.class),
-					record.get("indirizzo", String.class),
-					record.get("pathFoto", String.class),
-					record.get("orarioApertura", String.class),
-					record.get("pathMaps", String.class)
+					istanza.get(FACOLTA, String.class),
+					istanza.get(INDIRIZZO, String.class),
+					istanza.get(PATHFOTO, String.class),
+					istanza.get(ORARIOAPERTURA, String.class),
+					istanza.get(PATHMAPS, String.class)
 			);
 		}
 
@@ -70,13 +77,13 @@ public class SedeDAO extends DAO<Sede> {
 	public List<Sede> findAll() {
 		try {
 			return dsl
-					.selectFrom(table("sede"))
-					.fetch(record -> new Sede(
-							record.get("facolta", String.class),
-							record.get("indirizzo", String.class),
-							record.get("pathFoto", String.class),
-							record.get("orarioApertura", String.class),
-							record.get("pathMaps", String.class)
+					.selectFrom(table(SEDE))
+					.fetch(istanza -> new Sede(
+							istanza.get(FACOLTA, String.class),
+							istanza.get(INDIRIZZO, String.class),
+							istanza.get(PATHFOTO, String.class),
+							istanza.get(ORARIOAPERTURA, String.class),
+							istanza.get(PATHMAPS, String.class)
 					));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -87,12 +94,12 @@ public class SedeDAO extends DAO<Sede> {
 	public List<Edificio> findEdificiBySede(String facolta) {
 		return dsl
 				.selectFrom(table("edificio"))
-				.where(field("facolta").eq(facolta))
+				.where(field(FACOLTA).eq(facolta))
 				.fetchInto(Edificio.class);
 		}
 	public List<Parcheggio> findParcheggioBySede(String facolta) {
 	    return dsl.selectFrom(table("parcheggio"))
-	              .where(field("facolta").eq(facolta))
+	              .where(field(FACOLTA).eq(facolta))
 	              .fetchInto(Parcheggio.class);
 		}
 	}

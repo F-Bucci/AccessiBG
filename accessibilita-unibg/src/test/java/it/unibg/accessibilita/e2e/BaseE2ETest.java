@@ -4,7 +4,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-
+import org.springframework.boot.test.context.SpringBootTest;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
@@ -12,7 +12,7 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
-
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public abstract class BaseE2ETest {
 	
 	//variabili statiche condivise tra tutti i test
@@ -26,10 +26,7 @@ public abstract class BaseE2ETest {
 	@BeforeAll
 	static void beforeAll() {
 		playwright = Playwright.create();
-		BrowserType browserType = playwright.chromium();
-		BrowserType.LaunchOptions launchOptions = new BrowserType.LaunchOptions();
-		launchOptions.setHeadless(false);
-		browser = browserType.launch(launchOptions);
+		browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true));
 	}
 	
 	@AfterAll

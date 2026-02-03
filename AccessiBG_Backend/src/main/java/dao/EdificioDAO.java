@@ -6,7 +6,6 @@ import static org.jooq.impl.DSL.*;
 
 import org.springframework.stereotype.Repository;
 
-import struttura.Distributore;
 import struttura.Edificio;
 import struttura.Piano;
 import struttura.PuntoDiIngresso;
@@ -16,6 +15,14 @@ import java.util.List;
 
 @Repository
 public class EdificioDAO extends DAO<Edificio> {
+	
+	static final String EDIFICIO = "edificio";
+	static final String NOME = "nome";
+	static final String INDIRIZZO = "indirizzo";
+	static final String ORARIO = "orario";
+	static final String PATHFOTO = "pathFoto";
+	static final String FACOLTA = "facolta";
+	
 		
 	public EdificioDAO(DSLContext dsl) {
 		super(dsl);
@@ -24,12 +31,12 @@ public class EdificioDAO extends DAO<Edificio> {
 	@Override
 	public void insert(Edificio e) {
 		dsl.insertInto(
-				table("edificio"),
-				field("nome"),
-				field("indirizzo"),
-				field("orario"),
-				field("pathFoto"),
-				field("facolta")
+				table(EDIFICIO),
+				field(NOME),
+				field(INDIRIZZO),
+				field(ORARIO),
+				field(PATHFOTO),
+				field(FACOLTA)
 		)
 		.values(
 				e.getNome(),
@@ -39,8 +46,8 @@ public class EdificioDAO extends DAO<Edificio> {
 				e.getFacolta()
 		)
 		.onConflict(
-				field("nome"),
-				field("facolta")
+				field(NOME),
+				field(FACOLTA)
 		)
 		.doNothing()
 		.execute();
@@ -48,25 +55,25 @@ public class EdificioDAO extends DAO<Edificio> {
 
     // restituisce edificio in base a nome e facolta, forse non utile, implementato già con sede
 	public Edificio findByEdificioFacolta(String nome, String facolta) {
-		var record = dsl
+		var istanza = dsl
 				.select(
-						field("nome"),
-						field("indirizzo"),
-						field("orario"),
-						field("pathFoto"),
-						field("facolta")
+						field(NOME),
+						field(INDIRIZZO),
+						field(ORARIO),
+						field(PATHFOTO),
+						field(FACOLTA)
 				)
-				.from(table("edificio"))
-				.where(field("nome").eq(nome)) 
-				.and(field("facolta").eq(facolta))
+				.from(table(EDIFICIO))
+				.where(field(NOME).eq(nome)) 
+				.and(field(FACOLTA).eq(facolta))
 				.fetchOne();
-		if (record != null) {
+		if (istanza != null) {
 			return new Edificio(
-					record.get("nome", String.class),
-					record.get("indirizzo", String.class),
-					record.get("orario", String.class),
-					record.get("pathFoto", String.class),
-					record.get("facolta", String.class)
+					istanza.get(NOME, String.class),
+					istanza.get(INDIRIZZO, String.class),
+					istanza.get(ORARIO, String.class),
+					istanza.get(PATHFOTO, String.class),
+					istanza.get(FACOLTA, String.class)
 			);
 		}
 		
@@ -75,23 +82,23 @@ public class EdificioDAO extends DAO<Edificio> {
 	
     // cerca l'edificio in base al nome mi serve per navigazione tra le views
 	public Edificio findByName(String nome) {
-		var record = dsl.select(
-				field("nome"),
-				field("indirizzo"),
-				field("orario"), 
-				field("pathFoto"), 
-				field("facolta")
+		var istanza = dsl.select(
+				field(NOME),
+				field(INDIRIZZO),
+				field(ORARIO), 
+				field(PATHFOTO), 
+				field(FACOLTA)
 				)
-				.from(table("edificio"))	
-				.where(field("nome").eq(nome))
+				.from(table(EDIFICIO))	
+				.where(field(NOME).eq(nome))
 				.fetchOne();
-		if (record != null) {
+		if (istanza != null) {
 			return new Edificio(
-					record.get("nome", String.class),
-					record.get("indirizzo", String.class),
-					record.get("orario", String.class),
-					record.get("pathFoto", String.class),
-					record.get("facolta", String.class)
+					istanza.get(NOME, String.class),
+					istanza.get(INDIRIZZO, String.class),
+					istanza.get(ORARIO, String.class),
+					istanza.get(PATHFOTO, String.class),
+					istanza.get(FACOLTA, String.class)
 			);
 		}
 		
@@ -102,12 +109,12 @@ public class EdificioDAO extends DAO<Edificio> {
 	public List<Edificio> findAll(){
 		try {return dsl
 				.selectFrom(table("sede"))
-				.fetch(record -> new Edificio(
-						record.get("nome", String.class),
-						record.get("indirizzo", String.class),
-						record.get("orario", String.class),
-						record.get("pathFoto", String.class),
-						record.get("facolta", String.class)
+				.fetch(istanza -> new Edificio(
+						istanza.get(NOME, String.class),
+						istanza.get(INDIRIZZO, String.class),
+						istanza.get(ORARIO, String.class),
+						istanza.get(PATHFOTO, String.class),
+						istanza.get(FACOLTA, String.class)
 				));
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -118,13 +125,13 @@ public class EdificioDAO extends DAO<Edificio> {
 	public List<Piano> findPianoByEdificio(String edificio) {
 	    return dsl
 	        .selectFrom(table("piano"))
-	        .where(field("edificio").eq(edificio))
+	        .where(field(EDIFICIO).eq(edificio))
 	        .fetchInto(Piano.class);}
 	
 	public List<PuntoDiIngresso> findIngressoByEdificio(String edificio) {
 	    return dsl
 	        .selectFrom(table("puntiAccesso"))
-	        .where(field("edificio").eq(edificio))
+	        .where(field(EDIFICIO).eq(edificio))
 	        .fetchInto(PuntoDiIngresso.class);
 	}
 }

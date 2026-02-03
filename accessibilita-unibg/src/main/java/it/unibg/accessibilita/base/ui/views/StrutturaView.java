@@ -4,15 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.vaadin.flow.component.dialog.Dialog;
+import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.theme.lumo.LumoUtility;
 
 import dao.EdificioDAO;
 import dao.PianoDAO;
 import it.unibg.accessibilita.base.ui.component.AppButton;
+import it.unibg.accessibilita.base.ui.component.DialogMappa;
+import it.unibg.accessibilita.base.ui.component.ImageCard;
 import it.unibg.accessibilita.base.ui.component.MappaInterattiva;
 import struttura.Distributore;
 import struttura.ElementoMappa;
@@ -34,6 +38,7 @@ public class StrutturaView extends VerticalLayout implements HasUrlParameter<Str
 		setSpacing(false);
 		setPadding(true);
 		setSizeFull();
+		setAlignItems(Alignment.CENTER);
 		
 	}
 	@Override
@@ -49,6 +54,8 @@ public class StrutturaView extends VerticalLayout implements HasUrlParameter<Str
 		}
 	}
 	private void interfacciaPiano(Piano piano) {
+		H2 titolo = new H2("Mappa iterattiva del Piano " + piano.getNumero());
+		titolo.addClassNames(LumoUtility.FontSize.XLARGE, LumoUtility.TextAlignment.CENTER);
 		//creazione mappa utilizziamo una interfaccia
 		MappaInterattiva mappa = new MappaInterattiva();
 		List<ElementoMappa> elemento = new ArrayList<>();
@@ -66,27 +73,12 @@ public class StrutturaView extends VerticalLayout implements HasUrlParameter<Str
 		mappa.mapBuilder(piano, elemento);
 		mappa.setWidthFull();
 		mappa.setMinHeight("600px");
-		add(mappa);
+		
+		add(titolo,mappa);
 	}
 	//crea dialog (box che appare quando si clicca una icona)
 	private void apriDettaglio(ElementoMappa elemento) {
-		Dialog dialog = new Dialog();
-		
-		VerticalLayout layoutDettagli = new VerticalLayout();
-	    layoutDettagli.setAlignItems(Alignment.CENTER);
-	    layoutDettagli.setSpacing(true);
-	    //aggiunge foto nel dialog
-	    if (elemento.getPathFoto() != null && !elemento.getPathFoto().isEmpty()) {
-	        Image img = new Image(elemento.getPathFoto(), "cambaire con metodo per il nome");
-	        img.setWidth("250px");
-	        layoutDettagli.add(img);
-	    }
-	    //bottone per chiudere dialog
-	    AppButton chiudi = new AppButton("Chiudi", event ->
-	    	dialog.close());
-	    dialog.getFooter().add(chiudi);
-	    dialog.add(layoutDettagli);
-	    dialog.open();
+	    new DialogMappa(elemento).open();
 	}
 	
 		

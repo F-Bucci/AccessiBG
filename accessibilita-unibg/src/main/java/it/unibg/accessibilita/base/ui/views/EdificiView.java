@@ -57,7 +57,6 @@ public class EdificiView extends VerticalLayout implements HasUrlParameter<Strin
 		AppTabs edificioTab = new AppTabs();
 		edificioTab.addTab("Generale", createGeneraleContent(edificio));
 		edificioTab.addTab("Ingressi", createIngressiContent(edificio));
-		edificioTab.addTab("Servizi", createServiziContent(edificio));
         //FOOTER
 		AppFooter footer = new AppFooter();
 		add(titolo, divisore, edificioTab, footer);
@@ -114,20 +113,10 @@ public class EdificiView extends VerticalLayout implements HasUrlParameter<Strin
 		List<PuntoDiIngresso> ingresso = edificioDAO.findIngressoByEdificio(edificio.getNome());
 		if(ingresso.isEmpty()) {return null;}
 		for(PuntoDiIngresso p : ingresso) {
-			ImageCard card = new ImageCard(p.getNome(), p.getPathFoto());
+			ImageCard card = new ImageCard(p.getNome(),p.getPathFoto());
             card.getStyle().set("cursor", "pointer");
             griglia.add(card);
 		}
 	    return griglia;
 	}
-	//TAB SERVIZI
-	private VerticalLayout createServiziContent(Edificio edificio) {
-	    VerticalLayout layout = new VerticalLayout();
-	    layout.setPadding(false);
-	    layout.setSpacing(true);
-
-	    return layout;
-	}
-
-	
 }

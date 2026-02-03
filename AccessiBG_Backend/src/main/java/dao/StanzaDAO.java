@@ -10,42 +10,56 @@ import struttura.*;
 
 @Repository
 public class StanzaDAO extends DAO<Stanza>{
+	
+	static final String STANZA = "stanza";
+	static final String ID = "id";
+	static final String NOME = "nome";
+	static final String POSTI = "posti";
+	static final String DESCRIZIONE = "descrizione";
+	static final String ACCESSIBILE = "accessibile";
+	static final String X = "x";
+	static final String Y = "y";
+	static final String TIPOSTANZA = "tipoStanza";
+	static final String PATHFOTO = "pathFoto";
+	static final String PATHPERCORSO = "pathPercorso";
+	static final String PIANO = "piano";
+	
 
 	public StanzaDAO(DSLContext dsl) {
 		super(dsl);
 	}
 	@Override
 	public void insert(Stanza s) {
-		dsl.insertInto(table("stanza"), field("id"),field("nome"),field("posti"), field("descrizione"), field("accessibile"),
-				field("x"), field("y"), field("tipoStanza"),field("pathFoto"), field("pathPercorso"),field("piano"))
+		dsl.insertInto(table(STANZA), field(ID),field(NOME),field(POSTI), field(DESCRIZIONE), field(ACCESSIBILE),
+				field(X), field(Y), field(TIPOSTANZA),field(PATHFOTO), field(PATHPERCORSO),field(PIANO))
 		.values(s.getId(), s.getNome(), s.getPosti(), s.getDescrizione(), s.getAccessibile() ? 1 : 0, s.getX(), s.getY(), 
 				s.getTipoStan().name(),s.getPathFoto(),s.getPathPercorso(),s.getPiano())
-		.onConflict(field("id"), field("piano"))
+		.onConflict(field(ID), field(PIANO))
 		.doNothing()
 		.execute();
 	}
 
 	public Stanza findByName(String nome) {
-		var record = dsl.select(field("id"),field("nome"),field("posti"), field("descrizione"), field("accessibile"),
-				field("x"), field("y"), field("tipoStanza"), field("pathFoto"), field("pathPercorso"),field("piano"))
-				.from(table("stanza"))	
-				.where(field("nome").eq(nome))
+		var istanza = dsl.select(field(ID),field(NOME),field(POSTI), field(DESCRIZIONE), field(ACCESSIBILE),
+				field(X), field(Y), field(TIPOSTANZA), field(PATHFOTO), field(PATHPERCORSO),field(PIANO))
+				.from(table(STANZA))	
+				.where(field(NOME).eq(nome))
 				.fetchOne();
-		if (record != null) {
-			TipoStanza tipo = TipoStanza.valueOf(record.get("tipoStanza", String.class));
-			boolean accessibile = record.get("accessibile", Boolean.class);
+		if (istanza != null) {
+			TipoStanza tipo = TipoStanza.valueOf(istanza.get(TIPOSTANZA, String.class));
+			boolean accessibile = istanza.get(ACCESSIBILE, Boolean.class);
 			return new Stanza(
-					record.get("id", Integer.class),
-					record.get("nome", String.class),
-					record.get("posti", Integer.class),
-					record.get("descrizione", String.class),
+					istanza.get(ID, Integer.class),
+					istanza.get(NOME, String.class),
+					istanza.get(POSTI, Integer.class),
+					istanza.get(DESCRIZIONE, String.class),
 					accessibile,
-					record.get("x", Double.class),
-					record.get("y", Double.class),
+					istanza.get(X, Double.class),
+					istanza.get(Y, Double.class),
 					tipo,
-					record.get("pathFoto", String.class),
-					record.get("pathPercorso", String.class),
-					record.get("piano", Integer.class)
+					istanza.get(PATHFOTO, String.class),
+					istanza.get(PATHPERCORSO, String.class),
+					istanza.get(PIANO, Integer.class)
 					);
 		}
 		return null;}

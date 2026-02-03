@@ -12,6 +12,13 @@ import struttura.*;
 
 @Repository
 public class PianoDAO extends DAO<Piano> {
+	
+	static final String PIANO = "piano";
+	static final String NUM = "num";
+	static final String DESCRIZIONE = "descrizione";
+	static final String PATHFOTO = "pathFoto";
+	static final String EDIFICIO = "edificio";
+	
 
 	public PianoDAO(DSLContext dsl) {
 		super(dsl);
@@ -21,11 +28,11 @@ public class PianoDAO extends DAO<Piano> {
 	public void insert(Piano p) {
 		dsl
 			.insertInto(
-					table("piano"), 
-					field("num"),
-					field("descrizione"),
-					field("pathFoto"),
-					field("edificio")
+					table(PIANO), 
+					field(NUM),
+					field(DESCRIZIONE),
+					field(PATHFOTO),
+					field(EDIFICIO)
 			)
 			.values(
 					p.getNumero(), 
@@ -34,32 +41,32 @@ public class PianoDAO extends DAO<Piano> {
 					p.getEdificio()
 			)
 			.onConflict(
-					field("num"), 
-					field("edificio")
+					field(NUM), 
+					field(EDIFICIO)
 			)
 			.doNothing()
 			.execute();
 	}
 		
 	public Piano findPianoByEdificio(int num, String edificio) {
-		var record = dsl
+		var istanza = dsl
 				.select(
-						field("num"),
-						field("descrizione"),
-						field("pathFoto"),
-						field("edificio")
+						field(NUM),
+						field(DESCRIZIONE),
+						field(PATHFOTO),
+						field(EDIFICIO)
 				)
-				.from(table("piano"))
-				.where(field("num").eq(num))
-				.and(field("edificio").eq(edificio))
+				.from(table(PIANO))
+				.where(field(NUM).eq(num))
+				.and(field(EDIFICIO).eq(edificio))
 				.fetchOne();
 		
-		if (record != null) {
+		if (istanza != null) {
 			return new Piano(
-					record.get("num", Integer.class),
-					record.get("descrizione", String.class),
-					record.get("pathFoto", String.class),
-					record.get("edificio", String.class)
+					istanza.get(NUM, Integer.class),
+					istanza.get(DESCRIZIONE, String.class),
+					istanza.get(PATHFOTO, String.class),
+					istanza.get(EDIFICIO, String.class)
 			);
 		}
 		return null;
@@ -68,21 +75,21 @@ public class PianoDAO extends DAO<Piano> {
 	public List<Distributore> findDistributoreByPiano(int piano) {
 		return dsl	
 				.selectFrom(table("distributore"))
-				.where(field("piano").eq(piano))
+				.where(field(PIANO).eq(piano))
 				.fetchInto(Distributore.class);
 	}
 	
 	public List<Stanza> findStanzaByPiano(int piano) {
 		return dsl
 				.selectFrom(table("stanza"))
-				.where(field("piano").eq(piano))
+				.where(field(PIANO).eq(piano))
 				.fetchInto(Stanza.class);
 	}
 	
 	public List<Ostacolo> findOstacoloByPiano(int piano) {
 		return dsl
 				.selectFrom(table("ostacolo"))
-				.where(field("piano").eq(piano))
+				.where(field(PIANO).eq(piano))
 				.fetchInto(Ostacolo.class);
 	}
 }
