@@ -12,15 +12,15 @@ public class Ostacolo implements ElementoMappa{
 	private int piano;
 	
 	public Ostacolo(int id, String nome, TipoOstacolo tipo, String descrizione, double x, double y, String pathFoto, String pathPercorso, int piano) {
-        this.id = id;
-        this.nome = nome;
-		this.tipo = tipo;
-        this.descrizione = descrizione;
-        this.x = x;
-        this.y = y;
-        this.piano = piano;
+        this.id = id; // id può essere qualsiasi valore, validato altrove
+        this.nome = (nome == null || nome.isBlank()) ? "Nome non specificato" : nome;
+		this.tipo = (tipo == null) ? TipoOstacolo.OGGETTO_INGROMBRANTE : tipo;
+		this.descrizione = (descrizione == null || descrizione.isBlank()) ? "Descrizione non presente" : descrizione;
+        this.x = x; // coordinata x può essere qualsiasi valore, validato altrove
+        this.y = y; // coordinata y può essere qualsiasi valore, validato altrove
+        this.piano = piano; // numero del piano può essere qualsiasi valore, validato altrove
         this.pathPercorso = pathPercorso;
-        this.pathFoto = pathFoto;
+        this.pathFoto = (pathFoto == null || pathFoto.isBlank()) ? "Foto non disponibile" : pathFoto;
     }
 	
 	public Ostacolo() {}
