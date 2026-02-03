@@ -13,16 +13,16 @@ public class Distributore implements ElementoMappa{
 	private int piano;
 	
 	public Distributore(int id, String nome, String descrizione, TipoDistributore tipo, boolean accessibile, double x, double y, String pathFoto, String pathPercorso, int piano) {
-		this.id = id;
-		this.nome = nome;
-		this.descrizione = descrizione;
-		this.tipo = tipo;
+		this.id = id; // id può essere qualsiasi valore, validato altrove
+		this.nome = (nome == null || nome.isBlank()) ? "Nome non specificato" : nome;
+		this.descrizione = (descrizione == null || descrizione.isBlank()) ? "Descrizione non presente" : descrizione;
+		this.tipo = (tipo == null) ? TipoDistributore.SNACK_E_BEVANDE : tipo;
 		this.accessibile = accessibile;
-		this.x = x;
-		this.y = y;
-		this.piano = piano;
-		this.pathFoto = pathFoto;
-		this.pathPercorso = pathPercorso;
+		this.x = x; // coordinata x può essere qualsiasi valore, validato altrove
+		this.y = y; // coordinata y può essere qualsiasi valore, validato altrove
+		this.piano = piano; // numero del piano può essere qualsiasi valore, validato altrove
+		this.pathFoto = (pathFoto == null || pathFoto.isBlank()) ? "Foto non disponibile" : pathFoto;
+		this.pathPercorso = (pathPercorso == null || pathPercorso.isBlank()) ? "Percorso non disponibile" : pathPercorso;
 	}
 	
 	public TipoDistributore getTipo() { return tipo; }

@@ -8,7 +8,7 @@ public class Piano {
 	private String edificio;
 	
 	public Piano(int numero, String descrizione, String pathFoto, String edificio) {
-		this.numero = numero;
+		this.numero = numero; // numero del piano può essere qualsiasi valore, validato altrove
 		this.descrizione = (descrizione == null || descrizione.isBlank()) ? "Descrizione non presente" : descrizione;
 		this.pathFoto = (pathFoto == null || pathFoto.isBlank()) ? "Foto non disponibile" : pathFoto;
 		this.edificio = (edificio == null || edificio.isBlank()) ? "Edificio non specificato" : edificio;
