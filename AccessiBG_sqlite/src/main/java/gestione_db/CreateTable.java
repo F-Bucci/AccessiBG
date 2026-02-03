@@ -54,6 +54,7 @@ public class CreateTable {
 			dsl.execute("CREATE TABLE IF NOT EXISTS distributore("+
 			    "id INTEGER NOT NULL,"+
 			    "nome TEXT NOT NULL,"+
+			    "descrizione TEXT,"+
 			    "tipo TEXT NOT NULL,"+
 			    "accessibile INTEGER NOT NULL,"+
 			    "x REAL, " +
@@ -68,6 +69,7 @@ public class CreateTable {
 			dsl.execute("CREATE TABLE IF NOT EXISTS puntiAccesso("+
 					"id INTEGER NOT NULL,"+
 					"nome TEXT NOT NULL,"+
+					"descrizione TEXT NOT NULL," +
 					"scale INTEGER NOT NULL,"+
 					"rampe INTEGER NOT NULL,"+
 					"portaTagliafuoco INTEGER NOT NULL,"+
@@ -85,7 +87,7 @@ public class CreateTable {
 					"id INTEGER NOT NULL, "+
 					"nome TEXT NOT NULL, "+
 					"posti INTEGER NOT NULL, " +
-					"descrizione TEXT NOT NULL, " +
+					"descrizione TEXT, " +
 					"accessibile INTEGER NOT NULL, " +
 					"x REAL, " +
 					"y REAL, " +

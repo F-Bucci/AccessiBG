@@ -15,6 +15,7 @@ public class DistributoreDAO extends DAO<Distributore> {
 	static final String DISTRIBUTORE = "distributore";
 	static final String ID = "id";
 	static final String NOME = "nome";
+	static final String DESCRIZIONE = "descrizione";
 	static final String TIPO = "tipo";
 	static final String ACCESSIBILE = "accessibile";
 	static final String X = "x";
@@ -30,9 +31,9 @@ public class DistributoreDAO extends DAO<Distributore> {
 
 	@Override
 	public void insert(Distributore d) {
-		dsl.insertInto(table(DISTRIBUTORE), field(ID), field(NOME), field(TIPO), field(ACCESSIBILE), field(X),
+		dsl.insertInto(table(DISTRIBUTORE), field(ID), field(NOME), field(DESCRIZIONE), field(TIPO), field(ACCESSIBILE), field(X),
 				field(Y), field(PATHFOTO), field(PATHPERCORSO), field(PIANO))
-		.values(d.getId(), d.getNome(), d.getTipo().name(), d.getAccessibile() ? 1 : 0, d.getX(), d.getY(), d.getPathFoto(), d.getPathPercorso(), d.getPiano())
+		.values(d.getId(), d.getNome(), d.getDescrizione(), d.getTipo().name(), d.getAccessibile() ? 1 : 0, d.getX(), d.getY(), d.getPathFoto(), d.getPathPercorso(), d.getPiano())
 		.onConflict(field(ID), field(PIANO))
 		.doNothing()
 		.execute();
@@ -40,7 +41,7 @@ public class DistributoreDAO extends DAO<Distributore> {
 	
 	public Distributore findDistributoreByPiano(int id, int piano) {
 		var istanza = dsl
-				.select(field(ID), field(NOME), field(TIPO), field(ACCESSIBILE), field(X),
+				.select(field(ID), field(NOME), field(DESCRIZIONE), field(TIPO), field(ACCESSIBILE), field(X),
 						field(Y), field(PATHFOTO), field(PATHPERCORSO), field(PIANO))
 				.from(table(DISTRIBUTORE))
 				.where(field(ID).eq(id))
@@ -53,6 +54,7 @@ public class DistributoreDAO extends DAO<Distributore> {
 			return new Distributore(
 					istanza.get(ID, Integer.class),
 					istanza.get(NOME, String.class),
+					istanza.get(DESCRIZIONE, String.class),
 					tipo,
 					accessibile,
 					istanza.get(X, Double.class),
@@ -66,7 +68,7 @@ public class DistributoreDAO extends DAO<Distributore> {
 	
 	public Distributore findById(int id) {
 			var istanza = dsl
-					.select(field(ID), field(NOME), field(TIPO), field(ACCESSIBILE), field(X),
+					.select(field(ID), field(NOME), field(DESCRIZIONE), field(TIPO), field(ACCESSIBILE), field(X),
 							field(Y), field(PATHFOTO), field(PATHPERCORSO), field(PIANO))
 					.from(table(DISTRIBUTORE))
 					.where(field(ID).eq(id))
@@ -77,6 +79,7 @@ public class DistributoreDAO extends DAO<Distributore> {
 				return new Distributore(
 						istanza.get(ID, Integer.class),
 						istanza.get(NOME, String.class),
+						istanza.get(DESCRIZIONE, String.class),
 						tipo,
 						accessibile,
 						istanza.get(X, Double.class),

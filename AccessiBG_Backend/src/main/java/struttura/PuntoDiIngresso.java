@@ -3,6 +3,7 @@ package struttura;
 public class PuntoDiIngresso {
 	private int id;
 	private String nome;
+	private String descrizione;
 	private boolean scale;
 	private boolean rampe;
 	private boolean portaTagliafuoco;
@@ -13,10 +14,11 @@ public class PuntoDiIngresso {
 	private String pathPercorso; 
 	private String edificio;
 	
-	public PuntoDiIngresso(int id, String nome,  boolean scale, boolean rampe, boolean portaTagliafuoco,
+	public PuntoDiIngresso(int id, String nome, String descrizione,  boolean scale, boolean rampe, boolean portaTagliafuoco,
 			boolean percorsoStrisceIpov, double x, double y, String pathFoto, String pathPercorso, String edificio) {
 		this.id = id;
 		this.nome = nome;
+		this.descrizione = descrizione;
 		this.scale = scale;
 		this.rampe = rampe;
 		this.portaTagliafuoco = portaTagliafuoco;
@@ -40,24 +42,16 @@ public class PuntoDiIngresso {
 
 	public String getEdificio() {return edificio;}
 	
-	public String getNome() {
-		return nome;
-	}
+	public String getNome() {return nome;}
+	
+	public String getDescrizione() {return descrizione;}
 
-	public double getX() {
-		return x;
-	}
+	public double getX() {return x;}
 
-	public double getY() {
-		return y;
-	}
+	public double getY() {return y;}
 
-	public String getPathFoto() {
-		return pathFoto;
-	}
+	public String getPathFoto() {return pathFoto;}
 
-	public String getPathPercorso() {
-		return pathPercorso;
-	}
+	public String getPathPercorso() {return pathPercorso;}
 
 }

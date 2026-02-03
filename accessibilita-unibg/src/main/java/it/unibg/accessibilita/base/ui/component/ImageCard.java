@@ -17,6 +17,9 @@ public class ImageCard extends Div{
 	public ImageCard(String titolo, String sottotitolo, String pathFoto) {
 		this(titolo, sottotitolo, null, pathFoto);
 	}
+	public ImageCard(String titolo, String descrizione, boolean b1, boolean b2, boolean b3, boolean b4) {
+		
+	}
 	public ImageCard(String titolo, String sottotitolo, String descrizione, String pathFoto) {
 		
 		addClassNames(
