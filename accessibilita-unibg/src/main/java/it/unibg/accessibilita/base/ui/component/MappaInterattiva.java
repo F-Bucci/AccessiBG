@@ -82,9 +82,4 @@ public class MappaInterattiva extends Div {
 		});
 		containerImg.add(pin);
 	}
-	public void mapReset() {
-		if (this.mappaOriginale != null) {
-            mappaImg.setSrc(this.mappaOriginale);
-	}
-	}
 }
