@@ -11,16 +11,16 @@ public class Ostacolo implements ElementoMappa{
 	private String pathPercorso;
 	private int piano;
 	
-	public Ostacolo(int id, String nome,TipoOstacolo tipo, String descrizione, double x, double y,String pathFoto,String pathPercorso, int piano) {
-       this.id=id;
-       this.nome = nome;
+	public Ostacolo(int id, String nome, TipoOstacolo tipo, String descrizione, double x, double y, String pathFoto, String pathPercorso, int piano) {
+        this.id = id;
+        this.nome = nome;
 		this.tipo = tipo;
         this.descrizione = descrizione;
-        this.x=x;
-        this.y=y;
-        this.piano=piano;
-        this.pathPercorso=pathPercorso;
-        this.pathFoto=pathFoto;
+        this.x = x;
+        this.y = y;
+        this.piano = piano;
+        this.pathPercorso = pathPercorso;
+        this.pathFoto = pathFoto;
     }
 	
 	public Ostacolo() {}
@@ -34,19 +34,24 @@ public class Ostacolo implements ElementoMappa{
     public int getId() {
 		return id;
 	}
+    
 	public double getX() {
 		return x;
 	}
+	
 	public double getY() {
 		return y;
 	}
+	
 	@Override
 	public String getPathPercorso() {
 		return null;
 	}
+	
 	public String getPathFoto() {
 		return pathFoto;
 	}
+	
 	public String getNome() {
 		return nome;
 	}
