@@ -203,6 +203,28 @@ public class DistributoreTest {
 		
 		assertEquals("Percorso non disponibile", d.getPathPercorso());
 	}
-		
+	
+	// Viene verificato che tutti i controllo presenti nel costruttore agiscano insieme
+	@Test
+	public void testValoriNonValidi() {
+		Distributore d = new Distributore(
+				1,
+				"  ",
+				"   ",
+				null,
+				true,
+				56.64,
+				45,
+				null,
+				"       ",
+				0
+		);
+
+	    assertEquals("Nome non specificato", d.getNome());
+	    assertEquals("Descrizione non presente", d.getDescrizione());
+	    assertEquals(TipoDistributore.SNACK_E_BEVANDE, d.getTipo());
+	    assertEquals("Foto non disponibile", d.getPathFoto());
+	    assertEquals("Percorso non disponibile", d.getPathPercorso());
+	}
 	
 }

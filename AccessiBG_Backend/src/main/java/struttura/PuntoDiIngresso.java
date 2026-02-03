@@ -16,18 +16,18 @@ public class PuntoDiIngresso {
 	
 	public PuntoDiIngresso(int id, String nome, String descrizione,  boolean scale, boolean rampe, boolean portaTagliafuoco,
 			boolean percorsoStrisceIpov, double x, double y, String pathFoto, String pathPercorso, String edificio) {
-		this.id = id;
-		this.nome = nome;
-		this.descrizione = descrizione;
+		this.id = id; // id può essere qualsiasi valore, validato altrove
+		this.nome = (nome == null || nome.isBlank()) ? "Nome non specificato" : nome;
+		this.descrizione = (descrizione == null || descrizione.isBlank()) ? "Descrizione non presente" : descrizione;
 		this.scale = scale;
 		this.rampe = rampe;
 		this.portaTagliafuoco = portaTagliafuoco;
 		this.percorsoStrisceIpov = percorsoStrisceIpov;
-		this.x = x;
-		this.y = y;
-		this.pathFoto = pathFoto;
+		this.x = x; // coordinata x può essere qualsiasi valore, validato altrove
+		this.y = y; // coordinata y può essere qualsiasi valore, validato altrove
+		this.pathFoto = (pathFoto == null || pathFoto.isBlank()) ? "Foto non disponibile" : pathFoto;
 		this.pathPercorso = pathPercorso;
-		this.edificio = edificio;
+		this.edificio = (edificio == null || edificio.isBlank()) ? "Edificio non specificato" : edificio;
 	}
 
 	public boolean getPercorsoStrisceIpov() {return percorsoStrisceIpov;}

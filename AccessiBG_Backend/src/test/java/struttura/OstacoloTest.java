@@ -158,4 +158,25 @@ public class OstacoloTest {
 		assertEquals("Foto non disponibile", o.getPathFoto());
 	}
 	
+	// Viene verificato che tutti i controllo presenti nel costruttore agiscano insieme
+	@Test
+	public void testValoriNonValidi() {
+		Ostacolo o = new Ostacolo(
+				3,
+				null,
+				null,
+				" ",
+				64.75,
+				70.25,
+				"",
+				null,
+				0
+		);
+
+		assertEquals("Nome non specificato", o.getNome());
+		assertEquals(TipoOstacolo.OGGETTO_INGROMBRANTE, o.getTipo());
+		assertEquals("Descrizione non presente", o.getDescrizione());
+		assertEquals("Foto non disponibile", o.getPathFoto());
+	}
+	
 }

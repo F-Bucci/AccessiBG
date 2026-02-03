@@ -4,8 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-
-
 public class EdificioTest {
 
 	// Viene controllato che tutti i valori passati vengano assegnati correttamente
