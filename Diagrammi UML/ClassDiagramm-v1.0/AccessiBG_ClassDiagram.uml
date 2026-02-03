@@ -370,6 +370,9 @@
         <generalization xmi:type="uml:Generalization" xmi:id="_wpLh8ABsEfG7PdVgw6qLpw" general="_CsVa0ABsEfG7PdVgw6qLpw"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_RUGgAABtEfG7PdVgw6qLpw" name="insert"/>
       </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_vM6hwAE8EfG0aYVkioTlZg" client="__m23oABrEfG7PdVgw6qLpw" supplier="_1BL8oABvEfG7PdVgw6qLpw"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_GIo2oAE9EfG0aYVkioTlZg" client="__m23oABrEfG7PdVgw6qLpw" supplier="_rEFPwABuEfG7PdVgw6qLpw"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_AGnNUAE-EfG0aYVkioTlZg" client="__m23oABrEfG7PdVgw6qLpw" supplier="_Hngx0ABgEfGNuqwtwhEntg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_rEFPwABuEfG7PdVgw6qLpw" name="gestione_db">
       <packagedElement xmi:type="uml:Class" xmi:id="_zeJSAABuEfG7PdVgw6qLpw" name="CreateDB">
@@ -377,6 +380,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_4XNSsABuEfG7PdVgw6qLpw" name="CreateTable"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_5-bIIABuEfG7PdVgw6qLpw" name="InsterInDB"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_qGaiAAE8EfG0aYVkioTlZg" client="_rEFPwABuEfG7PdVgw6qLpw" supplier="_Hngx0ABgEfGNuqwtwhEntg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_1BL8oABvEfG7PdVgw6qLpw" name="accessibilita">
       <packagedElement xmi:type="uml:Class" xmi:id="_DL02YABwEfG7PdVgw6qLpw" name="Application"/>
@@ -426,6 +430,9 @@
       <packagedElement xmi:type="uml:Package" xmi:id="_57on4AE0EfGeB8zFFlKGYA" name="manager">
         <packagedElement xmi:type="uml:Class" xmi:id="_EugUkAE1EfGeB8zFFlKGYA" name="manager"/>
       </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_neQM8AE8EfG0aYVkioTlZg" client="_1BL8oABvEfG7PdVgw6qLpw" supplier="_rEFPwABuEfG7PdVgw6qLpw"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_3nxOMAE8EfG0aYVkioTlZg" client="_1BL8oABvEfG7PdVgw6qLpw" supplier="__m23oABrEfG7PdVgw6qLpw"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_6i0DAAE8EfG0aYVkioTlZg" client="_1BL8oABvEfG7PdVgw6qLpw" supplier="_Hngx0ABgEfGNuqwtwhEntg"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_3iJVkPFdEfCQiL03duEjZw">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3iRRYPFdEfCQiL03duEjZw" source="http://www.eclipse.org/uml2/2.0.0/UML">
