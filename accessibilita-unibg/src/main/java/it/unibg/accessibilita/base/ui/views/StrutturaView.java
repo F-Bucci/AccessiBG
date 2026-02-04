@@ -23,13 +23,19 @@ import struttura.ElementoMappa;
 import struttura.Ostacolo;
 import struttura.Piano;
 import struttura.Stanza;
-
+/**
+ * Vista principale per la visualizzazione della mappa interattiva di un piano.
+ */
 @Route(value = "struttura", layout = MainLayout.class)
 public class StrutturaView extends VerticalLayout implements HasUrlParameter<String>{
 	
 	private final transient EdificioDAO edificioDAO;
 	private final transient PianoDAO pianoDAO;
-
+	/**
+	 * inietta i DAO e imposta lo stile base
+	 * @param edificioDAO
+	 * @param pianoDAO
+	 */
 	public StrutturaView(EdificioDAO edificioDAO, PianoDAO pianoDAO) {
 		this.edificioDAO = edificioDAO;
 		this.pianoDAO = pianoDAO;
@@ -41,6 +47,11 @@ public class StrutturaView extends VerticalLayout implements HasUrlParameter<Str
 		setAlignItems(Alignment.CENTER);
 		
 	}
+	/**
+	 * 
+	 * * * @param event Evento di navigazione
+	 * @param nome  Il parametro URL 
+	 */
 	@Override
 	public void setParameter(BeforeEvent event, String nome) {
 		removeAll();
@@ -53,6 +64,10 @@ public class StrutturaView extends VerticalLayout implements HasUrlParameter<Str
 			e.getMessage();
 		}
 	}
+	/**
+	 * crea l'interfaccia per la visualizzazione della mappa
+	 * @param piano piano selezionato
+	 */
 	private void interfacciaPiano(Piano piano) {
 		H2 titolo = new H2("Mappa iterattiva del Piano " + piano.getNumero());
 		titolo.addClassNames(LumoUtility.FontSize.XLARGE, LumoUtility.TextAlignment.CENTER);
@@ -76,7 +91,10 @@ public class StrutturaView extends VerticalLayout implements HasUrlParameter<Str
 		
 		add(titolo,mappa);
 	}
-	//crea dialog (box che appare quando si clicca una icona)
+	/**
+	 * crea dialog (box che appare quando si clicca una icona)
+	 * @param elemento L'elemento (Stanza, Ostacolo, ecc.) su cui è stato effettuato il click.
+	 */
 	private void apriDettaglio(ElementoMappa elemento) {
 	    new DialogMappa(elemento).open();
 	}

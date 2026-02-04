@@ -6,9 +6,10 @@ import com.vaadin.flow.theme.lumo.LumoUtility;
 
 public class GoogleMapCard extends Div {
 
-/*
-@param urlMappa
-*/
+/**
+ * 
+ * @param pathMaps src mappa di google
+ */
 	public GoogleMapCard(String pathMaps) {
 		
 		setWidthFull();

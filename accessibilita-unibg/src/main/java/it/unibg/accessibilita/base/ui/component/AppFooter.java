@@ -8,7 +8,9 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
 public class AppFooter extends VerticalLayout {
-	
+	/**
+	 * Componente che rappresenta il piè di pagina standard dell'applicazione.
+	 */
 	public AppFooter(){
 	setWidthFull();
 	setPadding(false);

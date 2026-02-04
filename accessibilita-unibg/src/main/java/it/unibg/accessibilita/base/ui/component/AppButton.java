@@ -8,7 +8,11 @@ import com.vaadin.flow.theme.lumo.LumoUtility;
 
 public class AppButton extends Button {
 	
-	//Senza icona
+	/**
+	 * 
+	 * @param text
+	 * @param listener azione da eseguire
+	 */
 	public AppButton(String text, ComponentEventListener<ClickEvent<Button>> listener) {
 		super(text);
 		configureStyle();
@@ -16,17 +20,27 @@ public class AppButton extends Button {
 			this.addClickListener(listener);
 		}
 	}
-	//Con icona
+	/**
+	 * 
+	 * @param text
+	 * @param icon icona di vaadin
+	 * @param listener azione da eseguire
+	 */
 	public AppButton(String text, Icon icon, ComponentEventListener<ClickEvent<Button>> listener) {
 		this(text,listener);
 		this.setIcon(icon);
 		configureStyle();
 	}
+	/**
+	 * 
+	 */
 	public AppButton() {
 		super();
 		configureStyle();
 	}
-	
+	/**
+	 *  css
+	 */
 	private void configureStyle() {
         this.addClassNames(
             LumoUtility.FontWeight.SEMIBOLD,       // Font più marcato

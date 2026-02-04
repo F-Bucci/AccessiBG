@@ -10,6 +10,10 @@ import com.vaadin.flow.theme.lumo.Lumo;
 
 public class ThemeToggleButton extends AppButton{
 	
+	/**
+	 * Crea un bottone per cambiare il tema della pagina.
+	 * Inizializza il bottone controllando lo stato attuale del tema all'avvio dell'applicazione.
+	 */
 	public ThemeToggleButton() {
 		
 		super();
@@ -22,7 +26,11 @@ public class ThemeToggleButton extends AppButton{
 		updateVisuals(isDarkNow);
 		addClickListener(this::handleClick);
 	}
-	
+	/**
+	 * Se è Scuro -> Rimuove {@code Lumo.DARK} -> Diventa Chiaro.
+	 * Se è Chiaro -> Aggiunge {@code Lumo.DARK} -> Diventa Scuro.
+	 * @param e evento di click
+	 */
 	private void handleClick(ClickEvent<Button> e) {
 		ThemeList themeList = UI.getCurrent().getElement().getThemeList();
 		boolean isDark = themeList.contains(Lumo.DARK);
@@ -37,7 +45,10 @@ public class ThemeToggleButton extends AppButton{
 			updateVisuals(true);
 		}
 	}
-	
+	/**
+	 * Aggiorna l'aspetto del bottone in base al tema attivo.
+	 * @param isDarkActive {@code true} se la Dark Mode è attualmente attiva, {@code false} altrimenti.
+	 */
 	public void updateVisuals(boolean isDarkActive) {
 	if(isDarkActive) {
 		setIcon(VaadinIcon.SUN_O.create());

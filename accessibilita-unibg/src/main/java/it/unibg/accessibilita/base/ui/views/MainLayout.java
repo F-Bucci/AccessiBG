@@ -14,6 +14,9 @@ import it.unibg.accessibilita.base.ui.component.AppButton;
 import it.unibg.accessibilita.base.ui.component.ThemeToggleButton;
 import it.unibg.accessibilita.base.ui.component.ViewToolbar;
 @Layout
+/**
+ * Layout principale che definisce la struttura comune a tutte le pagine.
+ */
 public final class MainLayout extends AppLayout implements RouterLayout {
 
     public MainLayout() {
@@ -26,7 +29,10 @@ public final class MainLayout extends AppLayout implements RouterLayout {
         ViewToolbar header = new ViewToolbar("AccessiBg");
         addToNavbar(header);
     }
-    
+    /**
+     * Istanzia la {@link ViewToolbar} personalizzata e la aggiunge alla Navbar.
+	 * 
+     */
     private void createDrawer() {
     	
     	//MENU LATERALE

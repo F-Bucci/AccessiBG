@@ -11,7 +11,9 @@ import struttura.Piano;
 import struttura.Stanza;
 import struttura.Distributore;
 import struttura.ElementoMappa;
-
+/**
+ * Componente grafico complesso che gestisce la visualizzazione della piantina e dei punti di interesse
+ */
 public class MappaInterattiva extends Div {
 	private static final String STYLE_DISPLAY = "display";
 	private static final String FULL_WIDTH = "100%";
@@ -20,6 +22,9 @@ public class MappaInterattiva extends Div {
 	private final Image mappaImg;
 	private String mappaOriginale;
 	private transient Consumer<ElementoMappa> onElementClick;
+	/**
+	 * Costruttore: Inizializza il layer grafico di base.
+	 */
 	public MappaInterattiva() {
 	    getStyle().set(POSITION, "relative");
 	    getStyle().set(STYLE_DISPLAY, "inline-block");
@@ -40,10 +45,19 @@ public class MappaInterattiva extends Div {
 	    containerImg.add(mappaImg);
 	    add(containerImg);
 	}
+	/**
+	 * Imposta il gestore dell'evento di click sui Pin.
+	 * @param handler 
+	 */
 	public void setOnElementClick(Consumer<ElementoMappa> handler) {
         this.onElementClick = handler;
     }
 	//metodo per costruire la mappa
+	/**
+	 * 
+	 * @param piano il piano dell'edificio
+	 * @param elemento La lista di elementi
+	 */
 	public void mapBuilder(Piano piano, List<? extends ElementoMappa> elemento) {
 		if(piano.getPathFoto() != null && !piano.getPathFoto().isEmpty()) {
 			this.mappaOriginale = piano.getPathFoto();
@@ -57,6 +71,10 @@ public class MappaInterattiva extends Div {
 		
 		
 	}
+	/**
+	 * 
+	 * @param e l'elemento per il quale creare il pin
+	 */
 	private void aggiungiPin(ElementoMappa e) {
 		MapPin pin = new MapPin(e);
 		pin.getStyle().set(POSITION, "absolute");
