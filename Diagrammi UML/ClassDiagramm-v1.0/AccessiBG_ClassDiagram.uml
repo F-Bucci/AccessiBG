@@ -381,6 +381,7 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_4XNSsABuEfG7PdVgw6qLpw" name="CreateTable"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_5-bIIABuEfG7PdVgw6qLpw" name="InsterInDB"/>
       <packagedElement xmi:type="uml:Usage" xmi:id="_qGaiAAE8EfG0aYVkioTlZg" client="_rEFPwABuEfG7PdVgw6qLpw" supplier="_Hngx0ABgEfGNuqwtwhEntg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_K56LMAIXEfG8ybkgYGD9Pg" client="_rEFPwABuEfG7PdVgw6qLpw" supplier="__m23oABrEfG7PdVgw6qLpw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_1BL8oABvEfG7PdVgw6qLpw" name="accessibilita">
       <packagedElement xmi:type="uml:Class" xmi:id="_DL02YABwEfG7PdVgw6qLpw" name="Application"/>

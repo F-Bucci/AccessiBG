@@ -1909,4 +1909,17 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_AIHpMAE-EfG0aYVkioTlZg" id="(0.3855421686746988,0.03908045977011468)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_AIHpMQE-EfG0aYVkioTlZg" id="(0.41025641025641024,1.0)"/>
   </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_K7I6QAIXEfG8ybkgYGD9Pg" type="Usage_Edge" source="_rEHE8ABuEfG7PdVgw6qLpw" target="__m4s0ABrEfG7PdVgw6qLpw">
+    <children xmi:type="notation:DecorationNode" xmi:id="_K7JhUAIXEfG8ybkgYGD9Pg" type="Usage_NameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_K7JhUQIXEfG8ybkgYGD9Pg" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_K7KIYAIXEfG8ybkgYGD9Pg" type="Usage_StereotypeLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_K7KIYQIXEfG8ybkgYGD9Pg" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_K7I6QQIXEfG8ybkgYGD9Pg"/>
+    <element xmi:type="uml:Usage" href="AccessiBG_ClassDiagram.uml#_K56LMAIXEfG8ybkgYGD9Pg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_K7I6QgIXEfG8ybkgYGD9Pg" points="[1526, 938, -643984, -643984]$[1026, 678, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_K9N94AIXEfG8ybkgYGD9Pg" id="(0.0,0.5909090909090909)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_K9Ok8AIXEfG8ybkgYGD9Pg" id="(1.0,0.4482758620689655)"/>
+  </edges>
 </notation:Diagram>
