@@ -89,8 +89,8 @@ public class InsertInDBTest {
         });
 
         assertEquals(6, sedeDAO.findAll().size());
-        assertEquals(4, sedeDAO.findEdificiBySede("Sede di Dalmine").size());
-        assertEquals(4, sedeDAO.findParcheggioBySede("Sede di Dalmine").size());
+        assertEquals(5, sedeDAO.findEdificiBySede("Sede di Dalmine").size());
+        assertEquals(5, sedeDAO.findParcheggioBySede("Sede di Dalmine").size());
         assertEquals(1, edificioDAO.findPianoByEdificio("Edificio D").size());
         assertEquals(5, edificioDAO.findIngressoByEdificio("Edificio D").size()+ 
         		edificioDAO.findIngressoByEdificio("Edificio B").size());
