@@ -5,19 +5,15 @@ database SQLite
 
 Utente -> Webapp : Visualizza sedi
 
-par
-    Webapp -> SQLite : getInformazioniSedi()
-    SQLite --> Webapp : Informazioni sedi
-end
+Webapp -> SQLite : getInformazioniSedi()
+SQLite --> Webapp : Informazioni sedi
 
 Webapp --> Utente : Mostra Home
 
 Utente -> Webapp : selezionaSede(Sede)
 
-par
-    Webapp -> SQLite : getInfoSede(Sede)
-    SQLite --> Webapp : Info sede
-end
+Webapp -> SQLite : getInfoSede(Sede)
+SQLite --> Webapp : Info sede
 
 Webapp --> Utente : Mostra Sede
 
@@ -28,52 +24,35 @@ end
 
 Utente -> Webapp : visualizzaEdifici(Sede)
 
-par
-    Webapp -> SQLite : getInformazioniEdifici(Sede)
-    SQLite --> Webapp : Informazioni edifici
-end
+Webapp -> SQLite : getInformazioniEdifici(Sede)
+SQLite --> Webapp : Informazioni edifici
 
 Webapp --> Utente : Mostra Edifici
 
 Utente -> Webapp : selezionaEdificio(Edificio)
 
-par
-    Webapp -> SQLite : getInfoEdificio(Edificio)
-    SQLite --> Webapp : Info edificio
-end
+Webapp -> SQLite : getInfoEdificio(Edificio)
+SQLite --> Webapp : Info edificio
 
 Webapp --> Utente : Mostra edificio
 
 opt Visualizza ingressi
     Utente -> Webapp : VisualizzaIngressi(Edificio)
 
-    par
-        Webapp -> SQLite : getInformazioniIngressi(Edificio)
-        SQLite --> Webapp : Informazioni ingressi
-    end
+    Webapp -> SQLite : getInformazioniIngressi(Edificio)
+    SQLite --> Webapp : Informazioni ingressi
 
     Webapp --> Utente : Mostra ingressi
 end
 
-opt Visualizza servizi
-    Utente -> Webapp : visualizzaServizi(Edificio)
-    Webapp -> SQLite : getInformazioniServizi(Edificio)
-    SQLite --> Webapp : Informazioni servizi
-    Webapp --> Utente : Mostra servizi
-end
+Utente -> Webapp : visualizzaPiano(Piano)
+Webapp -> SQLite : getPiano(Piano)
+SQLite --> Webapp : Cartina interattiva del piano
+Webapp --> Utente : Mostra cartina interattiva del piano
 
-Utente -> Webapp : visualizzaPiani(Edificio)
-Webapp -> SQLite : getPiani(Edificio)
-SQLite --> Webapp : Piani
-Webapp --> Utente : Mostra piani
-
-Utente -> Webapp : selezionaPiano(Piano)
-
-par
-    Webapp -> SQLite : getInformazioniPiano(Piano)
-    SQLite --> Webapp : Informazioni piano
-end
-
-Webapp --> Utente : Mostra piano
+Utente -> Webapp : visualizzaElementoCartina(Elemento)
+Webapp -> SQLite : getElementoCartina(Elemento)
+SQLite --> Webapp : Immagine con descrizione\ndell'elemento della cartina
+Webapp --> Utente : Mostra immagine con descrizione\ndell'elemento della cartina
 
 @enduml
