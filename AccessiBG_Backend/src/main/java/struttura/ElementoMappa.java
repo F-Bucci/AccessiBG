@@ -1,7 +1,11 @@
 package struttura;
 
-
-//ci aiuta a costruire la logica della mappa sul frontend
+/**
+ * Interfaccia per la logica della mappa.
+ * <p>
+ * Interfaccia che ci aiuta a costruire la logica della mappa sul frontend
+ * </p>
+ */
 public interface ElementoMappa {
 	double getX();
 	double getY();
