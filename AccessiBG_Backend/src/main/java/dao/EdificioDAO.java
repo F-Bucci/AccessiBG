@@ -108,7 +108,7 @@ public class EdificioDAO extends DAO<Edificio> {
 	// gia implementato in sede, potrebbe non servire, da valutare
 	public List<Edificio> findAll(){
 		try {return dsl
-				.selectFrom(table("sede"))
+				.selectFrom(table("edificio"))
 				.fetch(istanza -> new Edificio(
 						istanza.get(NOME, String.class),
 						istanza.get(INDIRIZZO, String.class),

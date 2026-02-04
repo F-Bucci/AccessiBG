@@ -35,13 +35,14 @@ public class OstacoloDAO extends DAO<Ostacolo> {
 		.execute();
 	}
 
-	public Ostacolo findById(int id) {
+	public Ostacolo findById(int id, int piano) {
 		var istanza = dsl.select(field(ID), field(NOME),field(TIPO),field(DESCRIZIONE),field(X),field(Y),field(PATHFOTO),field(PATHPERCORSO), field(PIANO))
 				.from(table(OSTACOLO))	
 				.where(field(ID).eq(id))
+				.and(field(PIANO).eq(piano))
 				.fetchOne();
 		if (istanza != null) {
-			TipoOstacolo tipo = TipoOstacolo.valueOf(istanza.get("tipoStanza", String.class));
+			TipoOstacolo tipo = TipoOstacolo.valueOf(istanza.get(TIPO, String.class));
 			return new Ostacolo(
 					istanza.get(ID, Integer.class),
 					istanza.get(NOME, String.class),
