@@ -6,9 +6,7 @@ import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
 import org.junit.jupiter.api.*;
 
-import dao.EdificioDAO;
-import dao.ParcheggioDAO;
-import dao.SedeDAO;
+import dao.*;
 import struttura.*;
 
 import java.sql.Connection;
