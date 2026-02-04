@@ -3,11 +3,13 @@ package it.unibg.accessibilita.base.ui.views;
 import java.util.List;
 
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Hr;
 import com.vaadin.flow.component.html.Paragraph;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.BeforeEvent;
@@ -25,6 +27,7 @@ import it.unibg.accessibilita.base.ui.component.ImageCard;
 import struttura.Edificio;
 import struttura.Parcheggio;
 import struttura.Sede;
+import struttura.TipoParcheggio;
 
 //TEMPORANEAMENTE PER VEDERE LA VIEW FARE: http://localhost:8080/sedi
 //Alcuni attributi vanno modificati dopo aver implementato il Database
@@ -90,12 +93,7 @@ public class SediView extends VerticalLayout implements HasUrlParameter<String>{
 		infoSede.setHeight("500px");
 		
 		rowCentrale.add(card, infoSede);
-		
-		Box descBox = new Box("Sulla " + sede.getFacolta());
-		descBox.setWidthFull();
-		descBox.addClassNames(LumoUtility.Margin.Top.LARGE);
-		
-		layout.add(rowCentrale, descBox);
+		layout.add(rowCentrale);
 		
 		return layout;
 	}
@@ -133,7 +131,7 @@ public class SediView extends VerticalLayout implements HasUrlParameter<String>{
 		layout.setMaxWidth("1200px");
 		layout.addClassName(LumoUtility.Margin.Horizontal.AUTO);
 		
-		H3 titoloMappa = new H3("MAPPA DELLA " + sede.getFacolta());
+		H3 titoloMappa = new H3("Mappa: " + sede.getFacolta());
 		titoloMappa.addClassNames(LumoUtility.Margin.Horizontal.AUTO);
 		
 		GoogleMapCard mappaSede = new GoogleMapCard(sede.getPathMaps());
@@ -160,6 +158,15 @@ public class SediView extends VerticalLayout implements HasUrlParameter<String>{
         if(parcheggi.isEmpty()) {return null;}
         for(Parcheggio p : parcheggi) {
 			ImageCard card = new ImageCard(p.getNome(), p.getIndirizzo(), p.getPathFoto());
+			if(Boolean.TRUE.equals(p.getPostiDisabili())) {
+				Span badgeDisabili = new Span(new Text("Questo parcheggio possiede posti per gli utenti disabili"));
+				badgeDisabili.getElement().getThemeList().add("badge success pill");
+				card.add(badgeDisabili);
+			}
+			if(TipoParcheggio.DISCO_ORARIO == p.getTipo()) {
+				Span badgePOrario = new Span(new Text("Questo parcheggio ha il disco orario"));
+				card.add(badgePOrario);
+			}
             card.getStyle().set("cursor", "pointer");
             griglia.add(card, spacer);
 		}

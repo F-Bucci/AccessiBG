@@ -6,12 +6,18 @@ import org.springframework.stereotype.Component;
 import gestione_db.CreateDB;
 
 @Component
+/**
+ * Componente responsabile dell'inizializzazione del database all'avvio dell'applicazione.
+ */
 public class DBInit implements CommandLineRunner{
 	private final CreateDB createDB;
 	
 	public DBInit(CreateDB createDB) {
 		this.createDB = createDB;
 	}
+	/**
+	 * @param createDB Il gestore del database che contiene la logica di creazione delle tabelle.
+	 */
 	@Override
 	public void run(String...args) throws Exception{
 		try {

@@ -8,9 +8,18 @@ import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import struttura.ElementoMappa;
 import struttura.Ostacolo;
-
+/**
+ * Questa classe estende il componente {@link Dialog} nativo di Vaadin, personalizzandolo per:
+ * Mostrare un'immagine rappresentativa (se presente).
+ * Adattare il messaggio di testo in base al tipo di elemento (es. avvisi per gli ostacoli).
+ */
 public class DialogMappa extends Dialog {
 	
+	/**
+	 * Costruisce e apre il dialog popolandolo con i dati dell'elemento passato.
+	 * * @param elemento L'oggetto {@link ElementoMappa} di cui visualizzare i dettagli.
+	 * Viene controllato dinamicamente se è un {@link Ostacolo} per cambiare lo stile dell'avviso.
+	 */
 	public DialogMappa(ElementoMappa elemento) {
 		//titoletto
 		setHeaderTitle(elemento.getNome());

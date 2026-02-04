@@ -10,13 +10,30 @@ import com.vaadin.flow.theme.lumo.LumoIcon;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
 public class ImageCard extends Div{
-
+	/**
+	 * 
+	 * @param titolo
+	 * @param pathFoto percorso dell'immagine
+	 */
 	public ImageCard(String titolo, String pathFoto) {
 		this(titolo, null, null, pathFoto);
 	}
+	/**
+	 * 
+	 * @param titolo
+	 * @param sottotitolo
+	 * @param pathFoto percorso dell'immagine
+	 */
 	public ImageCard(String titolo, String sottotitolo, String pathFoto) {
 		this(titolo, sottotitolo, null, pathFoto);
 	}
+	/**
+	 * 
+	 * @param titolo
+	 * @param sottotitolo
+	 * @param descrizione
+	 * @param pathFoto percorso dell'immagine
+	 */
 	public ImageCard(String titolo, String sottotitolo, String descrizione, String pathFoto) {
 		
 		addClassNames(
@@ -88,13 +105,27 @@ public class ImageCard extends Div{
 		
 	}
 	
-	//evita che java vada in crash se dal database arriva un campo vuoto
-	//toglie gli spazi in caso di inserimento accidentale
+	/**
+	 * 
+	 * Se l'URL è incompleto, questo viene aggiunto automaticamente.
+	 * Se l'URL è completo, rimane invariato
+	 * 
+	 * @param url indirizzo url da controllare. Può essere null.
+	 * @return L'URL normalizzato, oppure una stringa vuota se l'input è null o vuoto.
+	 */
 	private String fixUrl(String url) {
         if (url == null || url.trim().isEmpty()) return "";
         if (url.startsWith("http") || url.startsWith("/")) return url;
         return "/" + url.trim();
     }
+	/**
+	 * 
+	 * Verifica che l'URL punti a un file immagine supportato (formato .webp).
+	 * 
+	 * @param url  
+	 * @return
+	 */
+	
 	//verifica che le immagini finiscano con .webp
     private boolean isUrlValid(String url) {
         if (url == null || url.isEmpty()) return false;

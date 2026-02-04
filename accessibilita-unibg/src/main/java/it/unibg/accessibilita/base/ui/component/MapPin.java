@@ -11,6 +11,10 @@ import struttura.Ostacolo;
 import struttura.Stanza;
 
 public class MapPin extends Div{
+	/**
+	 * 
+	 * @param e L'elemento della mappa.
+	 */
 	public MapPin(ElementoMappa e) {
         // Crea delle icone in base al tipo di elemento
         VaadinIcon icona = VaadinIcon.CIRCLE;
@@ -66,7 +70,11 @@ public class MapPin extends Div{
 
         graficaMappa(icona, colore);
     }
-	
+	/**
+	 * Applica lo stile CSS, le dimensioni e le animazioni al Pin.
+	 * @param icon icone di Vaadin
+	 * @param colore colore dello sfondo delle icone
+	 */
 	private void graficaMappa(VaadinIcon icon, String colore) {
 		
 		setWidth("32px");

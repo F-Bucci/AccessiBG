@@ -12,7 +12,11 @@ import org.jspecify.annotations.Nullable;
 
 @NullMarked
 public final class ViewToolbar extends Composite<Header> {
-
+	/**
+	 * Componente strutturale che rappresenta la barra degli strumenti superiore (Header) di una vista.
+	 * @param viewTitle titolo
+	 * @param components una lista variabile di componenti
+	 */
     public ViewToolbar(@Nullable String viewTitle, Component... components) {
         addClassNames(Display.FLEX, FlexDirection.ROW, AlignItems.CENTER, 
                 Gap.MEDIUM, Padding.End.MEDIUM, Width.FULL);
@@ -37,7 +41,11 @@ public final class ViewToolbar extends Composite<Header> {
             getContent().add(actions);
         }
     }
-
+    /**
+     * Metodo di utilità per raggruppare visivamente più componenti.
+     * @param components i componenti da raggruppare
+     * @return Un componente {@link Div} configurato con il layout appropriato.
+     */
     public static Component group(Component... components) {
         var group = new Div(components);
         group.addClassNames(Display.FLEX, FlexDirection.COLUMN, AlignItems.STRETCH, Gap.SMALL,

@@ -7,7 +7,10 @@ import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
 public class Box extends Div {
-	
+	/**
+	 * Contenitore grafico generico utilizzato per raggruppare informazioni correlate.
+	 * @param titoloBox
+	 */
 	public Box(String titoloBox) {
 		
 		setWidthFull();
@@ -28,6 +31,11 @@ public class Box extends Div {
 	}
 	
 	// SE VOGLIAMO AGGIUNGERE UN TELEFONO, UNA MAIL, UN ORARIO ES.(ORARIO: 8:00-19:00)
+	/**
+	 * 
+	 * @param soggetto
+	 * @param valore
+	 */
 	public void addInfo(String soggetto, String valore) {
 		Span soggettoSpan = new Span(soggetto + ": ");
 		soggettoSpan.addClassName(LumoUtility.FontWeight.BOLD);
@@ -38,6 +46,10 @@ public class Box extends Div {
 		add(riga);
 	}
 	// SE VOGLIAMO AGGIUNGERE UN PARAGRAFO DI TESTO
+	/**
+	 * 
+	 * @param testo
+	 */
 	public void addParagrafo(String testo) {
 		if(testo != null && !testo.isEmpty()) {
 			Paragraph p = new Paragraph(testo);

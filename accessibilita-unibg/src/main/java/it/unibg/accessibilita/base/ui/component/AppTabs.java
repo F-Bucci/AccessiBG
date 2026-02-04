@@ -10,12 +10,18 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.theme.lumo.LumoUtility;
-
+/**
+ * Componente personalizzato che gestisce un layout a schede
+ */
 public class AppTabs extends VerticalLayout {
 	private final Tabs tabs = new Tabs();
 	private final Div contentContainer = new Div();
 	private final Map<Tab, Component> tabToContentMap = new HashMap<>();
 	
+	/**
+	 * Inizializza il layout e configura il listener per il cambio scheda.
+	 * Quando l'utente seleziona una scheda, il contenuto precedente viene rimosso
+	 */
 	public AppTabs() {
 		setSpacing(true);
 		setPadding(false);
@@ -41,13 +47,23 @@ public class AppTabs extends VerticalLayout {
 	}
 	
 	//SCHEDA SOLO TESTO
-	
+	/**
+	 * 
+	 * @param title
+	 * @param content il componente da visualizzare quando la scheda cambia
+	 */
 	public void addTab(String title,  Component content) {
 		Tab tab = new Tab(title);
 		addInternal(tab, content);
 	}
 	
 	//SCHEDA TESTO = ICONA IN CASO CI SERVA
+	/**
+	 * 
+	 * @param title
+	 * @param icon icona di vaadin
+	 * @param content il componente da visualizzare la quando la scheda cambia
+	 */
 	public void addTab(String title, Icon icon, Component content) {
 		Tab tab = new Tab(icon, new com.vaadin.flow.component.html.Span(title));
 		addInternal(tab, content);

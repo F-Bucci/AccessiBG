@@ -5,13 +5,23 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class CreateTable {
+	/**
+	 * Repository responsabile della definizione dello schema del Database
+	 */
 	private final DSLContext dsl;
-	
+	/**
+	 * Costruttore con iniezione del contesto jOOQ.
+	 * @param dsl Il contesto per l'esecuzione delle query.
+	 */
 	public CreateTable(DSLContext dsl) {
 		this.dsl = dsl;
 	}
 	
-//	struttura del database
+
+	/**
+	 * Repository responsabile della definizione dello schema del Database.
+	 * Utilizza {@link DSLContext} di jOOQ per eseguire query SQL native che generano la struttura
+	 */
 	public void createTable() {
 		dsl.execute("CREATE TABLE IF NOT EXISTS sede (" +
 			    "facolta TEXT PRIMARY KEY, " +

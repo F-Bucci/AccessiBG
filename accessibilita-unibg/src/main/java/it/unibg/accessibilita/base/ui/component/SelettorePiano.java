@@ -8,7 +8,10 @@ import it.unibg.accessibilita.base.ui.views.StrutturaView;
 import struttura.Piano;
 
 public class SelettorePiano extends Select<Piano>{
-	
+	/**
+	 * Configura il menu a tendina con la lista dei piani e la logica di navigazione.
+	 * @param piani la lista di oggetti
+	 */
 	public SelettorePiano(List<Piano> piani) {
 		super();
 		

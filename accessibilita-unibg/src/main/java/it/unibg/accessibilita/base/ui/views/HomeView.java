@@ -16,10 +16,16 @@ import it.unibg.accessibilita.base.ui.component.ImageCard;
 import struttura.Sede;
 
 @Route(value = "", layout = MainLayout.class) 
+/**
+ * Home della webapp
+ */
 public class HomeView extends VerticalLayout { 
 	
 	private final transient SedeDAO sedeDAO;
-	
+	/**
+	 * Inizializza la struttura verticale, aggiunge intestazioni, il contenitore delle card e il footer.
+	 * @param sedeDAO Data Access Object iniettato per il recupero delle sedi universitarie.
+	 */
     public HomeView(SedeDAO sedeDAO) {
     	this.sedeDAO = sedeDAO;
     	
@@ -38,7 +44,10 @@ public class HomeView extends VerticalLayout {
     	add(titolo, sottotitolo, container, spacer,  footer);
         addCards(container);
     }
-    
+    /**
+     * Configura il contenitore grafico per le card.
+     * @return un Div configurato come griglia flessibile
+     */ 
     private Div createGrigliaCards(){
     	Div griglia = new Div();
     	griglia.setWidthFull();
@@ -52,7 +61,10 @@ public class HomeView extends VerticalLayout {
     		.set("justify-content", "center");
     	return griglia;
     }
-    
+    /**
+     * 
+     * @param container il Div in cui inserire le card generate
+     */
     private void addCards(Div container) {
     	try {
     		List<Sede> sedi = sedeDAO.findAll();
