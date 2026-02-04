@@ -3,14 +3,12 @@
 class Utente
 class WebappConMaven
 class Database_SQLite
-class Database_Firebase
 
 
-Utente - WebappConMaven : > 1: Accesso \n< 1.3: Visualizza Home con Sedi \n> 2: RichiestaVisualizzaViewDiUnIstanza(istanzaDiRiferimento) \n< 2.3: VisualizzaViewDiUnIstanza(istanzaDiRiferimento) 
 
-WebappConMaven - Database_SQLite : > 1.1: RichiestaSedi()\n< 1.1.1: InvioSedi() \n> 2.1: RichiestaInfoDiUnIstanza(istanzaDiRiferimento) \n< 2.1.1: InvioInfoDiUnIstanza(istanzaDiRiferimento)
+Utente - WebappConMaven : > 1: Accesso \n< 1.2: Visualizza Home con Sedi \n> 2: RichiestaVisualizzaViewDiUnIstanza(istanzaDiRiferimento) \n< 2.2: VisualizzaViewDiUnIstanza(istanzaDiRiferimento) 
 
-WebappConMaven ---- Database_Firebase : > 1.2: RichiestaImmaginiSedi() \n< 1.2.1: InvioImmaginiSedi() \n> 2.2: RichiestaImmaginiDiUnIstanza(istanzaDiRiferimento) \n< 2.2.1: InvioImmaginiDiUnIstanzaS(istanzaDiRiferimento)
+WebappConMaven - Database_SQLite : > 1.1: RichiestaInfoSedi()\n< 1.1.1: InvioInfoSedi() \n> 2.1: RichiestaInfoDiUnIstanza(istanzaDiRiferimento) \n< 2.1.1: InvioInfoDiUnIstanza(istanzaDiRiferimento)
 
 
 @enduml
