@@ -1,6 +1,7 @@
 package struttura;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
@@ -127,6 +128,26 @@ public class DistributoreTest {
 		
 		assertEquals(TipoDistributore.SNACK_E_BEVANDE, d.getTipo());
 	}
+	
+	// Viene controllato che un valore false passato all'attributo accessibile rimanga false
+	@Test
+	public void testGetAccessibileFalse() {
+		Distributore d = new Distributore(
+				1,
+				"Macchinetta caffe",
+				"In manutenzione",
+				TipoDistributore.BEVANDE_CALDE,
+				false,
+				56.64,
+				45,
+				"/DBagni_E_DistributoriDX.webp",
+				"/percorso_DistributoriDX_BAGNO.webp",
+				0
+		);
+
+	    assertFalse(d.getAccessibile());
+	}
+
 	
 	// Viene controllato che un valore null passato all'attributo pathFoto diventi "Foto non disponibile"
 	@Test
