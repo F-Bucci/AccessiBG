@@ -142,12 +142,12 @@ public class EdificiView extends VerticalLayout implements HasUrlParameter<Strin
 			ImageCard card = new ImageCard(p.getNome(),p.getDescrizione(),p.getPathFoto());
             card.getStyle().set("cursor", "pointer");
             if(Boolean.TRUE.equals(p.getScale())) {
-            	Span badgeScale = new Span("Questo ingresso non e' accessibile per le persone con difficolta motorie");
+            	Span badgeScale = new Span("Questo ingresso non è accessibile per le persone con difficolta motorie");
             	badgeScale.getElement().getThemeList().add("badge error pill");
             	card.add(badgeScale);
             }
             if(Boolean.TRUE.equals(p.getRampe()) && Boolean.TRUE.equals(p.getScale())) {
-            	Span badgeRampaEScale = new Span("Questo ingresso e accessibile alle persone con disabilita motorie");
+            	Span badgeRampaEScale = new Span("Questo ingresso è accessibile alle persone con disabilita motorie");
             	badgeRampaEScale.getElement().getThemeList().add("badge success pill");
             	card.add(badgeRampaEScale);
             }
@@ -158,7 +158,7 @@ public class EdificiView extends VerticalLayout implements HasUrlParameter<Strin
             	card.add(badgePortaF);
             }
             if(Boolean.TRUE.equals(p.getRampe())) {
-            	Span badgeRampa = new Span("Questo ingresso e accessibile alle persone con disabilita motorie");
+            	Span badgeRampa = new Span("Questo ingresso è accessibile alle persone con disabilita motorie");
             	badgeRampa.getElement().getThemeList().add("badge success pill");
             	card.add(badgeRampa);
             }
