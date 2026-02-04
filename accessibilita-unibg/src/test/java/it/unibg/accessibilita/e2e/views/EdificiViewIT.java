@@ -6,7 +6,7 @@ import it.unibg.accessibilita.e2e.BaseE2ETest;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 
-public class EdificiViewIT extends BaseE2ETest{
+class EdificiViewIT extends BaseE2ETest{
 	
 	@Test
 	void edificiView_CaricaCorrettamente() {

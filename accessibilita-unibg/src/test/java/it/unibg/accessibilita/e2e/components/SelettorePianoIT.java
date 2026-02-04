@@ -13,7 +13,7 @@ import it.unibg.accessibilita.e2e.BaseE2ETest;
 public class SelettorePianoIT extends BaseE2ETest {
 	@Test
 	//test per verificare che la navigazione funzioni
-	void selezionaPiano_correttaNavigazione(){
+	void selezionaPianoCorrettaNavigazione(){
 		String urlTest = "/Edificio%20D";
 		page.navigate("http://localhost:8080/edifici" + urlTest);
 		

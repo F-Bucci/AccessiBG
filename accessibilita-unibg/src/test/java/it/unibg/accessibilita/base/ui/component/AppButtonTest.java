@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
-public class AppButtonTest {
+class AppButtonTest {
 
 	@Test
 	void bottone_nonVuoto() {

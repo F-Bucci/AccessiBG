@@ -12,8 +12,6 @@ import struttura.Ostacolo;
 public class DialogMappa extends Dialog {
 	
 	public DialogMappa(ElementoMappa elemento) {
-		//variabili
-		//String desc = (elemento.getDescrizione() != null) ? elemento.getDescrizione() : "Nessuna descrizione";
 		//titoletto
 		setHeaderTitle(elemento.getNome());
 		//rende il dialog draggable e resizable
