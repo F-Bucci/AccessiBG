@@ -23,8 +23,6 @@ public class Ostacolo implements ElementoMappa{
         this.pathFoto = (pathFoto == null || pathFoto.isBlank()) ? "Foto non disponibile" : pathFoto;
     }
 	
-	public Ostacolo() {}
-	
 	public TipoOstacolo getTipo() { return tipo; }
 
     public String getDescrizione() { return descrizione; }

@@ -26,7 +26,9 @@ public class PuntoDiIngresso {
 		this.x = x; // coordinata x può essere qualsiasi valore, validato altrove
 		this.y = y; // coordinata y può essere qualsiasi valore, validato altrove
 		this.pathFoto = (pathFoto == null || pathFoto.isBlank()) ? "Foto non disponibile" : pathFoto;
-		this.pathPercorso = pathPercorso;
+		// TODO: rimuovere quando la gestione dei percorsi sarà stabile
+		// Forziamo null per evitare crash lato UI / DAO
+		this.pathPercorso = null;
 		this.edificio = (edificio == null || edificio.isBlank()) ? "Edificio non specificato" : edificio;
 	}
 
