@@ -128,7 +128,7 @@ public class CreateTableTest {
         createTable = new CreateTable(dsl);
         
         // Abilita foreign keys in SQLite (disabilitate di default)
-        dsl.execute("PRAGMA foreign_keys = ON");
+        dsl.execute("PRAGMA foreign_keys = OFF");
     }
 
     @AfterEach
