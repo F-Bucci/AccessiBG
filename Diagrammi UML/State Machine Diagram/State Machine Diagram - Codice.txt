@@ -43,19 +43,18 @@ state Webapp{
       Mostra_Edificio -> c4 : Seleziona informazioni
       Mostra_Edificio -> c4 : Seleziona informazioni
       c4 -> c3
-      Mostra_Edificio -> Mostra_Struttura_Edificio : Visualizza struttura edificio
-      Mostra_Struttura_Edificio --> [*]
+      Mostra_Edificio -> Mostra_Struttura_Piano : Visualizza struttura piano
+      Mostra_Struttura_Piano --> [*]
     }
       
-    View_Edificio -> View_Struttura : Visualizza struttura
+    View_Edificio -> View_Struttura : Visualizza mappa interattiva (piano)
     
     state View_Struttura{
       state c5 <<choice>>
-      state c6 <<choice>>
       [*] -> c5
-      c5 -> Mostra_Piani
-      c5 -> Mostra_Servizi
-      c5 -> Ricerca_Aula
+      c5 -> Mostra_Piano : Mostra piano
+      Mostra_Piano -> Mostra_Foto : Visualizza foto elemento
+      Mostra_Foto -> c5
     }
 
     state History <<history*>>
@@ -67,8 +66,13 @@ state Webapp{
     
   }
   
+  state c6 <<choice>>
+  
   Interfaccia -> Menu : Accesso menu
-  Menu --> History : Chiusura menu
+  Menu --> c6
+
+  c6 ---> History : Chiusura menu
+  c6 ----> View_Home : Ritorna in Home
 
   Interfaccia --> [*] : Chiusura webapp
 
