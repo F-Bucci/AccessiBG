@@ -3,36 +3,32 @@
 
 package WebApp {
 (apetura menu laterale) as (menu)
-(selezione preferenze accessibilità) as (pref)
+(torna in home) as (home)
 (selezione tema) as (tema)
 (visualizza sedi universitarie) as (vSedi)
 (visualizza informazioni sede selezionata) as (infoSede)
 (visualizza parcheggi sede) as (park)
 (visualizza mappa sede) as (mappasede)
 (visualizza edifici sede) as (eSedi)
-(seleziona edificio) as (sEdificio)
 (visualizza informazioni edificio selezionato) as (vEdificio)
 (visualizza punti d'ingresso) as (ingresso)
 (visualizza struttura edificio) as (struttura)
 (visualizza piani edificio) as (vPiani)
 (visualizza mappa piano) as (infoMappa)
-(seleziona piano) as (sPiano)
 (visualizza elementi mappa) as (em)
 
-(menu) --.> (pref) : <<extends>>
+(menu) --.> (home) : <<extends>>
 (menu) --.> (tema) : <<extends>>
 (vSedi) -down-> (infoSede)
 (infoSede) <--. (park) : <<include>>
 (infoSede) <--. (mappasede) : <<include>>
 (infoSede) <--. (eSedi) : <<include>>
-(eSedi) --> (sEdificio)
-(sEdificio) --> (vEdificio)
+(eSedi) --> (vEdificio)
 (struttura) <-right-. (ingresso) : <<include>>
 
 (vEdificio) -right-> (struttura)
 (struttura) <--. (vPiani) : <<include>>
-(vPiani) --> (sPiano)
-(sPiano) -left-> (infoMappa)
+(vPiani) --> (infoMappa)
 (infoMappa) <.-- (em) :: <<include>>
 }
 Ut --> (vSedi)
