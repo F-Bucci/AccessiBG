@@ -35,7 +35,7 @@ Il repository è composto da tre progetti che collaborano tra di loro, e sono le
   Contiene la logica per creare e gestire il database SQLite (package `gestione_db`, classe principale `CreateDB`) + Jooq.
 
 - **AccessiBG_Backend**  
-  Implementa DAO e servizi (package `dao`, `servizi`, `struttura`): può essere avviato come servizio separato se l'architettura lo richiede.
+  Implementa DAO e servizi (package `dao`, `struttura`): può essere avviato come servizio separato se l'architettura lo richiede.
 
 - **accessibilita-unibg**  
   Applicazione web basata su Vaadin + Spring Boot. Contiene le view (`it.unibg.accessibilita.base.ui`), la classe `DBInit` che invoca `CreateDB` all'avvio e le risorse frontend in `src/main/frontend`.
