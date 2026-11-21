@@ -1,30 +1,24 @@
-FROM ghcr.io/jqlang/jq:latest AS jq-stage
+# Fase 1: Build con Maven e Java 17 nell'ordine esatto delle dipendenze
+FROM maven:3.9-eclipse-temurin-17 AS build
+WORKDIR /app
+COPY . .
 
-FROM eclipse-temurin:21-jdk AS build
-COPY --from=jq-stage /jq /usr/bin/jq
-# Test that jq works after copying
-RUN jq --version
+# 1. Prima il Backend (non ha dipendenze interne)
+RUN mvn -f AccessiBG_Backend/pom.xml clean install -DskipTests
 
-ENV HOME=/app
-RUN mkdir -p $HOME
-WORKDIR $HOME
-COPY . $HOME
+# 2. Poi SQLite (dipende da AccessiBG_Backend)
+RUN mvn -f AccessiBG_sqlite/pom.xml clean install -DskipTests
 
-# If you have a Vaadin Pro key, pass it as a secret with id "proKey":
-#
-#   $ docker build --secret id=proKey,src=$HOME/.vaadin/proKey .
-#
-# If you have a Vaadin Offline key, pass it as a secret with id "offlineKey":
-#
-#   $ docker build --secret id=offlineKey,src=$HOME/.vaadin/offlineKey .
+# 3. Infine la UI Vaadin in modalità production (dipende da entrambi)
+# (Se il pom.xml della UI sta nella root invece che in accessibilita-unibg/, togli "-f accessibilita-unibg/pom.xml")
+RUN mvn -f accessibilita-unibg/pom.xml clean package -Pproduction -DskipTests
 
-RUN --mount=type=cache,target=/root/.m2 \
-    --mount=type=secret,id=proKey \
-    --mount=type=secret,id=offlineKey \
-    sh -c 'PRO_KEY=$(jq -r ".proKey // empty" /run/secrets/proKey 2>/dev/null || echo "") && \
-    OFFLINE_KEY=$(cat /run/secrets/offlineKey 2>/dev/null || echo "") && \
-    ./mvnw clean package -Pproduction -DskipTests -Dvaadin.proKey=${PRO_KEY} -Dvaadin.offlineKey=${OFFLINE_KEY}'
+# Fase 2: Esecuzione su Ubuntu jammy (compatibile con la libreria nativa di sqlite-jdbc)
+FROM eclipse-temurin:17-jre-jammy
+WORKDIR /app
 
-FROM eclipse-temurin:21-jre-alpine
-COPY --from=build /app/target/*.jar app.jar
-ENTRYPOINT ["java", "-jar", "/app.jar", "--spring.profiles.active=prod"]
+# (Togli "accessibilita-unibg/" dal percorso se il pom.xml UI è nella root)
+COPY --from=build /app/accessibilita-unibg/target/*-SNAPSHOT.jar /app/app.jar
+
+EXPOSE 8080
+ENTRYPOINT ["java", "-Xmx380m", "-jar", "/app/app.jar", "--spring.profiles.active=prod"]
